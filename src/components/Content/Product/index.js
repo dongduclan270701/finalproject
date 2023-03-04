@@ -1,6 +1,182 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ProductParameters from './Product-parameters'
+import ProductThumbnail from './Product-thumbnail'
+import TabpanelDacDiem from './Tabpanel-dacdiem'
+import TabpanelChitiet from './Tabpanel-chitiet'
+import Tabpanelhrvproductabs from './Tabpanel-hrvproductabs'
 
 const Index = () => {
+    const [product, setProduct] = useState([
+        {
+            img: [
+                "https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-1_f7e2bdc9339d400ea1fa3943e7abccba.png",
+                "https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-2_9571d7449e25453798da61fbd82d22b0.png",
+                "https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-3_54451808ae1d4f6196ced38ea630d6c4.png",
+                "https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-4_cc64c03ae2a24e959483664b07529550.png",
+                "https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-5_758608d1480f446692fdac3f2c1a45b8.png"
+            ],
+            src: "laptop-asus-vivobook-15-x515ea-br2045w",
+            gift: [
+                "Sticker Gearvn GBot (Từ 08.11 cho đến khi hết quà)",
+                "Nhận bộ quà tặng trị giá 600.000đ (Từ ngày 02/02 đến 28/02/2023):",
+                "- Tai nghe Rapoo H100",
+                "- Chuột không dây Rapoo M21 Silent",
+                "- Lót chuột Rapoo V1000"
+            ],
+            gift_buy:[
+                "Mua chuột không dây LM115G Wireless chỉ với 100,000đ.",
+                "Giảm ngay 100,000đ khi mua thêm màn hình máy tính. ",
+                "Giảm ngay 100,000đ khi mua thêm ram. ",
+                "Giảm ngay 100,000đ khi mua kèm Microsoft Office (01/10 - 31/12/2022)"
+            ],
+            nameProduct: "Laptop Asus Vivobook 15 X515EA BR2045W",
+            realPrice: "11,490,000",
+            nowPrice: "10,990,000",
+            description_table: [
+                { CPU: "Intel Core i3-1115G4 1.7GHz up to 4.1GHz 6MB" },
+                { RAM: "4GB Onboard DDR4 2666MHz (1x SO-DIMM socket, up to 12GB SDRAM)" },
+                { Storage: '512GB M.2 NVMe™ PCIe® 3.0 SSD, 1x slot SATA3 2.5"' },
+                { GPU: "Intel UHD Graphics" },
+                { Monitor: '15.6" HD (1366 x 768), Anti-glare display, LED Backlit, 200nits, NTSC: 45%, Screen-to-body ratio: 83 ％' },
+                { Keyboard: "Tiêu chuẩn, có phím số" },
+                { Audio: "SonicMaster" },
+                { LAN: "None" },
+                { Wireless: "802.11 AC, Bluetooth v4.1" },
+                { Webcam: "HD camera  (720p Webcam)" },
+                { Communication: ['1x USB 3.2 Gen 1 Type-A', '1x USB 3.2 Gen 1 Type-C', '2x USB 2.0 Type-A', '1x HDMI 1.4', '1x 3.5mm Combo Audio Jack', '1x DC-in'] },
+                { System: "Windows 11 Home" },
+                { Battery: "2 Cells 37WHrs" },
+                { Weight: "1.8 kg" },
+                { Color: "Slate Gray" },
+                { Security: "Vân tay" },
+                { Size: "36.00 x 23.50 x 1.99 ~ 1.99 cm" },
+            ],
+            description:[
+                "Đánh giá chi tiết laptop Asus Vivobook 15 X515EA BR2045W",
+                "Asus Vivobook 15 X515EA BR2045W là chiếc laptop giá rẻ phù hợp cho việc học tập và làm việc hằng ngày. Cấu hình ổn định, thiết kế hoàn thiện hứa hẹn sẽ mang đến những trải nghiệm phù hợp với người dùng.",
+                "Thiết kế sang trọng, độc đáo",
+                "Laptop Asus Vivobook15 sở hữu một màu bạc đẹp mắt với thiết kế vuông vắn đầy tinh tế. Bản lề được thiết kế tự tạo một góc nghiêng vừa phải khi mở nắp máy tính lên. Logo Asus đặt ở trung tâm của mặt trên laptop tạo một điểm nhấn của dòng sản phẩm. Trọng lượng 1.8kg, dày khoảng 1.99cm tạo điều kiện di chuyển đi mọi nơi phục vụ cho nhu cầu học tập và làm việc. ",
+                "Cấu hình vượt trội trên laptop Asus Vivobook 15 X515EA BR2045W",
+                "Sử dụng bộ vi xử lý Intel core i3-1115G4mạnh mẽ cho phép laptop Asus Vivobook 15 giải quyết mọi tác vụ văn phòng cơ bản đến nâng cao. Card đồ họa tích hợp Intel® UHD Graphics hỗ trợ các công việc hình ảnh sắc nét. 4GB RAM DDR4 xử lý đa nhiệm cực tốt cho những thao tác mượt mà. Bộ lưu trữ 512GB thỏa sức lưu trữ các dữ liệu quan trọng mà người dùng cần.",
+                "Chất lượng hình ảnh chân thực",
+                "Asus Vivobook 15 sở hữu màn hình HD với độ phân giải 1366 x 768. Thiết kế viền mỏng mở ra tầm nhìn thoải mái hơn trên một sản phẩmlaptop mỏng nhẹ. Độ sáng 200 nits hỗ trợ hình ảnh hiển thị luôn tốt trong nhiều điều kiện ánh sáng. Vivobook 15 được trang bị công nghệ chống chói Anti-Glare mang lại độ chính xác cao hỗ trợ đôi mắt quan sát tốt hơn.  ",
+                "Bàn phím và bảo mật",
+                "Đây có lẽ là sản phẩm laptop cho sinh viênhoàn hảo với thiết kế bàn phím thoải mái. Hành trình phím được tinh chỉnh hợp lý để việc đánh máy trên Asus Vivobook 15 thuận lợi. Thiết kế Fullsize dễ dàng cho việc nhập dữ liệu nhanh chóng. ",
+            ]
+        },
+        {
+            img: [
+                "https://file.hstatic.net/1000026716/file/gearvn-laptop-asus-vivobook-14-x1402za-ek232w-1_9484ee6af78442b292ca985e3a45cbdc.png",
+                "https://file.hstatic.net/1000026716/file/gearvn-laptop-asus-vivobook-14-x1402za-ek232w-7_ff99faa9a496471ebc3c6316246b0c08.png",
+                "https://file.hstatic.net/1000026716/file/gearvn-laptop-asus-vivobook-14-x1402za-ek232w-4_7a4f26cd0ca442f0a472b0b2d13e5ae1.png",
+                "https://file.hstatic.net/1000026716/file/gearvn-laptop-asus-vivobook-14-x1402za-ek232w-2_4aa885843ac743b0b1e5ba2dd0430432.png",
+                "https://file.hstatic.net/1000026716/file/gearvn-laptop-asus-vivobook-14-x1402za-ek232w-5_4f95a6fc389146df85ef4a00113b67ca.png",
+                "https://file.hstatic.net/1000026716/file/gearvn-laptop-asus-vivobook-14-x1402za-ek232w-8_f8515436b414418f995f91a6258c3de0.png",
+                "https://file.hstatic.net/1000026716/file/gearvn-laptop-asus-vivobook-14-x1402za-ek232w-9_88e0e25363f145d6a2fb7ce41de0dbfe.png",
+            ],
+            src: "laptop-asus-vivobook-14-x1402za-ek232w",
+            gift: [
+                'Balo phổ thông Asus 15.6" ',
+                "Sticker Gearvn GBot (Từ 08.11 cho đến khi hết quà)",
+                "Năm Mèo - Tặng Chuột (Từ 01.03 - 31.03.2023)"
+            ],
+            gift_buy:[
+                "Mua túi chống sốc chỉ với giá 49.000đ",
+                "Giảm ngay 100.000đ khi mua kèm Ram Laptop.",
+                "Giảm đến 200.000đ khi mua kèm Balo, túi chống sốc, phụ kiện.",
+                "Giảm ngay 30.000đ khi mua Đế tản nhiệt Laptop.",
+                "Giảm ngay 100.000đ khi mua chuột TUF Gaming M3, Logitech G203, G102."
+            ],
+            nameProduct: "Laptop Asus Vivobook 15 X515EA BR2045W",
+            realPrice: "0",
+            nowPrice: "13,490,000",
+            description_table: [
+                { CPU: "Intel® Core™ i3-1220P Processor 3.3 GHz (12M Cache, up to 4.4 GHz, 10 cores, 12 threads)" },
+                { RAM: "4GB (Onboard) DDR4 3200MHz (Còn 1 slot SO-DIMM)" },
+                { Storage: '512GB M.2 NVMe™ PCIe® 3.0 SSD (1 Slot)' },
+                { GPU: "Intel® UHD Graphics" },
+                { Monitor: '14.0 inch, FHD (1920 x 1080) 16:9, LED Backlit, 220nits, 45% NTSC, Anti-glare display' },
+                { Keyboard: "LED trắng" },
+                { Audio: "SonicMaster" },
+                { LAN: "None" },
+                { Wireless: "v5.0" },
+                { Webcam: "720p HD camera With privacy shutter" },
+                { Communication: ['', '1x USB 3.2 Gen 1 Type-C', '2x USB 2.0 Type-A', '1x HDMI 1.4', '1x 3.5mm Combo Audio Jack', '1x DC-in'] },
+                { System: "Windows 11 Home" },
+                { Battery: "	42WHrs, 3S1P, 3-cell Li-io" },
+                { Weight: "1.50 kg" },
+                { Color: "Quiet Blue" },
+                { Security: "Fingerprint sensor intergrated with Touchpad" },
+                { Size: "31.71 x 22.20 x 1.99 ~ 1.99 cm" },
+            ],
+            description: [
+                
+            ]
+        },
+        {
+            img: [
+                "https://product.hstatic.net/1000026716/product/1024vn-fix-win_596189a32e9d42cc8cb3c0b47da9b61c.png",
+                "https://file.hstatic.net/1000026716/file/gearvn-laptop-msi-modern-15-a11mu-678vn-1_ccd39899124e40bcaf2c97a38ca8b676_grande.jpeg",
+                "https://file.hstatic.net/1000026716/file/gearvn-laptop-msi-modern-15-a11mu-678vn-2_fb58e292c02c4dff86350a9b93e3102d_grande.jpeg",
+                "https://file.hstatic.net/1000026716/file/gearvn-laptop-msi-modern-15-a11mu-678vn-3_8dfd185330bf489588a8aa262d411c72_grande.jpeg",
+                "https://file.hstatic.net/1000026716/file/gearvn-laptop-msi-modern-15-a11mu-678vn-4_47f472407fe2471fb51ac2221a1971da_grande.jpeg",
+            ],
+            src: "laptop-msi-modern-15-a11m-1024vn",
+            gift: [
+                "Chuột MSI M88 (Số lượng có hạn)",
+                "Sticker Gearvn GBot (Từ 08.11 cho đến khi hết quà)",
+                "Năm Mèo - Tặng Chuột (Từ 01.03 - 31.03.2023)"
+            ],
+            gift_buy:[
+                "Mua túi chống sốc chỉ với giá 49.000đ",
+                "Giảm ngay 100.000đ khi mua kèm đế tản nhiệt Havit F2072.",
+                "Giảm ngay 100.000đ khi mua kèm Ram Laptop.",
+                "Giảm đến 200.000đ khi mua kèm Balo, túi chống sốc, phụ kiện.",
+                "Giảm ngay 30.000đ khi mua Đế tản nhiệt Laptop.",
+                "Giảm ngay 100.000đ khi mua chuột TUF Gaming M3, Logitech G203, G102.",
+                "Giảm ngay 100.000 khi mua kèm Microsoft Office (từ 1/1 - 31/3/2023)",
+                "Giảm ngay 200.000 khi mua kèm Office Home & Student (từ 1/1 - 31/3/2023)",
+            ],
+            nameProduct: "Laptop MSI Modern 15 A11M 1024VN",
+            realPrice: "18,990,000",
+            nowPrice: "14,490,000",
+            description_table: [
+                { CPU: "Intel Core i5-1155G7 2.5GHz up to 4.5GHz 8MB 4 nhân 8 luồng" },
+                { RAM: "8GB DDR4 3200MHz ( 2 Khe ram nâng cấp tối đa 64GB )" },
+                { Storage: '512GB SSD M.2 PCIE Gen3X4 (Còn trống 1 khe SSD M.2 NVMe PCIe Gen4 )' },
+                { GPU: "Intel Iris Xe Graphics" },
+                { Monitor: '15.6" FHD (1920 x 1080) IPS, Anti-Glare with 45% NTSC, 60Hz' },
+                { Keyboard: "Có đèn nền màu trắng" },
+                { Audio: "Âm thanh độ phân giải cao ™ với Nahimic 3" },
+                { LAN: "Không" },
+                { Wireless: "Wi-Fi 6(Gig+)(802.11ax), Bluetooth v5.1" },
+                { Webcam: "HD Webcam 720p" },
+                { Communication: ['1x Type-C (USB / DP / Thunderbolt™) hỗ trợ sạc PD', '1x Type-A USB3.2 Gen1', '2x Type-A USB3.2 Gen2', '1x (4K @ 60Hz) HDMI', '1x Mic-in/Headphone-out Combo Jack'] },
+                { System: "Windows 11 Home" },
+                { Battery: "52WHrs" },
+                { Weight: "1.6 kg" },
+                { Color: "Carbon Gray ( Xám )" },
+                { Security: "None" },
+                { Size: "356.8 x 233.75 x 16.9 - 18.9 mm" },
+            ],
+            description:[
+                "Đánh giá chi tiết laptop MSI Modern 15 A11M 1024VN",
+                "",
+                "Laptop sang trọng, tâm điểm của mọi ánh nhìn",
+                "Với thiết kế tinh tế, sang trọng, laptop MSI Modern 15 A11M 1024VN là sự lựa chọn hàng đầu của giới trẻ, giúp mang đến một vẻ ngoài siêu nổi bật và tràn đầy cá tính. Máy mỏng nhẹ có điểm nhấn thiết kế độc đáo. Thể hiện cá tính độc đáo của bạn với hiệu năng không giới hạn.",
+                "Siêu di động với trọng lượng chỉ 1,6 kg",
+                "Laptop siêu nhẹ với trọng lượng chỉ 1,6kg và mỏng 16,9 mm. Modern Series luôn cơ động và phong cách. Làm việc mọi lúc mọi nơi một cách thú vị hơn.",
+                "Hỗ trợ USB type C",
+                "Với cổng USB type C, Modern Series có thể truyền dữ liệu với tốc độ cực cao tới 40Gbps, hoặc sạc nhanh nhờ hỗ trợ chuẩn Power Delivery.",
+                "Âm thanh chất lượng cao cấp",
+                "Tận hưởng những khoảnh khắc tuyệt vời khi nghe nhạc với MSI Modern 15 A11M 1024VN. Nâng cấp từ thế hệ MSI Modern 14, MSI Modern 15 A11M 1024VN trang bị công nghệ hỗ trợ lấy mẫu âm thanh tới 24bit / 192kHz, giúp bạn lắng nghe âm thanh một cách chân thật và sắc nét nhất.",
+                "Bàn phím gõ thoải mái",
+                "Hành trình phím 1.5mm cùng với độ phản hồi tốt giúp đem tới trải nghiệm gõ phím tuyệt với trên Modern. Bàn phím có đèn nền cực sáng, cho phép bạn dễ dàng nhận diện ngay cả trong môi trường tối.",
+                "Kết nối đa dạng",
+                " Trang bị 2 cổng USB-A và cổng USB Type C, dễ dàng kết nối theo nhu cầu của bạn. Đầu đọc thẻ micro SD và cổng xuất hình HDMI giúp thuận tiện hơn trong việc chụp hình, để bạn có thể thoải mái tận hưởng mọi khoảnh khắc cuộc sống. Với thiết kế tinh tế, sang trọng MSI Modern là sự lựa chọn hàng đầu với laptop sinh viên dành cho giới trẻ, giúp mang đến một vẻ ngoài siêu nổi bật và tràn đầy cá tính. Cũng như đủ sức chinh phục mọi khách hàng với vẻ ngoài chuyên nghiệp, tự tin. Sản phẩm phù hợp với giới văn phòng, hay những bạn trẻ mong muốn sử dụng một chiếc máy thanh lịch và nổi bật giữa đám đông.",
+            ]
+        },
+    ])
     return (
         <div className="noindex">
             <div id="breadcrumb">
@@ -19,79 +195,44 @@ const Index = () => {
                         </div>
                         <div className="page_content">
                             <div className="row">
-                                <div className="col-sm-6 col-xs-12 product_thumbnail">
-                                    <style dangerouslySetInnerHTML={{ __html: ".fotorama1677070849262 .fotorama__nav--thumbs .fotorama__nav__frame{\npadding:2px;\nheight:64px}\n.fotorama1677070849262 .fotorama__thumb-border{\nheight:60px;\nborder-width:2px;\nmargin-top:2px}" }} /><div className="fotorama--hidden" /><div className="fotorama fotorama1677070849262" data-width="100%" data-max-width="100%" data-autoplay="true" data-nav="thumbs" data-transition="slide" data-clicktransition="crossfade"><div className="fotorama__wrap fotorama__wrap--css3 fotorama__wrap--slide fotorama__wrap--toggle-arrows fotorama__wrap--no-controls" style={{ width: '100%', minWidth: '0px', maxWidth: '100%' }}><div className="fotorama__stage fotorama__pointer" style={{ width: '625px', height: '625px' }}><div className="fotorama__stage__shaft" style={{ width: '625px', marginLeft: '0px', transitionDuration: '0ms', transform: 'translate3d(0px, 0px, 0px)' }}><div className="fotorama__stage__frame fotorama__loaded fotorama__loaded--img" style={{ left: '-627px' }}><img src="https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-1_f7e2bdc9339d400ea1fa3943e7abccba.png" className="fotorama__img" style={{ width: '625px', height: '625px', left: '0px', top: '0px' }} /></div><div className="fotorama__stage__frame fotorama__loaded fotorama__loaded--img fotorama__active" style={{ left: '0px' }}><img src="https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-2_9571d7449e25453798da61fbd82d22b0.png" className="fotorama__img" style={{ width: '625px', height: '625px', left: '0px', top: '0px' }} /></div><div className="fotorama__stage__frame fotorama__loaded fotorama__loaded--img" style={{ left: '627px' }}><img src="https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-3_54451808ae1d4f6196ced38ea630d6c4.png" className="fotorama__img" style={{ width: '625px', height: '625px', left: '0px', top: '0px' }} /></div></div><div className="fotorama__arr fotorama__arr--prev" tabIndex={0} role="button" /><div className="fotorama__arr fotorama__arr--next" tabIndex={0} role="button" /><div className="fotorama__video-close" /></div><div className="fotorama__nav-wrap"><div className="fotorama__nav fotorama__nav--thumbs" style={{ width: '625px' }}><div className="fotorama__nav__shaft" style={{ transitionDuration: '330ms', transform: 'translate3d(0px, 0px, 0px)' }}><div className="fotorama__thumb-border" style={{ transitionDuration: '360ms', transform: 'translate3d(66px, 0px, 0px)', width: '60px' }} /><div className="fotorama__nav__frame fotorama__nav__frame--thumb" tabIndex={0} role="button" style={{ width: '64px' }}><div className="fotorama__thumb fotorama__loaded fotorama__loaded--img"><img src="https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-1_f7e2bdc9339d400ea1fa3943e7abccba.png" className="fotorama__img" style={{ width: '64px', height: '64px', left: '0px', top: '0px' }} /></div></div><div className="fotorama__nav__frame fotorama__nav__frame--thumb fotorama__active" tabIndex={0} role="button" style={{ width: '64px' }}><div className="fotorama__thumb fotorama__loaded fotorama__loaded--img"><img src="https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-2_9571d7449e25453798da61fbd82d22b0.png" className="fotorama__img" style={{ width: '64px', height: '64px', left: '0px', top: '0px' }} /></div></div><div className="fotorama__nav__frame fotorama__nav__frame--thumb" tabIndex={0} role="button" style={{ width: '64px' }}><div className="fotorama__thumb fotorama__loaded fotorama__loaded--img"><img src="https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-3_54451808ae1d4f6196ced38ea630d6c4.png" className="fotorama__img" style={{ width: '64px', height: '64px', left: '0px', top: '0px' }} /></div></div><div className="fotorama__nav__frame fotorama__nav__frame--thumb" tabIndex={0} role="button" style={{ width: '64px' }}><div className="fotorama__thumb fotorama__loaded fotorama__loaded--img"><img src="https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-4_cc64c03ae2a24e959483664b07529550.png" className="fotorama__img" style={{ width: '64px', height: '64px', left: '0px', top: '0px' }} /></div></div><div className="fotorama__nav__frame fotorama__nav__frame--thumb" tabIndex={0} role="button" style={{ width: '64px' }}><div className="fotorama__thumb fotorama__loaded fotorama__loaded--img"><img src="https://product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-5_758608d1480f446692fdac3f2c1a45b8.png" className="fotorama__img" style={{ width: '64px', height: '64px', left: '0px', top: '0px' }} /></div></div></div></div></div></div></div>
-                                </div>
-                                <div className="col-sm-6 col-xs-12 product_parameters">
-                                    <h1 className="product_name">
-                                        Laptop Asus Vivobook 15 X515EA BR2045W
-                                    </h1>
-                                    <p>
-                                    </p><p><span style={{ fontSize: '18px' }}>✔&nbsp;Bảo hành chính hãng 24&nbsp;tháng.&nbsp;</span></p><p><span style={{ fontSize: '18px' }}>✔ Hỗ trợ đổi mới trong 7 ngày.&nbsp;</span></p><p><span style={{ fontSize: '18px' }}>✔ Windows bản quyền tích hợp.&nbsp;</span></p><p><span style={{ fontSize: '18px' }}>✔ Miễn phí giao hàng toàn quốc.</span></p><hr /><p><span style={{ color: '#ff0000' }}><span style={{ fontSize: '18px' }}><u><strong>QUÀ TẶNG:</strong></u></span></span></p><p><span style={{ fontSize: '18px' }}><a href="https://gearvn.com/products/phu-kien-sticker-da-n-gearvn-gbot-pc"><strong>🎁 Sticker Gearvn&nbsp;GBot (Từ 08.11 cho đến khi hết quà)</strong></a></span></p><p><span style={{ fontSize: '18px' }}><strong>🎁Nhận bộ quà tặng trị giá 600.000đ (Từ ngày 02/02 đến 28/02/2023):</strong></span></p><p><span style={{ fontSize: '18px' }}><strong>- Tai nghe Rapoo H100</strong></span></p><p><span style={{ fontSize: '18px' }}><strong>- Chuột không dây Rapoo M21 Silent</strong></span></p><p><span style={{ fontSize: '18px' }}><strong>- Lót chuột Rapoo V1000</strong></span></p><hr /><p><span style={{ fontSize: '18px' }}><span style={{ color: '#ff0000' }}><strong><u>ƯU ĐÃI KHI MUA KÈM LAPTOP:&nbsp;</u></strong></span></span></p><p><span style={{ fontSize: '18px' }}>⭐ Mua chuột không dây LM115G Wireless&nbsp;chỉ với 100,000đ.<br />⭐ Giảm ngay 100,000đ khi mua thêm màn hình máy tính.&nbsp;<br />⭐ Giảm ngay 100,000đ khi mua thêm ram.&nbsp;<br /><a href="https://gearvn.com/pages/microsoft-office-365">⭐&nbsp;Giảm ngay 100,000đ khi mua kèm Microsoft Office (01/10 - 31/12/2022)</a></span></p><p><span style={{ fontSize: '18px' }}>Và còn rất nhiều ưu đãi khác. <a href="http://gearvn.com/pages/chuong-trinh-mua-kem-pc-gearvn"><span style={{ color: '#3498db' }}><strong>XEM NGAY CHI TIẾT TẠI ĐÂY</strong></span></a></span></p><hr /><p><span style={{ fontSize: '18px' }}><strong><span style={{ color: '#ff0000' }}>Hỗ&nbsp;trợ trả góp MPOS (Thẻ tín dụng), HDSAISON&nbsp;(</span><a href="https://gearvn.com/pages/huong-dan-tra-gop"><span style={{ color: '#3498db' }}>Xem chi tiết</span></a><span style={{ color: '#ff0000' }}>).</span></strong></span></p><p><strong>
-                                    </strong></p><strong>
-                                        {/*<h3 class="product_select_qty">
-Chọn màu sắc, số lượng sản phẩm
-<div class="fb-like pull-right" data-href="/component/products/dam-cat-laze-thoi-trang.html" data-layout="button" data-action="like" data-show-faces="false" data-share="true" ></div>
-</h3>*/}
-                                        <form id="add-item-form-2" name="shoppingCart" action="/cart/add" method="post" encType="multipart/form-data">
-                                            <div id="sel_price_qty" className="table_qty table-responsive" style={{ display: 'none' }}>
-                                                <table width="100%" border={0} cellSpacing={0} cellPadding={4}>
-                                                    <tbody><tr className>
-                                                        <td>
-                                                            <img className="product_cs_thumb" src="//hstatic.net/0/0/global/noDefaultImage6_small.gif" />
-                                                            <span>Laptop Asus Vivobook 15 X515EA BR2045W / 12295		</span>
-                                                        </td>
-                                                        <td className="text-right">
-                                                            <span className>10,990,000₫</span>
-                                                        </td>
-                                                        <td className="text-right variant-control" data-price={1099000000}>
-                                                            <button className="bt_down" type="button" onclick="javascript:jQuery(this).qtyDown('qty1098653408');"> - </button>
-                                                            <input type="text" className="input_qty" id="qty1098653408" name="qty[]" defaultValue={0} />
-                                                            <button className="bt_up" type="button" onclick="javascript:jQuery(this).qtyUp('qty1098653408');"> + </button>
-                                                            <input type="hidden" defaultValue={1098653408} name="pid[]" className="vid" />
-                                                        </td>
-                                                    </tr>
-                                                    </tbody></table>
-                                            </div>
-                                            <span className="text-select-product" style={{ display: 'none' }}>(Vui lòng chọn số lượng trước khi mua hàng)</span>
-                                            {/*<div id="sel_price_readmore">
-<a id="price_readmore" href="javascript:void();"><span class="fa fa-chevron-down" aria-hidden="true"></span></a>
-</div>*/}
-                                            <div className="product_nav_btn">
-                                                <div className="product_sales_off pull-left">
-                                                    <span className="price-text">Giá Cũ:</span><span className="product_price"><del>11,490,000₫</del></span><br />
-                                                    <span className="price-text">Giá KM:</span><span className="product_sale_price">10,990,000₫</span>
-                                                </div>
-                                            </div>
-                                            <div className="clearfix" />
-                                            <div className="form-group">
-                                                <a id="allowAdd2Cart" className="product_buy_btn btn-success theme_button addtocar">Đặt hàng</a>
-                                            </div>
-                                        </form>
-                                    </strong></div><strong>
-                                </strong></div><strong>
+                                <ProductThumbnail product={product} />
+                                <ProductParameters product={product} />
+
+                                <strong>
+
+                                </strong>
+                            </div>
+                            <strong>
+
                                 <br className="clr" />
-                            </strong><div id="product_content_detail" className="row"><strong>
-                            </strong><div id="product_left" className="col-md-12 col-xs-12"><strong>
-                            </strong><div role="tabpanel"><strong>
-                                {/* Nav tabs */}
-                                <ul className="nav nav-tabs" role="tablist">
-                                    <li role="presentation" className="active"><a href="#chitiet" aria-controls="chitiet" role="tab" data-toggle="tab">Mô tả sản phẩm</a></li>
-                                    <li role="presentation"><a href="#dacdiem" aria-controls="dacdiem" role="tab" data-toggle="tab">Đặc điểm nổi bật</a></li>
-                                    <li role="presentation"><a href="#hrvproducttabs" aria-controls="dacdiem" role="tab" data-toggle="tab">Thông tin bảo hành</a></li>
-                                </ul>
-                                {/* Tab panes */}
-                            </strong><div className="tab-content"><strong>
-                            </strong><div role="tabpanel" className="tab-pane active" id="chitiet"><strong>
-                            </strong><p><strong /></p><h2><span style={{ fontSize: '22px' }}><strong>THÔNG SỐ KĨ THUẬT:<strong>&nbsp;</strong></strong></span></h2><div className="scroll-table"><table id="tblGeneralAttribute" border={1} cellPadding={3} cellSpacing={0} style={{ backgroundColor: '#ffffff', borderCollapse: 'collapse', borderSpacing: '0px', border: '1px solid #eeeeee', boxSizing: 'border-box', color: '#333333', fontFamily: 'Roboto,sans-serif', fontSize: '13px', lineHeight: '20px', marginBottom: '20px', marginLeft: 'auto', marginRight: 'auto', maxWidth: '100%', minWidth: '500px', width: '100%' }} className="table table-bordered"><tbody style={{ boxSizing: 'border-box' }}><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><strong><a target="_blank" href="https://gearvn.com/collections/cpu-bo-vi-xu-ly">CPU</a></strong></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>Intel Core i3-1115G4 1.7GHz up to 4.1GHz 6MB</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><strong><a target="_blank" href="https://gearvn.com/collections/cpu-bo-vi-xu-ly">RAM</a></strong></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>4GB Onboard DDR4 2666MHz (1x SO-DIMM socket, up to 12GB SDRAM)</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><strong><a target="_blank" href="https://gearvn.com/collections/cpu-bo-vi-xu-ly">Ổ lưu trữ</a></strong></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>512GB M.2 NVMe™ PCIe® 3.0 SSD, 1x slot SATA3 2.5"</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><strong><a target="_blank" href="https://gearvn.com/collections/cpu-bo-vi-xu-ly">Card đồ họa</a></strong></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>Intel UHD Graphics</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><strong><span style={{ color: '#000000' }}><a target="_blank" href="https://gearvn.com/collections/cpu-bo-vi-xu-ly">Màn hình</a></span></strong></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>15.6" HD (1366 x 768), Anti-glare display, LED Backlit, 200nits, NTSC: 45%, Screen-to-body ratio: 83 ％</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><strong><a target="_blank" href="https://gearvn.com/collections/cpu-bo-vi-xu-ly">Bàn phím</a></strong></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>Tiêu chuẩn, có phím số</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}><strong>Audio</strong></span></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>SonicMaster</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}><strong>Kết nối có dây (LAN)</strong></span></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>None</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}><strong>Kết nối không dây</strong></span></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>802.11 AC, Bluetooth v4.1</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><strong><a target="_blank" href="https://gearvn.com/collections/cpu-bo-vi-xu-ly">Webcam</a></strong></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}>HD camera&nbsp;&nbsp;(720p Webcam)</span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}><strong>Cổng giao tiếp</strong></span></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><ul><li><span style={{ fontSize: '18px' }}>1x USB 3.2 Gen 1 Type-A</span></li><li><span style={{ fontSize: '18px' }}>1x USB 3.2 Gen 1 Type-C</span></li><li><span style={{ fontSize: '18px' }}>2x USB 2.0 Type-A</span></li><li><span style={{ fontSize: '18px' }}>1x HDMI 1.4</span></li><li><span style={{ fontSize: '18px' }}>1x 3.5mm Combo Audio Jack</span></li><li><span style={{ fontSize: '18px' }}>1x DC-in</span></li></ul></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}><strong>Hệ điều hành</strong></span></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>Windows 11 Home</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}><strong>Pin</strong></span></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>2 Cells 37WHrs</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}><strong>Trọng lượng</strong></span></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>1.8 kg</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}><strong>Màu sắc</strong></span></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>Slate Gray</span></span></td></tr><tr style={{ boxSizing: 'border-box' }} className="row-info"><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}><strong>Bảo mật</strong></span></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>Vân tay</span></span></td></tr><tr><td style={{ backgroundColor: '#f7f7f7 !important', borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '190px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}><strong>Kích thước</strong></span></span></td><td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}><span style={{ fontSize: '18px' }}><span style={{ color: '#000000' }}>36.00 x 23.50 x 1.99 ~ 1.99 cm</span></span></td></tr></tbody></table></div><h2><strong><span style={{ fontSize: '22px' }}>Đánh giá chi tiết laptop Asus Vivobook 15 X515EA BR2045W</span></strong></h2><p><span style={{ fontSize: '18px' }}>Asus Vivobook 15 X515EA BR2045W&nbsp;là chiếc laptop giá rẻ phù hợp cho việc học tập và làm việc hằng ngày. Cấu hình ổn định, thiết kế hoàn thiện hứa hẹn sẽ mang đến những trải nghiệm phù hợp với người dùng.</span></p><p style={{ textAlign: 'center' }}><img alt="GEARVN Laptop Asus Vivobook 15 X515EA BR2045W" src="//file.hstatic.net/1000026716/file/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-1_7ed8f46030f143688ed8ad521c7c72f7.png" /></p><h3><strong><span style={{ fontSize: '20px' }}>Thiết kế sang trọng, độc đáo</span></strong></h3><p><span style={{ fontSize: '18px' }}>Laptop <a target="_blank" href="https://gearvn.com/collections/laptop-asus-vivobook-series">Asus Vivobook</a> 15 sở hữu một màu bạc đẹp mắt với thiết kế vuông vắn đầy tinh tế. Bản lề được thiết kế tự tạo một góc nghiêng vừa phải khi mở nắp máy tính lên. Logo Asus đặt ở trung tâm của mặt trên laptop tạo một điểm nhấn của dòng sản phẩm. Trọng lượng 1.8kg, dày khoảng 1.99cm tạo điều kiện di chuyển đi mọi nơi phục vụ cho nhu cầu học tập và làm việc.&nbsp;</span></p><p style={{ textAlign: 'center' }}><img alt="GEARVN Laptop Asus Vivobook 15 X515EA BR2045W" src="//file.hstatic.net/1000026716/file/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-4_b7de181576f444799d76fe3a353a7d15.png" /></p><h3><strong><span style={{ fontSize: '20px' }}>Cấu hình vượt trội trên laptop Asus Vivobook 15 X515EA BR2045W </span></strong></h3><p><span style={{ fontSize: '18px' }}>Sử dụng bộ vi xử lý Intel core </span><span style={{ color: '#000000' }}><span style={{ fontSize: '16px' }}>i3-1115G4</span></span><span style={{ fontSize: '18px' }}> mạnh mẽ cho phép <a target="_blank" href="http://gearvn.com/collections/laptop-asus">laptop Asus</a>&nbsp;Vivobook 15 giải quyết mọi tác vụ văn phòng cơ bản đến nâng cao. Card đồ họa tích hợp <span style={{ lineHeight: '107%' }}><span style={{ fontFamily: '"Arial","sans-serif"' }}><span style={{ color: '#333333' }}>Intel® UHD Graphics hỗ trợ các công việc hình ảnh sắc nét. </span></span></span>4GB RAM DDR4 xử lý đa nhiệm cực tốt cho những thao tác mượt mà. Bộ lưu trữ 512GB thỏa sức lưu trữ các dữ liệu quan trọng mà người dùng cần.</span></p><p style={{ textAlign: 'center' }}><img alt="GEARVN Laptop Asus Vivobook 15 X515EA BR2045W" src="//file.hstatic.net/1000026716/file/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-2_8d15a800401d4dd49b539f06010b02e1.png" /></p><h3><strong><span style={{ fontSize: '20px' }}>Chất lượng hình ảnh chân thực</span></strong></h3><p><span style={{ fontSize: '18px' }}>Asus Vivobook 15&nbsp;sở hữu màn hình&nbsp;HD với độ phân giải <span style={{ color: '#000000' }}>1366 x 768</span>. Thiết kế viền mỏng mở ra tầm nhìn thoải mái hơn trên một sản phẩm <a target="_blank" href="https://gearvn.com/collections/laptop-cao-cap-mong-nhe">laptop mỏng nhẹ</a>. Độ sáng 200 nits hỗ trợ hình ảnh hiển thị luôn tốt trong nhiều điều kiện ánh sáng. Vivobook 15 được trang bị&nbsp;công nghệ chống chói Anti-Glare&nbsp;mang lại độ chính xác cao hỗ trợ đôi mắt quan sát tốt hơn. &nbsp;</span></p><p style={{ textAlign: 'center' }}><img alt="GEARVN Laptop Asus Vivobook 15 X515EA BR2045W" src="//file.hstatic.net/1000026716/file/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-3_c137ef8911ed4ad29ad4cecf43fab28f.png" /></p><h3><span style={{ fontSize: '20px' }}><strong>Bàn phím và bảo mật</strong></span></h3><p><span style={{ fontSize: '18px' }}>Đây có lẽ là sản phẩm <a target="_blank" href="https://gearvn.com/collections/laptop-hoc-sinh-sinh-vien">laptop cho sinh viên</a> hoàn hảo với thiết kế bàn phím thoải mái. Hành trình phím được tinh chỉnh hợp lý để việc đánh máy trên Asus Vivobook 15 thuận lợi. Thiết kế Fullsize dễ dàng cho việc nhập dữ liệu nhanh chóng.&nbsp;</span></p><p style={{ textAlign: 'center' }}><img alt="GEARVN Laptop Asus Vivobook 15 X515EA BR2045W" src="//file.hstatic.net/1000026716/file/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-5_adb816436ba545819cfad5758ba834ab.png" /></p><p />
-                                            </div>
-                                            <div role="tabpanel" className="tab-pane" id="dacdiem">
-                                                <p />
-                                            </div>
-                                            <div role="tabpanel" className="tab-pane" id="hrvproducttabs">
-                                                <p>
-                                                </p>
-                                            </div>
+                            </strong>
+                            <div id="product_content_detail" className="row">
+                                <strong>
+
+                                </strong>
+                                <div id="product_left" className="col-md-12 col-xs-12">
+                                    <strong>
+
+                                    </strong>
+                                    <div role="tabpanel">
+                                        <strong>
+
+                                            {/* Nav tabs */}
+                                            <ul className="nav nav-tabs" role="tablist">
+                                                <li role="presentation" className="active"><a href="#chitiet" aria-controls="chitiet" role="tab" data-toggle="tab">Mô tả sản phẩm</a></li>
+                                                <li role="presentation"><a href="#dacdiem" aria-controls="dacdiem" role="tab" data-toggle="tab">Đặc điểm nổi bật</a></li>
+                                                <li role="presentation"><a href="#hrvproducttabs" aria-controls="dacdiem" role="tab" data-toggle="tab">Thông tin bảo hành</a></li>
+                                            </ul>
+                                            {/* Tab panes */}
+                                        </strong>
+                                        <div className="tab-content">
+                                            <strong>
+
+                                            </strong>
+                                            <TabpanelDacDiem product={product} />
+                                            <TabpanelChitiet product={product} />
+                                            <Tabpanelhrvproductabs product={product} />
+
                                         </div>
                                     </div>
                                 </div>

@@ -651,7 +651,7 @@ const ListCategoryProduct = () => {
     );
     return (
         <>{item.map((item, index) => {
-            return <li className="cat-menu-item ">
+            return <li className="cat-menu-item " key={index}>
                 <a className="gearvn-cat-menu-item" href="https://gearvn.com/pages/laptop-van-phong">
                     <span className="gearvn-cat-menu-icon">
                         <img src={item[0].img1icon} />
@@ -662,10 +662,10 @@ const ListCategoryProduct = () => {
                 <div className="megamenu absolute-center level0 xlab_grid_container this" >
                     <div className="column xlab_column_5_5">
                         {item.slice((item.length -1)*(-1)).map((itemCollection, indexCollection) => {
-                            return <div className="sub-cat-item">
+                            return <div className="sub-cat-item" key={indexCollection}>
                             <a className="sub-cat-item-name" href="https://gearvn.com/pages/laptop-van-phong">{itemCollection.nameList}</a>
                             {itemCollection.name.map((itemNameList, indexItemList) => {
-                                return <a className="sub-cat-item-filter" href="/collections/laptop-asus-hoc-tap-va-lam-viec">{itemNameList}</a>
+                                return <a className="sub-cat-item-filter" href="/collections/laptop-asus-hoc-tap-va-lam-viec" key={indexItemList}>{itemNameList}</a>
                             })}
                             <br />
                         </div>

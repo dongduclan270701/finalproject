@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
+import { useParams } from 'react-router-dom'
 
 const Index = () => {
+    const params = useParams()
+    console.log(params)
     const [Laptop, setLaptop] = useState(
         [
             {
@@ -9,7 +12,7 @@ const Index = () => {
                 SaleNowPrice:"10,990,000",
                 img:"//product.hstatic.net/1000026716/product/gearvn-laptop-msi-modern-14-c11m-011vn-1_d693b8ae9c1f45e2a77617e07d4634d4_large.png",
                 percent:-23,
-                src:""
+                src:"laptop-msi-modern-14-c11m-011vn"
             },
             {
                 productName:"Laptop MSI Modern 14 B11SBU 668VN",
@@ -17,7 +20,7 @@ const Index = () => {
                 SaleNowPrice:"22,990,000",
                 img:"//product.hstatic.net/1000026716/product/laptop_msi_modern_14_b11sbu_668vn_197c30cd01b84916ae9a57c9102839e8_large.jpg",
                 percent:-39,
-                src:""
+                src:"laptop-msi-modern-14-b11sbu-668vn"
             },
             {
                 productName:"Laptop MSI Modern 15 A11M 1024VN",
@@ -25,7 +28,7 @@ const Index = () => {
                 SaleNowPrice:"18,990,000",
                 img:"//product.hstatic.net/1000026716/product/1024vn-fix-win_596189a32e9d42cc8cb3c0b47da9b61c_large.png",
                 percent:-24,
-                src:""
+                src:"laptop-msi-modern-15-a11m-1024vn"
             }
         ]
     )
@@ -78,12 +81,12 @@ const Index = () => {
                                         {Laptop.map((item, index) => {
                                             return <div className="col-sm-3 col-xs-12 padding-none col-fix20" key={index}>
                                             <div className="product-row">
-                                                <a href="/products/laptop-msi-modern-14-c11m-011vn">
-                                                </a><div className="product-row-img"><a href="/products/laptop-msi-modern-14-c11m-011vn">
+                                                <a href={"/products/" + item.src}>
+                                                </a><div className="product-row-img"><a href={"/products/" + item.src}>
                                                     <img className="product-row-thumbnail" src={item.img} alt={item.productName} />
-                                                </a><div className="product-row-price-hover"><a href="/products/laptop-msi-modern-14-c11m-011vn">
+                                                </a><div className="product-row-price-hover"><a href={"/products/" + item.src}>
                                                     <div className="product-row-note pull-left">Click để xem chi tiết</div>
-                                                </a><a href="/products/laptop-msi-modern-14-c11m-011vn" className="product-row-btnbuy pull-right">Đặt hàng</a></div></div>
+                                                </a><a href={"/products/" + item.src} className="product-row-btnbuy pull-right">Đặt hàng</a></div></div>
                                                 <h2 className="product-row-name">{item.productName}</h2>
                                                 <div className="product-row-info">
                                                     <div className="product-row-price pull-left"><del>{item.realPrice}₫</del><br /><span className="product-row-sale">{item.SaleNowPrice}₫</span></div>

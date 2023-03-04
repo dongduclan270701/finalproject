@@ -25,8 +25,8 @@ const Index = () => {
         <div className=" gearvn-content-section i100 mb-10" id="xxx-banner">
             <div className="row row-margin-small">
                 {BannerPr.map((item,index) => {
-                    return <div className="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-10 col-padding-small">
-                    <div className="border-rus" key={index}>
+                    return <div className="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-10 col-padding-small" key={index}>
+                    <div className="border-rus" >
                         <a href={item.url}>
                             <img src={item.src} />
                         </a>

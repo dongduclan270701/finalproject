@@ -9,7 +9,7 @@ const Index = () => {
                 SaleNowPrice:"10,990,000",
                 img:"//product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-1_f7e2bdc9339d400ea1fa3943e7abccba_large.png",
                 percent:-4,
-                src:""
+                src:"laptop-asus-vivobook-15-x515ea-br2045w"
             },
             {
                 productName:"Laptop Asus Vivobook 14 X1402ZA EK232W",
@@ -17,7 +17,7 @@ const Index = () => {
                 SaleNowPrice:"13,490,000",
                 img:"//product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-14-x1402za-ek232w-1_e2af0d7006a34cb692ffe6b810e83a39_large.png",
                 percent:-39,
-                src:""
+                src:"laptop-asus-vivobook-14-x1402za-ek232w"
             },
             {
                 productName:"Laptop MSI Modern 15 A11M 1024VN",
@@ -25,7 +25,7 @@ const Index = () => {
                 SaleNowPrice:"14,690,000",
                 img:"//product.hstatic.net/1000026716/product/i3_bce8c31dc65d4496adb27e465903a0e9_large.png",
                 percent:-14,
-                src:""
+                src:"laptop-msi-modern-15-a11m-1024vn"
             }
         ]
     )
@@ -78,12 +78,12 @@ const Index = () => {
                                         {Laptop.map((item,index) => {
                                             return <div className="col-sm-3 col-xs-12 padding-none col-fix20" key={index}>
                                             <div className="product-row">
-                                                <a href="/products/laptop-asus-vivobook-15-x515ea-br2045w">
-                                                </a><div className="product-row-img"><a href="/products/laptop-asus-vivobook-15-x515ea-br2045w">
+                                                <a href={"/products/" + item.src}>
+                                                </a><div className="product-row-img"><a href={"/products/" + item.src}>
                                                     <img className="product-row-thumbnail" src={item.img} alt={item.productName} />
-                                                </a><div className="product-row-price-hover"><a href="/products/laptop-asus-vivobook-15-x515ea-br2045w">
+                                                </a><div className="product-row-price-hover"><a href={"/products/" + item.src}>
                                                     <div className="product-row-note pull-left">Click để xem chi tiết</div>
-                                                </a><a href="/products/laptop-asus-vivobook-15-x515ea-br2045w" className="product-row-btnbuy pull-right">Đặt hàng</a></div></div>
+                                                </a><a href={"/products/" + item.src} className="product-row-btnbuy pull-right">Đặt hàng</a></div></div>
                                                 <h2 className="product-row-name">{item.productName}</h2>
                                                 <div className="product-row-info">
                                                     <div className="product-row-price pull-left"><del>{item.realPrice}₫</del><br /><span className="product-row-sale">{item.SaleNowPrice}₫</span></div>

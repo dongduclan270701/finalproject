@@ -47,21 +47,21 @@ function App() {
             <Footer/>
           </>
         } />
-        <Route path='/collectionDetail' element={
+        <Route path='/collectionDetail/:codeCollectionDetail' element={
           <>
             <HeaderMain /><Banner/>
             <CollectionDetail />
             <Footer/>
           </>
         } />
-        <Route path='/collectionNoDetail' element={
+        <Route path='/collectionNoDetail/:codeCollectionNoDetail' element={
           <>
             <HeaderMain /><Banner/>
             <CollectionNoDetail />
             <Footer/>
           </>
         } />
-        <Route path='/product' element={
+        <Route path='/products/:codeProduct' element={
           <>
             <HeaderMain /><Banner/>
             <Product />
