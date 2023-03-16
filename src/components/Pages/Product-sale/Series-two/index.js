@@ -25,7 +25,7 @@ const Index = () => {
                             <div className="ladi-image-background" />
                         </div>
                     </a>
-                    <a href="" target="_blank" id="HEADLINE497" className="ladi-element" data-replace-href="https://gearvn.com/collections/laptop-dell-vostro-series">
+                    <a href="" target="_blank" id="HEADLINE497-PSALE" className="ladi-element" data-replace-href="https://gearvn.com/collections/laptop-dell-vostro-series">
                         <h3 className="ladi-headline ladi-transition">
                             Xem thêm các sản phẩm khác<br />
                         </h3>

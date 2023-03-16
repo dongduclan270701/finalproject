@@ -83,7 +83,7 @@ const Index = () => {
                                     <div className="ladi-image-background" />
                                 </div>
                             </div>
-                            <div id="BOX288" className="ladi-element">
+                            <div id="BOX288-SHOWROOM" className="ladi-element">
                                 <div className="ladi-box ladi-transition" />
                             </div>
                         </div>

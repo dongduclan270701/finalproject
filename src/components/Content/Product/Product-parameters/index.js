@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Index = () => {
+const Index = (props) => {
+    const {product} = props
+    console.log(product)
     return (
         <div className="col-sm-6 col-xs-12 product_parameters">
                                     <h1 className="product_name">
-                                        Laptop Asus Vivobook 15 X515EA BR2045W
+                                        {product.nameProduct}
                                     </h1>
                                     <p>
                                     </p>
@@ -35,38 +37,17 @@ const Index = () => {
                                             </span>
                                         </span>
                                     </p>
-                                    <p>
+                                    {product.gift.map((item,index) => {
+                                        return <p key={index}>
                                         <span style={{ fontSize: '18px' }}>
-                                            <a href="https://gearvn.com/products/phu-kien-sticker-da-n-gearvn-gbot-pc">
+                                            
                                                 <strong>
-                                                    🎁 Sticker Gearvn&nbsp;GBot (Từ 08.11 cho đến khi hết quà)</strong>
-                                            </a>
+                                                    {item}</strong>
+                                            
                                         </span>
                                     </p>
-                                    <p>
-                                        <span style={{ fontSize: '18px' }}>
-                                            <strong>
-                                                🎁Nhận bộ quà tặng trị giá 600.000đ (Từ ngày 02/02 đến 28/02/2023):</strong>
-                                        </span>
-                                    </p>
-                                    <p>
-                                        <span style={{ fontSize: '18px' }}>
-                                            <strong>
-                                                - Tai nghe Rapoo H100</strong>
-                                        </span>
-                                    </p>
-                                    <p>
-                                        <span style={{ fontSize: '18px' }}>
-                                            <strong>
-                                                - Chuột không dây Rapoo M21 Silent</strong>
-                                        </span>
-                                    </p>
-                                    <p>
-                                        <span style={{ fontSize: '18px' }}>
-                                            <strong>
-                                                - Lót chuột Rapoo V1000</strong>
-                                        </span>
-                                    </p>
+                                    })}
+                                    
                                     <hr />
                                     <p>
                                         <span style={{ fontSize: '18px' }}>
@@ -79,13 +60,13 @@ const Index = () => {
                                         </span>
                                     </p>
                                     <p>
-                                        <span style={{ fontSize: '18px' }}>
-                                            ⭐ Mua chuột không dây LM115G Wireless&nbsp;chỉ với 100,000đ.<br />
-                                            ⭐ Giảm ngay 100,000đ khi mua thêm màn hình máy tính.&nbsp;<br />
-                                            ⭐ Giảm ngay 100,000đ khi mua thêm ram.&nbsp;<br />
-                                            <a href="https://gearvn.com/pages/microsoft-office-365">
-                                                ⭐&nbsp;Giảm ngay 100,000đ khi mua kèm Microsoft Office (01/10 - 31/12/2022)</a>
-                                        </span>
+                                        
+                                            {product.gift_buy.map((item,index) => {
+                                                return <span style={{ fontSize: '18px' }}>
+                                                {item}<br/>
+                                                </span>
+                                            })}
+                                        
                                     </p>
                                     <p>
                                         <span style={{ fontSize: '18px' }}>
@@ -149,8 +130,8 @@ Chọn màu sắc, số lượng sản phẩm
 </div>*/}
                                             <div className="product_nav_btn">
                                                 <div className="product_sales_off pull-left">
-                                                    <span className="price-text">Giá Cũ:</span><span className="product_price"><del>11,490,000₫</del></span><br />
-                                                    <span className="price-text">Giá KM:</span><span className="product_sale_price">10,990,000₫</span>
+                                                    <span className="price-text">Giá Cũ:</span><span className="product_price"><del>{product.realPrice}₫</del></span><br />
+                                                    <span className="price-text">Giá KM:</span><span className="product_sale_price">{product.nowPrice}₫</span>
                                                 </div>
                                             </div>
                                             <div className="clearfix" />

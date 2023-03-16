@@ -59,7 +59,7 @@ const Index = () => {
                     </div>
                     <div id="GROUP118" className="ladi-element">
                         <div className="ladi-group">
-                            <div id="HEADLINE116" className="ladi-element">
+                            <div id="HEADLINE116-SHIP" className="ladi-element">
                                 <h3 className="ladi-headline">
                                     Của TP. Hồ Chí Minh &amp; Hà Nội<br />
                                 </h3>

@@ -29,7 +29,7 @@ const Index = () => {
                         <h3 className="ladi-headline">
                             mua hàng:</h3>
                     </div>
-                    <a href="tel:1800 6147" id="IMAGE285" className="ladi-element">
+                    <a href="tel:1800 6147" id="IMAGE285-SHIP" className="ladi-element">
                         <div className="ladi-image">
                             <div className="ladi-image-background" />
                         </div>
@@ -38,7 +38,7 @@ const Index = () => {
                         <h3 className="ladi-headline">
                             tuyển dụng:</h3>
                     </div>
-                    <a href="tel:1800 6173" id="IMAGE284" className="ladi-element">
+                    <a href="tel:1800 6173" id="IMAGE284-SHIP" className="ladi-element">
                         <div className="ladi-image">
                             <div className="ladi-image-background" />
                         </div>
