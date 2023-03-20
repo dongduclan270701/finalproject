@@ -1,12 +1,13 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductParameters from './Product-parameters'
 import ProductThumbnail from './Product-thumbnail'
 import TabpanelDacDiem from './Tabpanel-dacdiem'
 import TabpanelChitiet from './Tabpanel-chitiet'
 import Tabpanelhrvproductabs from './Tabpanel-hrvproductabs'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 const Index = () => {
     const params = useParams()
+    const navigate = useNavigate();
     const [listProduct, setListProduct] = useState([
         {
             img: [
@@ -24,40 +25,40 @@ const Index = () => {
                 "- Chuột không dây Rapoo M21 Silent",
                 "- Lót chuột Rapoo V1000"
             ],
-            gift_buy:[
+            gift_buy: [
                 "⭐ Mua chuột không dây LM115G Wireless chỉ với 100,000đ.",
                 "⭐ Giảm ngay 100,000đ khi mua thêm màn hình máy tính. ",
                 "⭐ Giảm ngay 100,000đ khi mua thêm ram. ",
                 "⭐ Giảm ngay 100,000đ khi mua kèm Microsoft Office (01/10 - 31/12/2022)"
             ],
             nameProduct: "Laptop Asus Vivobook 15 X515EA BR2045W",
-            realPrice: "11,490,000",
-            nowPrice: "10,990,000",
+            realPrice: 11490000,
+            nowPrice: 10990000,
             description_table: [
-                [ "CPU", "Intel Core i3-1115G4 1.7GHz up to 4.1GHz 6MB" ],
-                [ "RAM", "4GB Onboard DDR4 2666MHz (1x SO-DIMM socket, up to 12GB SDRAM)" ],
-                [ "Storage", '512GB M.2 NVMe™ PCIe® 3.0 SSD, 1x slot SATA3 2.5"' ],
-                [ "GPU", "Intel UHD Graphics" ],
-                [ "Monitor", '15.6" HD (1366 x 768), Anti-glare display, LED Backlit, 200nits, NTSC: 45%, Screen-to-body ratio: 83 ％' ],
-                [ "Keyboard", "Tiêu chuẩn, có phím số" ],
-                [ "Audio", "SonicMaster" ],
-                [ "LAN", "None" ],
-                [ "Wireless", "802.11 AC, Bluetooth v4.1" ],
-                [ "Webcam", "HD camera  (720p Webcam)" ],
-                [ "Communication", ['1x USB 3.2 Gen 1 Type-A', '1x USB 3.2 Gen 1 Type-C', '2x USB 2.0 Type-A', '1x HDMI 1.4', '1x 3.5mm Combo Audio Jack', '1x DC-in'] ],
-                [ "System", "Windows 11 Home" ],
-                [ "Battery", "2 Cells 37WHrs" ],
-                [ "Weight", "1.8 kg" ],
-                [ "Color", "Slate Gray" ],
-                [ "Security", "Vân tay" ],
-                [ "Size", "36.00 x 23.50 x 1.99 ~ 1.99 cm" ],
+                ["CPU", "Intel Core i3-1115G4 1.7GHz up to 4.1GHz 6MB"],
+                ["RAM", "4GB Onboard DDR4 2666MHz (1x SO-DIMM socket, up to 12GB SDRAM)"],
+                ["Storage", '512GB M.2 NVMe™ PCIe® 3.0 SSD, 1x slot SATA3 2.5"'],
+                ["GPU", "Intel UHD Graphics"],
+                ["Monitor", '15.6" HD (1366 x 768), Anti-glare display, LED Backlit, 200nits, NTSC: 45%, Screen-to-body ratio: 83 ％'],
+                ["Keyboard", "Tiêu chuẩn, có phím số"],
+                ["Audio", "SonicMaster"],
+                ["LAN", "None"],
+                ["Wireless", "802.11 AC, Bluetooth v4.1"],
+                ["Webcam", "HD camera  (720p Webcam)"],
+                ["Communication", ['1x USB 3.2 Gen 1 Type-A', '1x USB 3.2 Gen 1 Type-C', '2x USB 2.0 Type-A', '1x HDMI 1.4', '1x 3.5mm Combo Audio Jack', '1x DC-in']],
+                ["System", "Windows 11 Home"],
+                ["Battery", "2 Cells 37WHrs"],
+                ["Weight", "1.8 kg"],
+                ["Color", "Slate Gray"],
+                ["Security", "Vân tay"],
+                ["Size", "36.00 x 23.50 x 1.99 ~ 1.99 cm"],
             ],
-            description:[
-                ["Đánh giá chi tiết laptop Asus Vivobook 15 X515EA BR2045W","Asus Vivobook 15 X515EA BR2045W là chiếc laptop giá rẻ phù hợp cho việc học tập và làm việc hằng ngày. Cấu hình ổn định, thiết kế hoàn thiện hứa hẹn sẽ mang đến những trải nghiệm phù hợp với người dùng."],
-                ["Thiết kế sang trọng, độc đáo","Laptop Asus Vivobook15 sở hữu một màu bạc đẹp mắt với thiết kế vuông vắn đầy tinh tế. Bản lề được thiết kế tự tạo một góc nghiêng vừa phải khi mở nắp máy tính lên. Logo Asus đặt ở trung tâm của mặt trên laptop tạo một điểm nhấn của dòng sản phẩm. Trọng lượng 1.8kg, dày khoảng 1.99cm tạo điều kiện di chuyển đi mọi nơi phục vụ cho nhu cầu học tập và làm việc. "],
-                ["Cấu hình vượt trội trên laptop Asus Vivobook 15 X515EA BR2045W","Sử dụng bộ vi xử lý Intel core i3-1115G4mạnh mẽ cho phép laptop Asus Vivobook 15 giải quyết mọi tác vụ văn phòng cơ bản đến nâng cao. Card đồ họa tích hợp Intel® UHD Graphics hỗ trợ các công việc hình ảnh sắc nét. 4GB RAM DDR4 xử lý đa nhiệm cực tốt cho những thao tác mượt mà. Bộ lưu trữ 512GB thỏa sức lưu trữ các dữ liệu quan trọng mà người dùng cần."],
-                ["Chất lượng hình ảnh chân thực","Asus Vivobook 15 sở hữu màn hình HD với độ phân giải 1366 x 768. Thiết kế viền mỏng mở ra tầm nhìn thoải mái hơn trên một sản phẩmlaptop mỏng nhẹ. Độ sáng 200 nits hỗ trợ hình ảnh hiển thị luôn tốt trong nhiều điều kiện ánh sáng. Vivobook 15 được trang bị công nghệ chống chói Anti-Glare mang lại độ chính xác cao hỗ trợ đôi mắt quan sát tốt hơn.  "],
-                ["Bàn phím và bảo mật","Đây có lẽ là sản phẩm laptop cho sinh viênhoàn hảo với thiết kế bàn phím thoải mái. Hành trình phím được tinh chỉnh hợp lý để việc đánh máy trên Asus Vivobook 15 thuận lợi. Thiết kế Fullsize dễ dàng cho việc nhập dữ liệu nhanh chóng. "]
+            description: [
+                ["Đánh giá chi tiết laptop Asus Vivobook 15 X515EA BR2045W", "Asus Vivobook 15 X515EA BR2045W là chiếc laptop giá rẻ phù hợp cho việc học tập và làm việc hằng ngày. Cấu hình ổn định, thiết kế hoàn thiện hứa hẹn sẽ mang đến những trải nghiệm phù hợp với người dùng."],
+                ["Thiết kế sang trọng, độc đáo", "Laptop Asus Vivobook15 sở hữu một màu bạc đẹp mắt với thiết kế vuông vắn đầy tinh tế. Bản lề được thiết kế tự tạo một góc nghiêng vừa phải khi mở nắp máy tính lên. Logo Asus đặt ở trung tâm của mặt trên laptop tạo một điểm nhấn của dòng sản phẩm. Trọng lượng 1.8kg, dày khoảng 1.99cm tạo điều kiện di chuyển đi mọi nơi phục vụ cho nhu cầu học tập và làm việc. "],
+                ["Cấu hình vượt trội trên laptop Asus Vivobook 15 X515EA BR2045W", "Sử dụng bộ vi xử lý Intel core i3-1115G4mạnh mẽ cho phép laptop Asus Vivobook 15 giải quyết mọi tác vụ văn phòng cơ bản đến nâng cao. Card đồ họa tích hợp Intel® UHD Graphics hỗ trợ các công việc hình ảnh sắc nét. 4GB RAM DDR4 xử lý đa nhiệm cực tốt cho những thao tác mượt mà. Bộ lưu trữ 512GB thỏa sức lưu trữ các dữ liệu quan trọng mà người dùng cần."],
+                ["Chất lượng hình ảnh chân thực", "Asus Vivobook 15 sở hữu màn hình HD với độ phân giải 1366 x 768. Thiết kế viền mỏng mở ra tầm nhìn thoải mái hơn trên một sản phẩmlaptop mỏng nhẹ. Độ sáng 200 nits hỗ trợ hình ảnh hiển thị luôn tốt trong nhiều điều kiện ánh sáng. Vivobook 15 được trang bị công nghệ chống chói Anti-Glare mang lại độ chính xác cao hỗ trợ đôi mắt quan sát tốt hơn.  "],
+                ["Bàn phím và bảo mật", "Đây có lẽ là sản phẩm laptop cho sinh viênhoàn hảo với thiết kế bàn phím thoải mái. Hành trình phím được tinh chỉnh hợp lý để việc đánh máy trên Asus Vivobook 15 thuận lợi. Thiết kế Fullsize dễ dàng cho việc nhập dữ liệu nhanh chóng. "]
             ]
         },
         {
@@ -76,7 +77,7 @@ const Index = () => {
                 "🎁 Sticker Gearvn GBot (Từ 08.11 cho đến khi hết quà)",
                 "🎁 Năm Mèo - Tặng Chuột (Từ 01.03 - 31.03.2023)"
             ],
-            gift_buy:[
+            gift_buy: [
                 "⭐ Mua túi chống sốc chỉ với giá 49.000đ",
                 "⭐ Giảm ngay 100.000đ khi mua kèm Ram Laptop.",
                 "⭐ Giảm đến 200.000đ khi mua kèm Balo, túi chống sốc, phụ kiện.",
@@ -84,35 +85,35 @@ const Index = () => {
                 "⭐ Giảm ngay 100.000đ khi mua chuột TUF Gaming M3, Logitech G203, G102."
             ],
             nameProduct: "Laptop Asus Vivobook 14 X1402ZA EK232W",
-            realPrice: "0",
-            nowPrice: "13,490,000",
+            realPrice: 0,
+            nowPrice: 13490000,
             description_table: [
-                [ "CPU", "Intel® Core™ i3-1220P Processor 3.3 GHz (12M Cache, up to 4.4 GHz, 10 cores, 12 threads)" ],
-                [ "RAM", "4GB (Onboard) DDR4 3200MHz (Còn 1 slot SO-DIMM)" ],
-                [ "Storage", '512GB M.2 NVMe™ PCIe® 3.0 SSD (1 Slot)' ],
-                [ "GPU", "Intel® UHD Graphics" ],
-                [ "Monitor", '14.0 inch, FHD (1920 x 1080) 16:9, LED Backlit, 220nits, 45% NTSC, Anti-glare display' ],
-                [ "Keyboard", "LED trắng" ],
-                [ "Audio", "SonicMaster" ],
-                [ "LAN", "None" ],
-                [ "Wireless", "v5.0" ],
-                [ "Webcam", "720p HD camera With privacy shutter" ],
-                [ "Communication", ['', '1x USB 3.2 Gen 1 Type-C', '2x USB 2.0 Type-A', '1x HDMI 1.4', '1x 3.5mm Combo Audio Jack', '1x DC-in'] ],
-                [ "System", "Windows 11 Home" ],
-                [ "Battery", "	42WHrs, 3S1P, 3-cell Li-io" ],
-                [ "Weight", "1.50 kg" ],
-                [ "Color", "Quiet Blue" ],
-                [ "Security", "Fingerprint sensor intergrated with Touchpad" ],
-                [ "Size", "31.71 x 22.20 x 1.99 ~ 1.99 cm" ],
+                ["CPU", "Intel® Core™ i3-1220P Processor 3.3 GHz (12M Cache, up to 4.4 GHz, 10 cores, 12 threads)"],
+                ["RAM", "4GB (Onboard) DDR4 3200MHz (Còn 1 slot SO-DIMM)"],
+                ["Storage", '512GB M.2 NVMe™ PCIe® 3.0 SSD (1 Slot)'],
+                ["GPU", "Intel® UHD Graphics"],
+                ["Monitor", '14.0 inch, FHD (1920 x 1080) 16:9, LED Backlit, 220nits, 45% NTSC, Anti-glare display'],
+                ["Keyboard", "LED trắng"],
+                ["Audio", "SonicMaster"],
+                ["LAN", "None"],
+                ["Wireless", "v5.0"],
+                ["Webcam", "720p HD camera With privacy shutter"],
+                ["Communication", ['', '1x USB 3.2 Gen 1 Type-C', '2x USB 2.0 Type-A', '1x HDMI 1.4', '1x 3.5mm Combo Audio Jack', '1x DC-in']],
+                ["System", "Windows 11 Home"],
+                ["Battery", "	42WHrs, 3S1P, 3-cell Li-io"],
+                ["Weight", "1.50 kg"],
+                ["Color", "Quiet Blue"],
+                ["Security", "Fingerprint sensor intergrated with Touchpad"],
+                ["Size", "31.71 x 22.20 x 1.99 ~ 1.99 cm"],
             ],
             description: [
-                ["Đánh giá chi tiết laptop  Asus Vivobook 14 X1402ZA EK232W","Asus Vivobook 14 X1402ZA EK232W là sản phẩm laptop văn phòng với mức giá tầm trung tốt nhất từ nhà Asus. Kiểu dáng hiện đại, hiệu năng vượt trội đáp ứng mọi nhu cầu học tập và làm việc mỗi ngày. Tìm hiểu ngay về những đặc điểm mà chiếc laptop này có thể mang lại cùng GEARVN nhé!"],
-                ["Kiểu dáng hiện đại ","Laptop Asus Vivobook 14 sở hữu một game màu xanh đen trung tính kết hợp cùng lớp vỏ cứng cáp được đầu tư chất liệu cao cấp. Logo dòng sản phẩm được đặt tinh tế ở mặt nắp của laptop, không quá cầu kỳ phô trương nhưng cũng đủ để gây ấn tượng với mọi người xung quanh. Với kiểu dáng gập 180 độ còn mang đến sự thuận tiện trong quá trình trao đổi công việc hay chia sẻ màn hình với người đối diện. Về tính di động thì chiếc Asus Vivobook 14 hoàn toàn có thể đáp ứng được với trọng lượng 1.5kg và dày khoảng 1.99cm, dễ dàng mang đi mọi nơi. "],
-                ["Hiệu suất làm việc ấn tượng trên laptop  Asus Vivobook 14 X1402ZA EK232W","Laptop Asus Vivobook 14 X1402ZA EK232W được trang bị cấu hình hoạt động ổn định giúp mọi công việc văn phòng cơ bản đến nâng cao được giải quyết tinh gọn. Được ưu ái với bộ vi xử lý Intel Core i3 thế hệ 12 cấu trúc 10 nhân 12 luồng mạnh mẽ. Sử dụng các ứng dụng văn phòng như Microsoft Office (Word, Excel, PowerPoint) mượt mà. Chiếc laptop Asus Vivobook 14 còn được trang bị chiếc card đồ họa Intel® UHD Graphics. Đảm bảo mọi yêu cầu đồ họa để việc tận hưởng phút giây giải trí hay chơi game thoải mái. "],
-                ["Màn hình Full HD với tỷ lệ 16:9","Chiếc màn hình laptop Asus Vivobook 14 có độ rộng 14inch, độ phân giải Full HD (1920x1080). Tỷ lệ màn hình chuẩn 16:9 hỗ trợ tầm nhìn tốt nhất cho người dùng. Độ sáng 220nits cùng công nghệ chống chói Anti-Glare tái hiện hình ảnh chân thật, sắc nét. Phía trên màn hình laptop Asus Vivobook 14 còn được trang bị thêm một chiếc camera 720p HD phục vụ cho nhu cầu gọi video call hay tham gia các lớp học online từ ứng dụng Google Meet, Zoom,... "],
-                ["Thiết kế bàn phím nâng cao trải nghiệm làm việc ","Để tối giản kích thước trong một chiếc laptop mỏng nhẹ, Asus Vivobook 14 đã loại bỏ dãy phím numpad, tiết kiệm diện tích. Hành trình các phím bấm là 1.4mm với độ nảy phím ổn định cho mọi thao tác đánh máy trở nên nhanh nhẹn và chính xác. LED trắng tích hợp trên bàn phím còn mang đến không gian làm việc trong điều kiện thiếu sáng tốt hơn, duy trì hiệu suất trong mọi hoàn cảnh. Phím nguồn được đặt bên trong phím Delete hạn chế tối đa những sai sót khi làm việc. "],
-                ["Đa dạng cổng kết nối ","Để có thể liên kết với các thiết bị ngoại vi thì cổng kết nối là thành phần không thể nào bỏ qua. Dọc hai bên thân của laptop Asus Vivobook 14 là các cổng kết nối phổ biến hiện nay. Người dùng có thể liên kết với các công cụ hỗ trợ trong quá trình sử dụng qua các đầu"]
-                
+                ["Đánh giá chi tiết laptop  Asus Vivobook 14 X1402ZA EK232W", "Asus Vivobook 14 X1402ZA EK232W là sản phẩm laptop văn phòng với mức giá tầm trung tốt nhất từ nhà Asus. Kiểu dáng hiện đại, hiệu năng vượt trội đáp ứng mọi nhu cầu học tập và làm việc mỗi ngày. Tìm hiểu ngay về những đặc điểm mà chiếc laptop này có thể mang lại cùng GEARVN nhé!"],
+                ["Kiểu dáng hiện đại ", "Laptop Asus Vivobook 14 sở hữu một game màu xanh đen trung tính kết hợp cùng lớp vỏ cứng cáp được đầu tư chất liệu cao cấp. Logo dòng sản phẩm được đặt tinh tế ở mặt nắp của laptop, không quá cầu kỳ phô trương nhưng cũng đủ để gây ấn tượng với mọi người xung quanh. Với kiểu dáng gập 180 độ còn mang đến sự thuận tiện trong quá trình trao đổi công việc hay chia sẻ màn hình với người đối diện. Về tính di động thì chiếc Asus Vivobook 14 hoàn toàn có thể đáp ứng được với trọng lượng 1.5kg và dày khoảng 1.99cm, dễ dàng mang đi mọi nơi. "],
+                ["Hiệu suất làm việc ấn tượng trên laptop  Asus Vivobook 14 X1402ZA EK232W", "Laptop Asus Vivobook 14 X1402ZA EK232W được trang bị cấu hình hoạt động ổn định giúp mọi công việc văn phòng cơ bản đến nâng cao được giải quyết tinh gọn. Được ưu ái với bộ vi xử lý Intel Core i3 thế hệ 12 cấu trúc 10 nhân 12 luồng mạnh mẽ. Sử dụng các ứng dụng văn phòng như Microsoft Office (Word, Excel, PowerPoint) mượt mà. Chiếc laptop Asus Vivobook 14 còn được trang bị chiếc card đồ họa Intel® UHD Graphics. Đảm bảo mọi yêu cầu đồ họa để việc tận hưởng phút giây giải trí hay chơi game thoải mái. "],
+                ["Màn hình Full HD với tỷ lệ 16:9", "Chiếc màn hình laptop Asus Vivobook 14 có độ rộng 14inch, độ phân giải Full HD (1920x1080). Tỷ lệ màn hình chuẩn 16:9 hỗ trợ tầm nhìn tốt nhất cho người dùng. Độ sáng 220nits cùng công nghệ chống chói Anti-Glare tái hiện hình ảnh chân thật, sắc nét. Phía trên màn hình laptop Asus Vivobook 14 còn được trang bị thêm một chiếc camera 720p HD phục vụ cho nhu cầu gọi video call hay tham gia các lớp học online từ ứng dụng Google Meet, Zoom,... "],
+                ["Thiết kế bàn phím nâng cao trải nghiệm làm việc ", "Để tối giản kích thước trong một chiếc laptop mỏng nhẹ, Asus Vivobook 14 đã loại bỏ dãy phím numpad, tiết kiệm diện tích. Hành trình các phím bấm là 1.4mm với độ nảy phím ổn định cho mọi thao tác đánh máy trở nên nhanh nhẹn và chính xác. LED trắng tích hợp trên bàn phím còn mang đến không gian làm việc trong điều kiện thiếu sáng tốt hơn, duy trì hiệu suất trong mọi hoàn cảnh. Phím nguồn được đặt bên trong phím Delete hạn chế tối đa những sai sót khi làm việc. "],
+                ["Đa dạng cổng kết nối ", "Để có thể liên kết với các thiết bị ngoại vi thì cổng kết nối là thành phần không thể nào bỏ qua. Dọc hai bên thân của laptop Asus Vivobook 14 là các cổng kết nối phổ biến hiện nay. Người dùng có thể liên kết với các công cụ hỗ trợ trong quá trình sử dụng qua các đầu"]
+
             ]
         },
         {
@@ -129,7 +130,7 @@ const Index = () => {
                 "🎁 Sticker Gearvn GBot (Từ 08.11 cho đến khi hết quà)",
                 "🎁 Năm Mèo - Tặng Chuột (Từ 01.03 - 31.03.2023)"
             ],
-            gift_buy:[
+            gift_buy: [
                 "⭐ Mua túi chống sốc chỉ với giá 49.000đ",
                 "⭐ Giảm ngay 100.000đ khi mua kèm đế tản nhiệt Havit F2072.",
                 "⭐ Giảm ngay 100.000đ khi mua kèm Ram Laptop.",
@@ -140,36 +141,36 @@ const Index = () => {
                 "⭐ Giảm ngay 200.000 khi mua kèm Office Home & Student (từ 1/1 - 31/3/2023)",
             ],
             nameProduct: "Laptop MSI Modern 15 A11M 1024VN",
-            realPrice: "18,990,000",
-            nowPrice: "14,490,000",
+            realPrice: 18990000,
+            nowPrice: 14490000,
             description_table: [
-                [ "CPU", "Intel Core i5-1155G7 2.5GHz up to 4.5GHz 8MB 4 nhân 8 luồng" ],
-                [ "RAM", "8GB DDR4 3200MHz ( 2 Khe ram nâng cấp tối đa 64GB )" ],
-                [ "Storage", '512GB SSD M.2 PCIE Gen3X4 (Còn trống 1 khe SSD M.2 NVMe PCIe Gen4 )' ],
-                [ "GPU", "Intel Iris Xe Graphics" ],
-                [ "Monitor", '15.6" FHD (1920 x 1080) IPS, Anti-Glare with 45% NTSC, 60Hz' ],
-                [ "Keyboard", "Có đèn nền màu trắng" ],
-                [ "Audio", "Âm thanh độ phân giải cao ™ với Nahimic 3" ],
-                [ "LAN", "Không" ],
-                [ "Wireless", "Wi-Fi 6(Gig+)(802.11ax), Bluetooth v5.1" ],
-                [ "Webcam", "HD Webcam 720p" ],
-                [ "Communication", ['1x Type-C (USB / DP / Thunderbolt™) hỗ trợ sạc PD', '1x Type-A USB3.2 Gen1', '2x Type-A USB3.2 Gen2', '1x (4K @ 60Hz) HDMI', '1x Mic-in/Headphone-out Combo Jack'] ],
-                [ "System", "Windows 11 Home" ],
-                [ "Battery", "52WHrs" ],
-                [ "Weight", "1.6 kg" ],
-                [ "Color", "Carbon Gray ( Xám )" ],
-                [ "Security", "None" ],
-                [ "Size", "356.8 x 233.75 x 16.9 - 18.9 mm" ],
+                ["CPU", "Intel Core i5-1155G7 2.5GHz up to 4.5GHz 8MB 4 nhân 8 luồng"],
+                ["RAM", "8GB DDR4 3200MHz ( 2 Khe ram nâng cấp tối đa 64GB )"],
+                ["Storage", '512GB SSD M.2 PCIE Gen3X4 (Còn trống 1 khe SSD M.2 NVMe PCIe Gen4 )'],
+                ["GPU", "Intel Iris Xe Graphics"],
+                ["Monitor", '15.6" FHD (1920 x 1080) IPS, Anti-Glare with 45% NTSC, 60Hz'],
+                ["Keyboard", "Có đèn nền màu trắng"],
+                ["Audio", "Âm thanh độ phân giải cao ™ với Nahimic 3"],
+                ["LAN", "Không"],
+                ["Wireless", "Wi-Fi 6(Gig+)(802.11ax), Bluetooth v5.1"],
+                ["Webcam", "HD Webcam 720p"],
+                ["Communication", ['1x Type-C (USB / DP / Thunderbolt™) hỗ trợ sạc PD', '1x Type-A USB3.2 Gen1', '2x Type-A USB3.2 Gen2', '1x (4K @ 60Hz) HDMI', '1x Mic-in/Headphone-out Combo Jack']],
+                ["System", "Windows 11 Home"],
+                ["Battery", "52WHrs"],
+                ["Weight", "1.6 kg"],
+                ["Color", "Carbon Gray ( Xám )"],
+                ["Security", "None"],
+                ["Size", "356.8 x 233.75 x 16.9 - 18.9 mm"],
             ],
-            description:[
-                ["Đánh giá chi tiết laptop MSI Modern 15 A11M 1024VN",""],
-                ["Laptop sang trọng, tâm điểm của mọi ánh nhìn","Với thiết kế tinh tế, sang trọng, laptop MSI Modern 15 A11M 1024VN là sự lựa chọn hàng đầu của giới trẻ, giúp mang đến một vẻ ngoài siêu nổi bật và tràn đầy cá tính. Máy mỏng nhẹ có điểm nhấn thiết kế độc đáo. Thể hiện cá tính độc đáo của bạn với hiệu năng không giới hạn."],
-                ["Siêu di động với trọng lượng chỉ 1,6 kg","Laptop siêu nhẹ với trọng lượng chỉ 1,6kg và mỏng 16,9 mm. Modern Series luôn cơ động và phong cách. Làm việc mọi lúc mọi nơi một cách thú vị hơn."],
-                ["Hỗ trợ USB type C","Với cổng USB type C, Modern Series có thể truyền dữ liệu với tốc độ cực cao tới 40Gbps, hoặc sạc nhanh nhờ hỗ trợ chuẩn Power Delivery."],
-                ["Âm thanh chất lượng cao cấp","Tận hưởng những khoảnh khắc tuyệt vời khi nghe nhạc với MSI Modern 15 A11M 1024VN. Nâng cấp từ thế hệ MSI Modern 14, MSI Modern 15 A11M 1024VN trang bị công nghệ hỗ trợ lấy mẫu âm thanh tới 24bit / 192kHz, giúp bạn lắng nghe âm thanh một cách chân thật và sắc nét nhất."],
-                ["Bàn phím gõ thoải mái","Hành trình phím 1.5mm cùng với độ phản hồi tốt giúp đem tới trải nghiệm gõ phím tuyệt với trên Modern. Bàn phím có đèn nền cực sáng, cho phép bạn dễ dàng nhận diện ngay cả trong môi trường tối."],
-                ["Kết nối đa dạng"," Trang bị 2 cổng USB-A và cổng USB Type C, dễ dàng kết nối theo nhu cầu của bạn. Đầu đọc thẻ micro SD và cổng xuất hình HDMI giúp thuận tiện hơn trong việc chụp hình, để bạn có thể thoải mái tận hưởng mọi khoảnh khắc cuộc sống. Với thiết kế tinh tế, sang trọng MSI Modern là sự lựa chọn hàng đầu với laptop sinh viên dành cho giới trẻ, giúp mang đến một vẻ ngoài siêu nổi bật và tràn đầy cá tính. Cũng như đủ sức chinh phục mọi khách hàng với vẻ ngoài chuyên nghiệp, tự tin. Sản phẩm phù hợp với giới văn phòng, hay những bạn trẻ mong muốn sử dụng một chiếc máy thanh lịch và nổi bật giữa đám đông.",]
-                
+            description: [
+                ["Đánh giá chi tiết laptop MSI Modern 15 A11M 1024VN", ""],
+                ["Laptop sang trọng, tâm điểm của mọi ánh nhìn", "Với thiết kế tinh tế, sang trọng, laptop MSI Modern 15 A11M 1024VN là sự lựa chọn hàng đầu của giới trẻ, giúp mang đến một vẻ ngoài siêu nổi bật và tràn đầy cá tính. Máy mỏng nhẹ có điểm nhấn thiết kế độc đáo. Thể hiện cá tính độc đáo của bạn với hiệu năng không giới hạn."],
+                ["Siêu di động với trọng lượng chỉ 1,6 kg", "Laptop siêu nhẹ với trọng lượng chỉ 1,6kg và mỏng 16,9 mm. Modern Series luôn cơ động và phong cách. Làm việc mọi lúc mọi nơi một cách thú vị hơn."],
+                ["Hỗ trợ USB type C", "Với cổng USB type C, Modern Series có thể truyền dữ liệu với tốc độ cực cao tới 40Gbps, hoặc sạc nhanh nhờ hỗ trợ chuẩn Power Delivery."],
+                ["Âm thanh chất lượng cao cấp", "Tận hưởng những khoảnh khắc tuyệt vời khi nghe nhạc với MSI Modern 15 A11M 1024VN. Nâng cấp từ thế hệ MSI Modern 14, MSI Modern 15 A11M 1024VN trang bị công nghệ hỗ trợ lấy mẫu âm thanh tới 24bit / 192kHz, giúp bạn lắng nghe âm thanh một cách chân thật và sắc nét nhất."],
+                ["Bàn phím gõ thoải mái", "Hành trình phím 1.5mm cùng với độ phản hồi tốt giúp đem tới trải nghiệm gõ phím tuyệt với trên Modern. Bàn phím có đèn nền cực sáng, cho phép bạn dễ dàng nhận diện ngay cả trong môi trường tối."],
+                ["Kết nối đa dạng", " Trang bị 2 cổng USB-A và cổng USB Type C, dễ dàng kết nối theo nhu cầu của bạn. Đầu đọc thẻ micro SD và cổng xuất hình HDMI giúp thuận tiện hơn trong việc chụp hình, để bạn có thể thoải mái tận hưởng mọi khoảnh khắc cuộc sống. Với thiết kế tinh tế, sang trọng MSI Modern là sự lựa chọn hàng đầu với laptop sinh viên dành cho giới trẻ, giúp mang đến một vẻ ngoài siêu nổi bật và tràn đầy cá tính. Cũng như đủ sức chinh phục mọi khách hàng với vẻ ngoài chuyên nghiệp, tự tin. Sản phẩm phù hợp với giới văn phòng, hay những bạn trẻ mong muốn sử dụng một chiếc máy thanh lịch và nổi bật giữa đám đông.",]
+
             ]
         },
     ])
@@ -180,10 +181,32 @@ const Index = () => {
             setProduct(listProduct[getIndexProduct])
         }
     }
-    // getProductParams()
     useEffect(() => {
         getProductParams()
+
     }, [product]);
+    const checkArrayOrder = (product) => {
+        const quantity = 1
+        if (localStorage.getItem('orderArray')) {
+            array = JSON.parse(localStorage.getItem('orderArray'))
+        } else {
+            var array = [];
+        }
+        function isCherries(fruit) {
+            return fruit.src === product.src;
+        }
+        const result = array.findIndex(isCherries);
+        if (result !== -1) {
+            // alert product already exists
+        } else {
+            array.push({ ...product, quantity });
+            localStorage.setItem("orderArray", JSON.stringify(array));
+            // alert product add to cart successfully
+            navigate("/cart")
+        }
+
+    }
+
     return (
         <div className="noindex">
             <div id="breadcrumb">
@@ -203,27 +226,23 @@ const Index = () => {
                         <div className="page_content">
                             <div className="row">
                                 {product && <ProductThumbnail product={product} />}
-                                {product && <ProductParameters product={product} />}
+                                {product && <ProductParameters product={product} checkArrayOrder={checkArrayOrder} />}
 
                                 <strong>
 
                                 </strong>
                             </div>
                             <strong>
-
                                 <br className="clr" />
                             </strong>
                             <div id="product_content_detail" className="row">
                                 <strong>
-
                                 </strong>
                                 <div id="product_left" className="col-md-12 col-xs-12">
                                     <strong>
-
                                     </strong>
                                     <div role="tabpanel">
                                         <strong>
-
                                             {/* Nav tabs */}
                                             <ul className="nav nav-tabs" role="tablist">
                                                 <li role="presentation" className="active"><a href="#chitiet" aria-controls="chitiet" role="tab" data-toggle="tab">Mô tả sản phẩm</a></li>

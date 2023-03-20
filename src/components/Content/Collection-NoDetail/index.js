@@ -8,24 +8,24 @@ const Index = () => {
         [
             {
                 productName:"Laptop MSI Modern 14 C11M 011VN",
-                realPrice: "14,190,000",
-                SaleNowPrice:"10,990,000",
+                realPrice: 14190000,
+                SaleNowPrice:10990000,
                 img:"//product.hstatic.net/1000026716/product/gearvn-laptop-msi-modern-14-c11m-011vn-1_d693b8ae9c1f45e2a77617e07d4634d4_large.png",
                 percent:-23,
                 src:"laptop-msi-modern-14-c11m-011vn"
             },
             {
                 productName:"Laptop MSI Modern 14 B11SBU 668VN",
-                realPrice: "22,990,000",
-                SaleNowPrice:"22,990,000",
+                realPrice: 22990000,
+                SaleNowPrice:22990000,
                 img:"//product.hstatic.net/1000026716/product/laptop_msi_modern_14_b11sbu_668vn_197c30cd01b84916ae9a57c9102839e8_large.jpg",
                 percent:-39,
                 src:"laptop-msi-modern-14-b11sbu-668vn"
             },
             {
                 productName:"Laptop MSI Modern 15 A11M 1024VN",
-                realPrice: "18,990,000",
-                SaleNowPrice:"18,990,000",
+                realPrice: 18990000,
+                SaleNowPrice:18990000,
                 img:"//product.hstatic.net/1000026716/product/1024vn-fix-win_596189a32e9d42cc8cb3c0b47da9b61c_large.png",
                 percent:-24,
                 src:"laptop-msi-modern-15-a11m-1024vn"

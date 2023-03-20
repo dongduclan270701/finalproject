@@ -1,8 +1,10 @@
 import React from 'react';
 
 const Index = (props) => {
-    const {product} = props
-    console.log(product)
+    const {product,checkArrayOrder} = props
+    const statusOrder = () => {
+        checkArrayOrder(product)
+    }
     return (
         <div className="col-sm-6 col-xs-12 product_parameters">
                                     <h1 className="product_name">
@@ -136,7 +138,7 @@ Chọn màu sắc, số lượng sản phẩm
                                             </div>
                                             <div className="clearfix" />
                                             <div className="form-group">
-                                                <a id="allowAdd2Cart" className="product_buy_btn btn-success theme_button addtocar">Đặt hàng</a>
+                                                <a id="allowAdd2Cart" className="product_buy_btn btn-success theme_button addtocar" onClick={statusOrder}>Đặt hàng</a>
                                             </div>
                                         </form>
                                     </strong>

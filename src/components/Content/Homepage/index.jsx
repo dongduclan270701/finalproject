@@ -25,80 +25,80 @@ const Index = () => {
         [
             {
                 productName:"GVN VIPER i3050",
-                realPrice: "22,710,000",
-                SaleNowPrice:"22,000,000",
+                realPrice: 22710000,
+                SaleNowPrice:22000000,
                 img:"//product.hstatic.net/1000026716/product/viper_i3050_tang_man_63c58a14ef4f4b679cbcfdb5a7cbfe2c_large.jpg",
                 percent:-3,
                 src:""
             },
             {
                 productName:"GVN ProArt Plus 5 a3070",
-                realPrice: "49,510,000",
-                SaleNowPrice:"49,000,000",
+                realPrice: 49510000,
+                SaleNowPrice:49000000,
                 img:"//product.hstatic.net/1000026716/product/02_392d138953ac4a5d9429d6fedeba2397_large.jpg",
                 percent:-1,
                 src:""
             },
             {
                 productName:"GVN VIPER Plus i3070Ti",
-                realPrice: "40,970,000",
-                SaleNowPrice:"40,000,000",
+                realPrice: 40970000,
+                SaleNowPrice:40000000,
                 img:"//product.hstatic.net/1000026716/product/1_d564f20f590543e8a7525df8b9e832f6_large.jpg",
                 percent:-2,
                 src:""
             },
             {
                 productName:"GVN ProArt Plus 9 i3090Ti",
-                realPrice: "86,360,000",
-                SaleNowPrice:"84,000,000",
+                realPrice: 86360000,
+                SaleNowPrice:84000000,
                 img:"//product.hstatic.net/1000026716/product/proart_plus_9_3090ti_new_7e4315e3fbb04271b01dfca2792a3751_large.jpg",
                 percent:-3,
                 src:""
             },
             {
                 productName:"GVN PHANTOM Plus i4070Ti",
-                realPrice: "65,920,000",
-                SaleNowPrice:"65,000,000",
+                realPrice: 65920000,
+                SaleNowPrice:65000000,
                 img:"//product.hstatic.net/1000026716/product/01_a8cf6b03151b40f49de677381e6c6d54_large.jpg",
                 percent:-1,
                 src:""
             },
             {
                 productName:"GVN VIPER i3060",
-                realPrice: "25,220,000",
-                SaleNowPrice:"24,000,000",
+                realPrice: 25220000,
+                SaleNowPrice:24000000,
                 img:"//product.hstatic.net/1000026716/product/viper_i3060_370839d403824f3e87603eaf0cfb51cc_large.jpg",
                 percent:-5,
                 src:""
             },
             {
                 productName:"GVN PHANTOM Plus i4080",
-                realPrice: "97,000,000",
-                SaleNowPrice:"95,000,000",
+                realPrice: 97000000,
+                SaleNowPrice:95000000,
                 img:"//product.hstatic.net/1000026716/product/phantom_plus_i4080_e4b7ce237b0642a2825ebdf6cd88ef11_large.jpg",
                 percent:-2,
                 src:""
             },
             {
                 productName:"GVN PHANTOM Plus i3070Ti",
-                realPrice: "62,610,000",
-                SaleNowPrice:"60,000,000",
+                realPrice: 62610000,
+                SaleNowPrice:60000000,
                 img:"//product.hstatic.net/1000026716/product/phantom_plus_i3070_ti_26013be9b2b44a5a8d71f59e0b6b8196_large.jpg",
                 percent:-4,
                 src:""
             },
             {
                 productName:"GVN PHANTOM Plus i3070 WHITE",
-                realPrice: 0,
-                SaleNowPrice:"50,000,000",
+                realPrice:0,
+                SaleNowPrice:50000000,
                 img:"//product.hstatic.net/1000026716/product/phantom_plus_i3070_white_20372657f667445983e40c1bbc652260_large.jpg",
                 percent:0,
                 src:""
             },
             {
                 productName:"GVN MINION i1650 - White Edition",
-                realPrice: "12,290,000",
-                SaleNowPrice:"11,790,000",
+                realPrice: 12290000,
+                SaleNowPrice:11790000,
                 img:"//product.hstatic.net/1000026716/product/minion_i1650_white_fa1d53072f0f4c868e2e3e3f33fcf168_large.jpg",
                 percent:-4,
                 src:""
@@ -109,80 +109,80 @@ const Index = () => {
         [
             {
                 productName:"Laptop gaming Lenovo Legion 5 15IAH7 82RC008LVN",
-                realPrice: "33,990,000",
-                SaleNowPrice:"27,990,000",
+                realPrice: 33990000,
+                SaleNowPrice:27990000,
                 img:"//product.hstatic.net/1000026716/product/gearvn-laptop-gaming-lenovo-legion-5-15iah7-82rc008lvn-1_ca9a0645fba34a2e970c3dc047055497_large.png",
                 percent:-18,
                 src:""
             },
             {
                 productName:"Laptop Gaming Gigabyte G5 GE 51VN263SH",
-                realPrice: "25,590,000",
-                SaleNowPrice:"20,990,000",
+                realPrice: 25590000,
+                SaleNowPrice:20990000,
                 img:"//product.hstatic.net/1000026716/product/g5-ge-51vn263sh-fix_3da6856774d849cf8c80548b6ef3f0cd_c55c38c0994f498b8ded543fd86fbeb4_large.png",
                 percent:-18,
                 src:""
             },
             {
                 productName:"Laptop Lenovo IdeaPad Gaming 3 15IAH7 82S9006YVN",
-                realPrice: "26,990,000",
-                SaleNowPrice:"20,990,000",
+                realPrice: 26990000,
+                SaleNowPrice:20990000,
                 img:"//product.hstatic.net/1000026716/product/82s9006yvn_08d56fe39a1542d9b1ad378bb2dd0fcd_large.png",
                 percent:-22,
                 src:""
             },
             {
                 productName:"Laptop gaming MSI Katana GF66 11UC 698VN",
-                realPrice: "29,990,000",
-                SaleNowPrice:"21,890,000",
+                realPrice: 29990000,
+                SaleNowPrice:21890000,
                 img:"//product.hstatic.net/1000026716/product/gearvn-laptop-gaming-msi-katana-gf66-11uc-698vn-1_14ce9424be3e4c27ab5db3a956b69c38_large.png",
                 percent:-27,
                 src:""
             },
             {
                 productName:"Laptop ASUS TUF Gaming F15 FX506LHB HN188W",
-                realPrice: "20,990,000",
-                SaleNowPrice:"16,990,000",
+                realPrice: 20990000,
+                SaleNowPrice:16990000,
                 img:"//product.hstatic.net/1000026716/product/gearvn-laptop-asus-tuf-gaming-f15-fx506lhb-hn188w-2_2cd5300c224b4c74ac58260d2e87f7f5_large.png",
                 percent:-19,
                 src:""
             },
             {
                 productName:"Laptop Gaming Acer Aspire 7 A715 42G R05G",
-                realPrice: "20,990,000",
-                SaleNowPrice:"15,990,000",
+                realPrice: 20990000,
+                SaleNowPrice:15990000,
                 img:"//product.hstatic.net/1000026716/product/laptop_gaming_acer_aspire_7_a715_42g_r05g_f9b4034f328d4211b9ffe51f7b1c4cbf_large.jpg",
                 percent:-24,
                 src:""
             },
             {
                 productName:"Laptop gaming Acer Aspire 7 A715 43G R8GA",
-                realPrice: "22,990,000",
-                SaleNowPrice:"17,490,000",
+                realPrice: 22990000,
+                SaleNowPrice:17490000,
                 img:"//product.hstatic.net/1000026716/product/r5-3050_1ca8d2e294ca4a3c8c875ac518beb714_large.png",
                 percent:-24,
                 src:""
             },
             {
                 productName:"Laptop gaming Acer Nitro 5 Eagle AN515 57 54MV",
-                realPrice: "25,990,000",
-                SaleNowPrice:"20,990,000",
+                realPrice: 25990000,
+                SaleNowPrice:20990000,
                 img:"//product.hstatic.net/1000026716/product/laptop_gaming_acer_nitro_5_eagle_an515_57_54mv_3e5cc4ba80be4c8595540963d469ccc3_large.jpg",
                 percent:-19,
                 src:""
             },
             {
                 productName:"Laptop gaming Acer Nitro 5 Tiger AN515 58 773Y",
-                realPrice: "32,990,000",
-                SaleNowPrice:"28,990,000",
+                realPrice: 32990000,
+                SaleNowPrice:28990000,
                 img:"//product.hstatic.net/1000026716/product/773y_5364964b798144f88c6137ff9a8afc60_large.png",
                 percent:-12,
                 src:""
             },
             {
                 productName:"Laptop gaming ASUS ROG Strix G15 G513IE HN246W",
-                realPrice: "26,990,000",
-                SaleNowPrice:"22,490,000",
+                realPrice: 26990000,
+                SaleNowPrice:22490000,
                 img:"//product.hstatic.net/1000026716/product/hn246w_40b3893ac444419a99964eaea1dd4138_large.png",
                 percent:-17,
                 src:""
@@ -193,80 +193,80 @@ const Index = () => {
         [
             {
                 productName:"Laptop Lenovo V14 G2 ITL 82KA00RRVN",
-                realPrice: "15,990,000",
-                SaleNowPrice:"15,990,000",
+                realPrice: 15990000,
+                SaleNowPrice:15990000,
                 img:"//product.hstatic.net/1000026716/product/82ka00rrvn_90b668072e554dbfb8c8dbb3df228f2e_large.png",
                 percent:-31,
                 src:""
             },
             {
                 productName:"Laptop Lenovo IdeaPad 5 Pro 14ITL6 82L300M9VN",
-                realPrice: "22,990,000",
-                SaleNowPrice:"17,490,000",
+                realPrice: 22990000,
+                SaleNowPrice:17490000,
                 img:"//product.hstatic.net/1000026716/product/82l300m9vn_1328f6b2bcf34a129007923a137fb9a7_large.png",
                 percent:-24,
                 src:""
             },
             {
                 productName:"Laptop ASUS Vivobook 14X OLED A1403ZA KM067W",
-                realPrice: "20,290,000",
-                SaleNowPrice:"17,490,000",
+                realPrice: 20290000,
+                SaleNowPrice:17490000,
                 img:"//product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-14x-oled-a1403za-km067w-1_3c57a7dbeb8d40619f4794c19c17a694_large.png",
                 percent:-14,
                 src:""
             },
             {
                 productName:"Laptop Asus Vivobook 15X OLED A1503ZA L1151W",
-                realPrice: "16,990,000",
-                SaleNowPrice:"14,690,000",
+                realPrice: 16990000,
+                SaleNowPrice:14690000,
                 img:"//product.hstatic.net/1000026716/product/i3_bce8c31dc65d4496adb27e465903a0e9_large.png",
                 percent:-14,
                 src:""
             },
             {
                 productName:"Laptop ASUS Vivobook 15X OLED A1503ZA L1421W",
-                realPrice: "20,790,000",
-                SaleNowPrice:"17,990,000",
+                realPrice: 20790000,
+                SaleNowPrice:17990000,
                 img:"//product.hstatic.net/1000026716/product/l1421w_2b115562199d462b82b92e89e95b2473_large.png",
                 percent:-13,
                 src:""
             },
             {
                 productName:"Laptop Dell Inspiron T7420 N4I5021W Silver",
-                realPrice: "24,890,000",
-                SaleNowPrice:"19,990,000",
+                realPrice: 24890000,
+                SaleNowPrice:19990000,
                 img:"//product.hstatic.net/1000026716/product/1_c46c98becd65476993ab7a77ec5a03bb_large.png",
                 percent:-20,
                 src:""
             },
             {
                 productName:"Laptop Dell Vostro 13 5320 V3I7005W Gray",
-                realPrice: "28,990,000",
-                SaleNowPrice:"26,490,000",
+                realPrice: 28990000,
+                SaleNowPrice:26490000,
                 img:"//product.hstatic.net/1000026716/product/v3i7005w-fix_2c4eb0882c0e4e3a8f07695f511797f4_large.png",
                 percent:-9,
                 src:""
             },
             {
                 productName:"Laptop HP Pavilion 15 EG2036TX 6K782PA",
-                realPrice: "20,590,000",
-                SaleNowPrice:"19,490,000",
+                realPrice: 20590000,
+                SaleNowPrice:19490000,
                 img:"//product.hstatic.net/1000026716/product/1_726e3cb5e5864b7999040c221f610f32_large.png",
                 percent:-5,
                 src:""
             },
             {
                 productName:"Laptop Asus Vivobook OLED M1503QA L1044W",
-                realPrice: "19,290,000",
-                SaleNowPrice:"19,290,000",
+                realPrice: 19290000,
+                SaleNowPrice:19290000,
                 img:"//product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-oled-m1503qa-l1044w-1_4b922183b924494898e421472f0faec2_large.png",
                 percent:-12,
                 src:""
             },
             {
                 productName:"Laptop HP Pavilion 15 EG0506TX 46M05PA",
-                realPrice: "19,990,000",
-                SaleNowPrice:"19,590,000",
+                realPrice: 19990000,
+                SaleNowPrice:19590000,
                 img:"//product.hstatic.net/1000026716/product/laptop-hp-pavilion-15-eg0506tx-46m05pa_3f2e2cb97f6b4ed192752aa774e1b9b4_large.jpg",
                 percent:-2,
                 src:""
@@ -277,80 +277,80 @@ const Index = () => {
         [
             {
                 productName:'Màn hình GIGABYTE G24F 2 24" IPS 180Hz chuyên game',
-                realPrice: "5,990,000",
-                SaleNowPrice:"3,900,000",
+                realPrice: 5990000,
+                SaleNowPrice:3900000,
                 img:"//product.hstatic.net/1000026716/product/gigabyte_g24f_2_gearvn_bc7aac7da42c448bb4b19f63a6dd4706_c4c396c336e942c6bc6b70fe1ed131a7_large.jpg",
                 percent:-35,
                 src:""
             },
             {
                 productName:'Màn hình Philips 242M8 24" IPS 144Hz Freesync chuyên game',
-                realPrice: "4,890,000",
-                SaleNowPrice:"3,590,000",
+                realPrice: 4890000,
+                SaleNowPrice:3590000,
                 img:"//product.hstatic.net/1000026716/product/323636560_862805858257243_4195203838265099200_n_1b626a12129c43d3b12ed00de72c4bd0_large.jpg",
                 percent:-27,
                 src:""
             },
             {
                 productName:'Màn hình Asus TUF GAMING VG249Q1A 24" IPS 165Hz Gsync compatible chuyên game',
-                realPrice: "6,390,000",
-                SaleNowPrice:"3,990,000",
+                realPrice: 6390000,
+                SaleNowPrice:3990000,
                 img:"//product.hstatic.net/1000026716/product/image-removebg-preview__10__05bcf6f0154b454db686a24404f55d4c_large.png",
                 percent:-38,
                 src:""
             },
             {
                 productName:'Màn hình ASUS VZ24EHE 24" IPS 75Hz viền mỏng',
-                realPrice: "4,490,000",
-                SaleNowPrice:"2,890,000",
+                realPrice: 4490000,
+                SaleNowPrice:2890000,
                 img:"//product.hstatic.net/1000026716/product/image-removebg-preview__6__675c448e152a4fc999e79bdb36aa1a2f_large.png",
                 percent:-36,
                 src:""
             },
             {
                 productName:'Màn hình ViewSonic VX2405-P-MHD 24" IPS 144Hz 1ms chuyên game',
-                realPrice: "5,690,000",
-                SaleNowPrice:"3,590,000",
+                realPrice: 5690000,
+                SaleNowPrice:3590000,
                 img:"//product.hstatic.net/1000026716/product/image-removebg-preview__11__71f5299c974b48e9875a623f3212b71a_large.png",
                 percent:-37,
                 src:""
             },
             {
                 productName:'Màn hình ViewSonic VA2432-H 24" IPS 75Hz viền mỏng',
-                realPrice: "4,550,000",
-                SaleNowPrice:"2,790,000",
+                realPrice: 4550000,
+                SaleNowPrice:2790000,
                 img:"//product.hstatic.net/1000026716/product/1-ec_b59555789944400e9cb252fb688bbc28-removebg-preview_398250d4c0ac499ca6d8079b829421c9_large.png",
                 percent:-39,
                 src:""
             },
             {
                 productName:'Màn hình ViewSonic VA2732-H 27" IPS 75Hz viền mỏng',
-                realPrice: "4,590,000",
-                SaleNowPrice:"3,490,000",
+                realPrice: 4590000,
+                SaleNowPrice:3490000,
                 img:"//product.hstatic.net/1000026716/product/image-removebg-preview__3__827d2fe2142944e090feb91439b4475a_large.png",
                 percent:-24,
                 src:""
             },
             {
                 productName:'Màn hình AOC 27B1H 27" IPS Ultraslim chuyên game',
-                realPrice: "4,490,000",
-                SaleNowPrice:"3,290,000",
+                realPrice: 4490000,
+                SaleNowPrice:3290000,
                 img:"//product.hstatic.net/1000026716/product/aoc-27b1h-27-ips-ultraslim-chuyen-game_b24f9599731c42df805705a5ef2c51a5_large.gif",
                 percent:-27,
                 src:""
             },
             {
                 productName:'Màn hình LG 24GN650-B 24" IPS 144Hz HDR10 Freesync chuyên game',
-                realPrice: "6,090,000",
-                SaleNowPrice:"4,190,000",
+                realPrice: 6090000,
+                SaleNowPrice:4190000,
                 img:"//product.hstatic.net/1000026716/product/image-removebg-preview__5__676906c35bad4fc2a438e3f13342c80a_large.png",
                 percent:-31,
                 src:""
             },
             {
                 productName:'Màn hình ACER KA272 27" IPS 75Hz',
-                realPrice: "4,690,000",
-                SaleNowPrice:"3,250,000",
+                realPrice: 4690000,
+                SaleNowPrice:3250000,
                 img:"//product.hstatic.net/1000026716/product/image-removebg-preview__22__15b72d19e23049edac52257d1a42bedc_large.png",
                 percent:-31,
                 src:""
@@ -361,80 +361,80 @@ const Index = () => {
         [
             {
                 productName:'Bàn phím cơ AKKO MOD007 PC Blue on White',
-                realPrice: "2,599,000",
-                SaleNowPrice:"2,490,000",
+                realPrice: 2599000,
+                SaleNowPrice:2490000,
                 img:"//product.hstatic.net/1000026716/product/thumbphim-recovered_75cf14850d4247789be5a1763968f569_large.gif",
                 percent:-4,
                 src:""
             },
             {
                 productName:'Bàn phím cơ AKKO 3108 RF Ocean Star',
-                realPrice: "1,599,000",
-                SaleNowPrice:"1,490,000",
+                realPrice: 1599000,
+                SaleNowPrice:1490000,
                 img:"//product.hstatic.net/1000026716/product/thumbphim_a782e6979e0d437895af75c76499da29_large.gif",
                 percent:-7,
                 src:""
             },
             {
                 productName:'Bàn phím cơ AKKO 3108 RF Matcha Red Bean',
-                realPrice: "1,599,000",
-                SaleNowPrice:"1,490,000",
+                realPrice: 1599000,
+                SaleNowPrice:1490000,
                 img:"//product.hstatic.net/1000026716/product/thumbphim_58513fa145114b63a6139b4dcc08bda5_large.gif",
                 percent:-7,
                 src:""
             },
             {
                 productName:'Bàn phím cơ AKKO 3087 RF Ocean Star',
-                realPrice: "1,499,000",
-                SaleNowPrice:"1,390,000",
+                realPrice: 1499000,
+                SaleNowPrice:1390000,
                 img:"//product.hstatic.net/1000026716/product/thumbphim_62954efae38d49978b599d7e9405b5a1_large.gif",
                 percent:-7,
                 src:""
             },
             {
                 productName:'Bàn phím cơ AKKO 3087 RF Matcha Red Bean',
-                realPrice: "1,499,000",
-                SaleNowPrice:"1,390,000",
+                realPrice: 1499000,
+                SaleNowPrice:1390000,
                 img:"//product.hstatic.net/1000026716/product/thumbphim_397520cac92a479ebfb0d1541293e513_large.gif",
                 percent:-7,
                 src:""
             },
             {
                 productName:'Bàn phím Leopold FC900RBT Bluetooth Coral Blue Limited Edition',
-                realPrice: "3,750,000",
-                SaleNowPrice:"3,600,000",
+                realPrice: 3750000,
+                SaleNowPrice:3600000,
                 img:"//product.hstatic.net/1000026716/product/thumbphim_c89256bf4c9b4f218a4c2675b6b1ecbb_large.gif",
                 percent:-4,
                 src:""
             },
             {
                 productName:'Bàn phím Leopold FC750RBT Bluetooth Coral Blue Limited Edition',
-                realPrice: "3,550,000",
-                SaleNowPrice:"3,400,000",
+                realPrice: 3550000,
+                SaleNowPrice:3400000,
                 img:"//product.hstatic.net/1000026716/product/thumbphim_c9b4c04a0a54411ba1de790c6e30a362_large.gif",
                 percent:-4,
                 src:""
             },
             {
                 productName:'Bàn phím Leopold FC660M Bluetooth Coral Blue Limited Edition',
-                realPrice: "3,350,000",
-                SaleNowPrice:"3,250,000",
+                realPrice: 3350000,
+                SaleNowPrice:3250000,
                 img:"//product.hstatic.net/1000026716/product/thumbphim_6a15b6783ea145c2b3c1c5c26e31090b_large.gif",
                 percent:-3,
                 src:""
             },
             {
                 productName:'Bàn phím Leopold FC900RBT Bluetooth Milk Turquoise Limited Edition',
-                realPrice: "3,750,000",
-                SaleNowPrice:"3,600,000",
+                realPrice: 3750000,
+                SaleNowPrice:3600000,
                 img:"//product.hstatic.net/1000026716/product/thumbphim_43758d8f9f79406a80500a54ba35eea5_large.gif",
                 percent:-4,
                 src:""
             },
             {
                 productName:'Bàn phím Leopold FC750RBT Bluetooth Milk Turquoise Limited Edition',
-                realPrice: "3,550,000",
-                SaleNowPrice:"3,400,000",
+                realPrice: 3550000,
+                SaleNowPrice:3400000,
                 img:"//product.hstatic.net/1000026716/product/thumbphim_b1fabfab30e74ea185a1ffe1f0f614b6_large.gif",
                 percent:-4,
                 src:""

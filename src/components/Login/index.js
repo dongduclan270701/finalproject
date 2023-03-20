@@ -5,17 +5,17 @@ const Index = () => {
     const [inputForm, setInputForm] = useState({ username: "", password: "" })
     const [submitForm, setSubmitForm] = useState(false)
     const getStateInputFormLogin = async () => {
-        setSubmitForm(!submitForm)
-        await axios.post(`http://localhost:9999/api/login`, inputForm)
-            .then(result => {
-                console.log('Got the token: ', result.data.data)
-                localStorage.setItem('token', result.data.data)
-                alert("Success")
+        // setSubmitForm(!submitForm)
+        // await axios.post(`http://localhost:9999/api/login`, inputForm)
+        //     .then(result => {
+        //         console.log('Got the token: ', result.data.data)
+        //         localStorage.setItem('token', result.data.data)
+        //         alert("Success")
 
-            }
-            )
-            .catch(error => console.log(error))
-
+        //     }
+        //     )
+        //     .catch(error => console.log(error))
+        console.log(inputForm)
     }
     return (
         // <div>
@@ -40,7 +40,7 @@ const Index = () => {
                         <div className="accounttype">
                             <h2 className="title" />
                         </div>
-                        <form acceptCharset="UTF-8" action="/account/login" id="customer_login" method="post">
+                        <div id="customer_login">
                             <input name="form_type" type="hidden" defaultValue="customer_login" />
                             <input name="utf8" type="hidden" defaultValue="✓" />
                             <div className="input-group">
@@ -58,13 +58,14 @@ const Index = () => {
                                 <a href="#" onclick="showRecoverPasswordForm();return false;">Quên mật khẩu?</a>
                                 hoặc <a href="/account/register" title="Đăng ký">Đăng ký</a>
                             </div>
-                            <input id="26610ad1e0e645fb853c5335676a0c27" name="g-recaptcha-response" type="hidden" defaultValue="03AFY_a8Un7hcxQyE4-mDjvKT655e0fC37cb8VfqO8C3kQcM_ImY_lBfI8mKxupH25QiRKiZ9ZsEAGQiEqLzY4_LuKl4HUsMmliNYxzCakJ_QYGhG_Uip1BIkdLAJFF20MMMVLtodgAlPv8HvtjktraQmREwtAJIIHiU1qNOcpEvBmULeyu0SHHAm8NwnEfvn7ne3clFz7GL8uejgslKl7aHOsdIp4a5-M8VZMQ12ahVid_Qy51rd1fvHej4Qsv9oQiB7KUqsKXd9yIc0SYy1rTO2p6Us77zumOdO8bTxavcVzUJVdta1Utzz6WESvJ8mpjuNFrTiN3sJ3NVPftqHLVLhuM5lY2VMsDnYX3LPaqkUcNtLuc-rTdJK0pMlYGZlJYGGvnjUofB_uMkHiQnm21JeiHNv_UgNGl_vyN0NQF2nTpuHyH2TnaPtpauP2oWsjsP2wAep4ArlbMztPzntaiT1txwWKhCptkm5QnmPkZ37wr-758-WoLE_DlnWXmy4qkzz64rdOpPiI" /></form>
+                            <input id="26610ad1e0e645fb853c5335676a0c27" name="g-recaptcha-response" type="hidden" defaultValue="03AFY_a8Un7hcxQyE4-mDjvKT655e0fC37cb8VfqO8C3kQcM_ImY_lBfI8mKxupH25QiRKiZ9ZsEAGQiEqLzY4_LuKl4HUsMmliNYxzCakJ_QYGhG_Uip1BIkdLAJFF20MMMVLtodgAlPv8HvtjktraQmREwtAJIIHiU1qNOcpEvBmULeyu0SHHAm8NwnEfvn7ne3clFz7GL8uejgslKl7aHOsdIp4a5-M8VZMQ12ahVid_Qy51rd1fvHej4Qsv9oQiB7KUqsKXd9yIc0SYy1rTO2p6Us77zumOdO8bTxavcVzUJVdta1Utzz6WESvJ8mpjuNFrTiN3sJ3NVPftqHLVLhuM5lY2VMsDnYX3LPaqkUcNtLuc-rTdJK0pMlYGZlJYGGvnjUofB_uMkHiQnm21JeiHNv_UgNGl_vyN0NQF2nTpuHyH2TnaPtpauP2oWsjsP2wAep4ArlbMztPzntaiT1txwWKhCptkm5QnmPkZ37wr-758-WoLE_DlnWXmy4qkzz64rdOpPiI" />
+                            </div>
                     </div>
                     <div id="recover-password" style={{ display: 'none' }} className="userbox">
                         <div className="accounttype">
                             <h2>Phục hồi mật khẩu</h2>
                         </div>
-                        <form acceptCharset="UTF-8" action="/account/recover" method="post">
+                        <div >
                             <input name="form_type" type="hidden" defaultValue="recover_customer_password" />
                             <input name="utf8" type="hidden" defaultValue="✓" />
                             <div className="input-group">
@@ -77,7 +78,8 @@ const Index = () => {
                             <div className="req_pass">
                                 <a href="#" onclick="hideRecoverPasswordForm();return false;">Hủy</a>
                             </div>
-                            <input id="11bd9d81983247fc81a39caa196c5981" name="g-recaptcha-response" type="hidden" defaultValue="03AFY_a8Vyygdn_4tWYyoEcLc-oXYXBviYfSJiQ_1IP8NSsLv8h-HIzc1m-0irq7m1GyXKxBxI6vars9Z_uxLqSHHbl1Sz190YR-g5NaAR1r5_QAmX7v0yoMQbRaNNcxwOIvGfB851ifjJN63iQoZ_g7-iBSJobd49xp66GZGcB5P7lbxPyLfYrlqYuNX3zhm8zqpR92Hvj24eRG9Fj45eiktxCma1_kSwbh1ZgkdDVRxaDILEJIaEoA1JSZyusW7LLIjQ3716Jxlf1AEOUMYYQ9nU0MkoFWPpSyI6Yr6pcdJClSCLRQ-rAzx0UrRNjlX0Unl38yzX06aSEqboFuD62xMl_MibICzFGkt3O4ipjCmwA-U5AbRhHGi3N53GNTTgyUZ739FIaHpl44Cka5k6d3i5kQeeLuYZEhDdRtPpTF5QnKp4IZ0eNL4ssgR_0NVnEXybHKNxKZM2Hs8-KwohNHnGjWDD69aqf3tm2n1mTzr3XmP4xOq9KkICkJaIuGICN_Q6OUzqBOML" /></form>
+                            <input id="11bd9d81983247fc81a39caa196c5981" name="g-recaptcha-response" type="hidden" defaultValue="03AFY_a8Vyygdn_4tWYyoEcLc-oXYXBviYfSJiQ_1IP8NSsLv8h-HIzc1m-0irq7m1GyXKxBxI6vars9Z_uxLqSHHbl1Sz190YR-g5NaAR1r5_QAmX7v0yoMQbRaNNcxwOIvGfB851ifjJN63iQoZ_g7-iBSJobd49xp66GZGcB5P7lbxPyLfYrlqYuNX3zhm8zqpR92Hvj24eRG9Fj45eiktxCma1_kSwbh1ZgkdDVRxaDILEJIaEoA1JSZyusW7LLIjQ3716Jxlf1AEOUMYYQ9nU0MkoFWPpSyI6Yr6pcdJClSCLRQ-rAzx0UrRNjlX0Unl38yzX06aSEqboFuD62xMl_MibICzFGkt3O4ipjCmwA-U5AbRhHGi3N53GNTTgyUZ739FIaHpl44Cka5k6d3i5kQeeLuYZEhDdRtPpTF5QnKp4IZ0eNL4ssgR_0NVnEXybHKNxKZM2Hs8-KwohNHnGjWDD69aqf3tm2n1mTzr3XmP4xOq9KkICkJaIuGICN_Q6OUzqBOML" />
+                            </div>
                     </div>
                 </div>
             </div>

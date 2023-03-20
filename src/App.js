@@ -16,6 +16,13 @@ import Hotline from 'components/Pages/Hotline'
 import CollectionDetail from 'components/Content/Collection-Detail'
 import CollectionNoDetail from 'components/Content/Collection-NoDetail'
 import Product from 'components/Content/Product'
+import Cart from 'components/Content/Cart'
+import PayOrder from 'components/Content/Pay-order'
+import Account from 'components/Content/Account'
+import Order from 'components/Content/Information-order'
+import Dashboard from 'components/Admin/Dashboard'
+import HeaderAdmin from 'components/Admin/Header'
+import FooterAdmin from 'components/Admin/Footer'
 import {
   BrowserRouter as Router,
   Routes,
@@ -33,6 +40,13 @@ function App() {
             <Footer/>
           </>
         } />
+        <Route path='/admin/dashboard' element={
+          <>
+            <HeaderAdmin />
+            <Dashboard />
+            <FooterAdmin />
+          </>
+        } />
         <Route path='/login' element={
           <>
             <HeaderMain /><Banner/>
@@ -45,6 +59,32 @@ function App() {
             <HeaderMain /><Banner/>
             <Register/>
             <Footer/>
+          </>
+        } />
+        <Route path='/account' element={
+          <>
+          <HeaderMain /><Banner/>
+            <Account/>
+            <Footer/>
+          </>
+        } />
+        <Route path='/information-order' element={
+          <>
+          <HeaderMain /><Banner/>
+            <Order/>
+            <Footer/>
+          </>
+        } />
+        <Route path='/cart' element={
+          <>
+            <HeaderMain /><Banner/>
+            <Cart/>
+            <Footer/>
+          </>
+        } />
+        <Route path='/pay-order' element={
+          <>
+            <PayOrder/>
           </>
         } />
         <Route path='/collectionDetail/:codeCollectionDetail' element={
@@ -103,6 +143,7 @@ function App() {
             <Hotline/>
           </>
         } />
+        
       </Routes>
 
     </Router>
