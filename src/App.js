@@ -20,9 +20,6 @@ import Cart from 'components/Content/Cart'
 import PayOrder from 'components/Content/Pay-order'
 import Account from 'components/Content/Account'
 import Order from 'components/Content/Information-order'
-import Dashboard from 'components/Admin/Dashboard'
-import HeaderAdmin from 'components/Admin/Header'
-import FooterAdmin from 'components/Admin/Footer'
 import {
   BrowserRouter as Router,
   Routes,
@@ -38,13 +35,6 @@ function App() {
             <HeaderMain /><Banner/>
             <Homepage/>
             <Footer/>
-          </>
-        } />
-        <Route path='/admin/dashboard' element={
-          <>
-            <HeaderAdmin />
-            <Dashboard />
-            <FooterAdmin />
           </>
         } />
         <Route path='/login' element={
