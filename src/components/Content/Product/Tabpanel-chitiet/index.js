@@ -2,6 +2,22 @@ import React from 'react';
 
 const Index = (props) => {
     const { product } = props
+    const renderTextWithSpan = (text) => {
+        const splitText = text.split(/<br\s*\/?>/i); // tách chuỗi tại vị trí <br/> hoặc <br>
+
+        return splitText.map((textPart, index) => {
+            if (index === splitText.length - 1) {
+                // nếu đây là phần tử cuối cùng thì trả về textPart không cần thêm <span>
+                return textPart;
+            }
+
+            // nếu không thì thêm <span> để render
+            return (
+                <p key={index} style={{ fontSize: '16px', color: '#000000' }}>
+                    {textPart}</p>
+            );
+        });
+    }
     return (
         <div role="tabpanel" className="tab-pane active" id="chitiet">
             <strong>
@@ -31,44 +47,32 @@ const Index = (props) => {
                                         </strong>
                                     </span>
                                 </td>
-                                <td style={{ borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px' }}>
-                                    {Array.isArray(item[1])? <ul>
-                                            {item[1].map((itemArray,index) => {
-                                                return <li key={index}>
-                                                <span style={{ fontSize: '18px' }}>
-                                                    {itemArray}</span>
-                                            </li>
-                                            })}
-                                            
-                                        </ul> : <span style={{ fontSize: '18px' }}>
-                                        <span style={{ color: '#000000' }}>
-                                            {item[1]}</span>
+                                <td style={{ textAlign: "left", borderColor: '#eeeeee', borderStyle: 'solid', borderWidth: '1px', boxSizing: 'border-box', padding: '8px', verticalAlign: 'top', width: '643px',fontSize:"16px" }}>
 
-                                    </span>}
-
+                                    {renderTextWithSpan(item[1])}
                                 </td>
                             </tr>
                         })}
                     </tbody>
                 </table>
             </div>
-            
-            {(product.description).map((item,index) => {
+
+            {(product.description).map((item, index) => {
                 return <React.Fragment key={index}><h3 >
-                <strong>
-                    <span style={{ fontSize: '22px' }}>
-                        {item[0]}</span>
-                </strong>
-            </h3>
-            <p>
-                <span style={{ fontSize: '18px' }}>
-                {item[1]}</span>
-            </p>
-            <p style={{ textAlign: 'center' }}>
-                <img alt="GEARVN Laptop Asus Vivobook 15 X515EA BR2045W" src={product.img[index]} />
-            </p></React.Fragment>
+                    <strong>
+                        <span style={{ fontSize: '22px' }}>
+                            {item[0]}</span>
+                    </strong>
+                </h3>
+                    <p>
+                        <span style={{ fontSize: '18px' }}>
+                            {item[1]}</span>
+                    </p>
+                    <p style={{ textAlign: 'center' }}>
+                        <img alt="GEARVN Laptop Asus Vivobook 15 X515EA BR2045W" src={product.img[index]} />
+                    </p></React.Fragment>
             })}
-            
+
         </div>
     );
 }
