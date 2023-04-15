@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const Index = () => {
+    const hanldLogout = () => {
+        localStorage.removeItem("auth-token");
+        localStorage.removeItem("user");
+        window.location.reload();
+    }
     return (
         <div className="headerxxx">
             <div className="container1 gearvn-content-section">
@@ -39,19 +44,38 @@ const Index = () => {
                         </div>
                         <div className="pdl0 fl1 ">
                             <div className="gearvn-right-top-block">
-                            
-                                <Link className="gearvn-header-top-item" to="/register">
-                                    <img src="//theme.hstatic.net/1000026716/1000440777/14/ak1.png?v=34146" />
-                                    <div className="header-right-description">
-                                        <div className="gearvn-text">Đăng ký</div>
-                                    </div>
-                                </Link>
-                                <Link className="gearvn-header-top-item" to="/login">
-                                    <img src="//theme.hstatic.net/1000026716/1000440777/14/ak3.png?v=34146" />
-                                    <div className="header-right-description">
-                                        <div className="gearvn-text">Đăng nhập</div>
-                                    </div>
-                                </Link>
+                                {JSON.parse(localStorage.getItem('auth-token')) ?
+                                    <>
+                                        <Link className="gearvn-header-top-item" to="/register">
+                                            <img src="//theme.hstatic.net/1000026716/1000440777/14/ak1.png?v=34146" />
+                                            <div className="header-right-description">
+                                                <div className="gearvn-text">{JSON.parse(localStorage.getItem('user'))}</div>
+                                            </div>
+                                        </Link>
+                                        <button onClick={hanldLogout} className="gearvn-header-top-item">
+                                            <img src="//theme.hstatic.net/1000026716/1000440777/14/ak2.png?v=35775" />
+                                            <div className="header-right-description">
+                                                <div className="gearvn-text">Đăng xuất</div>
+                                            </div>
+                                        </button>
+                                    </>
+                                    :
+                                    <>
+                                        <Link className="gearvn-header-top-item" to="/register">
+                                            <img src="//theme.hstatic.net/1000026716/1000440777/14/ak1.png?v=34146" />
+                                            <div className="header-right-description">
+                                                <div className="gearvn-text">Đăng ký</div>
+                                            </div>
+                                        </Link>
+                                        <Link className="gearvn-header-top-item" to="/login">
+                                            <img src="//theme.hstatic.net/1000026716/1000440777/14/ak3.png?v=34146" />
+                                            <div className="header-right-description">
+                                                <div className="gearvn-text">Đăng nhập</div>
+                                            </div>
+                                        </Link>
+                                    </>
+                                }
+
                                 <Link className="gearvn-header-top-item" to="/product-sales">
                                     <img src="//theme.hstatic.net/1000026716/1000440777/14/ak4.png?v=34146" />
                                     <div className="header-right-description">
@@ -68,61 +92,61 @@ const Index = () => {
                             </div>
                         </div>
                         <div className="gearvn-info-top">
-                        <ul>
-                            <li>
-                                <img src="//theme.hstatic.net/1000026716/1000440777/14/tongdai-icon.png?v=34146" />
-                                <span>
-                                    <Link to="/hotline">
-                                        <a style={{ color: '#ea1c00' }} >
-                                            Tổng đài
-                                        </a>
-                                    </Link>
-                                </span>
-                            </li>
-                            <li>
-                                <img src="//theme.hstatic.net/1000026716/1000440777/14/youtube.png?v=34146" />
-                                <span>
-                                    <Link to="/video">
-                                        <a style={{ color: '#ea1c00' }} >
-                                            Videos
-                                        </a>
-                                    </Link>
-                                </span>
-                            </li>
-                            <li>
-                                <img src="//theme.hstatic.net/1000026716/1000440777/14/gNewsFavIco.png?v=34146" />
-                                <span>
-                                    <Link to="/news">
-                                        <a style={{ color: '#ea1c00' }} >
-                                            Tin công nghệ
-                                        </a>
-                                    </Link>
-                                </span>
-                            </li>
-                            <li>
-                                <img src="//theme.hstatic.net/1000026716/1000440777/14/logo_hr.png?v=34146" />
-                                <span>
-                                    <Link to="/recruitment">
-                                        <a style={{ color: '#ea1c00' }} >
-                                            Tuyển dụng
-                                        </a>
-                                    </Link>
-                                </span>
-                            </li>
-                            <li>
-                                <img src="https://file.hstatic.net/200000397757/file/car-dealer_97df9ccd23f243e3a4da757eb19afe6c.png" />
-                                <span>
-                                    <Link to="/showroom">
-                                        <a style={{ color: '#ea1c00' }} >
-                                            Hệ thống showroom
-                                        </a>
-                                    </Link>
-                                </span>
-                            </li>
-                        </ul>
+                            <ul>
+                                <li>
+                                    <img src="//theme.hstatic.net/1000026716/1000440777/14/tongdai-icon.png?v=34146" />
+                                    <span>
+                                        <Link to="/hotline">
+                                            <a style={{ color: '#ea1c00' }} >
+                                                Tổng đài
+                                            </a>
+                                        </Link>
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="//theme.hstatic.net/1000026716/1000440777/14/youtube.png?v=34146" />
+                                    <span>
+                                        <Link to="/video">
+                                            <a style={{ color: '#ea1c00' }} >
+                                                Videos
+                                            </a>
+                                        </Link>
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="//theme.hstatic.net/1000026716/1000440777/14/gNewsFavIco.png?v=34146" />
+                                    <span>
+                                        <Link to="/news">
+                                            <a style={{ color: '#ea1c00' }} >
+                                                Tin công nghệ
+                                            </a>
+                                        </Link>
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="//theme.hstatic.net/1000026716/1000440777/14/logo_hr.png?v=34146" />
+                                    <span>
+                                        <Link to="/recruitment">
+                                            <a style={{ color: '#ea1c00' }} >
+                                                Tuyển dụng
+                                            </a>
+                                        </Link>
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="https://file.hstatic.net/200000397757/file/car-dealer_97df9ccd23f243e3a4da757eb19afe6c.png" />
+                                    <span>
+                                        <Link to="/showroom">
+                                            <a style={{ color: '#ea1c00' }} >
+                                                Hệ thống showroom
+                                            </a>
+                                        </Link>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    </div>
-                    
+
                     <div className="gearvn-info-top-mobile">
                         <span><a style={{ color: '#ea1c00' }} href /></span>
                     </div>

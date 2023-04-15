@@ -20,10 +20,12 @@ import Cart from 'components/Content/Cart'
 import PayOrder from 'components/Content/Pay-order'
 import Account from 'components/Content/Account'
 import Order from 'components/Content/Information-order'
+
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  Navigate
 } from 'react-router-dom'
 import 'assets/scss/Header/Header-main.scss'
 function App() {
@@ -38,6 +40,9 @@ function App() {
           </>
         } />
         <Route path='/login' element={
+          JSON.parse(localStorage.getItem('auth-token'))?
+          <Navigate to={-1} />
+          :
           <>
             <HeaderMain /><Banner/>
             <Login/>
@@ -45,6 +50,9 @@ function App() {
           </>
         } />
         <Route path='/register' element={
+          JSON.parse(localStorage.getItem('auth-token'))?
+          <Navigate to={-1} />
+          :
           <>
             <HeaderMain /><Banner/>
             <Register/>
@@ -52,9 +60,16 @@ function App() {
           </>
         } />
         <Route path='/account' element={
+          JSON.parse(localStorage.getItem('auth-token')) ?
           <>
           <HeaderMain /><Banner/>
             <Account/>
+            <Footer/>
+          </>
+          :
+          <>
+            <HeaderMain /><Banner/>
+            <Login/>
             <Footer/>
           </>
         } />
