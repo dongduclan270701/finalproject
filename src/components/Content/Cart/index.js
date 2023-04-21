@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const Index = () => {
     const navigate = useNavigate();
     const [arrayOrder, setArrayOrder] = useState(JSON.parse(localStorage.getItem('orderArray')))
     useEffect(() => {
-        
+
     }, [arrayOrder]);
     const totalArrayOrder = () => {
         let total = 0;
@@ -21,21 +22,47 @@ const Index = () => {
             if (obj === arrayOrder[index]) {
                 return { ...obj, quantity: value }
             }
-
             // 👇️ otherwise return the object as is
             return obj;
         });
         localStorage.setItem("orderArray", JSON.stringify(newState))
         setArrayOrder(newState)
     }
-    const deleteProductinCart = (index) => {
-        const indexArray = arrayOrder.indexOf(arrayOrder[index]);
-        if (indexArray > -1) {
-            arrayOrder.splice(indexArray, 1);
-        }
-        localStorage.setItem("orderArray", JSON.stringify(arrayOrder))
-        setArrayOrder(arrayOrder)
-        navigate("/cart")
+    const deleteProductInCart = (index) => {
+        Swal.fire({
+            title: 'Xoá sản phẩm?',
+            text: 'Bạn có muốn xoá sản phẩm khỏi giỏ hàng không?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Đồng ý',
+            cancelButtonText: 'Không',
+        })
+            .then(result => {
+                if (result.isConfirmed) {
+                    const indexArray = arrayOrder.indexOf(arrayOrder[index]);
+                    if (indexArray > -1) {
+                        arrayOrder.splice(indexArray, 1);
+                    }
+                    localStorage.setItem("orderArray", JSON.stringify(arrayOrder))
+                    setArrayOrder(arrayOrder)
+                    Swal.fire({
+                        title: 'Thêm vào giỏ hàng!',
+                        text: 'Bạn đã thêm sản phẩm vào giỏ hàng thành công!',
+                        icon: 'success',
+                        confirmButtonText: 'OK!'
+                    })
+                        .then(result =>{
+                            navigate("/cart")
+                        })
+                        .catch(err =>{
+                            return err
+                        })
+                }
+            })
+            .catch(err => {
+                return err
+            })
+
     }
     return (
         <div className="noindex">
@@ -80,7 +107,7 @@ const Index = () => {
                                                     </td>
                                                     <td className="price">{item.nowPrice}₫</td>
                                                     <td className="remove">
-                                                        <a className="cart" onClick={() => deleteProductinCart(index)}><i className="fa fa-trash" /></a>
+                                                        <a className="cart" onClick={() => deleteProductInCart(index)}><i className="fa fa-trash" /></a>
                                                     </td>
                                                 </tr>
                                             })}

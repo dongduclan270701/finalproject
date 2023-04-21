@@ -5,6 +5,7 @@ import TabpanelDacDiem from './Tabpanel-dacdiem'
 import TabpanelChitiet from './Tabpanel-chitiet'
 import Tabpanelhrvproductabs from './Tabpanel-hrvproductabs'
 import { useParams, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 const Index = () => {
     const params = useParams()
     const navigate = useNavigate();
@@ -197,12 +198,30 @@ const Index = () => {
         }
         const result = array.findIndex(isCherries);
         if (result !== -1) {
-            // alert product already exists
+            Swal.fire({
+                title: 'Sản phẩm đã trong giỏ hàng!',
+                text: 'Bạn đã có sản phẩm này trong giỏ hàng rồi bạn ơi!',
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
         } else {
             array.push({ ...product, quantity });
             localStorage.setItem("orderArray", JSON.stringify(array));
             // alert product add to cart successfully
-            navigate("/cart")
+            Swal.fire({
+                title: 'Thêm vào giỏ hàng!',
+                text: 'Bạn đã thêm sản phẩm vào giỏ hàng thành công!',
+                icon: 'success',
+                confirmButtonText: 'OK!'
+            })
+                .then(result => {
+                    if (result.isConfirmed) {
+                        navigate("/cart")
+                    }
+                })
+                .catch(err => {
+                    return err
+                })
         }
 
     }
