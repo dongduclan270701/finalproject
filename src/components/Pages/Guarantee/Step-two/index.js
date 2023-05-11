@@ -2,35 +2,35 @@ import React from 'react';
 
 const Index = () => {
     return (
-        <div id="SECTION222" className="ladi-section">
-                <div className="ladi-section-background" />
-                <div className="ladi-container">
-                    <div id="HEADLINE230" className="ladi-element">
-                        <h3 className="ladi-headline">
+        <div id="SECTION222" className="laid-section">
+                <div className="laid-section-background" />
+                <div className="laid-container">
+                    <div id="HEADLINE230" className="laid-element">
+                        <h3 className="laid-headline">
                             II. ĐIỀU KIỆN BẢO HÀNH SẢN PHẨM</h3>
                     </div>
-                    <div id="IMAGE248" className="ladi-element">
-                        <div className="ladi-image">
-                            <div className="ladi-image-background" />
+                    <div id="IMAGE248" className="laid-element">
+                        <div className="laid-image">
+                            <div className="laid-image-background" />
                         </div>
                     </div>
-                    <div id="IMAGE251" className="ladi-element">
-                        <div className="ladi-image">
-                            <div className="ladi-image-background" />
+                    <div id="IMAGE251" className="laid-element">
+                        <div className="laid-image">
+                            <div className="laid-image-background" />
                         </div>
                     </div>
-                    <div id="LINE252" className="ladi-element">
-                        <div className="ladi-line">
-                            <div className="ladi-line-container" />
+                    <div id="LINE252" className="laid-element">
+                        <div className="laid-line">
+                            <div className="laid-line-container" />
                         </div>
                     </div>
-                    <div id="LINE253" className="ladi-element">
-                        <div className="ladi-line">
-                            <div className="ladi-line-container" />
+                    <div id="LINE253" className="laid-element">
+                        <div className="laid-line">
+                            <div className="laid-line-container" />
                         </div>
                     </div>
-                    <div id="HEADLINE254" className="ladi-element">
-                        <h3 className="ladi-headline">
+                    <div id="HEADLINE254" className="laid-element">
+                        <h3 className="laid-headline">
                             • Sản phẩm nếu có tem niêm phong (seal) trên sản phẩm thì tem niêm phong phải còn nguyên vẹn.
                             <br />
                             • Đối với sản phẩm bảo hành trên hộp: sản phẩm còn đầy đủ hộp.
@@ -38,8 +38,8 @@ const Index = () => {
                             • Sản phẩm không trầy xước, cấn móp, bể, vỡ, biến dạng so với ban đầu.<br />
                         </h3>
                     </div>
-                    <div id="HEADLINE255" className="ladi-element">
-                        <h3 className="ladi-headline">
+                    <div id="HEADLINE255" className="laid-element">
+                        <h3 className="laid-headline">
                             • Hết thời hạn bảo hành.
                             <br />
                             • Không có tem niêm phong, hoặc bị tẩy xóa, không còn nguyên dạng ban đầu.
@@ -56,8 +56,8 @@ const Index = () => {
                             <br />
                         </h3>
                     </div>
-                    <div id="HEADLINE1020" className="ladi-element">
-                        <h3 className="ladi-headline">
+                    <div id="HEADLINE1020" className="laid-element">
+                        <h3 className="laid-headline">
                             <span style={{ fontWeight: 'bold' }}>
                                 GearVN hỗ trợ tiếp nhận &amp; sửa chữa sản phẩm (Có thu phí đối với khách hàng) với những sản phẩm không đủ điều kiện bảo hành.</span>
                             <br />

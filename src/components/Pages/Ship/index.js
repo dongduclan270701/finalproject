@@ -9,7 +9,7 @@ import ShipOut from './Ship-out'
 import Details from './Detail'
 const Index = () => {
     return (
-        <div className="ladi-wraper">
+        <div className="laid-wraper">
             <HeaderShip />
             <BannerShip />
             <LocationShip />
@@ -17,9 +17,9 @@ const Index = () => {
             <ShipOut />
             <Details />
             <FooterProductSale/>
-            <div id="SECTION_POPUP" className="ladi-section">
-                <div className="ladi-section-background" />
-                <div className="ladi-container" />
+            <div id="SECTION_POPUP" className="laid-section">
+                <div className="laid-section-background" />
+                <div className="laid-container" />
             </div>
         </div>
 

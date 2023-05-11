@@ -66,7 +66,7 @@ body {
 	background-image: none;
 	border: 1px solid transparent;
 	border-radius: 4px;
-	/* background-color: #e7e7e7; */
+	background-color: #e7e7e7;
 }
 
 #myModal {
@@ -1545,7 +1545,7 @@ body a:hover {
 	padding: 0px !important;
 }
 
-#cartformpage .checkout-buttons {
+#cartFormPage .checkout-buttons {
 	display: inline;
 }
 
@@ -1582,7 +1582,7 @@ body a:hover {
 	padding: 10px;
 }
 
-#cartformpage .qty input {
+#cartFormPage .qty input {
 	width: 65px;
 	text-align: center;
 }
@@ -1663,23 +1663,23 @@ body a:hover {
 	color: black;
 }
 
-#layout-page-card #cartformpage table tr {
+#layout-page-card #cartFormPage table tr {
 	border: 1px solid #f0f0f0;
 }
 
-#layout-page-card #cartformpage table {
+#layout-page-card #cartFormPage table {
 	margin-bottom: 20px;
 }
 
-#layout-page-card #cartformpage table td,
-#layout-page-card #cartformpage table th {
+#layout-page-card #cartFormPage table td,
+#layout-page-card #cartFormPage table th {
 	border-right: 1px solid #f0f0f0;
 	border-left: 1px solid #f0f0f0;
 	text-align: center;
 	padding: 20px 0px;
 }
 
-#layout-page-card #cartformpage table td .qty {
+#layout-page-card #cartFormPage table td .qty {
 	text-align: center;
 }
 
@@ -1904,7 +1904,7 @@ body a:hover {
 	font-size: 18px;
 }
 
-#layout-page-card #cartformpage table tr td a span {
+#layout-page-card #cartFormPage table tr td a span {
 	display: inline-block;
 	width: 100%;
 }
@@ -3904,8 +3904,8 @@ h1.new-product-title {
 	.container1 {
 		width: 1310px;
 		margin: auto;
-		padding-left: 15px;
-		padding-right: 15px;
+		/* padding-left: 15px;
+		padding-right: 15px; */
 	}
 }
 

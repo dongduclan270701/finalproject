@@ -6,14 +6,14 @@ import BannerHotline from './Banner'
 import ListShowroom from './List-showroom'
 const Index = () => {
     return (
-        <div className="ladi-wraper" data-padding-top-id="SECTION414" data-scroll-padding-top={70} style={{ paddingTop: '70px' }}>
+        <div className="laid-wraper" data-padding-top-id="SECTION414" data-scroll-padding-top={70} style={{ paddingTop: '70px' }}>
             <HeaderHotline />
             <BannerHotline />
             <ListShowroom />
             <FooterProductSale/>
-            <div id="SECTION_POPUP" className="ladi-section">
-                <div className="ladi-section-background" />
-                <div className="ladi-container" />
+            <div id="SECTION_POPUP" className="laid-section">
+                <div className="laid-section-background" />
+                <div className="laid-container" />
             </div>
         </div>
 

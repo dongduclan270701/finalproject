@@ -22,7 +22,7 @@ const Index = () => {
             { url: "", src: "//theme.hstatic.net/1000026716/1000440777/14/slideshow_14.jpg?v=34252" },
         ]
     )
-    const [PCGEARN, setPCGEARN] = useState(
+    const [PcGears, setPCGears] = useState(
         [
             {
                 productName: "GVN VIPER i3050",
@@ -106,7 +106,7 @@ const Index = () => {
             }
         ]
     )
-    const [LAPTOPGAMING, setLAPTOPGAMING] = useState(
+    const [LaptopGaming, setLaptopGaming] = useState(
         [
             {
                 productName: "Laptop gaming Lenovo Legion 5 15IAH7 82RC008LVN",
@@ -274,7 +274,7 @@ const Index = () => {
             },
         ]
     )
-    const [MANHINH, setMANHINH] = useState(
+    const [MONITOR, setMANHINH] = useState(
         [
             {
                 productName: 'Màn hình GIGABYTE G24F 2 24" IPS 180Hz chuyên game',
@@ -1300,7 +1300,7 @@ const Index = () => {
                             </div>
                             <div className="loop-pro">
                                 <div className="module-products row">
-                                    {PCGEARN.map((item, index) => {
+                                    {PcGears.map((item, index) => {
                                         return <div className="col-sm-4 col-xs-12 padding-none col-fix20" key={index}>
                                             <div className="product-row">
                                                 <NavLink to="">
@@ -1352,7 +1352,7 @@ const Index = () => {
                             </div>
                             <div className="loop-pro">
                                 <div className="module-products row">
-                                    {LAPTOPGAMING.map((item, index) => {
+                                    {LaptopGaming.map((item, index) => {
                                         return <div className="col-sm-4 col-xs-12 padding-none col-fix20" key={index}>
                                             <div className="product-row">
                                                 <NavLink to="">
@@ -1434,7 +1434,7 @@ const Index = () => {
                             </div>
                             <div className="loop-pro">
                                 <div className="module-products row">
-                                    {MANHINH.map((item, index) => {
+                                    {MONITOR.map((item, index) => {
                                         return <div className="col-sm-4 col-xs-12 padding-none col-fix20" key={index}>
                                             <div className="product-row">
                                                 <NavLink to="">

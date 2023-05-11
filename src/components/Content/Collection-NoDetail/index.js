@@ -49,8 +49,8 @@ const Index = () => {
                                 <div id="breadcrumb">
                                     <div className="main">
                                         <div className="breadcrumbs container1">
-                                            <span className="showHere">Bạn đang ở: </span><a href="/" className="pathway">Trang chủ</a>
-                                            <span> <i className="fa fa-caret-right" /> Laptop MSI Modern 14 | Modern 15 Series chính hãng</span>
+                                            <span className="showHere">You are in: </span><a href="/" className="pathway">Homepage</a>
+                                            <span> <i className="fa fa-caret-right" /> Laptop MSI Modern 14 | Modern 15 Series authentic</span>
                                         </div>
                                     </div>
                                 </div>
@@ -58,17 +58,17 @@ const Index = () => {
                                     <div className="row">
                                         <div className="col-sm-12 wrap-sort-by">
                                             <div className="browse-tags pull-right">
-                                                <span>Sắp xếp theo:</span>
+                                                <span>Soft by:</span>
                                                 <span className="custom-dropdown custom-dropdown--white">
                                                     <select className="sort-by custom-dropdown__select custom-dropdown__select--white">
-                                                        <option value="manual">Sản phẩm nổi bật</option>
-                                                        <option value="price-ascending">Giá: Tăng dần</option>
-                                                        <option value="price-descending">Giá: Giảm dần</option>
-                                                        <option value="title-ascending">Tên: A-Z</option>
-                                                        <option value="title-descending">Tên: Z-A</option>
-                                                        <option value="created-ascending">Cũ nhất</option>
-                                                        <option value="created-descending">Mới nhất</option>
-                                                        <option value="best-selling">Bán chạy nhất</option>
+                                                        <option value="manual">Featured products</option>
+                                                        <option value="price-ascending">Price: ascending</option>
+                                                        <option value="price-descending">Price: descending</option>
+                                                        <option value="title-ascending">Name: A-Z</option>
+                                                        <option value="title-descending">Name: Z-A</option>
+                                                        <option value="created-ascending">Oldest</option>
+                                                        <option value="created-descending">Newest</option>
+                                                        <option value="best-selling">Best-selling</option>
                                                     </select>
                                                 </span>
                                             </div>
@@ -84,8 +84,8 @@ const Index = () => {
                                                 </a><div className="product-row-img"><a href={"/products/" + item.src}>
                                                     <img className="product-row-thumbnail" src={item.img} alt={item.productName} />
                                                 </a><div className="product-row-price-hover"><a href={"/products/" + item.src}>
-                                                    <div className="product-row-note pull-left">Click để xem chi tiết</div>
-                                                </a><a href={"/products/" + item.src} className="product-row-btnbuy pull-right">Đặt hàng</a></div></div>
+                                                    <div className="product-row-note pull-left">Click to see details</div>
+                                                </a><a href={"/products/" + item.src} className="product-row-btnbuy pull-right">Place an order</a></div></div>
                                                 <h2 className="product-row-name">{item.productName}</h2>
                                                 <div className="product-row-info">
                                                     <div className="product-row-price pull-left"><del>{item.realPrice}₫</del><br /><span className="product-row-sale">{item.SaleNowPrice}₫</span></div>

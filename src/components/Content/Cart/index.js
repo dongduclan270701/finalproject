@@ -28,19 +28,19 @@ const Index = () => {
     }
     const deleteProductInCart = (index) => {
         Swal.fire({
-            title: 'Xoá sản phẩm?',
-            text: 'Bạn có muốn xoá sản phẩm khỏi giỏ hàng không?',
+            title: 'Delete product?',
+            text: 'Do you want to remove the product from the shopping cart?',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Đồng ý',
-            cancelButtonText: 'Không',
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No',
         })
             .then(result => {
                 if (result.isConfirmed) {
 
                     Swal.fire({
-                        title: 'Xoá sản phẩm thành công!',
-                        text: 'Bạn đã xoá sản phẩm khỏi giỏ hàng!',
+                        title: 'Successfully deleted the product!',
+                        text: 'The product has been removed from the cart!',
                         icon: 'success',
                         confirmButtonText: 'OK!'
                     })
@@ -72,17 +72,17 @@ const Index = () => {
                         <div className="row">
                             <div id="layout-page-card" className="container1">
                                 <div className="header-page">
-                                    <h1 className="title-card">Giỏ hàng</h1>
+                                    <h1 className="title-card">Cart</h1>
                                 </div>
-                                <form action="/cart" method="post" id="cartformpage">
+                                <form action="/cart" method="post" id="cartFormPage">
                                     <table width="100%">
                                         <thead>
                                             <tr>
-                                                <th className="image">Sản phẩm</th>
-                                                <th className="item">Tên sản phẩm</th>
-                                                <th className="qty">Số lượng</th>
-                                                <th className="price">Giá tiền</th>
-                                                <th className="remove">Xoá</th>
+                                                <th className="image">Image</th>
+                                                <th className="item">Product Name</th>
+                                                <th className="qty">Quantity</th>
+                                                <th className="price">Price</th>
+                                                <th className="remove">Remove</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -112,24 +112,17 @@ const Index = () => {
                                             })}
 
                                             <tr className="summary">
-                                                <td colSpan={4} style={{ fontWeight: 'bold', fontSize: '20px' }}>Tổng tiền:</td>
+                                                <td colSpan={4} style={{ fontWeight: 'bold', fontSize: '20px' }}>Total amount:</td>
                                                 <td className="price">
                                                     <span className="total">
                                                         <strong>{totalArrayOrder()}₫</strong>
                                                     </span>
                                                 </td>
                                             </tr>
-                                            {/* Ghi chú */}
-                                            <tr className="summary">
-                                                <td colSpan={5} style={{ fontWeight: 'bold', fontSize: '20px' }}>
-                                                    <div className="cartnote" />
-                                                    <textarea id="note" name="note" rows={8} cols={50} placeholder="Ghi chú" style={{ margin: '0px', height: '70px', borderColor: '#6498cd', borderWidth: '1px', width: '92%' }} defaultValue={""} />
-                                                </td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                     <div className="invoice-block">
-                                        <div className="hoadon-info">
+                                        <div className="bill-info">
                                             <div className="r-bill">
                                                 <div className="checkbox">
                                                     <input type="hidden" name="attributes[invoice]" id="re-checkbox-bill" defaultValue="no" />
@@ -137,7 +130,7 @@ const Index = () => {
                                                     <label htmlFor="checkbox-bill" className="box">
                                                         <span><svg width="12px" height="9px" viewBox="0 0 12 9"><polyline points="1 5 4 8 11 1" /></svg></span>
                                                     </label>
-                                                    <label htmlFor="checkbox-bill" className="title">Xuất hoá đơn cho đơn hàng</label>
+                                                    <label htmlFor="checkbox-bill" className="title">Generate an invoice for the order</label>
                                                 </div>
                                                 
                                             </div>
@@ -148,7 +141,7 @@ const Index = () => {
                                     </div>
                                     <div className="col-md-6 cart-buttons inner-right inner-left">
                                         <div className="buttons">
-                                            <NavLink to={"/pay-order/"}><button type="submit" id="checkout" className="button-default" name="checkout" value>Thanh toán</button></NavLink>
+                                            <NavLink to={"/pay-order/"}><button type="submit" id="checkout" className="button-default" name="checkout" value>Payment</button></NavLink>
                                         </div>
                                     </div>
                                 </form>

@@ -140,7 +140,7 @@ body {
     -webkit-text-size-adjust: none;
     background-color: #fff;
 }
-.ladi-loading {
+.laid-loading {
     z-index: 900000000000;
     position: fixed;
     width: 100%;
@@ -149,7 +149,7 @@ body {
     left: 0;
     background-color: rgba(0, 0, 0, 0.1);
 }
-.ladi-loading .loading {
+.laid-loading .loading {
     width: 80px;
     height: 80px;
     top: 0;
@@ -160,75 +160,75 @@ body {
     overflow: hidden;
     position: absolute;
 }
-.ladi-loading .loading div {
+.laid-loading .loading div {
     position: absolute;
     width: 6px;
     height: 6px;
     background: #fff;
     border-radius: 50%;
-    animation: ladi-loading 1.2s linear infinite;
+    animation: laid-loading 1.2s linear infinite;
 }
-.ladi-loading .loading div:nth-child(1) {
+.laid-loading .loading div:nth-child(1) {
     animation-delay: 0s;
     top: 37px;
     left: 66px;
 }
-.ladi-loading .loading div:nth-child(2) {
+.laid-loading .loading div:nth-child(2) {
     animation-delay: -0.1s;
     top: 22px;
     left: 62px;
 }
-.ladi-loading .loading div:nth-child(3) {
+.laid-loading .loading div:nth-child(3) {
     animation-delay: -0.2s;
     top: 11px;
     left: 52px;
 }
-.ladi-loading .loading div:nth-child(4) {
+.laid-loading .loading div:nth-child(4) {
     animation-delay: -0.3s;
     top: 7px;
     left: 37px;
 }
-.ladi-loading .loading div:nth-child(5) {
+.laid-loading .loading div:nth-child(5) {
     animation-delay: -0.4s;
     top: 11px;
     left: 22px;
 }
-.ladi-loading .loading div:nth-child(6) {
+.laid-loading .loading div:nth-child(6) {
     animation-delay: -0.5s;
     top: 22px;
     left: 11px;
 }
-.ladi-loading .loading div:nth-child(7) {
+.laid-loading .loading div:nth-child(7) {
     animation-delay: -0.6s;
     top: 37px;
     left: 7px;
 }
-.ladi-loading .loading div:nth-child(8) {
+.laid-loading .loading div:nth-child(8) {
     animation-delay: -0.7s;
     top: 52px;
     left: 11px;
 }
-.ladi-loading .loading div:nth-child(9) {
+.laid-loading .loading div:nth-child(9) {
     animation-delay: -0.8s;
     top: 62px;
     left: 22px;
 }
-.ladi-loading .loading div:nth-child(10) {
+.laid-loading .loading div:nth-child(10) {
     animation-delay: -0.9s;
     top: 66px;
     left: 37px;
 }
-.ladi-loading .loading div:nth-child(11) {
+.laid-loading .loading div:nth-child(11) {
     animation-delay: -1s;
     top: 62px;
     left: 52px;
 }
-.ladi-loading .loading div:nth-child(12) {
+.laid-loading .loading div:nth-child(12) {
     animation-delay: -1.1s;
     top: 52px;
     left: 62px;
 }
-@keyframes ladi-loading {
+@keyframes laid-loading {
     0%,
     100%,
     20%,
@@ -242,7 +242,7 @@ body {
 .overflow-hidden {
     overflow: hidden;
 }
-.ladi-transition {
+.laid-transition {
     transition: all 150ms linear 0s;
 }
 .opacity-0 {
@@ -266,7 +266,7 @@ body {
 .pointer-events-none {
     pointer-events: none;
 }
-.ladi-google-recaptcha-checkbox {
+.laid-google-recaptcha-checkbox {
     position: absolute;
     display: inline-block;
     transform: translateY(-100%);
@@ -337,22 +337,22 @@ body {
     font-weight: 600;
     cursor: pointer;
 }
-.ladi-wraper {
+.laid-wraper {
     width: 100%;
     min-height: 100%;
     overflow: hidden;
 }
-.ladi-section {
+.laid-section {
     margin: 0 auto;
     position: relative;
 }
-.ladi-section[data-tab-id] {
+.laid-section[data-tab-id] {
     display: none;
 }
-.ladi-section.selected[data-tab-id] {
+.laid-section.selected[data-tab-id] {
     display: block;
 }
-.ladi-section .ladi-section-arrow-down {
+.laid-section .laid-section-arrow-down {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -361,14 +361,14 @@ body {
     cursor: pointer;
     z-index: 90000040;
 }
-.ladi-section .ladi-section-close {
+.laid-section .laid-section-close {
     position: absolute;
     top: 0;
     right: 0;
     cursor: pointer;
     z-index: 90000040;
 }
-.ladi-section .ladi-section-background {
+.laid-section .laid-section-background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -377,15 +377,15 @@ body {
     pointer-events: none;
     overflow: hidden;
 }
-.ladi-container {
+.laid-container {
     position: relative;
     margin: 0 auto;
     height: 100%;
 }
-.ladi-element {
+.laid-element {
     position: absolute;
 }
-.ladi-overlay {
+.laid-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -393,18 +393,18 @@ body {
     width: 100%;
     pointer-events: none;
 }
-.ladi-survey {
+.laid-survey {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
-.ladi-form .ladi-survey {
+.laid-form .laid-survey {
     text-transform: inherit;
     text-decoration: inherit;
     letter-spacing: inherit;
     color: inherit;
 }
-.ladi-survey .ladi-survey-option {
+.laid-survey .laid-survey-option {
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -416,7 +416,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
 }
-.ladi-survey .ladi-survey-option-background {
+.laid-survey .laid-survey-option-background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -425,13 +425,13 @@ body {
     pointer-events: none;
     transition: inherit;
 }
-.ladi-survey .ladi-survey-option-label {
+.laid-survey .laid-survey-option-label {
     display: block;
     text-decoration-line: inherit;
     -webkit-text-decoration-line: inherit;
     position: relative;
 }
-.ladi-survey .ladi-survey-option-image {
+.laid-survey .laid-survey-option-image {
     background-size: cover;
     background-position: center center;
     pointer-events: none;
@@ -440,65 +440,65 @@ body {
     position: relative;
     margin: 0 auto;
 }
-.ladi-survey .ladi-survey-button-next {
+.laid-survey .laid-survey-button-next {
     display: block;
 }
-.ladi-survey .ladi-survey-button-next.empty {
+.laid-survey .laid-survey-button-next.empty {
     display: none;
 }
-.ladi-survey .ladi-survey-button-next.no-select {
+.laid-survey .laid-survey-button-next.no-select {
     display: none;
 }
-.ladi-survey .ladi-survey-button-next button {
+.laid-survey .laid-survey-button-next button {
     background-color: #fff;
     border: 1px solid #eee;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 2px;
 }
-.ladi-survey .ladi-survey-button-next button:active {
+.laid-survey .laid-survey-button-next button:active {
     transform: translateY(2px);
     transition: transform 0.2s linear;
 }
-.ladi-carousel {
+.laid-carousel {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
     touch-action: pan-y;
 }
-.ladi-carousel .ladi-carousel-content {
+.laid-carousel .laid-carousel-content {
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
     transition: left 350ms ease-in-out;
 }
-.ladi-carousel .ladi-carousel-arrow {
+.laid-carousel .laid-carousel-arrow {
     position: absolute;
     top: calc(50% - (33px) / 2);
     cursor: pointer;
     z-index: 90000040;
 }
-.ladi-carousel .ladi-carousel-arrow-left {
+.laid-carousel .laid-carousel-arrow-left {
     left: 5px;
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
 }
-.ladi-carousel .ladi-carousel-arrow-right {
+.laid-carousel .laid-carousel-arrow-right {
     right: 5px;
 }
-.ladi-gallery {
+.laid-gallery {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.ladi-gallery .ladi-gallery-view {
+.laid-gallery .laid-gallery-view {
     position: absolute;
     overflow: hidden;
     touch-action: pan-y;
 }
-.ladi-gallery .ladi-gallery-view > .ladi-gallery-view-item {
+.laid-gallery .laid-gallery-view > .laid-gallery-view-item {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -512,10 +512,10 @@ body {
     -webkit-perspective: 1000px;
     perspective: 1000px;
 }
-.ladi-gallery .ladi-gallery-view > .ladi-gallery-view-item.play-video {
+.laid-gallery .laid-gallery-view > .laid-gallery-view-item.play-video {
     cursor: pointer;
 }
-.ladi-gallery .ladi-gallery-view > .ladi-gallery-view-item.play-video:after {
+.laid-gallery .laid-gallery-view > .laid-gallery-view-item.play-video:after {
     content: "";
     position: absolute;
     top: 0;
@@ -530,178 +530,178 @@ body {
     pointer-events: none;
     cursor: pointer;
 }
-.ladi-gallery .ladi-gallery-view > .ladi-gallery-view-item.next,
-.ladi-gallery .ladi-gallery-view > .ladi-gallery-view-item.selected.right {
+.laid-gallery .laid-gallery-view > .laid-gallery-view-item.next,
+.laid-gallery .laid-gallery-view > .laid-gallery-view-item.selected.right {
     left: 0;
     transform: translate3d(100%, 0, 0);
 }
-.ladi-gallery .ladi-gallery-view > .ladi-gallery-view-item.prev,
-.ladi-gallery .ladi-gallery-view > .ladi-gallery-view-item.selected.left {
+.laid-gallery .laid-gallery-view > .laid-gallery-view-item.prev,
+.laid-gallery .laid-gallery-view > .laid-gallery-view-item.selected.left {
     left: 0;
     transform: translate3d(-100%, 0, 0);
 }
-.ladi-gallery .ladi-gallery-view > .ladi-gallery-view-item.next.left,
-.ladi-gallery .ladi-gallery-view > .ladi-gallery-view-item.prev.right,
-.ladi-gallery .ladi-gallery-view > .ladi-gallery-view-item.selected {
+.laid-gallery .laid-gallery-view > .laid-gallery-view-item.next.left,
+.laid-gallery .laid-gallery-view > .laid-gallery-view-item.prev.right,
+.laid-gallery .laid-gallery-view > .laid-gallery-view-item.selected {
     left: 0;
     transform: translate3d(0, 0, 0);
 }
-.ladi-gallery .ladi-gallery-view > .next,
-.ladi-gallery .ladi-gallery-view > .prev,
-.ladi-gallery .ladi-gallery-view > .selected {
+.laid-gallery .laid-gallery-view > .next,
+.laid-gallery .laid-gallery-view > .prev,
+.laid-gallery .laid-gallery-view > .selected {
     display: block;
 }
-.ladi-gallery .ladi-gallery-view > .selected {
+.laid-gallery .laid-gallery-view > .selected {
     left: 0;
 }
-.ladi-gallery .ladi-gallery-view > .next,
-.ladi-gallery .ladi-gallery-view > .prev {
+.laid-gallery .laid-gallery-view > .next,
+.laid-gallery .laid-gallery-view > .prev {
     position: absolute;
     top: 0;
     width: 100%;
 }
-.ladi-gallery .ladi-gallery-view > .next {
+.laid-gallery .laid-gallery-view > .next {
     left: 100%;
 }
-.ladi-gallery .ladi-gallery-view > .prev {
+.laid-gallery .laid-gallery-view > .prev {
     left: -100%;
 }
-.ladi-gallery .ladi-gallery-view > .next.left,
-.ladi-gallery .ladi-gallery-view > .prev.right {
+.laid-gallery .laid-gallery-view > .next.left,
+.laid-gallery .laid-gallery-view > .prev.right {
     left: 0;
 }
-.ladi-gallery .ladi-gallery-view > .selected.left {
+.laid-gallery .laid-gallery-view > .selected.left {
     left: -100%;
 }
-.ladi-gallery .ladi-gallery-view > .selected.right {
+.laid-gallery .laid-gallery-view > .selected.right {
     left: 100%;
 }
-.ladi-gallery .ladi-gallery-control {
+.laid-gallery .laid-gallery-control {
     position: absolute;
     overflow: hidden;
     touch-action: pan-y;
 }
-.ladi-gallery.ladi-gallery-top .ladi-gallery-view {
+.laid-gallery.laid-gallery-top .laid-gallery-view {
     width: 100%;
 }
-.ladi-gallery.ladi-gallery-top .ladi-gallery-control {
+.laid-gallery.laid-gallery-top .laid-gallery-control {
     top: 0;
     width: 100%;
 }
-.ladi-gallery.ladi-gallery-bottom .ladi-gallery-view {
+.laid-gallery.laid-gallery-bottom .laid-gallery-view {
     top: 0;
     width: 100%;
 }
-.ladi-gallery.ladi-gallery-bottom .ladi-gallery-control {
+.laid-gallery.laid-gallery-bottom .laid-gallery-control {
     width: 100%;
     bottom: 0;
 }
-.ladi-gallery.ladi-gallery-left .ladi-gallery-view {
+.laid-gallery.laid-gallery-left .laid-gallery-view {
     height: 100%;
 }
-.ladi-gallery.ladi-gallery-left .ladi-gallery-control {
+.laid-gallery.laid-gallery-left .laid-gallery-control {
     height: 100%;
 }
-.ladi-gallery.ladi-gallery-right .ladi-gallery-view {
+.laid-gallery.laid-gallery-right .laid-gallery-view {
     height: 100%;
 }
-.ladi-gallery.ladi-gallery-right .ladi-gallery-control {
+.laid-gallery.laid-gallery-right .laid-gallery-control {
     height: 100%;
     right: 0;
 }
-.ladi-gallery .ladi-gallery-view .ladi-gallery-view-arrow {
+.laid-gallery .laid-gallery-view .laid-gallery-view-arrow {
     position: absolute;
     top: calc(50% - (33px) / 2);
     cursor: pointer;
     z-index: 90000040;
 }
-.ladi-gallery .ladi-gallery-view .ladi-gallery-view-arrow-left {
+.laid-gallery .laid-gallery-view .laid-gallery-view-arrow-left {
     left: 5px;
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
 }
-.ladi-gallery .ladi-gallery-view .ladi-gallery-view-arrow-right {
+.laid-gallery .laid-gallery-view .laid-gallery-view-arrow-right {
     right: 5px;
 }
-.ladi-gallery .ladi-gallery-control .ladi-gallery-control-arrow {
+.laid-gallery .laid-gallery-control .laid-gallery-control-arrow {
     position: absolute;
     cursor: pointer;
     z-index: 90000040;
 }
-.ladi-gallery.ladi-gallery-bottom .ladi-gallery-control .ladi-gallery-control-arrow,
-.ladi-gallery.ladi-gallery-top .ladi-gallery-control .ladi-gallery-control-arrow {
+.laid-gallery.laid-gallery-bottom .laid-gallery-control .laid-gallery-control-arrow,
+.laid-gallery.laid-gallery-top .laid-gallery-control .laid-gallery-control-arrow {
     top: calc(50% - (33px) / 2);
 }
-.ladi-gallery.ladi-gallery-top .ladi-gallery-control .ladi-gallery-control-arrow-left {
+.laid-gallery.laid-gallery-top .laid-gallery-control .laid-gallery-control-arrow-left {
     left: 0;
     transform: rotateY(180deg) scale(0.6);
     -webkit-transform: rotateY(180deg) scale(0.6);
 }
-.ladi-gallery.ladi-gallery-top .ladi-gallery-control .ladi-gallery-control-arrow-right {
+.laid-gallery.laid-gallery-top .laid-gallery-control .laid-gallery-control-arrow-right {
     right: 0;
     transform: scale(0.6);
     -webkit-transform: scale(0.6);
 }
-.ladi-gallery.ladi-gallery-bottom .ladi-gallery-control .ladi-gallery-control-arrow-left {
+.laid-gallery.laid-gallery-bottom .laid-gallery-control .laid-gallery-control-arrow-left {
     left: 0;
     transform: rotateY(180deg) scale(0.6);
     -webkit-transform: rotateY(180deg) scale(0.6);
 }
-.ladi-gallery.ladi-gallery-bottom .ladi-gallery-control .ladi-gallery-control-arrow-right {
+.laid-gallery.laid-gallery-bottom .laid-gallery-control .laid-gallery-control-arrow-right {
     right: 0;
     transform: scale(0.6);
     -webkit-transform: scale(0.6);
 }
-.ladi-gallery.ladi-gallery-left .ladi-gallery-control .ladi-gallery-control-arrow,
-.ladi-gallery.ladi-gallery-right .ladi-gallery-control .ladi-gallery-control-arrow {
+.laid-gallery.laid-gallery-left .laid-gallery-control .laid-gallery-control-arrow,
+.laid-gallery.laid-gallery-right .laid-gallery-control .laid-gallery-control-arrow {
     left: calc(50% - (33px) / 2);
 }
-.ladi-gallery.ladi-gallery-left .ladi-gallery-control .ladi-gallery-control-arrow-left {
+.laid-gallery.laid-gallery-left .laid-gallery-control .laid-gallery-control-arrow-left {
     top: 0;
     transform: scale(0.6) rotate(270deg);
     -webkit-transform: scale(0.6) rotate(270deg);
 }
-.ladi-gallery.ladi-gallery-left .ladi-gallery-control .ladi-gallery-control-arrow-right {
+.laid-gallery.laid-gallery-left .laid-gallery-control .laid-gallery-control-arrow-right {
     bottom: 0;
     transform: scale(0.6) rotate(90deg);
     -webkit-transform: scale(0.6) rotate(90deg);
 }
-.ladi-gallery.ladi-gallery-right .ladi-gallery-control .ladi-gallery-control-arrow-left {
+.laid-gallery.laid-gallery-right .laid-gallery-control .laid-gallery-control-arrow-left {
     top: 0;
     transform: scale(0.6) rotate(270deg);
     -webkit-transform: scale(0.6) rotate(270deg);
 }
-.ladi-gallery.ladi-gallery-right .ladi-gallery-control .ladi-gallery-control-arrow-right {
+.laid-gallery.laid-gallery-right .laid-gallery-control .laid-gallery-control-arrow-right {
     bottom: 0;
     transform: scale(0.6) rotate(90deg);
     -webkit-transform: scale(0.6) rotate(90deg);
 }
-.ladi-gallery .ladi-gallery-control .ladi-gallery-control-box {
+.laid-gallery .laid-gallery-control .laid-gallery-control-box {
     position: relative;
 }
-.ladi-gallery.ladi-gallery-top .ladi-gallery-control .ladi-gallery-control-box {
+.laid-gallery.laid-gallery-top .laid-gallery-control .laid-gallery-control-box {
     display: -webkit-inline-flex;
     display: inline-flex;
     left: 0;
     transition: left 150ms ease-in-out;
 }
-.ladi-gallery.ladi-gallery-bottom .ladi-gallery-control .ladi-gallery-control-box {
+.laid-gallery.laid-gallery-bottom .laid-gallery-control .laid-gallery-control-box {
     display: -webkit-inline-flex;
     display: inline-flex;
     left: 0;
     transition: left 150ms ease-in-out;
 }
-.ladi-gallery.ladi-gallery-left .ladi-gallery-control .ladi-gallery-control-box {
+.laid-gallery.laid-gallery-left .laid-gallery-control .laid-gallery-control-box {
     display: inline-grid;
     top: 0;
     transition: top 150ms ease-in-out;
 }
-.ladi-gallery.ladi-gallery-right .ladi-gallery-control .ladi-gallery-control-box {
+.laid-gallery.laid-gallery-right .laid-gallery-control .laid-gallery-control-box {
     display: inline-grid;
     top: 0;
     transition: top 150ms ease-in-out;
 }
-.ladi-gallery .ladi-gallery-control .ladi-gallery-control-box .ladi-gallery-control-item {
+.laid-gallery .laid-gallery-control .laid-gallery-control-box .laid-gallery-control-item {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -710,7 +710,7 @@ body {
     cursor: pointer;
     filter: invert(15%);
 }
-.ladi-gallery .ladi-gallery-control .ladi-gallery-control-box .ladi-gallery-control-item.play-video:after {
+.laid-gallery .laid-gallery-control .laid-gallery-control-box .laid-gallery-control-item.play-video:after {
     content: "";
     position: absolute;
     top: 0;
@@ -725,92 +725,92 @@ body {
     pointer-events: none;
     cursor: pointer;
 }
-.ladi-gallery .ladi-gallery-control .ladi-gallery-control-box .ladi-gallery-control-item:hover {
+.laid-gallery .laid-gallery-control .laid-gallery-control-box .laid-gallery-control-item:hover {
     filter: none;
 }
-.ladi-gallery .ladi-gallery-control .ladi-gallery-control-box .ladi-gallery-control-item.selected {
+.laid-gallery .laid-gallery-control .laid-gallery-control-box .laid-gallery-control-item.selected {
     filter: none;
 }
-.ladi-gallery .ladi-gallery-control .ladi-gallery-control-box .ladi-gallery-control-item:last-child {
+.laid-gallery .laid-gallery-control .laid-gallery-control-box .laid-gallery-control-item:last-child {
     margin-right: 0 !important;
     margin-bottom: 0 !important;
 }
-.ladi-table {
+.laid-table {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: auto;
 }
-.ladi-table table {
+.laid-table table {
     width: 100%;
 }
-.ladi-table table td {
+.laid-table table td {
     vertical-align: middle;
 }
-.ladi-table tbody td {
+.laid-table tbody td {
     word-break: break-word;
 }
-.ladi-table table td img {
+.laid-table table td img {
     cursor: pointer;
     width: 100%;
 }
-.ladi-box {
+.laid-box {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
-.ladi-tabs {
+.laid-tabs {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.ladi-tabs .ladi-tabs-background {
+.laid-tabs .laid-tabs-background {
     height: 100%;
     width: 100%;
     pointer-events: none;
 }
-.ladi-tabs > .ladi-element[data-index] {
+.laid-tabs > .laid-element[data-index] {
     display: none;
 }
-.ladi-tabs > .ladi-element.selected[data-index] {
+.laid-tabs > .laid-element.selected[data-index] {
     display: block;
 }
-.ladi-frame {
+.laid-frame {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
-.ladi-frame .ladi-frame-background {
+.laid-frame .laid-frame-background {
     height: 100%;
     width: 100%;
     pointer-events: none;
     transition: inherit;
 }
-.ladi-banner {
+.laid-banner {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
-.ladi-banner .ladi-banner-background {
+.laid-banner .laid-banner-background {
     height: 100%;
     width: 100%;
     pointer-events: none;
 }
-#SECTION_POPUP .ladi-container {
+#SECTION_POPUP .laid-container {
     z-index: 90000070;
 }
-#SECTION_POPUP .ladi-container > .ladi-element {
+#SECTION_POPUP .laid-container > .laid-element {
     z-index: 90000070;
     position: fixed;
     display: none;
 }
-#SECTION_POPUP .ladi-container > .ladi-element[data-fixed-close="true"] {
+#SECTION_POPUP .laid-container > .laid-element[data-fixed-close="true"] {
     position: relative !important;
 }
-#SECTION_POPUP .ladi-container > .ladi-element.hide-visibility {
+#SECTION_POPUP .laid-container > .laid-element.hide-visibility {
     display: block !important;
     visibility: hidden !important;
 }
@@ -821,22 +821,22 @@ body {
     z-index: 9000000080;
     cursor: pointer;
 }
-.ladi-popup {
+.laid-popup {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.ladi-popup .ladi-popup-background {
+.laid-popup .laid-popup-background {
     height: 100%;
     width: 100%;
     pointer-events: none;
 }
-.ladi-countdown {
+.laid-countdown {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.ladi-countdown .ladi-countdown-background {
+.laid-countdown .laid-countdown-background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -848,7 +848,7 @@ body {
     display: table;
     pointer-events: none;
 }
-.ladi-countdown .ladi-countdown-text {
+.laid-countdown .laid-countdown-text {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -856,11 +856,11 @@ body {
     display: table;
     pointer-events: none;
 }
-.ladi-countdown .ladi-countdown-text span {
+.laid-countdown .laid-countdown-text span {
     display: table-cell;
     vertical-align: middle;
 }
-.ladi-countdown > .ladi-element {
+.laid-countdown > .laid-element {
     text-decoration: inherit;
     background-size: inherit;
     background-attachment: inherit;
@@ -868,27 +868,27 @@ body {
     position: relative;
     display: inline-block;
 }
-.ladi-countdown > .ladi-element:last-child {
+.laid-countdown > .laid-element:last-child {
     margin-right: 0 !important;
 }
-.ladi-button {
+.laid-button {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
-.ladi-button:active {
+.laid-button:active {
     transform: translateY(2px);
     transition: transform 0.2s linear;
 }
-.ladi-button .ladi-button-background {
+.laid-button .laid-button-background {
     height: 100%;
     width: 100%;
     pointer-events: none;
     transition: inherit;
 }
-.ladi-button > .ladi-button-headline,
-.ladi-button > .ladi-button-shape {
+.laid-button > .laid-button-headline,
+.laid-button > .laid-button-shape {
     width: 100% !important;
     height: 100% !important;
     top: 0 !important;
@@ -899,37 +899,37 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
 }
-.ladi-button > .ladi-button-shape .ladi-shape {
+.laid-button > .laid-button-shape .laid-shape {
     margin: auto;
     top: 0;
     bottom: 0;
 }
-.ladi-button > .ladi-button-headline .ladi-headline {
+.laid-button > .laid-button-headline .laid-headline {
     display: table-cell;
     vertical-align: middle;
 }
-.ladi-collection {
+.laid-collection {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.ladi-collection.carousel {
+.laid-collection.carousel {
     overflow: hidden;
 }
-.ladi-collection .ladi-collection-content {
+.laid-collection .laid-collection-content {
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
     transition: left 350ms ease-in-out;
 }
-.ladi-collection .ladi-collection-content .ladi-collection-item {
+.laid-collection .laid-collection-content .laid-collection-item {
     display: block;
     position: relative;
     float: left;
     overflow: hidden;
 }
-.ladi-collection .ladi-collection-content .ladi-collection-item:before {
+.laid-collection .laid-collection-content .laid-collection-item:before {
     content: "";
     position: absolute;
     pointer-events: none;
@@ -938,24 +938,24 @@ body {
     width: 100%;
     height: 100%;
 }
-.ladi-collection .ladi-collection-content .ladi-collection-page {
+.laid-collection .laid-collection-content .laid-collection-page {
     float: left;
 }
-.ladi-collection .ladi-collection-arrow {
+.laid-collection .laid-collection-arrow {
     position: absolute;
     top: calc(50% - (33px) / 2);
     cursor: pointer;
     z-index: 90000040;
 }
-.ladi-collection .ladi-collection-arrow-left {
+.laid-collection .laid-collection-arrow-left {
     left: 5px;
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
 }
-.ladi-collection .ladi-collection-arrow-right {
+.laid-collection .laid-collection-arrow-right {
     right: 5px;
 }
-.ladi-collection .ladi-collection-button-next {
+.laid-collection .laid-collection-button-next {
     position: absolute;
     bottom: -40px;
     right: 0;
@@ -966,12 +966,12 @@ body {
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
 }
-.ladi-form {
+.laid-form {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.ladi-form > .ladi-element {
+.laid-form > .laid-element {
     text-transform: inherit;
     text-decoration: inherit;
     text-align: inherit;
@@ -981,7 +981,7 @@ body {
     background-attachment: inherit;
     background-origin: inherit;
 }
-.ladi-form .ladi-button > .ladi-button-headline {
+.laid-form .laid-button > .laid-button-headline {
     color: initial;
     font-size: initial;
     font-weight: initial;
@@ -992,7 +992,7 @@ body {
     letter-spacing: initial;
     line-height: initial;
 }
-.ladi-form > .ladi-element .ladi-form-item-container {
+.laid-form > .laid-element .laid-form-item-container {
     text-transform: inherit;
     text-decoration: inherit;
     text-align: inherit;
@@ -1002,22 +1002,22 @@ body {
     background-attachment: inherit;
     background-origin: inherit;
 }
-.ladi-form > [data-quantity="true"] .ladi-form-item-container {
+.laid-form > [data-quantity="true"] .laid-form-item-container {
     overflow: hidden;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item {
     text-transform: inherit;
     text-decoration: inherit;
     text-align: inherit;
     letter-spacing: inherit;
     color: inherit;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item-background {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item-background {
     background-size: inherit;
     background-attachment: inherit;
     background-origin: inherit;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-control-select {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-control-select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -1026,29 +1026,29 @@ body {
     background-repeat: no-repeat;
     padding-right: 24px;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-control-select-2 {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-control-select-2 {
     width: calc(100% / 2 - 5px);
     max-width: calc(100% / 2 - 5px);
     min-width: calc(100% / 2 - 5px);
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-control-select-2:nth-child(3) {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-control-select-2:nth-child(3) {
     margin-left: 7.5px;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-control-select-3 {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-control-select-3 {
     width: calc(100% / 3 - 5px);
     max-width: calc(100% / 3 - 5px);
     min-width: calc(100% / 3 - 5px);
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-control-select-3:nth-child(3) {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-control-select-3:nth-child(3) {
     margin-left: 7.5px;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-control-select-3:nth-child(4) {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-control-select-3:nth-child(4) {
     margin-left: 7.5px;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-control-select option {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-control-select option {
     color: initial;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-control:not(.ladi-form-control-select) {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-control:not(.laid-form-control-select) {
     text-transform: inherit;
     text-decoration: inherit;
     text-align: inherit;
@@ -1058,7 +1058,7 @@ body {
     background-attachment: inherit;
     background-origin: inherit;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-control-select {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-control-select {
     text-transform: inherit;
     text-align: inherit;
     letter-spacing: inherit;
@@ -1067,10 +1067,10 @@ body {
     background-attachment: inherit;
     background-origin: inherit;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-control-select:not([data-selected=""]) {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-control-select:not([data-selected=""]) {
     text-decoration: inherit;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-checkbox-item {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-checkbox-item {
     text-transform: inherit;
     text-decoration: inherit;
     text-align: inherit;
@@ -1081,21 +1081,21 @@ body {
     background-origin: inherit;
     vertical-align: middle;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-checkbox-box-item {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-checkbox-box-item {
     display: inline-block;
     width: fit-content;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item .ladi-form-checkbox-item span {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item .laid-form-checkbox-item span {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
 }
-.ladi-form
-    > .ladi-element
-    .ladi-form-item-container
-    .ladi-form-item
-    .ladi-form-checkbox-item
+.laid-form
+    > .laid-element
+    .laid-form-item-container
+    .laid-form-item
+    .laid-form-checkbox-item
     span[data-checked="true"] {
     text-transform: inherit;
     text-decoration: inherit;
@@ -1106,11 +1106,11 @@ body {
     background-attachment: inherit;
     background-origin: inherit;
 }
-.ladi-form
-    > .ladi-element
-    .ladi-form-item-container
-    .ladi-form-item
-    .ladi-form-checkbox-item
+.laid-form
+    > .laid-element
+    .laid-form-item-container
+    .laid-form-item
+    .laid-form-checkbox-item
     span[data-checked="false"] {
     text-transform: inherit;
     text-align: inherit;
@@ -1120,20 +1120,20 @@ body {
     background-attachment: inherit;
     background-origin: inherit;
 }
-.ladi-form .ladi-form-item-container {
+.laid-form .laid-form-item-container {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.ladi-form .ladi-form-item-title-value {
+.laid-form .laid-form-item-title-value {
     font-weight: 700;
     word-break: break-word;
 }
-.ladi-form .ladi-form-label-container {
+.laid-form .laid-form-label-container {
     position: relative;
     width: 100%;
 }
-.ladi-form .ladi-form-label-container .ladi-form-label-item {
+.laid-form .laid-form-label-container .laid-form-label-item {
     display: inline-block;
     cursor: pointer;
     position: relative;
@@ -1143,24 +1143,24 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
 }
-.ladi-form .ladi-form-label-container .ladi-form-label-item.image {
+.laid-form .laid-form-label-container .laid-form-label-item.image {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
-.ladi-form .ladi-form-label-container .ladi-form-label-item.no-value {
+.laid-form .laid-form-label-container .laid-form-label-item.no-value {
     display: none !important;
 }
-.ladi-form .ladi-form-label-container .ladi-form-label-item.text.disabled {
+.laid-form .laid-form-label-container .laid-form-label-item.text.disabled {
     opacity: 0.35;
 }
-.ladi-form .ladi-form-label-container .ladi-form-label-item.image.disabled {
+.laid-form .laid-form-label-container .laid-form-label-item.image.disabled {
     opacity: 0.2;
 }
-.ladi-form .ladi-form-label-container .ladi-form-label-item.color.disabled {
+.laid-form .laid-form-label-container .laid-form-label-item.color.disabled {
     opacity: 0.15;
 }
-.ladi-form .ladi-form-label-container .ladi-form-label-item.selected:before {
+.laid-form .laid-form-label-container .laid-form-label-item.selected:before {
     content: "";
     width: 0;
     height: 0;
@@ -1171,7 +1171,7 @@ body {
     border-color: transparent;
     border-style: solid;
 }
-.ladi-form .ladi-form-label-container .ladi-form-label-item.selected:after {
+.laid-form .laid-form-label-container .laid-form-label-item.selected:after {
     content: "";
     background-image: url("data:image/svg+xml;utf8,%3Csvgxmlns='http://www.w3.org/2000/svg'enable-background='new001212'viewBox='001212'x='0'fill='%23fff'y='0'%3E%3Cg%3E%3Cpathd='m5.210.9c-.20-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.51.4-.1l3.435.1-7c.3-.41-.51.4-.2s.51.21.4l-5.77.9c-.2.2-.4.4-.7.40-.10-.1-.1-.1z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -1182,12 +1182,12 @@ body {
     right: 0;
     position: absolute;
 }
-.ladi-form .ladi-form-item {
+.laid-form .laid-form-item {
     width: 100%;
     height: 100%;
     position: absolute;
 }
-.ladi-form .ladi-form-item-background {
+.laid-form .laid-form-item-background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1195,10 +1195,10 @@ body {
     left: 0;
     pointer-events: none;
 }
-.ladi-form .ladi-form-item.ladi-form-checkbox {
+.laid-form .laid-form-item.laid-form-checkbox {
     height: auto;
 }
-.ladi-form .ladi-form-item .ladi-form-control {
+.laid-form .laid-form-item .laid-form-control {
     background-color: transparent;
     min-width: 100%;
     min-height: 100%;
@@ -1211,17 +1211,17 @@ body {
     font-size: inherit;
     border: none;
 }
-.ladi-form .ladi-form-item.ladi-form-checkbox {
+.laid-form .laid-form-item.laid-form-checkbox {
     padding: 0 5px;
 }
-.ladi-form .ladi-form-item.ladi-form-checkbox.ladi-form-checkbox-vertical .ladi-form-checkbox-item {
+.laid-form .laid-form-item.laid-form-checkbox.laid-form-checkbox-vertical .laid-form-checkbox-item {
     margin-top: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     display: table;
     border: none;
 }
-.ladi-form .ladi-form-item.ladi-form-checkbox.ladi-form-checkbox-horizontal .ladi-form-checkbox-item {
+.laid-form .laid-form-item.laid-form-checkbox.laid-form-checkbox-horizontal .laid-form-checkbox-item {
     margin-top: 0 !important;
     margin-left: 0 !important;
     margin-right: 10px !important;
@@ -1229,43 +1229,43 @@ body {
     border: none;
     position: relative;
 }
-.ladi-form .ladi-form-item.ladi-form-checkbox .ladi-form-checkbox-item input {
+.laid-form .laid-form-item.laid-form-checkbox .laid-form-checkbox-item input {
     vertical-align: middle;
     width: 13px;
     height: 13px;
     display: table-cell;
     margin-right: 5px;
 }
-.ladi-form .ladi-form-item.ladi-form-checkbox .ladi-form-checkbox-item span {
+.laid-form .laid-form-item.laid-form-checkbox .laid-form-checkbox-item span {
     display: table-cell;
     cursor: default;
     vertical-align: middle;
     word-break: break-word;
 }
-.ladi-form .ladi-form-item.ladi-form-checkbox.ladi-form-checkbox-horizontal .ladi-form-checkbox-item input {
+.laid-form .laid-form-item.laid-form-checkbox.laid-form-checkbox-horizontal .laid-form-checkbox-item input {
     position: absolute;
     top: 4px;
 }
-.ladi-form .ladi-form-item.ladi-form-checkbox.ladi-form-checkbox-horizontal .ladi-form-checkbox-item span {
+.laid-form .laid-form-item.laid-form-checkbox.laid-form-checkbox-horizontal .laid-form-checkbox-item span {
     padding-left: 18px;
 }
-.ladi-form .ladi-form-item textarea.ladi-form-control {
+.laid-form .laid-form-item textarea.laid-form-control {
     resize: none;
     padding: 5px;
 }
-.ladi-form .ladi-button {
+.laid-form .laid-button {
     cursor: pointer;
 }
-.ladi-form .ladi-button .ladi-headline {
+.laid-form .laid-button .laid-headline {
     cursor: pointer;
     user-select: none;
 }
-.ladi-form .ladi-element .ladi-form-otp::-webkit-inner-spin-button,
-.ladi-form .ladi-element .ladi-form-otp::-webkit-outer-spin-button {
+.laid-form .laid-element .laid-form-otp::-webkit-inner-spin-button,
+.laid-form .laid-element .laid-form-otp::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-.ladi-form .ladi-element .ladi-form-item .button-get-code {
+.laid-form .laid-element .laid-form-item .button-get-code {
     display: none;
     position: absolute;
     right: 0;
@@ -1281,14 +1281,14 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
 }
-.ladi-form .ladi-element .ladi-form-item .button-get-code.hide-visibility {
+.laid-form .laid-element .laid-form-item .button-get-code.hide-visibility {
     display: block !important;
     visibility: hidden !important;
 }
-.ladi-form .ladi-form-item.otp-resend .button-get-code {
+.laid-form .laid-form-item.otp-resend .button-get-code {
     display: block;
 }
-.ladi-form .ladi-form-item.otp-countdown:before {
+.laid-form .laid-form-item.otp-countdown:before {
     content: attr(data-countdown-time) "s";
     position: absolute;
     top: 0;
@@ -1297,12 +1297,12 @@ body {
     height: max-content;
     line-height: initial;
 }
-.ladi-combobox {
+.laid-combobox {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.ladi-combobox .ladi-combobox-item-container {
+.laid-combobox .laid-combobox-item-container {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1315,7 +1315,7 @@ body {
     background-attachment: inherit;
     background-origin: inherit;
 }
-.ladi-combobox .ladi-combobox-item-container .ladi-combobox-item-background {
+.laid-combobox .laid-combobox-item-container .laid-combobox-item-background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1326,7 +1326,7 @@ body {
     background-attachment: inherit;
     background-origin: inherit;
 }
-.ladi-combobox .ladi-combobox-item-container .ladi-combobox-item {
+.laid-combobox .laid-combobox-item-container .laid-combobox-item {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1336,10 +1336,10 @@ body {
     letter-spacing: inherit;
     color: inherit;
 }
-.ladi-combobox .ladi-combobox-item-container .ladi-combobox-item .ladi-combobox-control option {
+.laid-combobox .laid-combobox-item-container .laid-combobox-item .laid-combobox-control option {
     color: initial;
 }
-.ladi-combobox .ladi-combobox-item-container .ladi-combobox-item .ladi-combobox-control {
+.laid-combobox .laid-combobox-item-container .laid-combobox-item .laid-combobox-control {
     background-color: transparent;
     min-width: 100%;
     min-height: 100%;
@@ -1364,20 +1364,20 @@ body {
     background-repeat: no-repeat;
     padding-right: 24px;
 }
-.ladi-combobox .ladi-combobox-item-container .ladi-combobox-item .ladi-combobox-control:not([data-selected=""]) {
+.laid-combobox .laid-combobox-item-container .laid-combobox-item .laid-combobox-control:not([data-selected=""]) {
     text-decoration: inherit;
 }
-.ladi-cart {
+.laid-cart {
     position: absolute;
     width: 100%;
     font-size: 12px;
 }
-.ladi-cart .ladi-cart-row {
+.laid-cart .laid-cart-row {
     position: relative;
     display: inline-table;
     width: 100%;
 }
-.ladi-cart .ladi-cart-row:after {
+.laid-cart .laid-cart-row:after {
     content: "";
     position: absolute;
     left: 0;
@@ -1386,36 +1386,36 @@ body {
     width: 100%;
     background: #dcdcdc;
 }
-.ladi-cart .ladi-cart-no-product {
+.laid-cart .laid-cart-no-product {
     text-align: center;
     font-size: 16px;
     vertical-align: middle;
 }
-.ladi-cart .ladi-cart-image {
+.laid-cart .laid-cart-image {
     width: 16%;
     vertical-align: middle;
     position: relative;
     text-align: center;
 }
-.ladi-cart .ladi-cart-image img {
+.laid-cart .laid-cart-image img {
     max-width: 100%;
 }
-.ladi-cart .ladi-cart-title {
+.laid-cart .laid-cart-title {
     vertical-align: middle;
     padding: 0 5px;
     word-break: break-all;
 }
-.ladi-cart .ladi-cart-title .ladi-cart-title-name {
+.laid-cart .laid-cart-title .laid-cart-title-name {
     display: block;
     margin-bottom: 5px;
     word-break: break-word;
 }
-.ladi-cart .ladi-cart-title .ladi-cart-title-variant {
+.laid-cart .laid-cart-title .laid-cart-title-variant {
     font-weight: 700;
     display: block;
     word-break: break-word;
 }
-.ladi-cart .ladi-cart-image .ladi-cart-image-quantity {
+.laid-cart .laid-cart-image .laid-cart-image-quantity {
     position: absolute;
     top: -3px;
     right: -5px;
@@ -1427,16 +1427,16 @@ body {
     color: #fff;
     line-height: 20px;
 }
-.ladi-cart .ladi-cart-quantity {
+.laid-cart .laid-cart-quantity {
     width: 70px;
     vertical-align: middle;
     text-align: center;
 }
-.ladi-cart .ladi-cart-quantity-content {
+.laid-cart .laid-cart-quantity-content {
     display: -webkit-inline-flex;
     display: inline-flex;
 }
-.ladi-cart .ladi-cart-quantity input {
+.laid-cart .laid-cart-quantity input {
     width: 24px;
     text-align: center;
     height: 22px;
@@ -1448,12 +1448,12 @@ body {
     border-bottom: 1px solid #dcdcdc;
     border-radius: 0;
 }
-.ladi-cart .ladi-cart-quantity input::-webkit-inner-spin-button,
-.ladi-cart .ladi-cart-quantity input::-webkit-outer-spin-button {
+.laid-cart .laid-cart-quantity input::-webkit-inner-spin-button,
+.laid-cart .laid-cart-quantity input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-.ladi-cart .ladi-cart-quantity .button {
+.laid-cart .laid-cart-quantity .button {
     border: 1px solid #dcdcdc;
     cursor: pointer;
     text-align: center;
@@ -1465,46 +1465,46 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
 }
-.ladi-cart .ladi-cart-quantity .button:active {
+.laid-cart .laid-cart-quantity .button:active {
     transform: translateY(2px);
     transition: transform 0.2s linear;
 }
-.ladi-cart .ladi-cart-quantity .button span {
+.laid-cart .laid-cart-quantity .button span {
     font-size: 18px;
     position: relative;
     left: 0.5px;
 }
-.ladi-cart .ladi-cart-quantity .button:first-child span {
+.laid-cart .laid-cart-quantity .button:first-child span {
     top: -1.2px;
 }
-.ladi-cart .ladi-cart-price {
+.laid-cart .laid-cart-price {
     width: 100px;
     vertical-align: middle;
     text-align: right;
     padding: 0 10px 0 5px;
 }
-.ladi-cart .ladi-cart-row.has-promotion .ladi-cart-price span {
+.laid-cart .laid-cart-row.has-promotion .laid-cart-price span {
     text-decoration: line-through;
     display: block;
     margin-bottom: 3px;
 }
-.ladi-cart .ladi-cart-row.has-promotion .ladi-cart-price span.price-compare {
+.laid-cart .laid-cart-row.has-promotion .laid-cart-price span.price-compare {
     text-decoration: none;
     color: #e85d04;
     font-weight: 700;
     margin-bottom: 0;
 }
-.ladi-cart .ladi-cart-row.has-promotion .ladi-cart-title span.promotion-name {
+.laid-cart .laid-cart-row.has-promotion .laid-cart-title span.promotion-name {
     margin-top: 5px;
     display: block;
     word-break: break-word;
 }
-.ladi-cart .ladi-cart-action {
+.laid-cart .laid-cart-action {
     width: 28px;
     vertical-align: middle;
     text-align: center;
 }
-.ladi-cart .ladi-cart-action .button {
+.laid-cart .laid-cart-action .button {
     border: 1px solid #dcdcdc;
     display: table;
     cursor: pointer;
@@ -1516,25 +1516,25 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
 }
-.ladi-cart .ladi-cart-action .button:active {
+.laid-cart .laid-cart-action .button:active {
     transform: translateY(2px);
     transition: transform 0.2s linear;
 }
-.ladi-cart .ladi-cart-action .button span {
+.laid-cart .laid-cart-action .button span {
     font-size: 13px;
     position: relative;
     top: 0.5px;
     display: table-cell;
     vertical-align: middle;
 }
-.ladi-video {
+.laid-video {
     position: absolute;
     width: 100%;
     height: 100%;
     cursor: pointer;
     overflow: hidden;
 }
-.ladi-video .ladi-video-background {
+.laid-video .laid-video-background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1542,17 +1542,17 @@ body {
     left: 0;
     pointer-events: none;
 }
-.ladi-group {
+.laid-group {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.ladi-accordion {
+.laid-accordion {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.ladi-accordion .ladi-accordion-shape {
+.laid-accordion .laid-accordion-shape {
     width: 100% !important;
     height: 100% !important;
     top: 0 !important;
@@ -1563,36 +1563,36 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
 }
-.ladi-button-group {
+.laid-button-group {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.ladi-button-group > .ladi-element {
+.laid-button-group > .laid-element {
     transition: inherit;
 }
-.ladi-button-group > .ladi-element > .ladi-button {
+.laid-button-group > .laid-element > .laid-button {
     transition: inherit;
 }
-.ladi-shape {
+.laid-shape {
     position: absolute;
     width: 100%;
     height: 100%;
     pointer-events: none;
 }
-.ladi-html-code {
+.laid-html-code {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.ladi-image {
+.laid-image {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
     pointer-events: none;
 }
-.ladi-image .ladi-image-background {
+.laid-image .laid-image-background {
     background-repeat: no-repeat;
     background-position: left top;
     background-size: cover;
@@ -1604,48 +1604,48 @@ body {
     height: 100%;
     pointer-events: none;
 }
-.ladi-headline {
+.laid-headline {
     width: 100%;
     display: inline-block;
     word-break: break-word;
     background-size: cover;
     background-position: center center;
 }
-.ladi-headline a {
+.laid-headline a {
     text-decoration: underline;
 }
-.ladi-paragraph {
+.laid-paragraph {
     width: 100%;
     display: inline-block;
     word-break: break-word;
 }
-.ladi-paragraph a {
+.laid-paragraph a {
     text-decoration: underline;
 }
-.ladi-list-paragraph {
+.laid-list-paragraph {
     width: 100%;
     display: inline-block;
 }
-.ladi-list-paragraph a {
+.laid-list-paragraph a {
     text-decoration: underline;
 }
-.ladi-list-paragraph ul li {
+.laid-list-paragraph ul li {
     position: relative;
     counter-increment: linum;
 }
-.ladi-list-paragraph ul li:before {
+.laid-list-paragraph ul li:before {
     position: absolute;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     left: 0;
 }
-.ladi-list-paragraph ul li:last-child {
+.laid-list-paragraph ul li:last-child {
     padding-bottom: 0 !important;
 }
-.ladi-line {
+.laid-line {
     position: relative;
 }
-.ladi-line .ladi-line-container {
+.laid-line .laid-line-container {
     border-bottom: 0 !important;
     border-right: 0 !important;
     width: 100%;
@@ -1706,11 +1706,11 @@ a:link {
 .element-click-selected {
     cursor: pointer;
 }
-.ladi-accordion-shape.is-2nd-click,
-.ladi-button-shape.is-2nd-click {
+.laid-accordion-shape.is-2nd-click,
+.laid-button-shape.is-2nd-click {
     z-index: 1;
 }
-.ladi-hidden {
+.laid-hidden {
     display: none;
 }
 .backdrop-popup {
@@ -1752,16 +1752,16 @@ a:link {
 .lightbox-screen .lightbox-hidden {
     display: none;
 }
-.ladi-animation-hidden {
+.laid-animation-hidden {
     visibility: hidden !important;
 }
-.ladi-lazyload {
+.laid-lazyload {
     background-image: none !important;
 }
-.ladi-list-paragraph ul li.ladi-lazyload:before {
+.laid-list-paragraph ul li.laid-lazyload:before {
     background-image: none !important;
 }
-.ladi-cart-number {
+.laid-cart-number {
     position: absolute;
     top: -2px;
     right: -7px;
@@ -1775,12 +1775,12 @@ a:link {
     color: #fff;
     border-radius: 100%;
 }
-.ladi-form-quantity {
+.laid-form-quantity {
     display: -webkit-inline-flex;
     display: inline-flex;
     border-color: inherit;
 }
-.ladi-form > .ladi-element .ladi-form-item-container .ladi-form-item.ladi-form-quantity .ladi-form-control {
+.laid-form > .laid-element .laid-form-item-container .laid-form-item.laid-form-quantity .laid-form-control {
     text-align: center;
     pointer-events: none;
     -moz-appearance: textfield;
@@ -1793,20 +1793,20 @@ a:link {
     border-bottom: 1px hidden;
     border-color: inherit;
 }
-.ladi-form
-    > .ladi-element
-    .ladi-form-item-container
-    .ladi-form-item.ladi-form-quantity
+.laid-form
+    > .laid-element
+    .laid-form-item-container
+    .laid-form-item.laid-form-quantity
     input::-webkit-inner-spin-button,
-.ladi-form
-    > .ladi-element
-    .ladi-form-item-container
-    .ladi-form-item.ladi-form-quantity
+.laid-form
+    > .laid-element
+    .laid-form-item-container
+    .laid-form-item.laid-form-quantity
     input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-.ladi-form-quantity .button {
+.laid-form-quantity .button {
     display: table;
     cursor: pointer;
     text-align: center;
@@ -1818,30 +1818,30 @@ a:link {
     -moz-user-select: none;
     -ms-user-select: none;
 }
-.ladi-form-quantity .button span {
+.laid-form-quantity .button span {
     font-size: 18px;
     position: relative;
     display: table-cell;
     vertical-align: middle;
 }
-.ladi-form-quantity .button:first-child span {
+.laid-form-quantity .button:first-child span {
     top: -0.5px;
 }
-.ladi-form-quantity input {
+.laid-form-quantity input {
     pointer-events: none;
 }
-.ladi-form [data-variant="true"] select option[disabled] {
+.laid-form [data-variant="true"] select option[disabled] {
     background: #fff;
     color: #b8b8b8 !important;
 }
-.ladi-story-page-progress-bar {
+.laid-story-page-progress-bar {
     width: 100%;
     height: 25px;
     position: fixed;
     top: 0;
     left: 0;
 }
-.ladi-story-page-progress-bar-item {
+.laid-story-page-progress-bar-item {
     height: 100%;
     width: 100%;
     display: block;
@@ -1850,7 +1850,7 @@ a:link {
     position: relative;
     cursor: pointer;
 }
-.ladi-story-page-progress-bar-item:before {
+.laid-story-page-progress-bar-item:before {
     content: "";
     position: absolute;
     background: rgba(255, 255, 255, 0.4);
@@ -1863,10 +1863,10 @@ a:link {
     left: 0;
     right: 0;
 }
-.ladi-story-page-progress-bar-item.active:before {
+.laid-story-page-progress-bar-item.active:before {
     background: #fff;
 }
-.ladi-story-page-progress-bar-item span {
+.laid-story-page-progress-bar-item span {
     background: #fff;
     border-radius: 10px;
     height: 4px;
@@ -1878,12 +1878,12 @@ a:link {
     transition: width 0.3s linear;
     width: 0%;
 }
-.ladi-carousel .ladi-carousel-arrow,
-.ladi-collection .ladi-collection-arrow,
-.ladi-collection .ladi-collection-button-next,
-.ladi-gallery .ladi-gallery-control .ladi-gallery-control-arrow,
-.ladi-gallery .ladi-gallery-view .ladi-gallery-view-arrow,
-.ladi-section .ladi-section-arrow-down {
+.laid-carousel .laid-carousel-arrow,
+.laid-collection .laid-collection-arrow,
+.laid-collection .laid-collection-button-next,
+.laid-gallery .laid-gallery-control .laid-gallery-control-arrow,
+.laid-gallery .laid-gallery-view .laid-gallery-view-arrow,
+.laid-section .laid-section-arrow-down {
     width: 33px;
     height: 33px;
     background-repeat: no-repeat;
@@ -1891,7 +1891,7 @@ a:link {
     background-image: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22%23000%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M7.00015%200.585938L18.4144%2012.0002L7.00015%2023.4144L5.58594%2022.0002L15.5859%2012.0002L5.58594%202.00015L7.00015%200.585938Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
 }
 #SECTION_POPUP .popup-close,
-.ladi-section .ladi-section-close {
+.laid-section .laid-section-close {
     width: 16px;
     height: 16px;
     margin: 10px;
@@ -1916,60 +1916,60 @@ a:link {
     margin: 0 auto;
     height: 100vh !important;
 }
-.ladi-html strong {
+.laid-html strong {
     font-weight: 700;
 }
-.ladi-html em {
+.laid-html em {
     font-style: italic;
 }
-.ladi-html a {
+.laid-html a {
     text-decoration: underline;
 }
-.ladi-html img {
+.laid-html img {
     max-width: 100%;
 }
-.ladi-html .ladi-headline p,
-.ladi-html .ladi-paragraph p {
+.laid-html .laid-headline p,
+.laid-html .laid-paragraph p {
     margin: revert;
 }
 @media (min-width: 768px) {
-    .ladi-fullwidth {
+    .laid-fullwidth {
         width: 100vw !important;
         left: calc(-50vw + 50%) !important;
         box-sizing: border-box !important;
         transform: none !important;
     }
-    .ladi-fullwidth .ladi-gallery-view-item {
+    .laid-fullwidth .laid-gallery-view-item {
         transition-duration: 1.5s;
     }
 }
 @media (max-width: 767px) {
-    .ladi-element.ladi-auto-scroll {
+    .laid-element.laid-auto-scroll {
         overflow-x: auto;
         overflow-y: hidden;
         width: 100% !important;
         left: 0 !important;
         -webkit-overflow-scrolling: touch;
     }
-    .ladi-section.ladi-auto-scroll {
+    .laid-section.laid-auto-scroll {
         overflow-x: auto;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
     }
-    .ladi-carousel .ladi-carousel-content {
+    .laid-carousel .laid-carousel-content {
         transition: left 0.3s ease-in-out;
     }
-    .ladi-gallery .ladi-gallery-view > .ladi-gallery-view-item {
+    .laid-gallery .laid-gallery-view > .laid-gallery-view-item {
         transition: transform 0.3s ease-in-out;
     }
-    .ladi-html img {
+    .laid-html img {
         height: auto !important;
     }
 }
-.ladi-notify-transition {
+.laid-notify-transition {
     transition: top 0.5s ease-in-out, bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
-.ladi-notify {
+.laid-notify {
     padding: 5px;
     box-shadow: 0 0 1px rgba(64, 64, 64, 0.3), 0 8px 50px rgba(64, 64, 64, 0.05);
     border-radius: 40px;
@@ -1978,7 +1978,7 @@ a:link {
     height: 100%;
     font-size: 13px;
 }
-.ladi-notify .ladi-notify-image img {
+.laid-notify .laid-notify-image img {
     float: left;
     margin-right: 13px;
     border-radius: 50%;
@@ -1986,7 +1986,7 @@ a:link {
     height: 53px;
     pointer-events: none;
 }
-.ladi-notify .ladi-notify-title {
+.laid-notify .laid-notify-title {
     font-size: 100%;
     height: 17px;
     overflow: hidden;
@@ -1996,7 +1996,7 @@ a:link {
     white-space: nowrap;
     line-height: 1;
 }
-.ladi-notify .ladi-notify-content {
+.laid-notify .laid-notify-content {
     font-size: 92.308%;
     height: 17px;
     overflow: hidden;
@@ -2006,7 +2006,7 @@ a:link {
     line-height: 1;
     padding-top: 2px;
 }
-.ladi-notify .ladi-notify-time {
+.laid-notify .laid-notify-time {
     line-height: 1.6;
     font-size: 84.615%;
     display: inline-block;
@@ -2016,7 +2016,7 @@ a:link {
     max-width: calc(100% - 155px);
     overflow: hidden;
 }
-.ladi-notify .ladi-notify-copyright {
+.laid-notify .laid-notify-copyright {
     font-size: 76.9231%;
     margin-left: 2px;
     position: relative;
@@ -2026,24 +2026,24 @@ a:link {
     display: inline-block;
     top: -4px;
 }
-.ladi-notify .ladi-notify-copyright svg {
+.laid-notify .laid-notify-copyright svg {
     vertical-align: middle;
 }
-.ladi-notify .ladi-notify-copyright svg:not(:root) {
+.laid-notify .laid-notify-copyright svg:not(:root) {
     overflow: hidden;
 }
-.ladi-notify .ladi-notify-copyright div {
+.laid-notify .laid-notify-copyright div {
     text-decoration: none;
     color: rgba(64, 64, 64, 1);
     display: inline;
 }
-.ladi-notify .ladi-notify-copyright strong {
+.laid-notify .laid-notify-copyright strong {
     font-weight: 700;
 }
-.builder-container .ladi-notify {
+.builder-container .laid-notify {
     transition: unset;
 }
-.ladi-spin-lucky {
+.laid-spin-lucky {
     width: 100%;
     height: 100%;
     border-radius: 100%;
@@ -2051,7 +2051,7 @@ a:link {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.ladi-spin-lucky .ladi-spin-lucky-start {
+.laid-spin-lucky .laid-spin-lucky-start {
     position: absolute;
     top: 0;
     left: 0;
@@ -2067,10 +2067,10 @@ a:link {
     transition: transform 0.3s ease-in-out;
     -webkit-transition: transform 0.3s ease-in-out;
 }
-.ladi-spin-lucky .ladi-spin-lucky-start:hover {
+.laid-spin-lucky .laid-spin-lucky-start:hover {
     transform: scale(1.1);
 }
-.ladi-spin-lucky .ladi-spin-lucky-screen {
+.laid-spin-lucky .laid-spin-lucky-screen {
     width: 100%;
     height: 100%;
     border-radius: 100%;
@@ -2080,7 +2080,7 @@ a:link {
     -webkit-text-decoration-line: inherit;
     text-transform: inherit;
 }
-.ladi-spin-lucky .ladi-spin-lucky-screen:before {
+.laid-spin-lucky .laid-spin-lucky-screen:before {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -2092,7 +2092,7 @@ a:link {
     left: 0;
     pointer-events: none;
 }
-.ladi-spin-lucky .ladi-spin-lucky-label {
+.laid-spin-lucky .laid-spin-lucky-label {
     position: absolute;
     top: 50%;
     left: 50%;

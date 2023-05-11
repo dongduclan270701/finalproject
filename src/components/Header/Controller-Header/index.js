@@ -58,7 +58,7 @@ const Index = () => {
                                         <button onClick={hanldLogout} className="gearvn-header-top-item">
                                             <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak2.png?v=35775" />
                                             <div className="header-right-description">
-                                                <div className="gearvn-text">Đăng xuất</div>
+                                                <div className="gearvn-text">Logout</div>
                                             </div>
                                         </button>
                                     </>
@@ -67,13 +67,13 @@ const Index = () => {
                                         <Link className="gearvn-header-top-item" to="/register">
                                             <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak1.png?v=34146" />
                                             <div className="header-right-description">
-                                                <div className="gearvn-text">Đăng ký</div>
+                                                <div className="gearvn-text">Sign up</div>
                                             </div>
                                         </Link>
                                         <Link className="gearvn-header-top-item" to="/login">
                                             <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak3.png?v=34146" />
                                             <div className="header-right-description">
-                                                <div className="gearvn-text">Đăng nhập</div>
+                                                <div className="gearvn-text">Sign in</div>
                                             </div>
                                         </Link>
                                     </>
@@ -82,14 +82,14 @@ const Index = () => {
                                 <Link className="gearvn-header-top-item" to="/product-sales">
                                     <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak4.png?v=34146" />
                                     <div className="header-right-description">
-                                        <div className="gearvn-text">khuyến mãi</div>
+                                        <div className="gearvn-text">sales promotion</div>
                                     </div>
                                 </Link>
                                 <Link className="gearvn-cart gearvn-header-top-item rela" to="/cart">
                                     <div className="number">{state.arrayOrder.length}</div>
                                     <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak5.png?v=34146" />
                                     <div className="header-right-description">
-                                        <div className="gearvn-text">giỏ hàng </div>
+                                        <div className="gearvn-text">cart</div>
                                     </div>
                                 </Link>
                             </div>
@@ -100,7 +100,7 @@ const Index = () => {
                                     <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/tongdai-icon.png?v=34146" />
                                     <span>
                                         <NavLink to="/hotline" style={{ color: '#ea1c00' }}>
-                                                Tổng đài
+                                            Switchboard
                                         </NavLink>
                                     </span>
                                 </li>
@@ -116,7 +116,7 @@ const Index = () => {
                                     <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/gNewsFavIco.png?v=34146" />
                                     <span>
                                         <NavLink to="/news" style={{ color: '#ea1c00' }}>
-                                            Tin công nghệ
+                                            Tech news
                                         </NavLink>
                                     </span>
                                 </li>
@@ -124,7 +124,7 @@ const Index = () => {
                                     <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/logo_hr.png?v=34146" />
                                     <span>
                                         <NavLink to="/recruitment" style={{ color: '#ea1c00' }}>
-                                            Tuyển dụng
+                                            Hire
                                         </NavLink>
                                     </span>
                                 </li>
@@ -132,7 +132,7 @@ const Index = () => {
                                     <img alt="" src="https://file.hstatic.net/200000397757/file/car-dealer_97df9ccd23f243e3a4da757eb19afe6c.png" />
                                     <span>
                                         <NavLink to="/showroom" style={{ color: '#ea1c00' }}>
-                                            Hệ thống showroom
+                                            Showroom system
                                         </NavLink>
                                     </span>
                                 </li>
@@ -142,7 +142,7 @@ const Index = () => {
 
                     {/* <div className="gearvn-info-top-mobile">
                         <span><NavLink style={{ color: '#ea1c00' }} href /></span>
-                    </div> */} 
+                    </div> */}
                 </div>
             </div>
         </div>

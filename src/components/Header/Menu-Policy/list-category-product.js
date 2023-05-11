@@ -11,7 +11,7 @@ const ListCategoryProduct = () => {
                     img2icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx11.png?v=34146"
                 },
                 {
-                    nameList: "Thương hiệu",
+                    nameList: "Brand Name",
                     nameAndSrc: [
                         ["ASUS", "laptop-ASUS"],
                         ["ACER", "laptop-ACER"],
@@ -24,25 +24,25 @@ const ListCategoryProduct = () => {
                         ["HUAWEI", "laptop-HUAWEI"]],
                 },
                 {
-                    nameList: "Laptop theo Giá bán",
+                    nameList: "Laptop by price",
                     nameAndSrc: [["Dưới 15 triệu", "laptop-duoi-15-trieu"], ["Từ 15 đến 20 triệu", "laptop-tu-15-den-20-trieu"], ["Trên 20 triệu", "laptop-tren-2-trieu"]]
                 },
                 {
-                    nameList: "Laptop theo CPU",
+                    nameList: "Laptop by CPU",
                     nameAndSrc: [["Intel Core i3", "laptop-intel-core-i3"], ["Intel Core i5", "laptop-intel-core-i5"], ["Intel Core i7", "laptop-intel-core-i7"], ["AMD Ryzen", "laptop-amd-ryzen"]]
                 },
                 {
-                    nameList: "Laptop theo Nhu cầu",
+                    nameList: "Laptop needs",
                     nameAndSrc: [["Laptop đồ họa", "laptop-do-hoa"], ["Laptop Học sinh - Sinh viên", "laptop-hoc-sinh-sinh-vien"], ["Laptop mỏng nhẹ cao cấp", "laptop-mong-nhe-cao-cap"]]
                 },
                 {
-                    nameList: "Linh Kiện và Phụ Kiện Laptop",
+                    nameList: "Laptop Components & Accessories",
                     nameAndSrc: [
                         ["Ram laptop", "ram-laptop"],
                         ["SSD laptop", "ssd-laptop"],
-                        ["Đế tản nhiệt laptop", "de-tan-nhiet-laptop"],
-                        ["Balo và túi chống sốc laptop", "balo-va-tui-chong-soc-laptop"],
-                        ["Ổ cứng di động", "o-cung-di-dong"]]
+                        ["Laptop heater soleplate", "de-tan-nhiet-laptop"],
+                        ["Backpack and laptop shockproof bag", "balo-va-tui-chong-soc-laptop"],
+                        ["Portable hard drive", "o-cung-di-dong"]]
                 },
                 {
                     nameList: "Laptop ASUS",
@@ -102,7 +102,7 @@ const ListCategoryProduct = () => {
                     img2icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx12.png?v=34146"
                 },
                 {
-                    nameList: "Thương hiệu",
+                    nameList: "Brand Name",
                     nameAndSrc: [
                         ["ACER / PREDATOR", "laptop-gaming-acer-predator"],
                         ["ASUS / ROG", "laptop-gaming-aus-rog"],
@@ -180,7 +180,7 @@ const ListCategoryProduct = () => {
                         ["Laptop RTX 4000 Series", "laptop-gaming-rtx-4000-series"]]
                 },
                 {
-                    nameList: "Linh Kiện và Phụ Kiện Laptop",
+                    nameList: "Laptop Components & Accessories",
                     nameAndSrc: [
                         ["Ram laptop", "ram-laptop"],
                         ["SSD laptop", "ssd-laptop"],
@@ -489,7 +489,7 @@ const ListCategoryProduct = () => {
             //         nameAndSrc: ["Akko", "Logitech", "Razer", "Corsair", "Leopold", "iKBC", "Steelseries", "Asus", "Vortex", "IQUNIX (Mới)", "Mistel", "Keychron", "FL-Esports", "Ducky"]
             //     },
             //     {
-            //         nameList: "Thương hiệu",
+            //         nameList: "Brand Name",
             //         nameAndSrc: ["Dare-U", "E-Dra", "Rapoo", "Fuhlen", "HyperX", "Ajazz", "Havit", "Cooler Master", "NZXT", "Varmilo (Mới)", "Newmen"]
             //     },
             //     {
@@ -497,23 +497,23 @@ const ListCategoryProduct = () => {
             //         nameAndSrc: ["Dưới 1 triệu", "1 triệu - 2 triệu", "2 triệu - 3 triệu", "3 triệu - 4 triệu", "Trên 4 triệu"]
             //     },
             //     {
-            //         nameList: "Thương hiệu Akko",
+            //         nameList: "Brand Name Akko",
             //         nameAndSrc: ["ACR Series", "PC75B Series", "3068 Series", "3084 Series", "3087 Series", "3098 Series", "3108 Series", "5087 Series", "5108 Series", "Mojike Series", "RGB Series", "Bluetooth Series"]
             //     },
             //     {
-            //         nameList: "Thương hiệu Leopold",
+            //         nameList: "Brand Name Leopold",
             //         nameAndSrc: ["660M Series", "750R Series", "900R Series", "980M Series", "Bluetooth Series"]
             //     },
             //     {
-            //         nameList: "Thương hiệu IKBC",
+            //         nameList: "Brand Name IKBC",
             //         nameAndSrc: ["W200 Series"]
             //     },
             //     {
-            //         nameList: "Thương hiệu Razer",
+            //         nameList: "Brand Name Razer",
             //         nameAndSrc: ["Blackwidow Series", "Huntsman Series"]
             //     },
             //     {
-            //         nameList: "Thương hiệu Corsair",
+            //         nameList: "Brand Name Corsair",
             //         nameAndSrc: ["K63 Series", "K68 Series", "K70 Series", "K95 Series", "K100 Series"]
             //     },
             //     {
@@ -545,7 +545,7 @@ const ListCategoryProduct = () => {
             //         nameAndSrc: ["Dưới 500 nghìn", "Từ 500 nghìn - 1 triệu", "Từ 1 triệu - 2 triệu", "Trên 2 triệu - 3 triệu", "Trên 3 triệu"]
             //     },
             //     {
-            //         nameList: "Thương hiệu Logitech",
+            //         nameList: "Brand Name Logitech",
             //         nameAndSrc: ["Logitech G Pro Series", "Logitech G102 Series", "Logitech G Series"]
             //     },
             //     {
@@ -617,15 +617,15 @@ const ListCategoryProduct = () => {
             //         img2icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx113.png?v=34146"
             //     },
             //     {
-            //         nameList: "Thương hiệu ghế Gaming",
+            //         nameList: "Brand Name ghế Gaming",
             //         nameAndSrc: ["Corsair", "Warrior", "DXRacer", "Razer", "E-DRA", "Anda Seat", "Cougar"]
             //     },
             //     {
-            //         nameList: "Thương hiệu ghế Gaming",
+            //         nameList: "Brand Name ghế Gaming",
             //         nameAndSrc: ["Noble Chair", "MSI", "ASUS", "Cooler Master", "AKRacing"]
             //     },
             //     {
-            //         nameList: "Thương hiệu ghế CTH",
+            //         nameList: "Brand Name ghế CTH",
             //         nameAndSrc: ["Epione", "Sihoo", "E-Dra", "Warrior"]
             //     },
             //     {
@@ -633,15 +633,15 @@ const ListCategoryProduct = () => {
             //         nameAndSrc: ["Ghế Công thái học", "Ghế Gaming"]
             //     },
             //     {
-            //         nameList: "Thương hiệu Corsair",
+            //         nameList: "Brand Name Corsair",
             //         nameAndSrc: ["T3 RUSH Series", "TC60 Series", "TC200 Series"]
             //     },
             //     {
-            //         nameList: "Thương hiệu Sihoo",
+            //         nameList: "Brand Name Sihoo",
             //         nameAndSrc: ["M18 Series", "M57 Series"]
             //     },
             //     {
-            //         nameList: "Thương hiệu DXRacer",
+            //         nameList: "Brand Name DXRacer",
             //         nameAndSrc: ["Drifting Series", "King Series", "G Series", "A.I.R series"]
             //     },
             //     {
@@ -785,8 +785,8 @@ const ListCategoryProduct = () => {
             return <li className="cat-menu-item " key={index}>
                 <a className="gearvn-cat-menu-item" href="https://gearvn.com/pages/laptop-van-phong">
                     <span className="gearvn-cat-menu-icon">
-                        <img src={item[0].img1icon} />
-                        <img src={item[0].img2icon} />
+                        <img alt="" src={item[0].img1icon} />
+                        <img alt="" src={item[0].img2icon} />
                     </span>
                     <span className="gearvn-cat-menu-name">{item[0].collection}</span>
                 </a>

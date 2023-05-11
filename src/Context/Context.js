@@ -3,7 +3,7 @@ import { useState, useEffect, createContext } from 'react'
 const StateContext = createContext()
 
 function StateProvider({ children }) {
-    const [arrayOrder, setArrayOrder] = useState(JSON.parse(localStorage.getItem('orderArray')))
+    const [arrayOrder, setArrayOrder] = useState(JSON.parse(localStorage.getItem('orderArray')) ? JSON.parse(localStorage.getItem('orderArray')): [])
     const handleUpdateArrayOrder = (data) => {
         setArrayOrder(data)
     }

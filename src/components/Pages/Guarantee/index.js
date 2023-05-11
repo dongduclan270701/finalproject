@@ -10,7 +10,7 @@ import ListGuarantee from './List-guarantee'
 import HotlineGuarantee from './Hotline-guarantee'
 const Index = () => {
     return (
-        <div className="ladi-wraper">
+        <div className="laid-wraper">
             <HeaderGuarantee />
             <BannerGuarantee />
             <StepOneGuarantee />
@@ -18,24 +18,24 @@ const Index = () => {
             <StepThreeGuarantee />
             <ListGuarantee />
             <HotlineGuarantee />
-            <div id="SECTION968" className="ladi-section">
-                <div className="ladi-section-background" />
-                <div className="ladi-container">
-                    <div id="HEADLINE969" className="ladi-element">
-                        <h3 className="ladi-headline">
+            <div id="SECTION968" className="laid-section">
+                <div className="laid-section-background" />
+                <div className="laid-container">
+                    <div id="HEADLINE969" className="laid-element">
+                        <h3 className="laid-headline">
                             GEARVN CHÂN THÀNH CẢM ƠN QUÝ KHÁCH&nbsp;</h3>
                     </div>
-                    <div id="HEADLINE972" className="ladi-element">
-                        <h3 className="ladi-headline">
+                    <div id="HEADLINE972" className="laid-element">
+                        <h3 className="laid-headline">
                             Chính sách bảo hành được GearVN cập nhật vào ngày 01/07/2021<br />
                         </h3>
                     </div>
                 </div>
             </div>
             <FooterProductSale/>
-            <div id="SECTION_POPUP" className="ladi-section">
-                <div className="ladi-section-background" />
-                <div className="ladi-container" />
+            <div id="SECTION_POPUP" className="laid-section">
+                <div className="laid-section-background" />
+                <div className="laid-container" />
             </div>
         </div>
 

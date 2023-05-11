@@ -2,49 +2,49 @@ import React from 'react';
 
 const Index = () => {
     return (
-        <div id="SECTION12" className="ladi-section">
-                <div className="ladi-section-background" />
-                <div className="ladi-container">
-                    <div id="IMAGE286" className="ladi-element ladi-animation">
-                        <div className="ladi-image">
-                            <div className="ladi-image-background" />
+        <div id="SECTION12" className="laid-section">
+                <div className="laid-section-background" />
+                <div className="laid-container">
+                    <div id="IMAGE286" className="laid-element laid-animation">
+                        <div className="laid-image">
+                            <div className="laid-image-background" />
                         </div>
                     </div>
-                    <div id="IMAGE62" className="ladi-element">
-                        <div className="ladi-image">
-                            <div className="ladi-image-background" />
+                    <div id="IMAGE62" className="laid-element">
+                        <div className="laid-image">
+                            <div className="laid-image-background" />
                         </div>
                     </div>
-                    <div id="IMAGE343" className="ladi-element">
-                        <div className="ladi-image">
-                            <div className="ladi-image-background" />
+                    <div id="IMAGE343" className="laid-element">
+                        <div className="laid-image">
+                            <div className="laid-image-background" />
                         </div>
                     </div>
-                    <a href="tel:1800 6975" id="IMAGE283" className="ladi-element">
-                        <div className="ladi-image">
-                            <div className="ladi-image-background" />
+                    <a href="tel:1800 6975" id="IMAGE283" className="laid-element">
+                        <div className="laid-image">
+                            <div className="laid-image-background" />
                         </div>
                     </a>
-                    <div id="HEADLINE336" className="ladi-element">
-                        <h3 className="ladi-headline">
+                    <div id="HEADLINE336" className="laid-element">
+                        <h3 className="laid-headline">
                             mua hàng:</h3>
                     </div>
-                    <a href="tel:1800 6147" id="IMAGE285-SHIP" className="ladi-element">
-                        <div className="ladi-image">
-                            <div className="ladi-image-background" />
+                    <a href="tel:1800 6147" id="IMAGE285-SHIP" className="laid-element">
+                        <div className="laid-image">
+                            <div className="laid-image-background" />
                         </div>
                     </a>
-                    <div id="HEADLINE337" className="ladi-element">
-                        <h3 className="ladi-headline">
+                    <div id="HEADLINE337" className="laid-element">
+                        <h3 className="laid-headline">
                             tuyển dụng:</h3>
                     </div>
-                    <a href="tel:1800 6173" id="IMAGE284-SHIP" className="ladi-element">
-                        <div className="ladi-image">
-                            <div className="ladi-image-background" />
+                    <a href="tel:1800 6173" id="IMAGE284-SHIP" className="laid-element">
+                        <div className="laid-image">
+                            <div className="laid-image-background" />
                         </div>
                     </a>
-                    <div id="HEADLINE338" className="ladi-element">
-                        <h3 className="ladi-headline">
+                    <div id="HEADLINE338" className="laid-element">
+                        <h3 className="laid-headline">
                             cskh &amp; khiếu nại:</h3>
                     </div>
                 </div>

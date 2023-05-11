@@ -27,7 +27,7 @@ const Index = () => {
         method_payment: "Thanh toán khi nhận hàng",
         ship: 30000,
         sumOrder: 0,
-        status: 'Đã đặt đơn hàng',
+        status: 'Ordered',
     } :
         {
             product: state.arrayOrder,
@@ -43,7 +43,7 @@ const Index = () => {
             method_payment: "Thanh toán khi nhận hàng",
             ship: 30000,
             sumOrder: 0,
-            status: 'Đã đặt đơn hàng',
+            status: 'Ordered',
 
         }
     )
@@ -87,7 +87,7 @@ const Index = () => {
 
     }
 
-    const ResquestCheckOut = () => {
+    const RequestCheckOut = () => {
         const date = new Date();
         const minutes = date.getMinutes();
         const hours = date.getHours();
@@ -98,71 +98,71 @@ const Index = () => {
         const today = `${year}-${month}-${day}`;
         if (orderCheckOut.address === "") {
             Swal.fire({
-                title: 'Bạn chưa nhập đủ thông tin!',
-                text: 'Hãy nhập địa chỉ!',
+                title: "You haven't entered enough information!",
+                text: 'Please enter an address!',
                 icon: 'warning',
                 confirmButtonText: 'OK!'
             })
         }
         else if (orderCheckOut.phoneNumber === null) {
             Swal.fire({
-                title: 'Bạn chưa nhập đủ thông tin!',
-                text: 'Hãy nhập số điện thoại nhận hàng!',
+                title: "You haven't entered enough information!",
+                text: 'Please enter the delivery phone number!',
                 icon: 'warning',
                 confirmButtonText: 'OK!'
             })
         }
         else if (orderCheckOut.phoneNumber.length !== 10) {
             Swal.fire({
-                title: 'Bạn chưa nhập đủ thông tin!',
-                text: 'Hãy nhập đúng kiểu số điện thoại!',
+                title: "You haven't entered enough information!",
+                text: 'Please enter the correct phone number format!',
                 icon: 'warning',
                 confirmButtonText: 'OK!'
             })
         }
         else if (orderCheckOut.city === "") {
             Swal.fire({
-                title: 'Bạn chưa nhập đủ thông tin!',
-                text: 'Hãy chọn Tỉnh / Thành phố!',
+                title: "You haven't entered enough information!",
+                text: 'Please select Province / City!',
                 icon: 'warning',
                 confirmButtonText: 'OK!'
             })
         }
         else if (orderCheckOut.district === "") {
             Swal.fire({
-                title: 'Bạn chưa nhập đủ thông tin!',
-                text: 'Hãy chọn Quận / Huyện!',
+                title: "You haven't entered enough information!",
+                text: '"Please select District!',
                 icon: 'warning',
                 confirmButtonText: 'OK!'
             })
         }
         else if (orderCheckOut.commune === "") {
             Swal.fire({
-                title: 'Bạn chưa nhập đủ thông tin!',
-                text: 'Hãy chọn Phường / Xã!',
+                title: "You haven't entered enough information!",
+                text: 'Please select Ward/Commune!',
                 icon: 'warning',
                 confirmButtonText: 'OK!'
             })
         }
         else if (orderCheckOut.product === null || orderCheckOut.product.length < 1) {
             Swal.fire({
-                title: 'Bạn chưa có sản phẩm nào cả!',
-                text: 'Hãy chọn mua sản phẩm trước khi đặt đơn!',
+                title: "You don't have any products yet.!",
+                text: 'The product should be chosen before placing an order!',
                 icon: 'warning',
                 confirmButtonText: 'OK!'
             })
         }
         else {
-            const newData = { 
-                ...orderCheckOut, 
-                shipping_process: [{ time: time, date: today, content: 'Đã đặt đơn hàng' }],
+            const newData = {
+                ...orderCheckOut,
+                shipping_process: [{ time: time, date: today, content: 'Ordered' }],
                 sumOrder: totalArrayOrder(),
             }
             createOrderByCustomer(newData)
                 .then(result => {
                     Swal.fire({
-                        title: 'Đặt hàng thành công!',
-                        text: 'Bạn đã đặt hàng thành công!',
+                        title: 'Order placed successfully!',
+                        text: 'The order has been placed successfully.!',
                         icon: 'success',
                         confirmButtonText: 'OK!'
                     })
@@ -182,8 +182,8 @@ const Index = () => {
                 })
                 .catch(error => {
                     Swal.fire({
-                        title: 'Đặt hàng thất bại!',
-                        text: 'Có vẻ như đường truyền đến server có vấn đề!',
+                        title: 'Order failed!',
+                        text: 'The connection to the server seems to have a problem!',
                         icon: 'error',
                         confirmButtonText: 'OK!'
                     })
@@ -205,10 +205,10 @@ const Index = () => {
                         <style dangerouslySetInnerHTML={{ __html: "\n\t\t\t\t\t\t\ta.logo{display: block;}\n\t\t\t\t\t\t\t\t\t\t\t.logo-cus{ \n\t\t\t\t\t\t\t\t\t\t\t\twidth: 100%; padding: 15px 0; \n\t\t\t\t\t\t\t\t\t\t\t\ttext-align: ; \n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t.logo-cus img{ max-height: 4.2857142857em  }\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t.logo-text{\n\t\t\t\t\t\t\t\t\t\t\t\ttext-align: ; \n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t            @media (max-width: 767px){\n\t\t\t\t\t\t\t\t\t\t\t\t.banner a{ display: block; }\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t" }} />
                         <ul className="breadcrumb">
                             <li className="breadcrumb-item">
-                                <a href="/cart">Giỏ hàng</a>
+                                <a href="/cart">Cart</a>
                             </li>
                             <li className="breadcrumb-item breadcrumb-item-current">
-                                Thông tin giao hàng
+                                Delivery information
                             </li>
                         </ul>
                     </div>
@@ -223,7 +223,7 @@ const Index = () => {
                             <div className="step-sections steps-onepage" step={1}>
                                 <div className="section">
                                     <div className="section-header">
-                                        <h2 className="section-title">Thông tin giao hàng</h2>
+                                        <h2 className="section-title">Delivery information</h2>
                                     </div>
                                     <div className="section-content section-customer-information no-mb">
                                         <input type="hidden" name="checkout_user[email]" defaultValue="dongduclan277@gmail.com" />
@@ -235,123 +235,29 @@ const Index = () => {
                                                 <p className="logged-in-customer-information-paragraph">
                                                     {JSON.parse(localStorage.getItem('user'))[1]} ({JSON.parse(localStorage.getItem('user'))[0]})
                                                     <br />
-                                                    <NavLink to="/login">Đăng xuất</NavLink>
+                                                    <NavLink to="/login">Logout</NavLink>
                                                 </p>
                                             </>
                                                 :
                                                 <p className="section-content-text">
-                                                    Bạn đã có tài khoản?
-                                                    <NavLink to="/login">Đăng nhập</NavLink>
+                                                    Do you already have an account?
+                                                    <NavLink to="/login">Login</NavLink>
                                                 </p>
                                             }
 
 
                                         </div>
                                         <div className="fieldset">
-                                            {/* <div className="field field-show-floating-label">
-                                                <div className="field-input-wrapper field-input-wrapper-select">
-                                                    <label className="field-label" htmlFor="stored_addresses">Thêm địa chỉ mới...</label>
-                                                    <select className="field-input" id="stored_addresses">
-                                                        <option value={0} data-properties="{}">Địa chỉ đã lưu trữ</option>
-                                                        <option value={1078686050} data-properties="{&quot;id&quot;:1078686050,
-																				&quot;last_name&quot;:&quot;Đồng Đức&quot;,
-																				&quot;first_name&quot;:&quot;Lân&quot;,
-																				&quot;phone&quot;:&quot;0379382992&quot;,
-																				&quot;address1&quot;:&quot;Số 69 Trần Nguyên Hãn Tp.Bắc Giang&quot;,
-																				&quot;zip&quot;:null,
-																				&quot;city&quot;:null,
-																				&quot;country&quot;:&quot;Vietnam&quot;,
-																				&quot;country_id&quot;:&quot;241&quot;,
-																				&quot;province&quot;:&quot;Bắc Giang&quot;,
-																				&quot;province_id&quot;:&quot;15&quot;,
-																				&quot;district&quot;:&quot;Thành phố Bắc Giang&quot;,
-																				&quot;district_id&quot;:&quot;215&quot;,
-																				&quot;ward&quot;:null,
-																				&quot;wardid&quot;:null,
-																				&quot;default&quot;:true}" selected>
-                                                            0379382992,
-                                                            Số 69 Trần Nguyên Hãn Tp.Bắc Giang,
-                                                            Thành phố Bắc Giang,
-                                                            Bắc Giang,
-                                                            Vietnam
-                                                        </option>
-                                                        <option value={1078704591} data-properties="{&quot;id&quot;:1078704591,
-																				&quot;last_name&quot;:&quot;Đồng Đức&quot;,
-																				&quot;first_name&quot;:&quot;Lân&quot;,
-																				&quot;phone&quot;:&quot;0379382992&quot;,
-																				&quot;address1&quot;:&quot;Số 69, Trần Nguyên Hãn, Tp.Bắc Giang&quot;,
-																				&quot;zip&quot;:null,
-																				&quot;city&quot;:null,
-																				&quot;country&quot;:&quot;Vietnam&quot;,
-																				&quot;country_id&quot;:&quot;241&quot;,
-																				&quot;province&quot;:&quot;Bắc Giang&quot;,
-																				&quot;province_id&quot;:&quot;15&quot;,
-																				&quot;district&quot;:&quot;Thành phố Bắc Giang&quot;,
-																				&quot;district_id&quot;:&quot;215&quot;,
-																				&quot;ward&quot;:null,
-																				&quot;wardid&quot;:null,
-																				&quot;default&quot;:false}">
-                                                            0379382992,
-                                                            Số 69, Trần Nguyên Hãn, Tp.Bắc Giang,
-                                                            Thành phố Bắc Giang,
-                                                            Bắc Giang,
-                                                            Vietnam
-                                                        </option>
-                                                        <option value={1078686327} data-properties="{&quot;id&quot;:1078686327,
-																				&quot;last_name&quot;:&quot;Đồng Đức&quot;,
-																				&quot;first_name&quot;:&quot;Lân&quot;,
-																				&quot;phone&quot;:&quot;0924019420&quot;,
-																				&quot;address1&quot;:&quot;Số 69, Trần Nguyên Hãn, Tp.Bắc Giang&quot;,
-																				&quot;zip&quot;:null,
-																				&quot;city&quot;:null,
-																				&quot;country&quot;:&quot;Vietnam&quot;,
-																				&quot;country_id&quot;:&quot;241&quot;,
-																				&quot;province&quot;:&quot;Bắc Giang&quot;,
-																				&quot;province_id&quot;:&quot;15&quot;,
-																				&quot;district&quot;:null,
-																				&quot;district_id&quot;:null,
-																				&quot;ward&quot;:null,
-																				&quot;wardid&quot;:null,
-																				&quot;default&quot;:false}">
-                                                            0924019420,
-                                                            Số 69, Trần Nguyên Hãn, Tp.Bắc Giang,
-                                                            Bắc Giang,
-                                                            Vietnam
-                                                        </option>
-                                                        <option value={1078686322} data-properties="{&quot;id&quot;:1078686322,
-																				&quot;last_name&quot;:&quot;Đồng Đức&quot;,
-																				&quot;first_name&quot;:&quot;Lân&quot;,
-																				&quot;phone&quot;:&quot;0924019420&quot;,
-																				&quot;address1&quot;:&quot;Số 69, Trần Nguyên Hãn, Tp.Bắc Giang&quot;,
-																				&quot;zip&quot;:null,
-																				&quot;city&quot;:null,
-																				&quot;country&quot;:&quot;Vietnam&quot;,
-																				&quot;country_id&quot;:&quot;241&quot;,
-																				&quot;province&quot;:&quot;Đắk Lắk&quot;,
-																				&quot;province_id&quot;:&quot;42&quot;,
-																				&quot;district&quot;:null,
-																				&quot;district_id&quot;:null,
-																				&quot;ward&quot;:null,
-																				&quot;wardid&quot;:null,
-																				&quot;default&quot;:false}">
-                                                            0924019420,
-                                                            Số 69, Trần Nguyên Hãn, Tp.Bắc Giang,
-                                                            Đắk Lắk,
-                                                            Vietnam
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                            </div> */}
                                             <div className="field field-required  ">
                                                 <div className="field-input-wrapper">
-                                                    <label className="field-label" htmlFor="billing_address_full_name">Họ và tên</label>
-                                                    <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, username: e.target.value })} defaultValue={orderCheckOut.username} placeholder="Họ và tên" autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_full_name" name="billing_address[full_name]" autoComplete="false" />
+                                                    <label className="field-label" htmlFor="billing_address_full_name">Full name</label>
+                                                    <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, username: e.target.value })} defaultValue={orderCheckOut.username} c autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_full_name" name="billing_address[full_name]" autoComplete="false" />
                                                 </div>
                                             </div>
                                             <div className="field field-required   ">
                                                 <div className="field-input-wrapper">
-                                                    <label className="field-label" htmlFor="billing_address_phone">Số điện thoại</label>
-                                                    <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, phoneNumber: e.target.value })} defaultValue={orderCheckOut.phoneNumber} autoComplete="false" placeholder="Số điện thoại" autoCapitalize="off" spellCheck="false" className="field-input" size={30} maxLength={15} type="tel" id="billing_address_phone" name="billing_address[phone]" />
+                                                    <label className="field-label" htmlFor="billing_address_phone">Phone number</label>
+                                                    <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, phoneNumber: e.target.value })} defaultValue={orderCheckOut.phoneNumber} autoComplete="false" placeholder="Phone number" autoCapitalize="off" spellCheck="false" className="field-input" size={30} maxLength={15} type="tel" id="billing_address_phone" name="billing_address[phone]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -368,8 +274,8 @@ const Index = () => {
                                                         </div>
                                                         <div className="field field-required  field-show-floating-label">
                                                             <div className="field-input-wrapper">
-                                                                <label className="field-label" htmlFor="billing_address_address1">Địa chỉ</label>
-                                                                <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, address: e.target.value })} defaultValue={orderCheckOut.address} placeholder="Địa chỉ" autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_address1" name="billing_address[address1]" />
+                                                                <label className="field-label" htmlFor="billing_address_address1">Address</label>
+                                                                <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, address: e.target.value })} defaultValue={orderCheckOut.address} placeholder="Address" autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_address1" name="billing_address[address1]" />
                                                             </div>
                                                         </div>
                                                         <input name="selected_customer_shipping_country" type="hidden" defaultValue />
@@ -378,10 +284,10 @@ const Index = () => {
                                                         <input name="selected_customer_shipping_ward" type="hidden" defaultValue />
                                                         <div className="field field-show-floating-label field-required field-third ">
                                                             <div className="field-input-wrapper field-input-wrapper-select">
-                                                                <label className="field-label" htmlFor="customer_shipping_province"> Tỉnh / thành</label>
+                                                                <label className="field-label" htmlFor="customer_shipping_province">City</label>
                                                                 <select onChange={(e) => handleChooseCDC(e, "city")} className="field-input" id="customer_shipping_province" name="customer_shipping_province">
                                                                     <option data-code="null" value="null">
-                                                                        Chọn tỉnh / thành </option>
+                                                                        Select City </option>
                                                                     {city && city.map((item, index) => {
                                                                         return <option key={index} value={item.Name}>{item.Name}</option>
                                                                     })}
@@ -391,9 +297,9 @@ const Index = () => {
                                                         </div>
                                                         <div className="field field-show-floating-label field-required field-third ">
                                                             <div className="field-input-wrapper field-input-wrapper-select">
-                                                                <label className="field-label" htmlFor="customer_shipping_district">Quận / huyện</label>
+                                                                <label className="field-label" htmlFor="customer_shipping_district">District</label>
                                                                 <select onChange={(e) => handleChooseCDC(e, "district")} className="field-input" id="customer_shipping_district" name="customer_shipping_district">
-                                                                    <option data-code="null" value="null">Chọn quận / huyện</option>
+                                                                    <option data-code="null" value="null">Select District</option>
                                                                     {district && district.map((item, index) => {
                                                                         return <option key={index} value={item.Name}>{item.Name}</option>
                                                                     })}
@@ -406,9 +312,9 @@ const Index = () => {
                                                         </div>
                                                         <div className="field field-show-floating-label field-required  field-third  ">
                                                             <div className="field-input-wrapper field-input-wrapper-select">
-                                                                <label className="field-label" htmlFor="customer_shipping_ward">Phường / xã</label>
+                                                                <label className="field-label" htmlFor="customer_shipping_ward">Commune / Ward</label>
                                                                 <select onChange={(e) => handleChooseCDC(e, "commune")} className="field-input" id="customer_shipping_ward" name="customer_shipping_ward">
-                                                                    <option data-code="null" value="null">Chọn phường / xã</option>
+                                                                    <option data-code="null" value="null">Select Commune / Ward</option>
                                                                     {/* {commune !== undefined ? commune.Wards.map((item, index) => {
                                                                         return <option key={index} value={item.Name}>{item.Name}</option>
                                                                     }) : null} */}
@@ -416,20 +322,6 @@ const Index = () => {
                                                                         return <option key={index} value={item.Name}>{item.Name}</option>
                                                                     })}
                                                                 </select>
-                                                            </div>
-                                                        </div>
-                                                        <div id="div_location_country_not_vietnam" className="section-customer-information ">
-                                                            <div className="field field-two-thirds">
-                                                                <div className="field-input-wrapper">
-                                                                    <label className="field-label" htmlFor="billing_address_city">Thành phố</label>
-                                                                    <input placeholder="Thành phố" autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_city" name="billing_address[city]" defaultValue />
-                                                                </div>
-                                                            </div>
-                                                            <div className="field field-third">
-                                                                <div className="field-input-wrapper">
-                                                                    <label className="field-label" htmlFor="billing_address_zip">Mã bưu chính</label>
-                                                                    <input placeholder="Mã bưu chính" autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_zip" name="billing_address[zip]" defaultValue />
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -443,7 +335,7 @@ const Index = () => {
                                                 <div className="order-checkout__loading--circle" />
                                             </div>
                                             <div className="section-header">
-                                                <h2 className="section-title">Phương thức thanh toán</h2>
+                                                <h2 className="section-title">Payment method</h2>
                                             </div>
                                             <div className="section-content">
                                                 <div className="content-box">
@@ -464,7 +356,7 @@ const Index = () => {
                                                     </div>
                                                     <div className="radio-wrapper content-box-row content-box-row-secondary " htmlFor="payment_method_id_54606">
                                                         <div className="blank-slate">
-                                                            Là phương thức khách hàng nhận hàng mới trả tiền. Áp dụng với tất cả các đơn hàng trên toàn quốc
+                                                            The method of customers receiving the goods before making payment. Applicable to all orders nationwide
                                                         </div>
                                                     </div>
                                                 </div>
@@ -476,18 +368,18 @@ const Index = () => {
                             <div className="step-footer" id="step-footer-checkout">
 
                                 <input name="utf8" type="hidden" defaultValue="✓" />
-                                <button onClick={() => ResquestCheckOut()} className="step-footer-continue-btn btn">
-                                    <span className="btn-content">Hoàn tất đơn hàng</span>
+                                <button onClick={() => RequestCheckOut()} className="step-footer-continue-btn btn">
+                                    <span className="btn-content">Complete order</span>
                                     <i className="btn-spinner icon icon-button-spinner" />
                                 </button>
 
                                 <a className="step-footer-previous-link" href="/cart">
-                                    Giỏ hàng
+                                    Cart
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div className="hrv-coupons-popup">
+                    {/* <div className="hrv-coupons-popup">
                         <div className="hrv-title-coupons-popup">
                             <p>Chọn giảm giá <span className="count-coupons" /></p>
                             <div className="hrv-coupons-close-popup">
@@ -497,13 +389,13 @@ const Index = () => {
                             </div>
                         </div>
                         <div className="hrv-content-coupons-code">
-                            <h3 className="coupon_heading">Mã giảm giá của shop</h3>
+                            <h3 className="coupon_heading">Discount code của shop</h3>
                             <div className="hrv-discount-code-web">
                             </div>
                             <div className="hrv-discount-code-external">
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="hrv-coupons-popup-site-overlay" />
                     <div className="main-footer footer-powered-by">Powered by Haravan</div>
                 </div >
@@ -556,11 +448,11 @@ const Index = () => {
                                             <div className="field  ">
                                                 <div className="field-input-btn-wrapper">
                                                     <div className="field-input-wrapper">
-                                                        <label className="field-label" htmlFor="discount.code">Mã giảm giá</label>
-                                                        <input placeholder="Mã giảm giá" className="field-input" data-discount-field="true" autoComplete="false" autoCapitalize="off" spellCheck="false" size={30} type="text" id="discount.code" name="discount.code" />
+                                                        <label className="field-label" htmlFor="discount.code">Discount code</label>
+                                                        <input placeholder="Discount code" className="field-input" data-discount-field="true" autoComplete="false" autoCapitalize="off" spellCheck="false" size={30} type="text" id="discount.code" name="discount.code" />
                                                     </div>
                                                     <button type="submit" className="field-input-btn btn btn-default btn-disabled">
-                                                        <span className="btn-content">Sử dụng</span>
+                                                        <span className="btn-content">Apply</span>
                                                         <i className="btn-spinner icon icon-button-spinner" />
                                                     </button>
                                                 </div>
@@ -578,7 +470,7 @@ const Index = () => {
                                         </thead>
                                         <tbody>
                                             <tr className="total-line total-line-subtotal">
-                                                <td className="total-line-name">Tạm tính</td>
+                                                <td className="total-line-name">Temporary</td>
                                                 <td className="total-line-price">
                                                     <span className="order-summary-emphasis" data-checkout-subtotal-price-target={1199000000}>
                                                         {totalArrayOrder()}₫
@@ -586,10 +478,10 @@ const Index = () => {
                                                 </td>
                                             </tr>
                                             <tr className="total-line total-line-shipping">
-                                                <td className="total-line-name">Phí vận chuyển</td>
+                                                <td className="total-line-name">Transport fee</td>
                                                 <td className="total-line-price">
                                                     <span className="order-summary-emphasis" data-checkout-total-shipping-target={0}>
-                                                        —
+                                                        30,000₫
                                                     </span>
                                                 </td>
                                             </tr>
@@ -597,7 +489,7 @@ const Index = () => {
                                         <tfoot className="total-line-table-footer">
                                             <tr className="total-line">
                                                 <td className="total-line-name payment-due-label">
-                                                    <span className="payment-due-label-total">Tổng cộng</span>
+                                                    <span className="payment-due-label-total">Total amount</span>
                                                 </td>
                                                 <td className="total-line-name payment-due">
                                                     <span className="payment-due-currency">VND</span>

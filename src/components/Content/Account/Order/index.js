@@ -24,17 +24,17 @@ const Index = () => {
         <div className="profile-content">
             <div className="user-page">
                 <h1 className="postname">
-                    Quản lý đơn hàng
+                Order Management
                 </h1>
                 {listOrderNew && listOrderNew.map((item, index) => {
                     return <React.Fragment key={index}>
                         <hr />
                         <div className="row" style={{ padding: "0px 20px 10px 20px" }}>
-                            <div className="col-6">Đơn hàng: {item.orderId}</div>
+                            <div className="col-6">Order: {item.orderId}</div>
                             <div className="col-6 row" style={{ display: "flex", flexDirection: "row-reverse", padding: "0" }}>
-                                {item.status !== "Giao hàng thành công" ? <div style={{ color: "#5d5dd9" }}>Đang tiến hành</div>
+                                {item.status !== "Delivery successful" ? <div style={{ color: "#5d5dd9" }}>In process</div>
                                     :
-                                    <div style={{ color: "green" }}>Hoàn thành</div>}
+                                    <div style={{ color: "green" }}>Complete</div>}
                                 <div style={{ padding: "0 10px 0 10px" }}>|</div>
                                 <div>{item.status}</div>
                             </div>
@@ -49,17 +49,17 @@ const Index = () => {
                             </div>
                             <div className="col-4" style={{ textAlign: "right", margin: "auto", color: "red" }}> {item.product[0].quantity * item.product[0].nowPrice}₫</div>
                         </div>
-                        <div style={{ textAlign: "right", margin: "auto", color: "red", padding: "0px 20px 10px 20px" }}>Tổng: {item.sumOrder + item.ship} ₫</div>
+                        <div style={{ textAlign: "right", margin: "auto", color: "red", padding: "0px 20px 10px 20px" }}>Total: {item.sumOrder + item.ship} ₫</div>
                         <div className="row" style={{ padding: "0px 20px 10px 20px" }}>
                             <div className="profile-userbuttons">
                                 <NavLink to="">
-                                    <button type="button" className="btn btn-secondary btn-sm">Xem chi tiết đơn hàng</button>
+                                    <button type="button" className="btn btn-secondary btn-sm">View order details</button>
                                 </NavLink>
                             </div>
                         </div>
                     </React.Fragment>
                 })}
-                {listOrder && listOrderNew && listOrder.length === listOrderNew.length ? null : <button type="button" className="btn btn-secondary btn-sm" style={{ display: 'flex', margin: '0 auto' }} onClick={handleScroll}>Xem thêm</button>}
+                {listOrder && listOrderNew && listOrder.length === listOrderNew.length ? null : <button type="button" className="btn btn-secondary btn-sm" style={{ display: 'flex', margin: '0 auto' }} onClick={handleScroll}>More</button>}
             </div>
         </div>
     );

@@ -7,11 +7,11 @@ const Index = () => {
     return (
         <div className="gearvn-content-section padding-10-0 hidden-xs hidden-sm container1">
             <div className="content-flex top-header-bar">
-                <span className="style-nav-fix hidden"><i className="fa fa-bars" /> Danh mục sản phẩm</span>
+                <span className="style-nav-fix hidden"><i className="fa fa-bars" /> Product portfolio</span>
                 <div className="fixed-nav">
-                    <span className="fixed-menu style-nav-fix "><i className="fa fa-bars" /> Danh mục sản phẩm</span>
+                    <span className="fixed-menu style-nav-fix "><i className="fa fa-bars" /> Product portfolio</span>
                     {/*MENU LEFT*/}
-                    {/* <span class="click-list"><i class="fa fa-bars"></i> Danh mục sản phẩm</span> */}
+                    {/* <span class="click-list"><i class="fa fa-bars"></i> Product portfolio</span> */}
                     <div className="gearvn-header-menu freez">
                         <div className="cat-menu gearvn-cat-menu">
                             <nav id="megamenu-nav-freez" className="megamenu-nav">
@@ -26,31 +26,31 @@ const Index = () => {
 
                 <Link to="/pay" className="gearvn-header-navigation-item recently-product-item header-navigation-recently-products ">
                     <div className="xxxkt">
-                        <img src="//theme.hstatic.net/1000026716/1000440777/14/xk2.png?v=34146" />
-                        <img src="//theme.hstatic.net/1000026716/1000440777/14/xk2s.png?v=34146" />
+                        <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/xk2.png?v=34146" />
+                        <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/xk2s.png?v=34146" />
                     </div>
-                    HƯỚNG DẪN THANH TOÁN
+                    PAYMENT GUIDE
                 </Link>
                 <Link to="/installment" className="gearvn-header-navigation-item recently-product-item header-navigation-recently-products ">
                     <div className="xxxkt">
-                        <img src="//theme.hstatic.net/1000026716/1000440777/14/xk3.png?v=34146" />
-                        <img src="//theme.hstatic.net/1000026716/1000440777/14/xk3s.png?v=34146" />
+                        <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/xk3.png?v=34146" />
+                        <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/xk3s.png?v=34146" />
                     </div>
-                    HƯỚNG DẪN TRẢ GÓP
+                    PAYMENT INSTRUCTIONS
                 </Link>
                 <Link to="/guarantee" className="gearvn-header-navigation-item recently-product-item header-navigation-recently-products ">
                     <div className="xxxkt">
-                        <img src="//theme.hstatic.net/1000026716/1000440777/14/xk4.png?v=34146" />
-                        <img src="//theme.hstatic.net/1000026716/1000440777/14/xk4s.png?v=34146" />
+                        <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/xk4.png?v=34146" />
+                        <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/xk4s.png?v=34146" />
                     </div>
-                    CHÍNH SÁCH BẢO HÀNH
+                    WARRANTY POLICY
                 </Link>
                 <Link to="/ship" className="gearvn-header-navigation-item recently-product-item header-navigation-recently-products ">
                     <div className="xxxkt">
-                        <img src="//theme.hstatic.net/1000026716/1000440777/14/xk5.png?v=34146" />
-                        <img src="//theme.hstatic.net/1000026716/1000440777/14/xk5s.png?v=34146" />
+                        <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/xk5.png?v=34146" />
+                        <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/xk5s.png?v=34146" />
                     </div>
-                    CHÍNH SÁCH VẬN CHUYỂN
+                    SHIPPING POLICY
                 </Link>
             </div>
         </div>

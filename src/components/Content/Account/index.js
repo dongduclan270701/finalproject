@@ -24,7 +24,7 @@ const Index = () => {
 
                                         </div> */}
                                 <div className="profile-userbuttons">
-                                    <NavLink to=""><button type="button" className="btn btn-secondary btn-sm">Thoát ra</button></NavLink>
+                                    <NavLink to=""><button type="button" className="btn btn-secondary btn-sm">Logout</button></NavLink>
                                 </div>
                                 <div className="profile-usermenu">
                                     <ul className="nav">
@@ -32,7 +32,7 @@ const Index = () => {
                                             <button className="button-profile">
                                                 <div className="row row-profile" style={{ margin: "0 auto", padding:"0 40px",width:"100%" }}>
                                                     {/* <div className="button-number-profile">1</div> */}
-                                                    <div className="button-text-profile">Thông tin cá nhân</div>
+                                                    <div className="button-text-profile">Information User</div>
                                                 </div>
                                             </button>
                                         </li>
@@ -40,7 +40,7 @@ const Index = () => {
                                             <button className="button-profile">
                                                 <div className="row row-profile" style={{ margin: "0 auto", padding:"0 40px",width:"100%" }}>
                                                     {/* <div className="button-number-profile">2</div> */}
-                                                    <div className="button-text-profile">Cập nhật thông tin</div>
+                                                    <div className="button-text-profile">Update Information</div>
                                                 </div>
                                             </button>
                                         </li>
@@ -48,7 +48,7 @@ const Index = () => {
                                             <button className="button-profile">
                                                 <div className="row row-profile" style={{ margin: "0 auto", padding:"0 40px",width:"100%" }}>
                                                     {/* <div className="button-number-profile">3</div> */}
-                                                    <div className="button-text-profile">Thông báo</div>
+                                                    <div className="button-text-profile">Notice Board</div>
                                                 </div>
                                             </button>
                                         </li>
@@ -56,7 +56,7 @@ const Index = () => {
                                             <button className="button-profile">
                                                 <div className="row row-profile" style={{ margin: "0 auto", padding:"0 40px",width:"100%" }}>
                                                     {/* <div className="button-number-profile">4</div> */}
-                                                    <div className="button-text-profile">Kho voucher</div>
+                                                    <div className="button-text-profile">Voucher List </div>
                                                 </div>
                                             </button>
                                         </li>
@@ -64,7 +64,7 @@ const Index = () => {
                                             <button className="button-profile">
                                                 <div className="row row-profile" style={{ margin: "0 auto", padding:"0 40px",width:"100%" }}>
                                                     {/* <div className="button-number-profile">4</div> */}
-                                                    <div className="button-text-profile">Đơn hàng</div>
+                                                    <div className="button-text-profile">Orders List</div>
                                                 </div>
                                             </button>
                                         </li>

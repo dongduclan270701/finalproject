@@ -2,21 +2,21 @@ import React from 'react';
 
 const Index = () => {
     return (
-        <div id="SECTION474" className="ladi-section">
-                <div className="ladi-section-background" />
-                <div className="ladi-container">
-                    <div id="IMAGE510" className="ladi-element">
-                        <div className="ladi-image">
-                            <div className="ladi-image-background" />
+        <div id="SECTION474" className="laid-section">
+                <div className="laid-section-background" />
+                <div className="laid-container">
+                    <div id="IMAGE510" className="laid-element">
+                        <div className="laid-image">
+                            <div className="laid-image-background" />
                         </div>
                     </div>
-                    <div id="IMAGE529" className="ladi-element">
-                        <div className="ladi-image">
-                            <div className="ladi-image-background" />
+                    <div id="IMAGE529" className="laid-element">
+                        <div className="laid-image">
+                            <div className="laid-image-background" />
                         </div>
                     </div>
-                    <div id="HEADLINE534" className="ladi-element">
-                        <h1 className="ladi-headline">
+                    <div id="HEADLINE534" className="laid-element">
+                        <h1 className="laid-headline">
                             Laptop Dell Văn Phòng<br />
                         </h1>
                     </div>
