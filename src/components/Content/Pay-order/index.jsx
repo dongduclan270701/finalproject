@@ -1,56 +1,198 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import 'assets/scss/Content/Pay-order/Pay-order.scss'
 import axios from 'axios';
+import { createOrderByCustomer } from 'Apis'
+import Swal from 'sweetalert2'
+import { useNavigate, NavLink } from 'react-router-dom';
+import { StateContext } from 'Context/Context'
+
 const Index = () => {
-    const [arrayOrder, setArrayOrder] = useState(JSON.parse(localStorage.getItem('orderArray')))
+    const state = useContext(StateContext)
+    const navigate = useNavigate()
+    // const [arrayOrder, setArrayOrder] = useState(JSON.parse(localStorage.getItem('orderArray')))
     const [city, setCity] = useState([])
     const [district, setDistrict] = useState([])
     const [commune, setCommune] = useState(undefined)
-    const [orderCheckOut, setOrderCheckOut] = useState({
-        product: arrayOrder,
-        fnameAndlname: "",
-        phoneNumber:"",
-        address: "",
+    const [orderCheckOut, setOrderCheckOut] = useState(JSON.parse(localStorage.getItem('user')) ? {
+        product: state.arrayOrder,
+        email: JSON.parse(localStorage.getItem('user'))[0],
+        username: JSON.parse(localStorage.getItem('user'))[1],
+        phoneNumber: JSON.parse(localStorage.getItem('user'))[2],
+        address: JSON.parse(localStorage.getItem('user'))[3],
         city: "",
         district: "",
         commune: "",
-        discountCode : "",
-})
-    useEffect(() => {
-        
-    }, [arrayOrder]);
+        discountCode: [],
+        shipping_process: [],
+        method_payment: "Thanh toán khi nhận hàng",
+        ship: 30000,
+        sumOrder: 0,
+        status: 'Đã đặt đơn hàng',
+    } :
+        {
+            product: state.arrayOrder,
+            email: "",
+            username: "",
+            phoneNumber: "",
+            address: "",
+            city: "",
+            district: "",
+            commune: "",
+            discountCode: [],
+            shipping_process: [],
+            method_payment: "Thanh toán khi nhận hàng",
+            ship: 30000,
+            sumOrder: 0,
+            status: 'Đã đặt đơn hàng',
+
+        }
+    )
     useEffect(() => {
         const getCity = async () => {
             try {
-                const response = await axios.get('https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json');
-                setCity(response.data)
+                await axios.get('https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json')
+                    .then(result => {
+                        setCity(result.data)
+                    })
+
             } catch (error) {
                 console.log(error)
             }
         }
         getCity()
     }, []);
-    useEffect(() => {
-        const indexCity = city.findIndex(i => i.Name === orderCheckOut.city)
-        if (city.length > 0) {
-            setDistrict(city[indexCity].Districts)
-        }
-        if (city.length > 0 && city[indexCity].Districts.length > 0) {
-            const indexDistrices = city[indexCity].Districts.findIndex(i => i.Name === orderCheckOut.district)
-            setCommune(city[indexCity].Districts[indexDistrices])
-        }
-    }, [orderCheckOut]);
     const totalArrayOrder = () => {
         let total = 0;
-        arrayOrder.map((item, index) => {
+        state.arrayOrder && state.arrayOrder.map((item, index) => {
             total += item.nowPrice * item.quantity
         })
         return total
     }
-    
-    const ResquestCheckOut = () => {
 
-        console.log(orderCheckOut)
+    const handleChooseCDC = (e, nameTypeChoose) => {
+        if (nameTypeChoose === 'city') {
+            const indexCity = city.findIndex(i => i.Name === e.target.value)
+            setOrderCheckOut({ ...orderCheckOut, city: e.target.value, district: "", commune: "" })
+            setDistrict(city[indexCity].Districts)
+        }
+        if (nameTypeChoose === 'district') {
+            setOrderCheckOut({ ...orderCheckOut, district: e.target.value, commune: "" })
+            const indexCity = city.findIndex(i => i.Name === orderCheckOut.city)
+            const indexDistrict = city[indexCity].Districts.findIndex(i => i.Name === e.target.value)
+            setCommune(city[indexCity].Districts[indexDistrict].Wards)
+        }
+        if (nameTypeChoose === 'commune') {
+            setOrderCheckOut({ ...orderCheckOut, commune: e.target.value })
+        }
+
+    }
+
+    const ResquestCheckOut = () => {
+        const date = new Date();
+        const minutes = date.getMinutes();
+        const hours = date.getHours();
+        const time = `${hours}:${minutes}`;
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear();
+        const today = `${year}-${month}-${day}`;
+        if (orderCheckOut.address === "") {
+            Swal.fire({
+                title: 'Bạn chưa nhập đủ thông tin!',
+                text: 'Hãy nhập địa chỉ!',
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        }
+        else if (orderCheckOut.phoneNumber === null) {
+            Swal.fire({
+                title: 'Bạn chưa nhập đủ thông tin!',
+                text: 'Hãy nhập số điện thoại nhận hàng!',
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        }
+        else if (orderCheckOut.phoneNumber.length !== 10) {
+            Swal.fire({
+                title: 'Bạn chưa nhập đủ thông tin!',
+                text: 'Hãy nhập đúng kiểu số điện thoại!',
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        }
+        else if (orderCheckOut.city === "") {
+            Swal.fire({
+                title: 'Bạn chưa nhập đủ thông tin!',
+                text: 'Hãy chọn Tỉnh / Thành phố!',
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        }
+        else if (orderCheckOut.district === "") {
+            Swal.fire({
+                title: 'Bạn chưa nhập đủ thông tin!',
+                text: 'Hãy chọn Quận / Huyện!',
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        }
+        else if (orderCheckOut.commune === "") {
+            Swal.fire({
+                title: 'Bạn chưa nhập đủ thông tin!',
+                text: 'Hãy chọn Phường / Xã!',
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        }
+        else if (orderCheckOut.product === null || orderCheckOut.product.length < 1) {
+            Swal.fire({
+                title: 'Bạn chưa có sản phẩm nào cả!',
+                text: 'Hãy chọn mua sản phẩm trước khi đặt đơn!',
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        }
+        else {
+            const newData = { 
+                ...orderCheckOut, 
+                shipping_process: [{ time: time, date: today, content: 'Đã đặt đơn hàng' }],
+                sumOrder: totalArrayOrder(),
+            }
+            createOrderByCustomer(newData)
+                .then(result => {
+                    Swal.fire({
+                        title: 'Đặt hàng thành công!',
+                        text: 'Bạn đã đặt hàng thành công!',
+                        icon: 'success',
+                        confirmButtonText: 'OK!'
+                    })
+                    localStorage.removeItem("orderArray")
+                    setOrderCheckOut({
+                        product: [],
+                        email: "",
+                        username: "",
+                        phoneNumber: "",
+                        address: "",
+                        city: "",
+                        district: "",
+                        commune: "",
+                        discountCode: "",
+                    })
+                    navigate('/cart')
+                })
+                .catch(error => {
+                    Swal.fire({
+                        title: 'Đặt hàng thất bại!',
+                        text: 'Có vẻ như đường truyền đến server có vấn đề!',
+                        icon: 'error',
+                        confirmButtonText: 'OK!'
+                    })
+                    console.log(error)
+                })
+
+        }
+
+
     }
     return (
         <div className='content'>
@@ -86,18 +228,24 @@ const Index = () => {
                                     <div className="section-content section-customer-information no-mb">
                                         <input type="hidden" name="checkout_user[email]" defaultValue="dongduclan277@gmail.com" />
                                         <div className="logged-in-customer-information">
-                                            {/* <div className="logged-in-customer-information-avatar-wrapper">
-                                                <div className="logged-in-customer-information-avatar gravatar" style={{ backgroundImage: 'url(//www.gravatar.com/avatar/e2d3c79e0ca369f29ed6871b7650339f.jpg?s=100&d=blank)', filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="//www.gravatar.com/avatar/e2d3c79e0ca369f29ed6871b7650339f.jpg?s=100&d=blank", sizingMethod="scale")' }} />
-                                            </div> */}
-                                            {/* <p className="logged-in-customer-information-paragraph">
-                                                Đồng Đức Lân (dongduclan277@gmail.com)
-                                                <br />
-                                                <a href="/account/logout?return_url=%2Fcheckouts%2F00957fc80b8544a1894cfbe21c67a4e5%3Fstep%3D1">Đăng xuất</a>
-                                            </p> */}
-                                            <p className="section-content-text">
-                                                Bạn đã có tài khoản?
-                                                <a href="/account/login?urlredirect=%2Fcheckouts%2F00957fc80b8544a1894cfbe21c67a4e5%3Fstep%3D1">Đăng nhập</a>
-                                            </p>
+                                            {JSON.parse(localStorage.getItem('user')) ? <>
+                                                <div className="logged-in-customer-information-avatar-wrapper">
+                                                    <div className="logged-in-customer-information-avatar gravatar" style={{ backgroundImage: 'url(//www.gravatar.com/avatar/e2d3c79e0ca369f29ed6871b7650339f.jpg?s=100&d=blank)', filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="//www.gravatar.com/avatar/e2d3c79e0ca369f29ed6871b7650339f.jpg?s=100&d=blank", sizingMethod="scale")' }} />
+                                                </div>
+                                                <p className="logged-in-customer-information-paragraph">
+                                                    {JSON.parse(localStorage.getItem('user'))[1]} ({JSON.parse(localStorage.getItem('user'))[0]})
+                                                    <br />
+                                                    <NavLink to="/login">Đăng xuất</NavLink>
+                                                </p>
+                                            </>
+                                                :
+                                                <p className="section-content-text">
+                                                    Bạn đã có tài khoản?
+                                                    <NavLink to="/login">Đăng nhập</NavLink>
+                                                </p>
+                                            }
+
+
                                         </div>
                                         <div className="fieldset">
                                             {/* <div className="field field-show-floating-label">
@@ -197,13 +345,13 @@ const Index = () => {
                                             <div className="field field-required  ">
                                                 <div className="field-input-wrapper">
                                                     <label className="field-label" htmlFor="billing_address_full_name">Họ và tên</label>
-                                                    <input onChange={(e) => setOrderCheckOut({...orderCheckOut, fnameAndlname: e.target.value})} placeholder="Họ và tên" autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_full_name" name="billing_address[full_name]" autoComplete="false" />
+                                                    <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, username: e.target.value })} defaultValue={orderCheckOut.username} placeholder="Họ và tên" autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_full_name" name="billing_address[full_name]" autoComplete="false" />
                                                 </div>
                                             </div>
                                             <div className="field field-required   ">
                                                 <div className="field-input-wrapper">
                                                     <label className="field-label" htmlFor="billing_address_phone">Số điện thoại</label>
-                                                    <input  onChange={(e) => setOrderCheckOut({...orderCheckOut, phoneNumber: e.target.value})} autoComplete="false" placeholder="Số điện thoại" autoCapitalize="off" spellCheck="false" className="field-input" size={30} maxLength={15} type="tel" id="billing_address_phone" name="billing_address[phone]" />
+                                                    <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, phoneNumber: e.target.value })} defaultValue={orderCheckOut.phoneNumber} autoComplete="false" placeholder="Số điện thoại" autoCapitalize="off" spellCheck="false" className="field-input" size={30} maxLength={15} type="tel" id="billing_address_phone" name="billing_address[phone]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -221,7 +369,7 @@ const Index = () => {
                                                         <div className="field field-required  field-show-floating-label">
                                                             <div className="field-input-wrapper">
                                                                 <label className="field-label" htmlFor="billing_address_address1">Địa chỉ</label>
-                                                                <input onChange={(e) => setOrderCheckOut({...orderCheckOut, address: e.target.value})} placeholder="Địa chỉ" autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_address1" name="billing_address[address1]"  />
+                                                                <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, address: e.target.value })} defaultValue={orderCheckOut.address} placeholder="Địa chỉ" autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_address1" name="billing_address[address1]" />
                                                             </div>
                                                         </div>
                                                         <input name="selected_customer_shipping_country" type="hidden" defaultValue />
@@ -231,22 +379,22 @@ const Index = () => {
                                                         <div className="field field-show-floating-label field-required field-third ">
                                                             <div className="field-input-wrapper field-input-wrapper-select">
                                                                 <label className="field-label" htmlFor="customer_shipping_province"> Tỉnh / thành</label>
-                                                                <select  onChange={(e) => setOrderCheckOut({...orderCheckOut, city: e.target.value, district: "",commune: ""})} className="field-input" id="customer_shipping_province" name="customer_shipping_province">
+                                                                <select onChange={(e) => handleChooseCDC(e, "city")} className="field-input" id="customer_shipping_province" name="customer_shipping_province">
                                                                     <option data-code="null" value="null">
                                                                         Chọn tỉnh / thành </option>
-                                                                    {city && city.map((item,index) => {
+                                                                    {city && city.map((item, index) => {
                                                                         return <option key={index} value={item.Name}>{item.Name}</option>
                                                                     })}
-                                                                    
+
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div className="field field-show-floating-label field-required field-third ">
                                                             <div className="field-input-wrapper field-input-wrapper-select">
                                                                 <label className="field-label" htmlFor="customer_shipping_district">Quận / huyện</label>
-                                                                <select onChange={(e) => setOrderCheckOut({...orderCheckOut, district: e.target.value, commune: ""})} className="field-input" id="customer_shipping_district" name="customer_shipping_district">
+                                                                <select onChange={(e) => handleChooseCDC(e, "district")} className="field-input" id="customer_shipping_district" name="customer_shipping_district">
                                                                     <option data-code="null" value="null">Chọn quận / huyện</option>
-                                                                    {district && district.map((item,index)=> {
+                                                                    {district && district.map((item, index) => {
                                                                         return <option key={index} value={item.Name}>{item.Name}</option>
                                                                     })}
                                                                     {/* {console.log(city)} */}
@@ -259,12 +407,14 @@ const Index = () => {
                                                         <div className="field field-show-floating-label field-required  field-third  ">
                                                             <div className="field-input-wrapper field-input-wrapper-select">
                                                                 <label className="field-label" htmlFor="customer_shipping_ward">Phường / xã</label>
-                                                                <select onChange={(e) => setOrderCheckOut({...orderCheckOut, commune: e.target.value})} className="field-input" id="customer_shipping_ward" name="customer_shipping_ward">
-                                                                    <option data-code="null" value="null" selected>Chọn phường / xã</option>
-                                                                    
-                                                                    {commune !== undefined ? commune.Wards.map((item, index) => {
-                                                                            return <option key={index} value={item.Name}>{item.Name}</option>
-                                                                        }) : null}
+                                                                <select onChange={(e) => handleChooseCDC(e, "commune")} className="field-input" id="customer_shipping_ward" name="customer_shipping_ward">
+                                                                    <option data-code="null" value="null">Chọn phường / xã</option>
+                                                                    {/* {commune !== undefined ? commune.Wards.map((item, index) => {
+                                                                        return <option key={index} value={item.Name}>{item.Name}</option>
+                                                                    }) : null} */}
+                                                                    {commune && commune.map((item, index) => {
+                                                                        return <option key={index} value={item.Name}>{item.Name}</option>
+                                                                    })}
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -324,13 +474,13 @@ const Index = () => {
                                 </div>
                             </div >
                             <div className="step-footer" id="step-footer-checkout">
-                                
-                                    <input name="utf8" type="hidden" defaultValue="✓" />
-                                    <button onClick={() => ResquestCheckOut()}  className="step-footer-continue-btn btn">
-                                        <span className="btn-content">Hoàn tất đơn hàng</span>
-                                        <i className="btn-spinner icon icon-button-spinner" />
-                                    </button>
-                                
+
+                                <input name="utf8" type="hidden" defaultValue="✓" />
+                                <button onClick={() => ResquestCheckOut()} className="step-footer-continue-btn btn">
+                                    <span className="btn-content">Hoàn tất đơn hàng</span>
+                                    <i className="btn-spinner icon icon-button-spinner" />
+                                </button>
+
                                 <a className="step-footer-previous-link" href="/cart">
                                     Giỏ hàng
                                 </a>
@@ -373,29 +523,29 @@ const Index = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {arrayOrder.map((item,index) => {
+                                            {state.arrayOrder && state.arrayOrder.map((item, index) => {
                                                 return <tr className="product" data-product-id={1044931183} data-variant-id={1099216743} key={index}>
-                                                <td className="product-image">
-                                                    <div className="product-thumbnail">
-                                                        <div className="product-thumbnail-wrapper">
-                                                            <img className="product-thumbnail-image" alt="Laptop Acer Aspire 3 A315 59 321N" src="//product.hstatic.net/1000026716/product/gearvn-laptop-acer-aspire-3-a315-59-321n-1_3e1558ea185e42768e0c0367368c2136_small.png" />
+                                                    <td className="product-image">
+                                                        <div className="product-thumbnail">
+                                                            <div className="product-thumbnail-wrapper">
+                                                                <img className="product-thumbnail-image" alt="Laptop Acer Aspire 3 A315 59 321N" src={item.img[0]} />
+                                                            </div>
+                                                            <span className="product-thumbnail-quantity" aria-hidden="true">{item.quantity}</span>
                                                         </div>
-                                                        <span className="product-thumbnail-quantity" aria-hidden="true">{item.quantity}</span>
-                                                    </div>
-                                                </td>
-                                                <td className="product-description">
-                                                    <span className="product-description-name order-summary-emphasis">{item.nameProduct}</span>
-                                                    <span className="product-description-variant order-summary-small-text">
-                                                    {item.nameProduct}
-                                                    </span>
-                                                </td>
-                                                <td className="product-quantity visually-hidden">{item.quantity}</td>
-                                                <td className="product-price">
-                                                    <span className="order-summary-emphasis">{item.nowPrice}₫</span>
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                    <td className="product-description">
+                                                        <span className="product-description-name order-summary-emphasis">{item.nameProduct}</span>
+                                                        <span className="product-description-variant order-summary-small-text">
+                                                            {item.nameProduct}
+                                                        </span>
+                                                    </td>
+                                                    <td className="product-quantity visually-hidden">{item.quantity}</td>
+                                                    <td className="product-price">
+                                                        <span className="order-summary-emphasis">{item.nowPrice}₫</span>
+                                                    </td>
+                                                </tr>
                                             })}
-                                            
+
                                         </tbody>
                                     </table>
                                 </div>

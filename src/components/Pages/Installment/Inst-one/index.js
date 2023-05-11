@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Index = () => {
     return (
@@ -282,11 +283,11 @@ const Index = () => {
                                     <div className="ladi-line-container" />
                                 </div>
                             </div>
-                            <a href="" target="_blank" rel="nofollow" id="IMAGE416" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/khach-hang/tra-cuu-khoan-vay.html">
+                            <NavLink to="" rel="nofollow" id="IMAGE416" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/khach-hang/tra-cuu-khoan-vay.html">
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background ladi-lazyload" />
                                 </div>
-                            </a>
+                            </NavLink>
                             <div id="HEADLINE417" className="ladi-element">
                                 <h3 className="ladi-headline ladi-lazyload">
                                     Bước 2:</h3>
@@ -298,31 +299,31 @@ const Index = () => {
                                     click vào để xem chi tiết:<br />
                                 </div>
                             </div>
-                            <a href="" target="_blank" rel="nofollow" id="IMAGE419" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-buu-dien.html">
+                            <NavLink to="" rel="nofollow" id="IMAGE419" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-buu-dien.html">
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background ladi-lazyload" />
                                 </div>
-                            </a>
-                            <a href="" target="_blank" rel="nofollow" id="IMAGE420" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-ngan-hang-agribank.html">
+                            </NavLink>
+                            <NavLink to="" rel="nofollow" id="IMAGE420" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-ngan-hang-agribank.html">
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background ladi-lazyload" />
                                 </div>
-                            </a>
-                            <a href="" target="_blank" rel="nofollow" id="IMAGE421" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-momo.html">
+                            </NavLink>
+                            <NavLink to="" rel="nofollow" id="IMAGE421" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-momo.html">
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background ladi-lazyload" />
                                 </div>
-                            </a>
-                            <a href="" target="_blank" rel="nofollow" id="IMAGE422" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-ngan-hang-hdbank.html">
+                            </NavLink>
+                            <NavLink to="" rel="nofollow" id="IMAGE422" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-ngan-hang-hdbank.html">
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background ladi-lazyload" />
                                 </div>
-                            </a>
-                            <a href="" target="_blank" rel="nofollow" id="IMAGE423" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-ngan-hang-bidv.html">
+                            </NavLink>
+                            <NavLink to="" rel="nofollow" id="IMAGE423" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-ngan-hang-bidv.html">
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background ladi-lazyload" />
                                 </div>
-                            </a>
+                            </NavLink>
                         </div>
                     </div>
                     <div id="IMAGE537" className="ladi-element">

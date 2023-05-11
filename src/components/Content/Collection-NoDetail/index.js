@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 
 const Index = () => {
-    const params = useParams()
-    console.log(params)
+    // const params = useParams()
     const [Laptop, setLaptop] = useState(
         [
             {

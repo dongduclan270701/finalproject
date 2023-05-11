@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const FooterProductSale = () => {
     return (
@@ -108,18 +109,18 @@ const FooterProductSale = () => {
                             VGC - Cộng đồng game thủ<br />
                         </div>
                     </a>
-                    <a href="" target="_blank" id="SHAPE171" className="ladi-element" data-replace-href="https://gvn360.com/">
+                    <NavLink to="" id="SHAPE171" className="ladi-element" data-replace-href="https://gvn360.com/">
                         <div className="ladi-shape">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 24 24" className fill="rgba(232, 104, 48, 1)">
                                 <path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
                             </svg>
                         </div>
-                    </a>
-                    <a href="" target="_blank" id="PARAGRAPH205" className="ladi-element" data-replace-href="https://gvn360.com/">
+                    </NavLink>
+                    <NavLink to="" id="PARAGRAPH205" className="ladi-element" data-replace-href="https://gvn360.com/">
                         <div className="ladi-paragraph">
                             GVN360 - Tin tức công nghệ<br />
                         </div>
-                    </a>
+                    </NavLink>
                     <a href="https://www.youtube.com/channel/UCdxRpD_T4-HzPsely-Fcezw" target="_blank" id="SHAPE167" className="ladi-element" data-replace-href="https://www.youtube.com/channel/UCdxRpD_T4-HzPsely-Fcezw">
                         <div className="ladi-shape">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 24 24" className fill="rgba(235, 39, 39, 1)">
@@ -132,18 +133,18 @@ const FooterProductSale = () => {
                             Kênh Youtube GEARVN<br />
                         </div>
                     </a>
-                    <a href="" target="_blank" id="SHAPE173" className="ladi-element" data-replace-href="https://tuyendung.gearvn.com/">
+                    <NavLink to="" id="SHAPE173" className="ladi-element" data-replace-href="https://tuyendung.gearvn.com/">
                         <div className="ladi-shape">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 1792 1896.0833" className fill="rgba(235, 39, 39, 1)">
                                 <path d="M640 256h512V128H640v128zm1152 640v480q0 66-47 113t-113 47H160q-66 0-113-47T0 1376V896h672v160q0 26 19 45t45 19h320q26 0 45-19t19-45V896h672zm-768 0v128H768V896h256zm768-480v384H0V416q0-66 47-113t113-47h352V96q0-40 28-68t68-28h576q40 0 68 28t28 68v160h352q66 0 113 47t47 113z" />
                             </svg>
                         </div>
-                    </a>
-                    <a href="" target="_blank" id="PARAGRAPH207" className="ladi-element" data-replace-href="https://tuyendung.gearvn.com/">
+                    </NavLink>
+                    <NavLink to="" id="PARAGRAPH207" className="ladi-element" data-replace-href="https://tuyendung.gearvn.com/">
                         <div className="ladi-paragraph">
                             Kênh tuyển dụng<br />
                         </div>
-                    </a>
+                    </NavLink>
                     <div id="LINE302" className="ladi-element">
                         <div className="ladi-line">
                             <div className="ladi-line-container" />
@@ -154,59 +155,59 @@ const FooterProductSale = () => {
                             <div className="ladi-line-container" />
                         </div>
                     </div>
-                    <a href="" target="_blank" id="HEADLINE304" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
+                    <NavLink to="" id="HEADLINE304" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
                         <h4 className="ladi-headline">
                             Hệ thống chi nhánh</h4>
-                    </a>
+                    </NavLink>
                     <div id="LINE305" className="ladi-element">
                         <div className="ladi-line">
                             <div className="ladi-line-container" />
                         </div>
                     </div>
-                    <a href="" target="_blank" id="PARAGRAPH339" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
+                    <NavLink to="" id="PARAGRAPH339" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
                         <div className="ladi-paragraph">
                             Khu vực miền nam</div>
-                    </a>
-                    <a href="" target="_blank" id="PARAGRAPH342" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
+                    </NavLink>
+                    <NavLink to="" id="PARAGRAPH342" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
                         <div className="ladi-paragraph">
                             Khu vực miền bắc</div>
-                    </a>
-                    <a href="" target="_blank" id="PARAGRAPH176" className="ladi-element" data-replace-href="https://gearvn.com/pages/chinh-sach-bao-hanh">
+                    </NavLink>
+                    <NavLink to="" id="PARAGRAPH176" className="ladi-element" data-replace-href="https://gearvn.com/pages/chinh-sach-bao-hanh">
                         <div className="ladi-paragraph">
                             Chính sách bảo hành<br />
                         </div>
-                    </a>
-                    <a href="" target="_blank" id="PARAGRAPH198" className="ladi-element" data-replace-href="https://gearvn.com/pages/chinh-sach-giao-hang">
+                    </NavLink>
+                    <NavLink to="" id="PARAGRAPH198" className="ladi-element" data-replace-href="https://gearvn.com/pages/chinh-sach-giao-hang">
                         <div className="ladi-paragraph">
                             Chính sách giao hàng<br />
                         </div>
-                    </a>
-                    <a href="" target="_blank" id="PARAGRAPH199" className="ladi-element" data-replace-href="https://gearvn.com/pages/chinh-sach-bao-mat">
+                    </NavLink>
+                    <NavLink to="" id="PARAGRAPH199" className="ladi-element" data-replace-href="https://gearvn.com/pages/chinh-sach-bao-mat">
                         <div className="ladi-paragraph">
                             Chính sách bảo mật<br />
                         </div>
-                    </a>
-                    <a href="" target="_blank" id="PARAGRAPH200" className="ladi-element" data-replace-href="https://gearvn.com/pages/huong-dan-tra-gop">
+                    </NavLink>
+                    <NavLink to="" id="PARAGRAPH200" className="ladi-element" data-replace-href="https://gearvn.com/pages/huong-dan-tra-gop">
                         <div className="ladi-paragraph">
                             Hướng dẫn trả góp<br />
                         </div>
-                    </a>
-                    <a href="" target="_blank" id="PARAGRAPH202" className="ladi-element" data-replace-href="https://gearvn.com/pages/huong-dan-thanh-toan-gearvn">
+                    </NavLink>
+                    <NavLink to="" id="PARAGRAPH202" className="ladi-element" data-replace-href="https://gearvn.com/pages/huong-dan-thanh-toan-gearvn">
                         <div className="ladi-paragraph">
                             Hướng dẫn thanh toán<br />
                         </div>
-                    </a>
-                    <a href="" target="_blank" id="PARAGRAPH203" className="ladi-element" data-replace-href="https://gearvn.com/pages/khuyenmaigaminggear">
+                    </NavLink>
+                    <NavLink to="" id="PARAGRAPH203" className="ladi-element" data-replace-href="https://gearvn.com/pages/khuyenmaigaminggear">
                         <div className="ladi-paragraph">
                             Tổng hợp khuyến mãi
                             <br />
                         </div>
-                    </a>
-                    <a href="" target="_blank" id="PARAGRAPH403" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
+                    </NavLink>
+                    <NavLink to="" id="PARAGRAPH403" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
                         <div className="ladi-paragraph">
                             Trung tâm bảo hành
                         </div>
-                    </a>
+                    </NavLink>
                 </div>
             </div>
     );

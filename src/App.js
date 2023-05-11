@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useContext, memo } from 'react';
 import HeaderMain from 'components/Header/Header-main'
 import Login from 'components/Login'
 import Register from 'components/Register'
@@ -21,6 +21,7 @@ import PayOrder from 'components/Content/Pay-order'
 import Account from 'components/Content/Account'
 import Order from 'components/Content/Information-order'
 
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -29,6 +30,7 @@ import {
 } from 'react-router-dom'
 import 'assets/scss/Header/Header-main.scss'
 function App() {
+
   return (
     <Router>
       <Routes>
@@ -40,7 +42,7 @@ function App() {
           </>
         } />
         <Route path='/login' element={
-          JSON.parse(localStorage.getItem('auth-token'))?
+          JSON.parse(localStorage.getItem('auth-token-user'))?
           <Navigate to={-1} />
           :
           <>
@@ -50,7 +52,7 @@ function App() {
           </>
         } />
         <Route path='/register' element={
-          JSON.parse(localStorage.getItem('auth-token'))?
+          JSON.parse(localStorage.getItem('auth-token-user'))?
           <Navigate to={-1} />
           :
           <>
@@ -60,7 +62,7 @@ function App() {
           </>
         } />
         <Route path='/account' element={
-          JSON.parse(localStorage.getItem('auth-token')) ?
+          JSON.parse(localStorage.getItem('auth-token-user')) ?
           <>
           <HeaderMain /><Banner/>
             <Account/>
@@ -106,7 +108,7 @@ function App() {
             <Footer/>
           </>
         } />
-        <Route path='/products/:codeProduct' element={
+        <Route path='/products/:src' element={
           <>
             <HeaderMain /><Banner/>
             <Product />
@@ -155,4 +157,4 @@ function App() {
   );
 }
 
-export default App;
+export default memo(App);

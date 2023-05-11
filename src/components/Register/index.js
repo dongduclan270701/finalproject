@@ -19,8 +19,8 @@ const Index = () => {
                         confirmButtonText: 'OK!'
                     })
                 } else {
-                    localStorage.setItem("auth-token", JSON.stringify(result.token));
-                    localStorage.setItem("user", JSON.stringify(result.username));
+                    localStorage.setItem("auth-token-user", JSON.stringify(result.token));
+                    localStorage.setItem("user", JSON.stringify(result.user));
                     Swal.fire({
                         title: 'Đăng ký thành công!',
                         text: 'Chào mừng đến với website của Gearvn!',

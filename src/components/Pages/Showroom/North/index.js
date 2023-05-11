@@ -29,7 +29,7 @@ const Index = (props) => {
                 <div className="ladi-container">
                     <div id="HTML_CODE229" className="ladi-element">
                         <div className="ladi-html-code">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.500064164398!2d105.8205301!3d21.0126681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd7a4041695%3A0xa594770e41494bdb!2sGearvn!5e0!3m2!1svi!2s!4v1661848939309!5m2!1svi!2s" width={461} height={300} style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                            <iframe title="1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.500064164398!2d105.8205301!3d21.0126681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd7a4041695%3A0xa594770e41494bdb!2sGearvn!5e0!3m2!1svi!2s!4v1661848939309!5m2!1svi!2s" width={461} height={300} style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
                         </div>
                     </div>
                     <div id="GROUP496" className="ladi-element">
@@ -80,12 +80,12 @@ const Index = (props) => {
                     </div>
                     <div id="HTML_CODE506" className="ladi-element">
                         <div className="ladi-html-code">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.500064164398!2d105.8205301!3d21.0126681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd7a4041695%3A0xa594770e41494bdb!2sGearvn!5e0!3m2!1svi!2s!4v1661848939309!5m2!1svi!2s" width={400} height={260} style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                            <iframe title="1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.500064164398!2d105.8205301!3d21.0126681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd7a4041695%3A0xa594770e41494bdb!2sGearvn!5e0!3m2!1svi!2s!4v1661848939309!5m2!1svi!2s" width={400} height={260} style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
                         </div>
                     </div>
                     <div id="GROUP586" className="ladi-element">
                         <div className="ladi-group">
-                            <a href="https://goo.gl/maps/bX3PKjtioY7CHjTq9" target="_blank" id="IMAGE587" className="ladi-element" data-replace-href="https://goo.gl/maps/bX3PKjtioY7CHjTq9">
+                            <a href="https://goo.gl/maps/bX3PKjtioY7CHjTq9" id="IMAGE587" className="ladi-element" data-replace-href="https://goo.gl/maps/bX3PKjtioY7CHjTq9">
                                 <div className="ladi-image">
                                     <div className="ladi-image-background ladi-lazyload" />
                                 </div>
@@ -117,7 +117,7 @@ const Index = (props) => {
                             </div>
                         </div>
                     </div>
-                    <a href="https://www.facebook.com/gvnhanoi" target="_blank" rel="nofollow" id="GROUP904" className="ladi-element" data-replace-href="https://www.facebook.com/gvnhanoi">
+                    <a href="https://www.facebook.com/gvnhanoi" rel="nofollow" id="GROUP904" className="ladi-element" data-replace-href="https://www.facebook.com/gvnhanoi">
                         <div className="ladi-group">
                             <div id="SHAPE905" className="ladi-element">
                                 <div className="ladi-shape">
@@ -139,7 +139,7 @@ const Index = (props) => {
                 <div className="ladi-container">
                     <div id="HTML_CODE813" className="ladi-element">
                         <div className="ladi-html-code">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.8844175340923!2d105.86355981538493!3d20.997269794227428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ad299216a147%3A0x6b54e1a8c33501a2!2sGearvn!5e0!3m2!1sen!2s!4v1675440773202!5m2!1sen!2s" width={461} height={300} style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                            <iframe title="1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.8844175340923!2d105.86355981538493!3d20.997269794227428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ad299216a147%3A0x6b54e1a8c33501a2!2sGearvn!5e0!3m2!1sen!2s!4v1675440773202!5m2!1sen!2s" width={461} height={300} style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
                         </div>
                     </div>
                     <div id="GROUP814" className="ladi-element">
@@ -190,12 +190,12 @@ const Index = (props) => {
                     </div>
                     <div id="HTML_CODE824" className="ladi-element">
                         <div className="ladi-html-code">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.872250793978!2d105.86501821533179!3d20.9977573942109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac05ad2b82ab%3A0x7251d05b97061f86!2zNDYwIFAuIE1pbmggS2hhaSwgVsSpbmggVHV5LCBIYWkgQsOgIFRyxrBuZywgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1670236322129!5m2!1sen!2s" width={400} height={260} style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                            <iframe title="1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.872250793978!2d105.86501821533179!3d20.9977573942109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac05ad2b82ab%3A0x7251d05b97061f86!2zNDYwIFAuIE1pbmggS2hhaSwgVsSpbmggVHV5LCBIYWkgQsOgIFRyxrBuZywgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1670236322129!5m2!1sen!2s" width={400} height={260} style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
                         </div>
                     </div>
                     <div id="GROUP825" className="ladi-element">
                         <div className="ladi-group">
-                            <a href="https://goo.gl/maps/bX3PKjtioY7CHjTq9" target="_blank" id="IMAGE826" className="ladi-element" data-replace-href="https://goo.gl/maps/bX3PKjtioY7CHjTq9">
+                            <a href="https://goo.gl/maps/bX3PKjtioY7CHjTq9" id="IMAGE826" className="ladi-element" data-replace-href="https://goo.gl/maps/bX3PKjtioY7CHjTq9">
                                 <div className="ladi-image">
                                     <div className="ladi-image-background ladi-lazyload" />
                                 </div>
@@ -229,7 +229,7 @@ const Index = (props) => {
                             </div>
                         </div>
                     </div>
-                    <a href="https://www.facebook.com/gearvn.460.minhkhai" target="_blank" rel="nofollow" id="GROUP907" className="ladi-element" data-replace-href="https://www.facebook.com/gearvn.460.minhkhai">
+                    <a href="https://www.facebook.com/gearvn.460.minhkhai" rel="nofollow" id="GROUP907" className="ladi-element" data-replace-href="https://www.facebook.com/gearvn.460.minhkhai">
                         <div className="ladi-group">
                             <div id="SHAPE908" className="ladi-element">
                                 <div className="ladi-shape">

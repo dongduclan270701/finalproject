@@ -111,16 +111,16 @@ Chọn màu sắc, số lượng sản phẩm
                                                 <table width="100%" border={0} cellSpacing={0} cellPadding={4}>
                                                     <tbody><tr className>
                                                         <td>
-                                                            <img className="product_cs_thumb" src="//hstatic.net/0/0/global/noDefaultImage6_small.gif" />
+                                                            <img alt="" className="product_cs_thumb" src="//hstatic.net/0/0/global/noDefaultImage6_small.gif" />
                                                             <span>Laptop Asus Vivobook 15 X515EA BR2045W / 12295		</span>
                                                         </td>
                                                         <td className="text-right">
                                                             <span className>10,990,000₫</span>
                                                         </td>
                                                         <td className="text-right variant-control" data-price={1099000000}>
-                                                            <button className="bt_down" type="button" onclick="javascript:jQuery(this).qtyDown('qty1098653408');"> - </button>
+                                                            <button className="bt_down" type="button"> - </button>
                                                             <input type="text" className="input_qty" id="qty1098653408" name="qty[]" defaultValue={0} />
-                                                            <button className="bt_up" type="button" onclick="javascript:jQuery(this).qtyUp('qty1098653408');"> + </button>
+                                                            <button className="bt_up" type="button"> + </button>
                                                             <input type="hidden" defaultValue={1098653408} name="pid[]" className="vid" />
                                                         </td>
                                                     </tr>
@@ -138,7 +138,7 @@ Chọn màu sắc, số lượng sản phẩm
                                             </div>
                                             <div className="clearfix" />
                                             <div className="form-group">
-                                                <a id="allowAdd2Cart" className="product_buy_btn btn-success theme_button addtocar" onClick={statusOrder}>Đặt hàng</a>
+                                                <a href id="allowAdd2Cart" className="product_buy_btn btn-success theme_button addtocar" onClick={statusOrder}>Đặt hàng</a>
                                             </div>
                                         </form>
                                     </strong>

@@ -1,42 +1,28 @@
-import React,{useState} from 'react';
+import React, { useState, useEffect } from 'react';
+import { fetchSearchLaptopCollecting } from 'Apis'
+import { NavLink } from 'react-router-dom';
 
 const Index = () => {
     const [Laptop, setLaptop] = useState(
-        [
-            {
-                productName:"Laptop Asus Vivobook 15 X515EA BR2045W",
-                realPrice: 11490000,
-                SaleNowPrice:10990000,
-                img:"//product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-15-x515ea-br2045w-1_f7e2bdc9339d400ea1fa3943e7abccba_large.png",
-                percent:-4,
-                src:"laptop-asus-vivobook-15-x515ea-br2045w"
-            },
-            {
-                productName:"Laptop Asus Vivobook 14 X1402ZA EK232W",
-                realPrice: 22990000,
-                SaleNowPrice:13490000,
-                img:"//product.hstatic.net/1000026716/product/gearvn-laptop-asus-vivobook-14-x1402za-ek232w-1_e2af0d7006a34cb692ffe6b810e83a39_large.png",
-                percent:-39,
-                src:"laptop-asus-vivobook-14-x1402za-ek232w"
-            },
-            {
-                productName:"Laptop MSI Modern 15 A11M 1024VN",
-                realPrice: 16990000,
-                SaleNowPrice:14690000,
-                img:"//product.hstatic.net/1000026716/product/i3_bce8c31dc65d4496adb27e465903a0e9_large.png",
-                percent:-14,
-                src:"laptop-msi-modern-15-a11m-1024vn"
-            }
-        ]
     )
+    useEffect(() => {
+        fetchSearchLaptopCollecting({ nameProduct: "", category: ['ASUS', [], [], []] }, 1)
+            .then(result => {
+                setLaptop(result.data)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }, [])
+
     return (
         <div className="noindex">
             <section className="light_section">
                 <div id="collection" className="container1">
                     <div className=" banner-collection-header">
-                        <a href="/collections/laptop-asus-vivobook-series" target="_blank">
+                        <NavLink to="" >
                             <img src="https://file.hstatic.net/1000026716/collection/vvb_gearvn1920x450_61fba033031f4d6d97272973a3154f39.jpg" alt="Laptop Asus Vivobook Series" style={{ height: '300px', width: '100%', objectFit: 'contain' }} />
-                        </a>
+                        </NavLink>
                     </div>
                     <div className="col-sm-12">
                         <h1 className="title-box-collection">
@@ -75,25 +61,28 @@ const Index = () => {
                                 </div>
                                 <div className="col-md-12 product-list">
                                     <div className="row content-product-list">
-                                        {Laptop.map((item,index) => {
+                                        {
+                                        Laptop ? Laptop.map((item, index) => {
                                             return <div className="col-sm-3 col-xs-12 padding-none col-fix20" key={index}>
-                                            <div className="product-row">
-                                                <a href={"/products/" + item.src}>
-                                                </a><div className="product-row-img"><a href={"/products/" + item.src}>
-                                                    <img className="product-row-thumbnail" src={item.img} alt={item.productName} />
-                                                </a><div className="product-row-price-hover"><a href={"/products/" + item.src}>
-                                                    <div className="product-row-note pull-left">Click để xem chi tiết</div>
-                                                </a><a href={"/products/" + item.src} className="product-row-btnbuy pull-right">Đặt hàng</a></div></div>
-                                                <h2 className="product-row-name">{item.productName}</h2>
-                                                <div className="product-row-info">
-                                                    <div className="product-row-price pull-left"><del>{item.realPrice}₫</del><br /><span className="product-row-sale">{item.SaleNowPrice}₫</span></div>
-                                                    {/*<span class="product-row-buyer pull-right"><i class="fa fa-user"></i><br/>185</span>*/}
-                                                    <div className="clearfix" />
+                                                <div className="product-row">
+                                                    <a href={"/products/" + item.src}>
+                                                    </a><div className="product-row-img"><NavLink to={"/products/" + item.src}>
+                                                        <img className="product-row-thumbnail" src={item.img[0]} alt={item.nameProduct} />
+                                                    </NavLink><div className="product-row-price-hover"><NavLink to={"/products/" + item.src}>
+                                                        <div className="product-row-note pull-left">Click để xem chi tiết</div>
+                                                    </NavLink><NavLink to={"/products/" + item.src} className="product-row-btnbuy pull-right">Đặt hàng</NavLink></div></div>
+                                                    <h2 className="product-row-name">{item.nameProduct}</h2>
+                                                    <div className="product-row-info">
+                                                        <div className="product-row-price pull-left"><del>{item.realPrice}₫</del><br /><span className="product-row-sale">{item.nowPrice}₫</span></div>
+                                                        {/*<span class="product-row-buyer pull-right"><i class="fa fa-user"></i><br/>185</span>*/}
+                                                        <div className="clearfix" />
+                                                    </div>
+                                                    <div className="new-product-percent">{item.percent}%</div>
                                                 </div>
-                                                <div className="new-product-percent">{item.percent}%</div>
                                             </div>
-                                        </div>
-                                        })}
+                                        })
+                                        : null
+                                        }
                                     </div>
                                 </div>
                                 <div className="col-md-12 ">
@@ -110,7 +99,7 @@ const Index = () => {
                             <span style={{ fontSize: '18px' }}>
                                 <em>
                                     Laptop <strong>
-                                        <a target="_blank" href="https://gearvn.com/collections/laptop-asus-vivobook-series">
+                                        <a  href="https://gearvn.com/collections/laptop-asus-vivobook-series">
                                             Asus Vivobook</a>
                                     </strong>
                                     là một trong những dòng laptop dành cho học sinh, sinh viên và cả người làm văn phòng, là một trong những dòng laptop được yêu thích, chọn lựa nhiêu hiện nay. Với mức giá rẻ, cấu hình phù hợp, mẫu laptop này còn nổi bật với thiết kế đẹp, mỏng, sang trọng mà ít dòng nào ở thời điểm hiện tại có được.</em>
@@ -167,7 +156,7 @@ const Index = () => {
                         </p>
                         <p style={{ textAlign: 'justify' }}>
                             <span style={{ fontSize: '18px' }}>
-                                Hầu hết những chiếc <a data-mce-href="https://gearvn.com/collections/laptop-asus" target="_blank" href="https://gearvn.com/collections/laptop-asus">
+                                Hầu hết những chiếc <a data-mce-href="https://gearvn.com/collections/laptop-asus"  href="https://gearvn.com/collections/laptop-asus">
                                     laptop Asus</a>
                                 Vivobook đều sở hữu màn hình Full HD. Mang đến cho người sử dụng trải nghiệm hiển thị vô cùng chân thực và sống động.</span>
                         </p>

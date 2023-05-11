@@ -8,6 +8,7 @@ import SeriesOneSales from './Series-one'
 import SeriesTwoSales from './Series-two'
 import SeriesThreeSales from './Series-three'
 import SupportSalse from './Support'
+import { NavLink } from 'react-router-dom';
 const Index = () => {
     return (
         <div className="ladi-wraper" data-padding-top-id="HEADER" data-scroll-padding-top={70} style={{ paddingTop: '70px' }}>
@@ -42,15 +43,15 @@ const Index = () => {
                     <div id="POPUP269" className="ladi-element ladi-animation">
                         <div className="ladi-popup">
                             <div className="ladi-popup-background" />
-                            <a href="" target="_blank" id="BUTTON283" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
+                            <NavLink to="" id="BUTTON283" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
                                 <div className="ladi-button">
                                     <div className="ladi-button-background" />
                                     <div id="BUTTON_TEXT283" className="ladi-element ladi-button-headline">
                                         <p className="ladi-headline ladi-transition">Hệ Thống Showroom</p>
                                     </div>
                                 </div>
-                            </a>
-                            <a href="" target="_blank" id="BUTTON285" className="ladi-element" data-replace-href="https://gearvn.com/pages/huong-dan-tra-gop">
+                            </NavLink>
+                            <NavLink to="" id="BUTTON285" className="ladi-element" data-replace-href="https://gearvn.com/pages/huong-dan-tra-gop">
                                 <div className="ladi-button">
                                     <div className="ladi-button-background" />
                                     <div id="BUTTON_TEXT285" className="ladi-element ladi-button-headline">
@@ -59,8 +60,8 @@ const Index = () => {
                                         </p>
                                     </div>
                                 </div>
-                            </a>
-                            <a href="" target="_blank" id="BUTTON287" className="ladi-element" data-replace-href="https://gearvn.com/pages/chinh-sach-bao-hanh">
+                            </NavLink>
+                            <NavLink to="" id="BUTTON287" className="ladi-element" data-replace-href="https://gearvn.com/pages/chinh-sach-bao-hanh">
                                 <div className="ladi-button">
                                     <div className="ladi-button-background" />
                                     <div id="BUTTON_TEXT287" className="ladi-element ladi-button-headline">
@@ -69,7 +70,7 @@ const Index = () => {
                                         </p>
                                     </div>
                                 </div>
-                            </a>
+                            </NavLink>
                             <div data-action="true" id="BUTTON289" className="ladi-element">
                                 <div className="ladi-button">
                                     <div className="ladi-button-background" />

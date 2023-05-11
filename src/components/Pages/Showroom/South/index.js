@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Index = (props) => {
     const {choose} = props
@@ -82,10 +83,10 @@ const Index = (props) => {
                                             </svg>
                                         </div>
                                     </div>
-                                    <a href="" target="_blank" rel="nofollow" id="HEADLINE893" className="ladi-element" data-replace-href="https://www.facebook.com/profile.php?id=100063946362100">
+                                    <NavLink to="" rel="nofollow" id="HEADLINE893" className="ladi-element" data-replace-href="https://www.facebook.com/profile.php?id=100063946362100">
                                         <p className="ladi-headline ladi-lazyload">
                                             Truy cập Fanpage GEARVN Hoàng Hoa Thám</p>
-                                    </a>
+                                    </NavLink>
                                 </div>
                             </div>
                             <div id="HEADLINE149" className="ladi-element">
@@ -206,10 +207,10 @@ const Index = (props) => {
                                             </svg>
                                         </div>
                                     </div>
-                                    <a href="" target="_blank" rel="nofollow" id="HEADLINE897" className="ladi-element" data-replace-href="https://www.facebook.com/gearvn.905.khavancan">
+                                    <NavLink to="" target="_blank" rel="nofollow" id="HEADLINE897" className="ladi-element" data-replace-href="https://www.facebook.com/gearvn.905.khavancan">
                                         <p className="ladi-headline ladi-lazyload">
                                             Truy cập Fanpage GEARVN Kha Vạn Cân</p>
-                                    </a>
+                                    </NavLink>
                                 </div>
                             </div>
                             <div id="HEADLINE471" className="ladi-element">

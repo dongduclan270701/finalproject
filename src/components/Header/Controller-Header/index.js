@@ -1,10 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
-
+import React, { useEffect, useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom'
+import { StateContext } from 'Context/Context'
 const Index = () => {
+    const state = useContext(StateContext)
     const hanldLogout = () => {
-        localStorage.removeItem("auth-token");
-        localStorage.removeItem("user");
+        localStorage.removeItem("auth-token-user");
+        localStorage.removeItem("user")
         window.location.reload();
     }
     return (
@@ -16,7 +17,7 @@ const Index = () => {
                             <img src="//theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=34146" title="GEARVN PC HIGH-END & GAMING GEAR" alt="gearvn" />
                         </a>
                         <a href="/" className="hidden-sm hidden-md hidden-lg logo-small">
-                            <img id="logo-xxx" src="//theme.hstatic.net/1000026716/1000440777/14/logo-icon-01.svg?v=34146" />
+                            <img alt="" id="logo-xxx" src="//theme.hstatic.net/1000026716/1000440777/14/logo-icon-01.svg?v=34146" />
                         </a>
                         <div className="sidebar-search hidden-md hidden-lg" style={{ flex: 1, marginLeft: '15px', marginRight: '56px' }}>
                             <div className="gearvn-search-block-mobile">
@@ -44,16 +45,18 @@ const Index = () => {
                         </div>
                         <div className="pdl0 fl1 ">
                             <div className="gearvn-right-top-block">
-                                {JSON.parse(localStorage.getItem('auth-token')) ?
+                                {JSON.parse(localStorage.getItem('auth-token-user')) ?
                                     <>
                                         <Link className="gearvn-header-top-item" to="/register">
-                                            <img src="//theme.hstatic.net/1000026716/1000440777/14/ak1.png?v=34146" />
+                                            <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak1.png?v=34146" />
                                             <div className="header-right-description">
-                                                <div className="gearvn-text">{JSON.parse(localStorage.getItem('user'))}</div>
+                                                <div className="gearvn-text">{
+                                                    JSON.parse(localStorage.getItem('user'))[1]
+                                                }</div>
                                             </div>
                                         </Link>
                                         <button onClick={hanldLogout} className="gearvn-header-top-item">
-                                            <img src="//theme.hstatic.net/1000026716/1000440777/14/ak2.png?v=35775" />
+                                            <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak2.png?v=35775" />
                                             <div className="header-right-description">
                                                 <div className="gearvn-text">Đăng xuất</div>
                                             </div>
@@ -62,13 +65,13 @@ const Index = () => {
                                     :
                                     <>
                                         <Link className="gearvn-header-top-item" to="/register">
-                                            <img src="//theme.hstatic.net/1000026716/1000440777/14/ak1.png?v=34146" />
+                                            <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak1.png?v=34146" />
                                             <div className="header-right-description">
                                                 <div className="gearvn-text">Đăng ký</div>
                                             </div>
                                         </Link>
                                         <Link className="gearvn-header-top-item" to="/login">
-                                            <img src="//theme.hstatic.net/1000026716/1000440777/14/ak3.png?v=34146" />
+                                            <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak3.png?v=34146" />
                                             <div className="header-right-description">
                                                 <div className="gearvn-text">Đăng nhập</div>
                                             </div>
@@ -77,14 +80,14 @@ const Index = () => {
                                 }
 
                                 <Link className="gearvn-header-top-item" to="/product-sales">
-                                    <img src="//theme.hstatic.net/1000026716/1000440777/14/ak4.png?v=34146" />
+                                    <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak4.png?v=34146" />
                                     <div className="header-right-description">
                                         <div className="gearvn-text">khuyến mãi</div>
                                     </div>
                                 </Link>
-                                <Link className="gearvn-cart gearvn-header-top-item rela" to="/">
-                                    <div className="number">0</div>
-                                    <img src="//theme.hstatic.net/1000026716/1000440777/14/ak5.png?v=34146" />
+                                <Link className="gearvn-cart gearvn-header-top-item rela" to="/cart">
+                                    <div className="number">{state.arrayOrder.length}</div>
+                                    <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak5.png?v=34146" />
                                     <div className="header-right-description">
                                         <div className="gearvn-text">giỏ hàng </div>
                                     </div>
@@ -94,62 +97,52 @@ const Index = () => {
                         <div className="gearvn-info-top">
                             <ul>
                                 <li>
-                                    <img src="//theme.hstatic.net/1000026716/1000440777/14/tongdai-icon.png?v=34146" />
+                                    <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/tongdai-icon.png?v=34146" />
                                     <span>
-                                        <Link to="/hotline">
-                                            <a style={{ color: '#ea1c00' }} >
+                                        <NavLink to="/hotline" style={{ color: '#ea1c00' }}>
                                                 Tổng đài
-                                            </a>
-                                        </Link>
+                                        </NavLink>
                                     </span>
                                 </li>
                                 <li>
-                                    <img src="//theme.hstatic.net/1000026716/1000440777/14/youtube.png?v=34146" />
+                                    <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/youtube.png?v=34146" />
                                     <span>
-                                        <Link to="/video">
-                                            <a style={{ color: '#ea1c00' }} >
-                                                Videos
-                                            </a>
-                                        </Link>
+                                        <NavLink to="/video" style={{ color: '#ea1c00' }}>
+                                            Videos
+                                        </NavLink>
                                     </span>
                                 </li>
                                 <li>
-                                    <img src="//theme.hstatic.net/1000026716/1000440777/14/gNewsFavIco.png?v=34146" />
+                                    <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/gNewsFavIco.png?v=34146" />
                                     <span>
-                                        <Link to="/news">
-                                            <a style={{ color: '#ea1c00' }} >
-                                                Tin công nghệ
-                                            </a>
-                                        </Link>
+                                        <NavLink to="/news" style={{ color: '#ea1c00' }}>
+                                            Tin công nghệ
+                                        </NavLink>
                                     </span>
                                 </li>
                                 <li>
-                                    <img src="//theme.hstatic.net/1000026716/1000440777/14/logo_hr.png?v=34146" />
+                                    <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/logo_hr.png?v=34146" />
                                     <span>
-                                        <Link to="/recruitment">
-                                            <a style={{ color: '#ea1c00' }} >
-                                                Tuyển dụng
-                                            </a>
-                                        </Link>
+                                        <NavLink to="/recruitment" style={{ color: '#ea1c00' }}>
+                                            Tuyển dụng
+                                        </NavLink>
                                     </span>
                                 </li>
                                 <li>
-                                    <img src="https://file.hstatic.net/200000397757/file/car-dealer_97df9ccd23f243e3a4da757eb19afe6c.png" />
+                                    <img alt="" src="https://file.hstatic.net/200000397757/file/car-dealer_97df9ccd23f243e3a4da757eb19afe6c.png" />
                                     <span>
-                                        <Link to="/showroom">
-                                            <a style={{ color: '#ea1c00' }} >
-                                                Hệ thống showroom
-                                            </a>
-                                        </Link>
+                                        <NavLink to="/showroom" style={{ color: '#ea1c00' }}>
+                                            Hệ thống showroom
+                                        </NavLink>
                                     </span>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div className="gearvn-info-top-mobile">
-                        <span><a style={{ color: '#ea1c00' }} href /></span>
-                    </div>
+                    {/* <div className="gearvn-info-top-mobile">
+                        <span><NavLink style={{ color: '#ea1c00' }} href /></span>
+                    </div> */} 
                 </div>
             </div>
         </div>

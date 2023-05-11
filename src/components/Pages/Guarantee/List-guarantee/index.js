@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Index = () => {
     return (
@@ -1265,61 +1266,61 @@ const Index = () => {
                         <h3 className="ladi-headline">
                             THÔNG TIN LIÊN HỆ BẢO HÀNH THEO HÃNG</h3>
                     </div>
-                    <a href="" target="_blank" rel="nofollow" id="IMAGE1049" className="ladi-element" data-replace-href="https://vn.aoc.com/warranty.php">
+                    <NavLink to="" rel="nofollow" id="IMAGE1049" className="ladi-element" data-replace-href="https://vn.aoc.com/warranty.php">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
-                    <a href="" target="_blank" rel="nofollow" id="IMAGE1050" className="ladi-element" data-replace-href="https://www.lg.com/vn/tro-giup/bao-hanh">
+                    </NavLink>
+                    <NavLink to="" rel="nofollow" id="IMAGE1050" className="ladi-element" data-replace-href="https://www.lg.com/vn/tro-giup/bao-hanh">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
-                    <a href="" target="_blank" rel="nofollow" id="IMAGE1051" className="ladi-element" data-replace-href="https://www.samsung.com/vn/support/warranty/">
+                    </NavLink>
+                    <NavLink to="" rel="nofollow" id="IMAGE1051" className="ladi-element" data-replace-href="https://www.samsung.com/vn/support/warranty/">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
-                    <a href="" target="_blank" rel="nofollow" id="IMAGE1052" className="ladi-element" data-replace-href="https://gearvn.com/pages/www.baohanhhp.vn/vi/lien-he-chung-toi.html">
+                    </NavLink>
+                    <NavLink to="" rel="nofollow" id="IMAGE1052" className="ladi-element" data-replace-href="https://gearvn.com/pages/www.baohanhhp.vn/vi/lien-he-chung-toi.html">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
-                    <a href="" target="_blank" rel="nofollow" id="IMAGE1053" className="ladi-element" data-replace-href="https://www.asus.com/vn/support/">
+                    </NavLink>
+                    <NavLink to="" rel="nofollow" id="IMAGE1053" className="ladi-element" data-replace-href="https://www.asus.com/vn/support/">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
-                    <a href="" target="_blank" rel="nofollow" id="IMAGE1054" className="ladi-element" data-replace-href="https://www.coolermaster.com/vn/vi-vn/warranty/">
+                    </NavLink>
+                    <NavLink to="" rel="nofollow" id="IMAGE1054" className="ladi-element" data-replace-href="https://www.coolermaster.com/vn/vi-vn/warranty/">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
-                    <a href="" target="_blank" rel="nofollow" id="IMAGE1055" className="ladi-element" data-replace-href="https://www.lenovo.com/vn/vn/contact/">
+                    </NavLink>
+                    <NavLink to="" rel="nofollow" id="IMAGE1055" className="ladi-element" data-replace-href="https://www.lenovo.com/vn/vn/contact/">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
-                    <a href="" target="_blank" rel="nofollow" id="IMAGE1056" className="ladi-element" data-replace-href="https://www.acer.com/ac/vi/VN/content/servicecenter">
+                    </NavLink>
+                    <NavLink to="" rel="nofollow" id="IMAGE1056" className="ladi-element" data-replace-href="https://www.acer.com/ac/vi/VN/content/servicecenter">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
-                    <a href="" target="_blank" rel="nofollow" id="IMAGE1057" className="ladi-element" data-replace-href="https://www.dell.com/support/home/en-vn">
+                    </NavLink>
+                    <NavLink to="" rel="nofollow" id="IMAGE1057" className="ladi-element" data-replace-href="https://www.dell.com/support/home/en-vn">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
+                    </NavLink>
                     <div id="IMAGE1095" className="ladi-element">
                         <div className="ladi-image">
                             <div className="ladi-image-background" />
                         </div>
                     </div>
-                    <a href="" target="_blank" rel="nofollow" id="IMAGE1096" className="ladi-element" data-replace-href="https://www.apple.com/legal/warranty/products/embedded-mac-warranty-rest-of-apac-vietnamese.html">
+                    <NavLink to="" rel="nofollow" id="IMAGE1096" className="ladi-element" data-replace-href="https://www.apple.com/legal/warranty/products/embedded-mac-warranty-rest-of-apac-vietnamese.html">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
+                    </NavLink>
                 </div>
             </div>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Index = () => {
     return (
@@ -6,36 +7,36 @@ const Index = () => {
                 <div className="ladi-section-background" />
                 <div className="ladi-overlay" />
                 <div className="ladi-container">
-                    <a href="" target="_blank" id="IMAGE500" className="ladi-element" data-replace-href="https://gearvn.com/products/laptop-dell-xps-13-9320-70295789">
+                    <NavLink to="" id="IMAGE500" className="ladi-element" data-replace-href="https://gearvn.com/products/laptop-dell-xps-13-9320-70295789">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
-                    <a href="" target="_blank" id="IMAGE501" className="ladi-element" data-replace-href="https://gearvn.com/products/laptop-dell-xps-13-plus-9320-5cg56">
+                    </NavLink>
+                    <NavLink to="" id="IMAGE501" className="ladi-element" data-replace-href="https://gearvn.com/products/laptop-dell-xps-13-plus-9320-5cg56">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
-                    <a href="" target="_blank" id="IMAGE502" className="ladi-element" data-replace-href="https://gearvn.com/products/laptop-dell-xps-17-9700-xps7i7001w1-silver">
+                    </NavLink>
+                    <NavLink to="" id="IMAGE502" className="ladi-element" data-replace-href="https://gearvn.com/products/laptop-dell-xps-17-9700-xps7i7001w1-silver">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
-                    <a href="" target="_blank" id="IMAGE503" className="ladi-element" data-replace-href="https://gearvn.com/products/laptop-dell-xps-15-9520-70295790">
+                    </NavLink>
+                    <NavLink to="" id="IMAGE503" className="ladi-element" data-replace-href="https://gearvn.com/products/laptop-dell-xps-15-9520-70295790">
                         <div className="ladi-image ladi-transition">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
-                    <a href="" target="_blank" id="HEADLINE504" className="ladi-element" data-replace-href="https://gearvn.com/collections/laptop-dell-xps-chinh-hang">
+                    </NavLink>
+                    <NavLink to="" id="HEADLINE504" className="ladi-element" data-replace-href="https://gearvn.com/collections/laptop-dell-xps-chinh-hang">
                         <h3 className="ladi-headline ladi-transition">
                             Xem thêm các sản phẩm khác<br />
                         </h3>
-                    </a>
-                    <a href="" target="_blank" id="IMAGE505" className="ladi-element" data-replace-href="https://gearvn.com/collections/laptop-dell-xps-chinh-hang">
+                    </NavLink>
+                    <NavLink to="" id="IMAGE505" className="ladi-element" data-replace-href="https://gearvn.com/collections/laptop-dell-xps-chinh-hang">
                         <div className="ladi-image">
                             <div className="ladi-image-background" />
                         </div>
-                    </a>
+                    </NavLink>
                     <div id="HEADLINE530" className="ladi-element">
                         <h3 className="ladi-headline">
                             &nbsp;(*) Giá bán của sản phẩm có thể thay đổi theo từng thời điểm.

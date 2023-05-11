@@ -29,8 +29,8 @@ const Index = () => {
                 }
                 else {
                     console.log(result)
-                    localStorage.setItem("auth-token", JSON.stringify(result.token));
-                    localStorage.setItem("user", JSON.stringify(result.username));
+                    localStorage.setItem("auth-token-user", JSON.stringify(result.token));
+                    localStorage.setItem("user", JSON.stringify(result.user));
                     Swal.fire({
                         title: 'Đăng nhập thành công!',
                         text: 'Chào mừng đến với website của Gearvn!',

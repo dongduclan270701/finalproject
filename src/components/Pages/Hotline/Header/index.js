@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Index = () => {
     return (
@@ -46,7 +47,7 @@ const Index = () => {
                             </div>
                         </div>
                     </div>
-                    <a href="" target="_blank" id="BUTTON425" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
+                    <NavLink to="" id="BUTTON425" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
                         <div className="ladi-button">
                             <div className="ladi-button-background" />
                             <div id="BUTTON_TEXT425" className="ladi-element ladi-button-headline">
@@ -54,7 +55,7 @@ const Index = () => {
                                     Hệ Thống Showroom</p>
                             </div>
                         </div>
-                    </a>
+                    </NavLink>
                 </div>
             </div>
     );

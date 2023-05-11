@@ -4,6 +4,7 @@ import 'assets/scss/Header/Header-installment.scss'
 import FooterProductSale from 'components/Footer/Footer-product-sale';
 import BannerInstallment from './Banner'
 import InstallmentOne from './Inst-one'
+import { NavLink } from 'react-router-dom';
 const Index = () => {
     return (
         <div className="ladi-wraper" data-padding-top-id="HEADER" data-scroll-padding-top={70} style={{ paddingTop: '70px' }}>
@@ -225,7 +226,7 @@ const Index = () => {
                     <div id="POPUP269" className="ladi-element ladi-animation">
                         <div className="ladi-popup">
                             <div className="ladi-popup-background" />
-                            <a href="" target="_blank" id="BUTTON283" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
+                            <NavLink to="" id="BUTTON283" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
                                 <div className="ladi-button">
                                     <div className="ladi-button-background ladi-lazyload" />
                                     <div id="BUTTON_TEXT283" className="ladi-element ladi-button-headline">
@@ -233,8 +234,8 @@ const Index = () => {
                                             Hệ Thống Showroom</p>
                                     </div>
                                 </div>
-                            </a>
-                            <a href="" target="_blank" id="BUTTON285" className="ladi-element" data-replace-href="https://gearvn.com/pages/huong-dan-tra-gop">
+                            </NavLink>
+                            <NavLink to="" id="BUTTON285" className="ladi-element" data-replace-href="https://gearvn.com/pages/huong-dan-tra-gop">
                                 <div className="ladi-button">
                                     <div className="ladi-button-background ladi-lazyload" />
                                     <div id="BUTTON_TEXT285" className="ladi-element ladi-button-headline">
@@ -242,8 +243,8 @@ const Index = () => {
                                             Mua Hàng Trả Góp</p>
                                     </div>
                                 </div>
-                            </a>
-                            <a href="" target="_blank" id="BUTTON287" className="ladi-element" data-replace-href="https://gearvn.com/pages/chinh-sach-bao-hanh">
+                            </NavLink>
+                            <NavLink to="" id="BUTTON287" className="ladi-element" data-replace-href="https://gearvn.com/pages/chinh-sach-bao-hanh">
                                 <div className="ladi-button">
                                     <div className="ladi-button-background ladi-lazyload" />
                                     <div id="BUTTON_TEXT287" className="ladi-element ladi-button-headline">
@@ -251,7 +252,7 @@ const Index = () => {
                                             Chính Sách Bảo Hành</p>
                                     </div>
                                 </div>
-                            </a>
+                            </NavLink>
                             <div data-action="true" id="BUTTON289" className="ladi-element">
                                 <div className="ladi-button">
                                     <div className="ladi-button-background ladi-lazyload" />

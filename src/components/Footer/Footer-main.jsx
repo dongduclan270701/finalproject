@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Index = () => {
     
@@ -50,15 +51,15 @@ const Index = () => {
                                         </tbody>
                                     </table>
                                     <br />
-                                    <div><a href="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Chính sách bảo hành</a></div><br />
-                                    <div><a href="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Chính sách thanh toán</a></div><br />
-                                    <div><a href="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Chính sách giao hàng</a></div><br />
-                                    <div><a href="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Chính sách bảo mật</a></div>
+                                    <div><NavLink to="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Chính sách bảo hành</NavLink></div><br />
+                                    <div><NavLink to="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Chính sách thanh toán</NavLink></div><br />
+                                    <div><NavLink to="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Chính sách giao hàng</NavLink></div><br />
+                                    <div><NavLink to="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Chính sách bảo mật</NavLink></div>
                                 </div>
                                 <h3 className="title-footer-2" />
                                 <ul className="menu-footer">
                                 </ul>
-                                <a href="" rel="nofollow"><img src="https://theme.hstatic.net/1000026716/1000440777/14/20150827110756-dathongbao.png" style={{ maxWidth: '300px' }} /></a>
+                                <NavLink to="" rel="nofollow"><img src="https://theme.hstatic.net/1000026716/1000440777/14/20150827110756-dathongbao.png" style={{ maxWidth: '300px' }} /></NavLink>
 
                             </div>
                         </div>
@@ -66,7 +67,7 @@ const Index = () => {
                             <div className="moduletable">
                                 {/*<h3>BẢN ĐỒ ĐẾN GEARVN</h3>*/}
                                 <p style={{ fontSize: '16px', display: 'inline' }}>
-                                    <a href=""><b>HỆ THỐNG CỬA HÀNG:</b></a>
+                                    <NavLink to=""><b>HỆ THỐNG CỬA HÀNG:</b></NavLink>
                                 </p>
                                 <p style={{ display: 'inline' }} />
                                 <br />
@@ -81,13 +82,14 @@ const Index = () => {
                                     <div>- Địa chỉ 2: 460 Minh Khai, Phường Vĩnh Tuy, Quận Hai Bà Trưng, Hà Nội</div><br />
                                 </p>
                                 <p style={{ fontSize: '16px', display: 'inline' ,marginBottom:'5px'}}>
-                                    <a href="">
+                                    <NavLink to="">
                                         <b>TRUNG TÂM BẢO HÀNH:</b>
-                                    </a>
+                                    </NavLink>
                                 </p>
                                 <br />
                                 <div><p style={{ fontSize: '14px', paddingTop: '5px' }}>- Địa chỉ : 436A/71 đường 3/2, Phường 12, Quận 10, Hồ Chí Minh.</p></div>
-                                <p style={{ fontSize: '14px' }}>Mua <a href="">PC Gaming</a>, <a href="">laptop gaming</a>, <a href="">card màn hình</a>, <a href="">màn hình máy tính</a>, <a href="">ghế gaming</a>, thiết bị chơi game như PS5 hàng đầu Việt Nam bảo hành chính hãng. Mua online nhận ưu đãi hấp dẫn với nhiều chương trình đặc biệt như Black Friday, G-Fest, Cyber Monday<br /></p>
+                                <p style={{ fontSize: '14px' }}>Mua <NavLink to="">PC Gaming</NavLink>, <NavLink to="">laptop gaming</NavLink>, 
+                                <NavLink to="">card màn hình</NavLink>, <NavLink to="">màn hình máy tính</NavLink>, <NavLink to="">ghế gaming</NavLink>, thiết bị chơi game như PS5 hàng đầu Việt Nam bảo hành chính hãng. Mua online nhận ưu đãi hấp dẫn với nhiều chương trình đặc biệt như Black Friday, G-Fest, Cyber Monday<br /></p>
                                 {/* Pháp nhân */}
                                 <p style={{ fontSize: '14px', paddingTop: '4px' }}>
                                     <div>- Công ty TNHH Thương Mại Gearvn </div><br />
@@ -95,7 +97,7 @@ const Index = () => {
                                     - GĐ/Sở hữu website: Nguyễn Thế Anh <br />
                                 </p>
                                 {/* Code veryfi DMCA Quocvu */}
-                                <a href="" title="DMCA.com Protection Status" className="dmca-badge" rel="nofollow noopener noreferrer"> <img src="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=65147526-7602-46be-9047-e8c33f9fcbd3" alt="DMCA.com Protection Status" /></a>
+                                <NavLink to="" title="DMCA.com Protection Status" className="dmca-badge" rel="nofollow noopener noreferrer"> <img src="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=65147526-7602-46be-9047-e8c33f9fcbd3" alt="DMCA.com Protection Status" /></NavLink>
                                 <ul className="menu fix-menu">
                                 </ul>
                             </div>

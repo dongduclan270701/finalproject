@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 
 const HeaderSale = () => {
@@ -24,12 +25,12 @@ const HeaderSale = () => {
                         </svg>
                     </div>
                 </div>
-                <a href="" target="_blank" id="IMAGE32" className="ladi-element" data-replace-href="https://gearvn.com/">
+                <NavLink to="" id="IMAGE32" className="ladi-element" data-replace-href="https://gearvn.com/">
                     <div className="ladi-image">
                         <div className="ladi-image-background" />
                     </div>
-                </a>
-                <a href="" id="BUTTON259" className="ladi-element">
+                </NavLink>
+                <NavLink to="" id="BUTTON259" className="ladi-element">
                     <div className="ladi-button ladi-transition">
                         <div className="ladi-button-background" />
                         <div id="BUTTON_TEXT259" className="ladi-element ladi-button-headline">
@@ -37,8 +38,8 @@ const HeaderSale = () => {
                                 ☎&nbsp; Hotline: 1800 6975</p>
                         </div>
                     </div>
-                </a>
-                <a href="" target="_blank" id="BUTTON245" className="ladi-element" data-replace-href="https://gearvn.com/pages/huong-dan-tra-gop">
+                </NavLink>
+                <NavLink to="" id="BUTTON245" className="ladi-element" data-replace-href="https://gearvn.com/pages/huong-dan-tra-gop">
                     <div className="ladi-button">
                         <div className="ladi-button-background" />
                         <div id="BUTTON_TEXT245" className="ladi-element ladi-button-headline">
@@ -46,8 +47,8 @@ const HeaderSale = () => {
                                 Trả Góp</p>
                         </div>
                     </div>
-                </a>
-                <a href="" target="_blank" id="BUTTON247" className="ladi-element" data-replace-href="https://gearvn.com/pages/chinh-sach-bao-hanh">
+                </NavLink>
+                <NavLink to="" id="BUTTON247" className="ladi-element" data-replace-href="https://gearvn.com/pages/chinh-sach-bao-hanh">
                     <div className="ladi-button">
                         <div className="ladi-button-background" />
                         <div id="BUTTON_TEXT247" className="ladi-element ladi-button-headline">
@@ -55,7 +56,7 @@ const HeaderSale = () => {
                                 Bảo Hành</p>
                         </div>
                     </div>
-                </a>
+                </NavLink>
                 <div data-action="true" id="BUTTON249" className="ladi-element">
                     <div className="ladi-button">
                         <div className="ladi-button-background" />
@@ -65,7 +66,7 @@ const HeaderSale = () => {
                         </div>
                     </div>
                 </div>
-                <a href="" target="_blank" id="BUTTON256" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
+                <NavLink to="" id="BUTTON256" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
                     <div className="ladi-button">
                         <div className="ladi-button-background" />
                         <div id="BUTTON_TEXT256" className="ladi-element ladi-button-headline">
@@ -73,7 +74,7 @@ const HeaderSale = () => {
                                 Hệ Thống Showroom</p>
                         </div>
                     </div>
-                </a>
+                </NavLink>
                 <div data-action="true" id="MENU_DONG" className="ladi-element">
                     <div className="ladi-shape">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 90 90" enableBackground="new 0 0 90 90" xmlSpace="preserve" preserveAspectRatio="none" width="100%" height="100%" className fill="rgba(235, 39, 39, 1)">

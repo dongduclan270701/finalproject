@@ -1,32 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import { StateContext } from 'Context/Context'
 
 const Index = () => {
-    const navigate = useNavigate();
-    const [arrayOrder, setArrayOrder] = useState(JSON.parse(localStorage.getItem('orderArray')))
-    useEffect(() => {
-
-    }, [arrayOrder]);
+    const state = useContext(StateContext)
+    const [arrayOrder, setArrayOrder] = useState(state.arrayOrder)
     const totalArrayOrder = () => {
         let total = 0;
-        arrayOrder.map((item, index) => {
-            total += item.nowPrice * item.quantity
+        arrayOrder && arrayOrder.map((item, index) => {
+            return total += item.nowPrice * item.quantity
         })
         return total
     }
     const updateOrderCart = (index, value) => {
-        console.log(index, value)
         const newState = arrayOrder.map(obj => {
             // 👇️ if id equals 2, update country property
             if (obj === arrayOrder[index]) {
-                return { ...obj, quantity: value }
+                return { ...obj, quantity: Number(value) }
             }
             // 👇️ otherwise return the object as is
             return obj;
         });
-        localStorage.setItem("orderArray", JSON.stringify(newState))
+        // localStorage.setItem("orderArray", JSON.stringify(newState))
         setArrayOrder(newState)
+        state.handleUpdateArrayOrder(newState)
     }
     const deleteProductInCart = (index) => {
         Swal.fire({
@@ -39,22 +37,23 @@ const Index = () => {
         })
             .then(result => {
                 if (result.isConfirmed) {
-                    const indexArray = arrayOrder.indexOf(arrayOrder[index]);
-                    if (indexArray > -1) {
-                        arrayOrder.splice(indexArray, 1);
-                    }
-                    localStorage.setItem("orderArray", JSON.stringify(arrayOrder))
-                    setArrayOrder(arrayOrder)
+
                     Swal.fire({
-                        title: 'Thêm vào giỏ hàng!',
-                        text: 'Bạn đã thêm sản phẩm vào giỏ hàng thành công!',
+                        title: 'Xoá sản phẩm thành công!',
+                        text: 'Bạn đã xoá sản phẩm khỏi giỏ hàng!',
                         icon: 'success',
                         confirmButtonText: 'OK!'
                     })
-                        .then(result =>{
-                            navigate("/cart")
+                        .then(result => {
+                            const indexArray = arrayOrder.indexOf(arrayOrder[index]);
+                            if (indexArray > -1) {
+                                const newArrayOrder = [...arrayOrder]
+                                newArrayOrder.splice(indexArray, 1);
+                                setArrayOrder(newArrayOrder)
+                                state.handleUpdateArrayOrder(newArrayOrder)
+                            }
                         })
-                        .catch(err =>{
+                        .catch(err => {
                             return err
                         })
                 }
@@ -88,12 +87,12 @@ const Index = () => {
                                         </thead>
                                         <tbody>
 
-                                            {arrayOrder.map((item, index) => {
+                                            {arrayOrder && arrayOrder.map((item, index) => {
                                                 return <tr key={index}>
                                                     <td className="image">
                                                         <div className="product_image">
                                                             <NavLink to={"/products/" + item.src}>
-                                                                <img src={item.img[0]} width={150} />
+                                                                <img src={item.img[0]} width={150} alt="" />
                                                             </NavLink>
                                                         </div>
                                                     </td>
@@ -107,7 +106,7 @@ const Index = () => {
                                                     </td>
                                                     <td className="price">{item.nowPrice}₫</td>
                                                     <td className="remove">
-                                                        <a className="cart" onClick={() => deleteProductInCart(index)}><i className="fa fa-trash" /></a>
+                                                        <a href="/" className="cart" onClick={() => deleteProductInCart(index)}><i className="fa fa-trash" /></a>
                                                     </td>
                                                 </tr>
                                             })}
@@ -127,10 +126,9 @@ const Index = () => {
                                                     <textarea id="note" name="note" rows={8} cols={50} placeholder="Ghi chú" style={{ margin: '0px', height: '70px', borderColor: '#6498cd', borderWidth: '1px', width: '92%' }} defaultValue={""} />
                                                 </td>
                                             </tr>
-
                                         </tbody>
                                     </table>
-                                    <div className="invoice-block hidden">
+                                    <div className="invoice-block">
                                         <div className="hoadon-info">
                                             <div className="r-bill">
                                                 <div className="checkbox">
@@ -141,23 +139,7 @@ const Index = () => {
                                                     </label>
                                                     <label htmlFor="checkbox-bill" className="title">Xuất hoá đơn cho đơn hàng</label>
                                                 </div>
-                                                <div className="bill-field">
-                                                    <div className="form-group">
-                                                        <input type="text" className="form-control val-f check_change" name="attributes[bill_order_company]" defaultValue placeholder="Tên công ty..." />
-                                                    </div>
-                                                    <div className="form-group">
-                                                        <input type="number" pattern=".{10,}" onkeydown="return FilterInput(event)" onpaste="handlePaste(event)" className="form-control val-f val-n check_change" name="attributes[bill_order_tax_code]" defaultValue placeholder="Mã số thuế..." />
-                                                    </div>
-                                                    <div className="form-group">
-                                                        <input type="email" className="form-control val-f check_change" name="attributes[bill_email]" defaultValue placeholder="Email..." />
-                                                    </div>
-                                                    <div className="form-group">
-                                                        <input type="text" className="form-control val-f check_change" name="attributes[bill_order_address]" defaultValue placeholder="Địa chỉ công ty..." />
-                                                    </div>
-                                                    <div className="form-btn">
-                                                        <a href="javascript:void();" className="button btn-save">Lưu thông tin</a>
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -166,8 +148,7 @@ const Index = () => {
                                     </div>
                                     <div className="col-md-6 cart-buttons inner-right inner-left">
                                         <div className="buttons">
-                                            <button type="submit" id="checkout" className="button-default" name="checkout" value>Thanh toán</button>
-                                            <button type="submit" id="update-cart" className="button-default" name="update" value>Cập nhật</button>
+                                            <NavLink to={"/pay-order/"}><button type="submit" id="checkout" className="button-default" name="checkout" value>Thanh toán</button></NavLink>
                                         </div>
                                     </div>
                                 </form>
