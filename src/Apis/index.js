@@ -2,8 +2,28 @@ import axios from 'axios'
 import { API_ROOT } from 'utils'
 const token = JSON.parse(localStorage.getItem('auth-token-user'))
 
+export const fetchCollecting = async () => {
+    const req = await axios.get(`${API_ROOT}/v1/collecting`)
+    return req.data
+}
+
+export const fetchProductCollection = async (data, countPage) => {
+    const req = await axios.get(`${API_ROOT}/v1/searchCustomer/search`, { params: {...data, count:countPage }})
+    return req.data
+}
+
 export const fetchUserDetails = async (username, password) => {
     const req = await axios.get(`${API_ROOT}/v1/users/${username}/${password}`)
+    return req.data
+}
+
+export const fetchCartUser = async (email) => {
+    const req = await axios.get(`${API_ROOT}/v1/cart/${email}`)
+    return req.data
+}
+
+export const updateCart = async (email, data) => {
+    const req = await axios.put(`${API_ROOT}/v1/cart/${email}`, data)
     return req.data
 }
 

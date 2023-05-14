@@ -2,10 +2,10 @@ import React, { useState, useEffect, useContext } from 'react';
 import ProductParameters from './Product-parameters'
 import ProductThumbnail from './Product-thumbnail'
 import TabPanelCharacter from './TabPanel-character'
-import TabPanelDetails from './TabPanel-details'
-import TabPanelHrvProductTabs from './TabPanel-HrvProductTabs'
-import { useParams, useNavigate } from 'react-router-dom';
-import { fetchLaptopCollectingByName } from 'Apis'
+import TabPanelDetails from './TabPanel-reviews'
+import TabPanelHrvProductTabs from './TabPanel-Exchange'
+import { useParams, useNavigate, NavLink } from 'react-router-dom';
+import { fetchLaptopCollectingByName, updateCart } from 'Apis'
 import Swal from 'sweetalert2'
 import { StateContext } from 'Context/Context'
 const Index = () => {
@@ -13,6 +13,7 @@ const Index = () => {
     const params = useParams()
     const navigate = useNavigate();
     const [product, setProduct] = useState()
+    const [activeTable, setActiveTable] = useState(1)
     useEffect(() => {
         fetchLaptopCollectingByName(params.src)
             .then(result => {
@@ -35,30 +36,36 @@ const Index = () => {
         const result = array.findIndex(isSame);
         if (result !== -1) {
             Swal.fire({
-                title: 'Sản phẩm đã trong giỏ hàng!',
-                text: 'Bạn đã có sản phẩm này trong giỏ hàng rồi bạn ơi!',
+                title: 'The product is already in the cart!',
+                text: 'You already have this product in your cart!',
                 icon: 'warning',
                 confirmButtonText: 'OK!'
             })
         } else {
             array.push({ ...product, quantity });
-            state.handleUpdateArrayOrder(array)
-            // localStorage.setItem("orderArray", JSON.stringify(array));
-            // alert product add to cart successfully
-            Swal.fire({
-                title: 'Thêm vào giỏ hàng!',
-                text: 'Bạn đã thêm sản phẩm vào giỏ hàng thành công!',
-                icon: 'success',
-                confirmButtonText: 'OK!'
-            })
+            console.log(array)
+            updateCart(JSON.parse(localStorage.getItem('user'))[0], array)
                 .then(result => {
-                    if (result.isConfirmed) {
-                        navigate("/cart") 
-                    }
+                    state.handleUpdateArrayOrder(array)
+                    Swal.fire({
+                        title: 'Add to cart!',
+                        text: 'You have successfully added the product to your cart!',
+                        icon: 'success',
+                        confirmButtonText: 'OK!'
+                    })
+                        .then(result => {
+                            if (result.isConfirmed) {
+                                navigate("/cart")
+                            }
+                        })
+                        .catch(err => {
+                            return err
+                        })
                 })
-                .catch(err => {
-                    return err
+                .catch(error => {
+                    console.log(error)
                 })
+
         }
 
     }
@@ -68,8 +75,8 @@ const Index = () => {
             <div id="breadcrumb">
                 <div className="main">
                     <div className="breadcrumbs container1">
-                        <span className="showHere">Bạn đang ở: </span><a href="/" className="pathway">Trang chủ</a> <i className="fa fa-caret-right" />
-                        <span><a href="/collections/laptop-asus-hoc-tap-va-lam-viec">Laptop Asus</a> <i className="fa fa-caret-right" /> Laptop Asus Vivobook 15 X515EA BR2045W</span>
+                        <span className="showHere">You are in: </span><NavLink to="/" className="pathway">Homepage</NavLink> <i className="fa fa-caret-right" />
+                        <span> {product && product.nameProduct} </span>
                     </div>
                 </div>
             </div>
@@ -81,7 +88,7 @@ const Index = () => {
                         </div>
                         <div className="page_content">
                             <div className="row">
-                                {product ? <ProductThumbnail product={product} /> : null }
+                                {product ? <ProductThumbnail product={product} /> : null}
                                 {product ? <ProductParameters product={product} checkArrayOrder={checkArrayOrder} /> : null}
                                 <strong>
                                 </strong>
@@ -99,9 +106,9 @@ const Index = () => {
                                         <strong>
                                             {/* Nav tabs */}
                                             <ul className="nav nav-tabs" role="tablist">
-                                                <li role="presentation" className="active"><a href="#chitiet" aria-controls="chitiet" role="tab" data-toggle="tab">Mô tả sản phẩm</a></li>
-                                                <li role="presentation"><a href="#dacdiem" aria-controls="dacdiem" role="tab" data-toggle="tab">Đặc điểm nổi bật</a></li>
-                                                <li role="presentation"><a href="#hrvproducttabs" aria-controls="dacdiem" role="tab" data-toggle="tab">Thông tin bảo hành</a></li>
+                                                <li role="presentation" onClick={() => setActiveTable(1)} className={activeTable === 1 ? "active" : null}><a href="#chitiet" aria-controls="chitiet" role="tab" data-toggle="tab">Product Description</a></li>
+                                                <li role="presentation" onClick={() => setActiveTable(2)} className={activeTable === 2 ? "active" : null}><a href="#tabReviews" aria-controls="tabReviews" role="tab" data-toggle="tab">Product Reviews</a></li>
+                                                <li role="presentation" onClick={() => setActiveTable(3)} className={activeTable === 3 ? "active" : null}><a href="#tabExchange" aria-controls="tabExchange" role="tab" data-toggle="tab">Exchange between buyer and shop</a></li>
                                             </ul>
                                             {/* Tab panes */}
                                         </strong>

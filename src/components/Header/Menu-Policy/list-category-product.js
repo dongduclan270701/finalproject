@@ -1,268 +1,270 @@
 import React, { useState, useEffect } from 'react';
+import { fetchCollecting } from 'Apis'
+import { NavLink } from 'react-router-dom';
 
 const ListCategoryProduct = () => {
     const [item, setItem] = useState(
         [
-            [
-                {
-                    collection: "Laptop",
-                    imgBanner: "//theme.hstatic.net/1000026716/1000440777/14/xxxbannerxxx1.png?v=34146",
-                    img1icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx21.png?v=34146",
-                    img2icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx11.png?v=34146"
-                },
-                {
-                    nameList: "Brand Name",
-                    nameAndSrc: [
-                        ["ASUS", "laptop-ASUS"],
-                        ["ACER", "laptop-ACER"],
-                        ["MSI", "laptop-MSI"],
-                        ["LENOVO", "laptop-LENOVO"],
-                        ["HP", "laptop-HP"],
-                        ["DELL", "laptop-DELL"],
-                        ["GIGABYTE", "laptop-GIGABYTE"],
-                        ["LG", "laptop-LG"],
-                        ["HUAWEI", "laptop-HUAWEI"]],
-                },
-                {
-                    nameList: "Laptop by price",
-                    nameAndSrc: [["Dưới 15 triệu", "laptop-duoi-15-trieu"], ["Từ 15 đến 20 triệu", "laptop-tu-15-den-20-trieu"], ["Trên 20 triệu", "laptop-tren-2-trieu"]]
-                },
-                {
-                    nameList: "Laptop by CPU",
-                    nameAndSrc: [["Intel Core i3", "laptop-intel-core-i3"], ["Intel Core i5", "laptop-intel-core-i5"], ["Intel Core i7", "laptop-intel-core-i7"], ["AMD Ryzen", "laptop-amd-ryzen"]]
-                },
-                {
-                    nameList: "Laptop needs",
-                    nameAndSrc: [["Laptop đồ họa", "laptop-do-hoa"], ["Laptop Học sinh - Sinh viên", "laptop-hoc-sinh-sinh-vien"], ["Laptop mỏng nhẹ cao cấp", "laptop-mong-nhe-cao-cap"]]
-                },
-                {
-                    nameList: "Laptop Components & Accessories",
-                    nameAndSrc: [
-                        ["Ram laptop", "ram-laptop"],
-                        ["SSD laptop", "ssd-laptop"],
-                        ["Laptop heater soleplate", "de-tan-nhiet-laptop"],
-                        ["Backpack and laptop shockproof bag", "balo-va-tui-chong-soc-laptop"],
-                        ["Portable hard drive", "o-cung-di-dong"]]
-                },
-                {
-                    nameList: "Laptop ASUS",
-                    nameAndSrc: [
-                        ["VivoBook Series", "laptop-ASUS-vivobook-series"],
-                        ["VivoBook Pro Series", "laptop-ASUS-vivobook-pro-series"],
-                        ["Zenbook Series", "laptop-ASUS-zenbook-series"],
-                        ["ASUS OLED Series", "laptop-ASUS-asus-oled-series"],
-                        ["ExpertBook Series", "laptop-ASUS-experbook-series"],
-                        ["ProArt StudioBook Series", "laptop-ASUS-proart-studioBook-series"]]
-                },
-                {
-                    nameList: "Laptop ACER",
-                    nameAndSrc: [["Aspire Series", "laptop-ACER-aspire-series"], ["Swift Series", "laptop-ACER-swift-series"]]
-                },
-                {
-                    nameList: "Laptop MSI",
-                    nameAndSrc: [
-                        ["GF Series", "laptop-MSI-gf-series"],
-                        ["GS Series", "laptop-MSI-gs-series"],
-                        ["Bravo Series", "laptop-MSI-bravo-series"],
-                        ["Creator Series", "laptop-MSI-creator-series"],
-                        ["MSI AMD Series", "laptop-MSI-msi-amd-series"],
-                        ["Crosshair Series", "laptop-MSI-crosshair-series"],
-                        ["MSI RTX 40  Series", "laptop-MSI-msi-rtx-40-series"]]
-                },
-                {
-                    nameList: "Laptop LENOVO",
-                    nameAndSrc: [
-                        ["ThinkBook Series", "laptop-LENOVO-thinkbook-series"],
-                        ["IdeaPad Series", "laptop-LENOVO-ideapad-series"],
-                        ["IdeaPad Pro Series", "laptop-LENOVO-ideapad-pro-series"],
-                        ["ThinkPad Series", "laptop-LENOVO-thinkpad-series"],
-                        ["Yoga Series", "laptop-LENOVO-yoga-series"]]
-                },
-                {
-                    nameList: "Laptop DELL",
-                    nameAndSrc: [
-                        ["Inspiron Series", "laptop-DELL-inspiron-series"],
-                        ["Vostro Series", "laptop-DELL-vostro-series"],
-                        ["Latitude Pro Series", "laptop-DELL-latitude-series"],
-                        ["XPS Series", "laptop-DELL-xps-series"]]
-                },
-                {
-                    nameList: "Laptop HP",
-                    nameAndSrc: [
-                        ["Pavilion Series", "laptop-DELL-pavilion-series"],
-                        ["Envy Series", "laptop-DELL-envy-series"],
-                        ["Probook Series", "laptop-DELL-probook-series"]]
-                },
-            ],
-            [
-                {
-                    collection: "Laptop Gaming",
-                    imgBanner: "//theme.hstatic.net/1000026716/1000440777/14/xxxbannerxxx2.png?v=34146",
-                    img1icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx22.png?v=34146",
-                    img2icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx12.png?v=34146"
-                },
-                {
-                    nameList: "Brand Name",
-                    nameAndSrc: [
-                        ["ACER / PREDATOR", "laptop-gaming-acer-predator"],
-                        ["ASUS / ROG", "laptop-gaming-aus-rog"],
-                        ["MSI", "laptop-gaming-msi"],
-                        ["LENOVO", "laptop-gaming-lenovo"],
-                        ["DELL", "laptop-gaming-dell"],
-                        ["GIGABYTE / AORUS", "laptop-gaming-gigabyte-aorus"],
-                        ["HP", "laptop-gaming-hp"]]
-                },
-                {
-                    nameList: "Giá bán",
-                    nameAndSrc: [
-                        ["Dưới 20 triệu", "laptop-gaming-duoi-20-trieu"],
-                        ["Từ 20 đến 25 triệu", "laptop-gaming-tu-20-trieu-den-25-trieu"],
-                        ["Từ 25 đến 30 triệu", "laptop-gaming-tu-25-trieu-den-30-trieu"],
-                        ["Trên 30 triệu", "laptop-gaming-tren-30-trieu"],
-                        ["Laptop Gaming cao cấp", "laptop-gaming-cao-cap"]]
-                },
-                {
-                    nameList: "ACER | PREDATOR Gaming",
-                    nameAndSrc: [
-                        ["Nitro Series", "laptop-gaming-nitro-series"],
-                        ["Aspire Series", "laptop-gaming-aspire-series"],
-                        ["Predator Series", "laptop-gaming-predator-series"],
-                        ["ConceptD Series", "laptop-gaming-conceptd-series"]]
-                },
-                {
-                    nameList: "ASUS | ROG Gaming",
-                    nameAndSrc: [
-                        ["ROG Series", "laptop-gaming-rog-series"],
-                        ["TUF Series", "laptop-gaming-tuf-series"],
-                        ["Zephyrus Series", "laptop-gaming-zephyrus-series"],
-                        ["ROG Strix G", "laptop-gaming-rog-strix-g"],
-                        ["ROG Flow series", "laptop-gaming-rog-flow-series"],
-                        ["CPU Intel Gen 12th", "laptop-gaming-cpu-intel-gen-12th"],
-                        ["ROG RTX 4000 Series", "laptop-gaming-rog-rtx-4000-series"]]
-                },
-                {
-                    nameList: "MSI Gaming",
-                    nameAndSrc: [
-                        ["GF Series", "laptop-gaming-gf-series"],
-                        ["GL Series", "laptop-gaming-gl-series"],
-                        ["GS Series", "laptop-gaming-gs-series"],
-                        ["Bravo Series", "laptop-gaming-bravo-series"],
-                        ["Creator Series", "laptop-gaming-creator-series"],
-                        ["MSI AMD Series", "laptop-gaming-msi-amd-series"]]
-                },
-                {
-                    nameList: "LENOVO Gaming",
-                    nameAndSrc: [
-                        ["Legion Gaming", "laptop-gaming-legion-gaming"],
-                        ["Ideapad Gaming", "laptop-gaming-ideapad-gaming"]]
-                },
-                {
-                    nameList: "DELL Gaming",
-                    nameAndSrc: [
-                        ["Dell Gaming G Series", "laptop-gaming-dell-gaming-g-series"],
-                        ["Alienware Series", "laptop-gaming-alienware-series"]]
-                },
-                {
-                    nameList: "GIGABYTE Gaming",
-                    nameAndSrc: [
-                        ["GIGABYTE G5 | G7", "laptop-gaming-gigabyte-g5-g7"],
-                        ["GIGABYTE AORUS", "laptop-gaming-gigabyte-aorus"],
-                        ["GIGABYTE AERO", "laptop-gaming-gigabyte-aero"]]
-                },
-                {
-                    nameList: "Card đồ hoạ",
-                    nameAndSrc: [
-                        ["GTX 1650", "laptop-gaming-gtx-1650"],
-                        ["RTX 3050 / 3050Ti", "laptop-gaming-rtx-3050-3050ti"],
-                        ["RTX 3060", "laptop-gaming-rtx-3060"],
-                        ["RTX 3070 / 3080", "laptop-gaming-rtx-3070-3080"],
-                        ["AMD Radeon RX", "laptop-gaming-amd-radeon-rx"],
-                        ["Laptop RTX 4000 Series", "laptop-gaming-rtx-4000-series"]]
-                },
-                {
-                    nameList: "Laptop Components & Accessories",
-                    nameAndSrc: [
-                        ["Ram laptop", "ram-laptop"],
-                        ["SSD laptop", "ssd-laptop"],
-                        ["Đế tản nhiệt laptop", "de-tan-nhiet-laptop"],
-                        ["Balo và túi chống sốc laptop", "balo-va-tui-chong-soc-laptop"],
-                        ["Ổ cứng di động", "o-cung-di-dong"]]
-                },
-            ],
-            [
-                {
-                    collection: "PC Special",
-                    imgBanner: "//theme.hstatic.net/1000026716/1000440777/14/xxxbannerxxx3.png?v=34146",
-                    img1icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx23.png?v=34146",
-                    img2icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx13.png?v=34146"
-                },
-                {
-                    nameList: "KHUYẾN MÃI ĐẶC BIỆT",
-                    nameAndSrc: [
-                        ["Titan Plus i4080 - Siêu Khuyến Mãi", "gvn-titan-plus-i4080"],
-                        ["Phantom Plus i4080 - Tặng màn hình 4K", "gvn-phantom-plus-i4080"],
-                        ["Phantom Plus i4070Ti - Siêu Khuyến Mãi", "gvn-phantom-plus-i4070ti"],
-                        ["Viper Plus i3070Ti - Tặng tản nhiệt", "gvn-viper-plus-i3070ti"],
-                        ["Viper Plus i3060Ti - Tặng RAM", "gvn-viper-plus-i3060ti"],
-                        ["Viper Plus i3060 WHITE - Voucher màn hình 2tr", "gvn-viper-plus-i3060-white"],
-                        ["Viper i3060 - Voucher tản nhiệt 1tr", "gvn-viper-i3060"],
-                        ["Viper i3050 - Voucher màn hình 1tr500", "gvn-viper-i3050"],
-                        ["Minion i1650 WHITE - Tặng RAM", "gvn-minion-i1650-white"]]
-                },
-                {
-                    nameList: "GVN ProArt - Đồ Hoạ Đỉnh Cao",
-                    nameAndSrc: [
-                        ["ProArt Plus 9 a4090 - Tặng màn hình", "gvn-proart-plus-9-a4090"],
-                        ["ProArt Plus 9 a3090 - Tặng màn hình", "gvn-proart-plus-9-a3090"],
-                        ["ProArt Plus 9 i3090Ti - Tặng màn hình", "gvn-proart-plus-9-i3090ti"], 
-                        ["ProArt Plus 7 a3090Ti - Tặng voucher 5tr", "gvn-proart-plus-7-a3090ti"], 
-                        ["ProArt Plus 7 a3080Ti - Tặng voucher 5tr", "gvn-proart-plus-7-a3080ti"], 
-                        ["ProArt Plus 5 a3070 - Tặng tản nhiệt", "gvn-proart-plus-5-a3070"], 
-                        ["ProArt Plus 5 a3060Ti - Tặng RAM", "gvn-proart-plus-5-a3060ti"], 
-                        ["ProArt Plus 5 i3060Ti - Tặng voucher 2tr", "gvn-proart-plus-i3060ti"]]
-                },
-                {
-                    nameList: "GVN WHITE EDITION",
-                    nameAndSrc: [
-                        ["Poseidon 9 i3090", "gvn-poseidon-9-i3090"],
-                        ["Poseidon S WHITE", "gvn-poseidon-s-white"],
-                        ["Phantom Plus i4080", "gvn-phantom-plus-i4080"],
-                        ["Titan Plus i3090", "gvn-titan-plus-i3090"],
-                        ["Phantom Plus i3080", "gvn-phantom-plus-i3080"],
-                        ["Phantom Plus i3070", "gvn-phantom-plus-i3070"],
-                        ["ProArt Plus 5 a3070", "gvn-proart-plus-5-a3070"], 
-                        ["Viper Plus i3060Ti", "gvn-viper-plus-i3060ti"],
-                        ["Viper Plus i3060", "gvn-viper-plus-i3060"], 
-                        ["Viper i3050", "gvn-viper-i3050"],
-                        ["Minion i1650", "gvn-minion-i1650"]]
-                },
-                {
-                    nameList: "GVN iCUE PC (Voucher 2 Triệu)",
-                    nameAndSrc: [
-                        ["iCUE 5 i1660S", "gvn-icue-5-i1660S"],
-                        ["iCUE 5 Plus a6500XT", "gvn-icue-5-plus-a6500xt"],
-                        ["iCUE 5 Plus i3060", "gvn-icue-5-plus-i3060"], 
-                        ["iCUE 7 i3060", "gvn-icue-7-i3060"], 
-                        ["iCUE 7 Plus i3070Ti", "gvn-icue-7-plus-i3070ti"], 
-                        ["iCUE 9 Plus i3080", "gvn-icue-9-plus-i3080"]]
-                },
-                {
-                    nameList: "GVN POSEIDON - CUSTOM NƯỚC",
-                    nameAndSrc: [
-                        ["Poseidon 5 i3060 - Tặng tản nhiệt custom", "gvn-poseidon-5-i3060"],
-                        ["Poseidon 7 i3070 - Tặng tản nhiệt custom", "gvn-poseidon-7-i3070"],
-                        ["Poseidon S WHITE - i5 - 3060", "gvn-poseidon-s-white"],
-                        ["Poseidon S - i5 - 3060", "gvn-poseidon-s-i5-3060"],
-                        ["Poseidon 7 i3080", "gvn-poseidon-7-i3080"], 
-                        ["Poseidon 9 i3090", "gvn-poseidon-9-i3090"]]
-                },
-                {
-                    nameList: "Đèn thông minh Nanoleaf",
-                    nameAndSrc: [
-                        ["Bộ bắt đầu", "den-thong-minh-nanoleaf-starter-kit"],
-                        ["Bộ mở rộng", "den-thong-minh-nanoleaf-bo-mo-rong"]]
-                }
-            ],
+            // [
+            //     {
+            //         collection: "Laptop",
+            //         imgBanner: "//theme.hstatic.net/1000026716/1000440777/14/xxxbannerxxx1.png?v=34146",
+            //         img1icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx21.png?v=34146",
+            //         img2icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx11.png?v=34146"
+            //     },
+            //     {
+            //         nameList: "Brand Name",
+            //         nameAndSrc: [
+            //             ["ASUS", "laptop-ASUS"],
+            //             ["ACER", "laptop-ACER"],
+            //             ["MSI", "laptop-MSI"],
+            //             ["LENOVO", "laptop-LENOVO"],
+            //             ["HP", "laptop-HP"],
+            //             ["DELL", "laptop-DELL"],
+            //             ["GIGABYTE", "laptop-GIGABYTE"],
+            //             ["LG", "laptop-LG"],
+            //             ["HUAWEI", "laptop-HUAWEI"]],
+            //     },
+            //     {
+            //         nameList: "Laptop by price",
+            //         nameAndSrc: [["Dưới 15 triệu", "laptop-duoi-15-trieu"], ["Từ 15 đến 20 triệu", "laptop-tu-15-den-20-trieu"], ["Trên 20 triệu", "laptop-tren-2-trieu"]]
+            //     },
+            //     {
+            //         nameList: "Laptop by CPU",
+            //         nameAndSrc: [["Intel Core i3", "laptop-intel-core-i3"], ["Intel Core i5", "laptop-intel-core-i5"], ["Intel Core i7", "laptop-intel-core-i7"], ["AMD Ryzen", "laptop-amd-ryzen"]]
+            //     },
+            //     {
+            //         nameList: "Laptop needs",
+            //         nameAndSrc: [["Laptop đồ họa", "laptop-do-hoa"], ["Laptop Học sinh - Sinh viên", "laptop-hoc-sinh-sinh-vien"], ["Laptop mỏng nhẹ cao cấp", "laptop-mong-nhe-cao-cap"]]
+            //     },
+            //     {
+            //         nameList: "Laptop Components & Accessories",
+            //         nameAndSrc: [
+            //             ["Ram laptop", "ram-laptop"],
+            //             ["SSD laptop", "ssd-laptop"],
+            //             ["Laptop heater soleplate", "de-tan-nhiet-laptop"],
+            //             ["Backpack and laptop shockproof bag", "balo-va-tui-chong-soc-laptop"],
+            //             ["Portable hard drive", "o-cung-di-dong"]]
+            //     },
+            //     {
+            //         nameList: "Laptop ASUS",
+            //         nameAndSrc: [
+            //             ["VivoBook Series", "laptop-ASUS-vivobook-series"],
+            //             ["VivoBook Pro Series", "laptop-ASUS-vivobook-pro-series"],
+            //             ["Zenbook Series", "laptop-ASUS-zenbook-series"],
+            //             ["ASUS OLED Series", "laptop-ASUS-asus-oled-series"],
+            //             ["ExpertBook Series", "laptop-ASUS-experbook-series"],
+            //             ["ProArt StudioBook Series", "laptop-ASUS-proart-studioBook-series"]]
+            //     },
+            //     {
+            //         nameList: "Laptop ACER",
+            //         nameAndSrc: [["Aspire Series", "laptop-ACER-aspire-series"], ["Swift Series", "laptop-ACER-swift-series"]]
+            //     },
+            //     {
+            //         nameList: "Laptop MSI",
+            //         nameAndSrc: [
+            //             ["GF Series", "laptop-MSI-gf-series"],
+            //             ["GS Series", "laptop-MSI-gs-series"],
+            //             ["Bravo Series", "laptop-MSI-bravo-series"],
+            //             ["Creator Series", "laptop-MSI-creator-series"],
+            //             ["MSI AMD Series", "laptop-MSI-msi-amd-series"],
+            //             ["Crosshair Series", "laptop-MSI-crosshair-series"],
+            //             ["MSI RTX 40  Series", "laptop-MSI-msi-rtx-40-series"]]
+            //     },
+            //     {
+            //         nameList: "Laptop LENOVO",
+            //         nameAndSrc: [
+            //             ["ThinkBook Series", "laptop-LENOVO-thinkbook-series"],
+            //             ["IdeaPad Series", "laptop-LENOVO-ideapad-series"],
+            //             ["IdeaPad Pro Series", "laptop-LENOVO-ideapad-pro-series"],
+            //             ["ThinkPad Series", "laptop-LENOVO-thinkpad-series"],
+            //             ["Yoga Series", "laptop-LENOVO-yoga-series"]]
+            //     },
+            //     {
+            //         nameList: "Laptop DELL",
+            //         nameAndSrc: [
+            //             ["Inspiron Series", "laptop-DELL-inspiron-series"],
+            //             ["Vostro Series", "laptop-DELL-vostro-series"],
+            //             ["Latitude Pro Series", "laptop-DELL-latitude-series"],
+            //             ["XPS Series", "laptop-DELL-xps-series"]]
+            //     },
+            //     {
+            //         nameList: "Laptop HP",
+            //         nameAndSrc: [
+            //             ["Pavilion Series", "laptop-DELL-pavilion-series"],
+            //             ["Envy Series", "laptop-DELL-envy-series"],
+            //             ["Probook Series", "laptop-DELL-probook-series"]]
+            //     },
+            // ],
+            // [
+            //     {
+            //         collection: "Laptop Gaming",
+            //         imgBanner: "//theme.hstatic.net/1000026716/1000440777/14/xxxbannerxxx2.png?v=34146",
+            //         img1icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx22.png?v=34146",
+            //         img2icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx12.png?v=34146"
+            //     },
+            //     {
+            //         nameList: "Brand Name",
+            //         nameAndSrc: [
+            //             ["ACER / PREDATOR", "laptop-gaming-acer-predator"],
+            //             ["ASUS / ROG", "laptop-gaming-aus-rog"],
+            //             ["MSI", "laptop-gaming-msi"],
+            //             ["LENOVO", "laptop-gaming-lenovo"],
+            //             ["DELL", "laptop-gaming-dell"],
+            //             ["GIGABYTE / AORUS", "laptop-gaming-gigabyte-aorus"],
+            //             ["HP", "laptop-gaming-hp"]]
+            //     },
+            //     {
+            //         nameList: "Giá bán",
+            //         nameAndSrc: [
+            //             ["Dưới 20 triệu", "laptop-gaming-duoi-20-trieu"],
+            //             ["Từ 20 đến 25 triệu", "laptop-gaming-tu-20-trieu-den-25-trieu"],
+            //             ["Từ 25 đến 30 triệu", "laptop-gaming-tu-25-trieu-den-30-trieu"],
+            //             ["Trên 30 triệu", "laptop-gaming-tren-30-trieu"],
+            //             ["Laptop Gaming cao cấp", "laptop-gaming-cao-cap"]]
+            //     },
+            //     {
+            //         nameList: "ACER | PREDATOR Gaming",
+            //         nameAndSrc: [
+            //             ["Nitro Series", "laptop-gaming-nitro-series"],
+            //             ["Aspire Series", "laptop-gaming-aspire-series"],
+            //             ["Predator Series", "laptop-gaming-predator-series"],
+            //             ["ConceptD Series", "laptop-gaming-conceptd-series"]]
+            //     },
+            //     {
+            //         nameList: "ASUS | ROG Gaming",
+            //         nameAndSrc: [
+            //             ["ROG Series", "laptop-gaming-rog-series"],
+            //             ["TUF Series", "laptop-gaming-tuf-series"],
+            //             ["Zephyrus Series", "laptop-gaming-zephyrus-series"],
+            //             ["ROG Strix G", "laptop-gaming-rog-strix-g"],
+            //             ["ROG Flow series", "laptop-gaming-rog-flow-series"],
+            //             ["CPU Intel Gen 12th", "laptop-gaming-cpu-intel-gen-12th"],
+            //             ["ROG RTX 4000 Series", "laptop-gaming-rog-rtx-4000-series"]]
+            //     },
+            //     {
+            //         nameList: "MSI Gaming",
+            //         nameAndSrc: [
+            //             ["GF Series", "laptop-gaming-gf-series"],
+            //             ["GL Series", "laptop-gaming-gl-series"],
+            //             ["GS Series", "laptop-gaming-gs-series"],
+            //             ["Bravo Series", "laptop-gaming-bravo-series"],
+            //             ["Creator Series", "laptop-gaming-creator-series"],
+            //             ["MSI AMD Series", "laptop-gaming-msi-amd-series"]]
+            //     },
+            //     {
+            //         nameList: "LENOVO Gaming",
+            //         nameAndSrc: [
+            //             ["Legion Gaming", "laptop-gaming-legion-gaming"],
+            //             ["Ideapad Gaming", "laptop-gaming-ideapad-gaming"]]
+            //     },
+            //     {
+            //         nameList: "DELL Gaming",
+            //         nameAndSrc: [
+            //             ["Dell Gaming G Series", "laptop-gaming-dell-gaming-g-series"],
+            //             ["Alienware Series", "laptop-gaming-alienware-series"]]
+            //     },
+            //     {
+            //         nameList: "GIGABYTE Gaming",
+            //         nameAndSrc: [
+            //             ["GIGABYTE G5 | G7", "laptop-gaming-gigabyte-g5-g7"],
+            //             ["GIGABYTE AORUS", "laptop-gaming-gigabyte-aorus"],
+            //             ["GIGABYTE AERO", "laptop-gaming-gigabyte-aero"]]
+            //     },
+            //     {
+            //         nameList: "Card đồ hoạ",
+            //         nameAndSrc: [
+            //             ["GTX 1650", "laptop-gaming-gtx-1650"],
+            //             ["RTX 3050 / 3050Ti", "laptop-gaming-rtx-3050-3050ti"],
+            //             ["RTX 3060", "laptop-gaming-rtx-3060"],
+            //             ["RTX 3070 / 3080", "laptop-gaming-rtx-3070-3080"],
+            //             ["AMD Radeon RX", "laptop-gaming-amd-radeon-rx"],
+            //             ["Laptop RTX 4000 Series", "laptop-gaming-rtx-4000-series"]]
+            //     },
+            //     {
+            //         nameList: "Laptop Components & Accessories",
+            //         nameAndSrc: [
+            //             ["Ram laptop", "ram-laptop"],
+            //             ["SSD laptop", "ssd-laptop"],
+            //             ["Đế tản nhiệt laptop", "de-tan-nhiet-laptop"],
+            //             ["Balo và túi chống sốc laptop", "balo-va-tui-chong-soc-laptop"],
+            //             ["Ổ cứng di động", "o-cung-di-dong"]]
+            //     },
+            // ],
+            // [
+            //     {
+            //         collection: "PC Special",
+            //         imgBanner: "//theme.hstatic.net/1000026716/1000440777/14/xxxbannerxxx3.png?v=34146",
+            //         img1icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx23.png?v=34146",
+            //         img2icon: "//theme.hstatic.net/1000026716/1000440777/14/xxx13.png?v=34146"
+            //     },
+            //     {
+            //         nameList: "KHUYẾN MÃI ĐẶC BIỆT",
+            //         nameAndSrc: [
+            //             ["Titan Plus i4080 - Siêu Khuyến Mãi", "gvn-titan-plus-i4080"],
+            //             ["Phantom Plus i4080 - Tặng màn hình 4K", "gvn-phantom-plus-i4080"],
+            //             ["Phantom Plus i4070Ti - Siêu Khuyến Mãi", "gvn-phantom-plus-i4070ti"],
+            //             ["Viper Plus i3070Ti - Tặng tản nhiệt", "gvn-viper-plus-i3070ti"],
+            //             ["Viper Plus i3060Ti - Tặng RAM", "gvn-viper-plus-i3060ti"],
+            //             ["Viper Plus i3060 WHITE - Voucher màn hình 2tr", "gvn-viper-plus-i3060-white"],
+            //             ["Viper i3060 - Voucher tản nhiệt 1tr", "gvn-viper-i3060"],
+            //             ["Viper i3050 - Voucher màn hình 1tr500", "gvn-viper-i3050"],
+            //             ["Minion i1650 WHITE - Tặng RAM", "gvn-minion-i1650-white"]]
+            //     },
+            //     {
+            //         nameList: "GVN ProArt - Đồ Hoạ Đỉnh Cao",
+            //         nameAndSrc: [
+            //             ["ProArt Plus 9 a4090 - Tặng màn hình", "gvn-proart-plus-9-a4090"],
+            //             ["ProArt Plus 9 a3090 - Tặng màn hình", "gvn-proart-plus-9-a3090"],
+            //             ["ProArt Plus 9 i3090Ti - Tặng màn hình", "gvn-proart-plus-9-i3090ti"], 
+            //             ["ProArt Plus 7 a3090Ti - Tặng voucher 5tr", "gvn-proart-plus-7-a3090ti"], 
+            //             ["ProArt Plus 7 a3080Ti - Tặng voucher 5tr", "gvn-proart-plus-7-a3080ti"], 
+            //             ["ProArt Plus 5 a3070 - Tặng tản nhiệt", "gvn-proart-plus-5-a3070"], 
+            //             ["ProArt Plus 5 a3060Ti - Tặng RAM", "gvn-proart-plus-5-a3060ti"], 
+            //             ["ProArt Plus 5 i3060Ti - Tặng voucher 2tr", "gvn-proart-plus-i3060ti"]]
+            //     },
+            //     {
+            //         nameList: "GVN WHITE EDITION",
+            //         nameAndSrc: [
+            //             ["Poseidon 9 i3090", "gvn-poseidon-9-i3090"],
+            //             ["Poseidon S WHITE", "gvn-poseidon-s-white"],
+            //             ["Phantom Plus i4080", "gvn-phantom-plus-i4080"],
+            //             ["Titan Plus i3090", "gvn-titan-plus-i3090"],
+            //             ["Phantom Plus i3080", "gvn-phantom-plus-i3080"],
+            //             ["Phantom Plus i3070", "gvn-phantom-plus-i3070"],
+            //             ["ProArt Plus 5 a3070", "gvn-proart-plus-5-a3070"], 
+            //             ["Viper Plus i3060Ti", "gvn-viper-plus-i3060ti"],
+            //             ["Viper Plus i3060", "gvn-viper-plus-i3060"], 
+            //             ["Viper i3050", "gvn-viper-i3050"],
+            //             ["Minion i1650", "gvn-minion-i1650"]]
+            //     },
+            //     {
+            //         nameList: "GVN iCUE PC (Voucher 2 Triệu)",
+            //         nameAndSrc: [
+            //             ["iCUE 5 i1660S", "gvn-icue-5-i1660S"],
+            //             ["iCUE 5 Plus a6500XT", "gvn-icue-5-plus-a6500xt"],
+            //             ["iCUE 5 Plus i3060", "gvn-icue-5-plus-i3060"], 
+            //             ["iCUE 7 i3060", "gvn-icue-7-i3060"], 
+            //             ["iCUE 7 Plus i3070Ti", "gvn-icue-7-plus-i3070ti"], 
+            //             ["iCUE 9 Plus i3080", "gvn-icue-9-plus-i3080"]]
+            //     },
+            //     {
+            //         nameList: "GVN POSEIDON - CUSTOM NƯỚC",
+            //         nameAndSrc: [
+            //             ["Poseidon 5 i3060 - Tặng tản nhiệt custom", "gvn-poseidon-5-i3060"],
+            //             ["Poseidon 7 i3070 - Tặng tản nhiệt custom", "gvn-poseidon-7-i3070"],
+            //             ["Poseidon S WHITE - i5 - 3060", "gvn-poseidon-s-white"],
+            //             ["Poseidon S - i5 - 3060", "gvn-poseidon-s-i5-3060"],
+            //             ["Poseidon 7 i3080", "gvn-poseidon-7-i3080"], 
+            //             ["Poseidon 9 i3090", "gvn-poseidon-9-i3090"]]
+            //     },
+            //     {
+            //         nameList: "Đèn thông minh Nanoleaf",
+            //         nameAndSrc: [
+            //             ["Bộ bắt đầu", "den-thong-minh-nanoleaf-starter-kit"],
+            //             ["Bộ mở rộng", "den-thong-minh-nanoleaf-bo-mo-rong"]]
+            //     }
+            // ],
             // [
             //     {
             //         collection: "PC GEARVN Intel",
@@ -780,36 +782,66 @@ const ListCategoryProduct = () => {
         ]
     );
 
+    useEffect(() => {
+        fetchCollecting()
+            .then(result => {
+                // console.log(result)
+                setItem(result)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }, [])
+
     return (
-        <>{item.map((item, index) => {
-            return <li className="cat-menu-item " key={index}>
-                <a className="gearvn-cat-menu-item" href="https://gearvn.com/pages/laptop-van-phong">
-                    <span className="gearvn-cat-menu-icon">
-                        <img alt="" src={item[0].img1icon} />
-                        <img alt="" src={item[0].img2icon} />
-                    </span>
-                    <span className="gearvn-cat-menu-name">{item[0].collection}</span>
-                </a>
-                <div className="megamenu absolute-center level0 xlab_grid_container this" >
-                    <div className="column xlab_column_5_5">
-                        {item.slice((item.length - 1) * (-1)).map((itemCollection, indexCollection) => {
-                            return <div className="sub-cat-item" key={indexCollection}>
-                                <a className="sub-cat-item-name" href="https://gearvn.com/pages/laptop-van-phong">{itemCollection.nameList}</a>
-                                {itemCollection.nameAndSrc.map((itemNameList, indexItemList) => {
-                                    return <a className="sub-cat-item-filter" href={"/collectionDetail/" + itemNameList[1]} key={indexItemList}>{itemNameList[0]}</a>
-                                })}
-                                <br />
-                            </div>
-                        })}
+        <>
+        {
+            item.map((item, index) => {
+                return <li className="cat-menu-item " key={index}>
+                    <a className="gearvn-cat-menu-item" href="https://gearvn.com/pages/laptop-van-phong">
+                        <span className="gearvn-cat-menu-icon">
+                            {/* <img alt="" src={item[0].img1icon} />
+                        <img alt="" src={item[0].img2icon} /> */}
+                        </span>
+                        <span className="gearvn-cat-menu-name">{item.name}</span>
+                    </a>
+                    <div className="megamenu absolute-center level0 xlab_grid_container this" >
+                        <div className="column xlab_column_5_5">
+                            {
+                                item.category.map((itemCollection, indexCollection) => {
+
+                                    return <div className="sub-cat-item" key={indexCollection}>
+                                        <a className="sub-cat-item-name" href="https://gearvn.com/pages/laptop-van-phong">{itemCollection.name}</a>
+                                        {itemCollection.collecting.map((itemNameList, indexItemList) => {
+                                            return <NavLink className="sub-cat-item-filter" to={"/collectionDetail/" + itemNameList.name} state={{ category: itemNameList.name, collection: item.name.toLowerCase() }} key={indexItemList}>{itemNameList.name}</NavLink>
+                                        })}
+                                        <br />
+                                    </div>
+                                })
+                            }
+                            {
+                                item.category[0].collecting.map((itemCollection, indexCollection) => {
+                                    console.log()
+                                    return <div className="sub-cat-item" key={indexCollection}>
+                                        {itemCollection.category.length > 0 && <a className="sub-cat-item-name" href="https://gearvn.com/pages/laptop-van-phong">{itemCollection.name}</a>}
+                                        {itemCollection.category.length > 0 && itemCollection.category.map((itemNameList, indexItemList) => {
+                                            return <NavLink className="sub-cat-item-filter" to={"/collectionDetail/" + itemNameList.name} state={{ category: itemNameList.name, collection: item.name.toLowerCase() }} key={indexItemList}>{itemNameList.name}</NavLink>
+                                        })}
+                                        <br />
+                                    </div>
+                                })
+                            }
+                        </div>
+                        <div className="sub-cat-item pull-right" style={{ padding: 0, display: 'flex', justifyContent: 'flex-end' }}>
+                            <a className="none" href="https://gearvn.com/pages/laptop-van-phong">
+                                {/* <img src={item[0].imgBanner} alt="" /> */}
+                            </a>
+                        </div>
                     </div>
-                    <div className="sub-cat-item pull-right" style={{ padding: 0, display: 'flex', justifyContent: 'flex-end' }}>
-                        <a className="none" href="https://gearvn.com/pages/laptop-van-phong">
-                            <img src={item[0].imgBanner} alt="" />
-                        </a>
-                    </div>
-                </div>
-            </li>
-        })}
+                </li>
+            })
+        }
+        
         </>
     );
 }

@@ -53,7 +53,7 @@ const Index = () => {
                         </tr>
                             <tr height="40px" id={1237722295} className="odd">
                                 <td className>
-                                    <a href title>Chuột Dare-U EM908 RGB - Default Title</a> <br />
+                                    <a href="/"title>Chuột Dare-U EM908 RGB - Default Title</a> <br />
                                 </td>
                                 <td className="sku " />
                                 <td className="money">390,000₫</td>
@@ -62,7 +62,7 @@ const Index = () => {
                             </tr>
                             <tr height="40px" id={1237722296} className="even">
                                 <td className>
-                                    <a href title>Bàn phím cơ Gaming DAREU EK87 - Black (Multi-LED) - Default Title</a> <br />
+                                    <a href="/"title>Bàn phím cơ Gaming DAREU EK87 - Black (Multi-LED) - Default Title</a> <br />
                                 </td>
                                 <td className="sku " />
                                 <td className="money">499,000₫</td>
@@ -70,15 +70,15 @@ const Index = () => {
                                 <td className="total money">499,000₫</td>
                             </tr>
                             <tr height="40px" className="order_summary">
-                                <td className colSpan={4}><b>Giá sản phẩm</b></td>
+                                <td  colSpan={4}><b>Giá sản phẩm</b></td>
                                 <td className="total money"><b>889,000₫</b></td>
                             </tr>
                             <tr height="40px" className="order_summary ">
-                                <td className colSpan={4}><b>Giao hàng tận nơi</b></td>
+                                <td  colSpan={4}><b>Giao hàng tận nơi</b></td>
                                 <td className="total money"><b>0₫</b></td>
                             </tr>
                             <tr height="40px" className="order_summary order_total">
-                                <td className colSpan={4}><b>Tổng tiền</b></td>
+                                <td  colSpan={4}><b>Tổng tiền</b></td>
                                 <td className="total money"><b>889,000₫ </b></td>
                             </tr>
                         </tbody></table>

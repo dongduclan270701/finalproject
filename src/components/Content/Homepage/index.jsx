@@ -1332,9 +1332,9 @@ const Index = () => {
                                 <div className="text-center">
                                     <div className="pagination">
                                         <ul className="pagination-list">
-                                            <li className="hidden-phone current"><a title={1} href className="pagenav">1</a></li>
-                                            <li className="hidden-phone"><a title={2} href className="pagenav">2</a></li>
-                                            <li><a href title="Trang sau" className="pagenav"><i className="fa fa-chevron-right" /></a></li>
+                                            <li className="hidden-phone current"><a title={1} href="/"className="pagenav">1</a></li>
+                                            <li className="hidden-phone"><a title={2} href="/"className="pagenav">2</a></li>
+                                            <li><a href="/"title="Trang sau" className="pagenav"><i className="fa fa-chevron-right" /></a></li>
                                         </ul>
                                         <input type="hidden" name="limitstart" defaultValue={0} />
                                     </div>
@@ -1377,10 +1377,10 @@ const Index = () => {
                                 <div className="text-center">
                                     <div className="pagination">
                                         <ul className="pagination-list">
-                                            <li className="hidden-phone current"><a title={1} href className="pagenav">1</a></li>
-                                            <li className="hidden-phone"><a title={2} href className="pagenav">2</a></li>
-                                            <li className="hidden-phone"><a title={3} href className="pagenav">3</a></li>
-                                            <li><a title="Trang sau" href className="pagenav"><i className="fa fa-chevron-right" /></a></li>
+                                            <li className="hidden-phone current"><a title={1} href="/"className="pagenav">1</a></li>
+                                            <li className="hidden-phone"><a title={2} href="/"className="pagenav">2</a></li>
+                                            <li className="hidden-phone"><a title={3} href="/"className="pagenav">3</a></li>
+                                            <li><a title="Trang sau" href="/"className="pagenav"><i className="fa fa-chevron-right" /></a></li>
                                         </ul>
                                         <input type="hidden" name="limitstart" defaultValue={0} />
                                     </div>
@@ -1458,12 +1458,12 @@ const Index = () => {
                                 <div className="text-center">
                                     <div className="pagination">
                                         <ul className="pagination-list">
-                                            <li className="hidden-phone current"><a title={1} href className="pagenav">1</a></li>
-                                            <li className="hidden-phone"><a title={2} href className="pagenav">2</a></li>
-                                            <li className="hidden-phone"><a title={3} href className="pagenav">3</a></li>
-                                            <li className="hidden-phone "><a title="…" href className="pagenav">…</a></li>
-                                            <li className="hidden-phone"><a title={5} href className="pagenav">5</a></li>
-                                            <li><a title="Trang sau" href className="pagenav"><i className="fa fa-chevron-right" /></a></li>
+                                            <li className="hidden-phone current"><a title={1} href="/"className="pagenav">1</a></li>
+                                            <li className="hidden-phone"><a title={2} href="/"className="pagenav">2</a></li>
+                                            <li className="hidden-phone"><a title={3} href="/"className="pagenav">3</a></li>
+                                            <li className="hidden-phone "><a title="…" href="/"className="pagenav">…</a></li>
+                                            <li className="hidden-phone"><a title={5} href="/"className="pagenav">5</a></li>
+                                            <li><a title="Trang sau" href="/"className="pagenav"><i className="fa fa-chevron-right" /></a></li>
                                         </ul>
                                         <input type="hidden" name="limitstart" defaultValue={0} />
                                     </div>
@@ -1505,12 +1505,12 @@ const Index = () => {
                                 <div className="text-center">
                                     <div className="pagination">
                                         <ul className="pagination-list">
-                                            <li className="hidden-phone current"><a title={1} href className="pagenav">1</a></li>
-                                            <li className="hidden-phone"><a title={2} href className="pagenav">2</a></li>
-                                            <li className="hidden-phone"><a title={3} href className="pagenav">3</a></li>
-                                            <li className="hidden-phone "><a title="…" href className="pagenav">…</a></li>
-                                            <li className="hidden-phone"><a title={31} href className="pagenav">31</a></li>
-                                            <li><a title="Trang sau" href className="pagenav"><i className="fa fa-chevron-right" /></a></li>
+                                            <li className="hidden-phone current"><a title={1} href="/"className="pagenav">1</a></li>
+                                            <li className="hidden-phone"><a title={2} href="/"className="pagenav">2</a></li>
+                                            <li className="hidden-phone"><a title={3} href="/"className="pagenav">3</a></li>
+                                            <li className="hidden-phone "><a title="…" href="/"className="pagenav">…</a></li>
+                                            <li className="hidden-phone"><a title={31} href="/"className="pagenav">31</a></li>
+                                            <li><a title="Trang sau" href="/"className="pagenav"><i className="fa fa-chevron-right" /></a></li>
                                         </ul>
                                         <input type="hidden" name="limitstart" defaultValue={0} />
                                     </div>

@@ -14,7 +14,6 @@ import Ship from 'components/Pages/Ship'
 import Showroom from 'components/Pages/Showroom'
 import Hotline from 'components/Pages/Hotline'
 import CollectionDetail from 'components/Content/Collection-Detail'
-import CollectionNoDetail from 'components/Content/Collection-NoDetail'
 import Product from 'components/Content/Product'
 import Cart from 'components/Content/Cart'
 import PayOrder from 'components/Content/Pay-order'
@@ -98,13 +97,6 @@ function App() {
           <>
             <HeaderMain /><Banner/>
             <CollectionDetail />
-            <Footer/>
-          </>
-        } />
-        <Route path='/collectionNoDetail/:codeCollectionNoDetail' element={
-          <>
-            <HeaderMain /><Banner/>
-            <CollectionNoDetail />
             <Footer/>
           </>
         } />

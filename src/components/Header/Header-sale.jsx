@@ -9,7 +9,7 @@ const HeaderSale = () => {
             <div className="laid-container">
                 <div data-action="true" id="MENU_MO" className="laid-element">
                     <div className="laid-shape">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000" enableBackground="new 0 0 1000 1000" xmlSpace="preserve" preserveAspectRatio="none" width="100%" height="100%" className fill="rgba(5, 34, 74, 1.0)">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000" enableBackground="new 0 0 1000 1000" xmlSpace="preserve" preserveAspectRatio="none" width="100%" height="100%"  fill="rgba(5, 34, 74, 1.0)">
                             <path d="M876.5,662.5" />
                             <g>
                                 <g>
@@ -77,7 +77,7 @@ const HeaderSale = () => {
                 </NavLink>
                 <div data-action="true" id="MENU_DONG" className="laid-element">
                     <div className="laid-shape">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 90 90" enableBackground="new 0 0 90 90" xmlSpace="preserve" preserveAspectRatio="none" width="100%" height="100%" className fill="rgba(235, 39, 39, 1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 90 90" enableBackground="new 0 0 90 90" xmlSpace="preserve" preserveAspectRatio="none" width="100%" height="100%"  fill="rgba(235, 39, 39, 1)">
                             <path d="M49,45c7.2-7.2,13.8-13.8,14-14c0.5-0.5,0.8-1.3,0.9-2c0.1-0.8-0.2-1.6-0.7-2.1s-1.3-0.8-2.1-0.7c-0.8,0-1.5,0.4-2,0.9  c-0.2,0.2-6.8,6.8-14,14c-7.2-7.2-13.8-13.8-14-14c-0.5-0.5-1.3-0.8-2-0.9c-0.8-0.1-1.6,0.2-2.1,0.7s-0.8,1.3-0.7,2.1  c0,0.8,0.4,1.5,0.9,2c0.2,0.2,6.8,6.8,14,14c-7.2,7.2-13.8,13.8-14,14c-0.5,0.5-0.8,1.3-0.9,2c-0.1,0.8,0.2,1.6,0.7,2.1  s1.3,0.8,2.1,0.7c0.8,0,1.5-0.4,2-0.9c0.2-0.2,6.8-6.8,14-14c7.2,7.2,13.8,13.8,14,14c0.5,0.5,1.3,0.8,2,0.9  c0.8,0.1,1.6-0.2,2.1-0.7s0.8-1.3,0.7-2.1c0-0.8-0.4-1.5-0.9-2C62.8,58.8,56.2,52.2,49,45z" />
                         </svg>
                     </div>

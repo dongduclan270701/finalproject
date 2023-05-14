@@ -1,11 +1,15 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import { StateContext } from 'Context/Context'
+import { updateCart } from 'Apis'
 
 const Index = () => {
     const state = useContext(StateContext)
-    const [arrayOrder, setArrayOrder] = useState(state.arrayOrder)
+    const [arrayOrder, setArrayOrder] = useState()
+    useEffect(() => {
+        setArrayOrder(state.arrayOrder)
+    }, [state.arrayOrder])
     const totalArrayOrder = () => {
         let total = 0;
         arrayOrder && arrayOrder.map((item, index) => {
@@ -23,8 +27,14 @@ const Index = () => {
             return obj;
         });
         // localStorage.setItem("orderArray", JSON.stringify(newState))
-        setArrayOrder(newState)
-        state.handleUpdateArrayOrder(newState)
+        updateCart(JSON.parse(localStorage.getItem('user'))[0], newState)
+            .then(result => {
+                setArrayOrder(newState)
+                state.handleUpdateArrayOrder(newState)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
     const deleteProductInCart = (index) => {
         Swal.fire({
@@ -37,25 +47,25 @@ const Index = () => {
         })
             .then(result => {
                 if (result.isConfirmed) {
-
-                    Swal.fire({
-                        title: 'Successfully deleted the product!',
-                        text: 'The product has been removed from the cart!',
-                        icon: 'success',
-                        confirmButtonText: 'OK!'
-                    })
-                        .then(result => {
-                            const indexArray = arrayOrder.indexOf(arrayOrder[index]);
-                            if (indexArray > -1) {
-                                const newArrayOrder = [...arrayOrder]
-                                newArrayOrder.splice(indexArray, 1);
+                    const indexArray = arrayOrder.indexOf(arrayOrder[index]);
+                    if (indexArray > -1) {
+                        const newArrayOrder = [...arrayOrder]
+                        newArrayOrder.splice(indexArray, 1);
+                        updateCart(JSON.parse(localStorage.getItem('user'))[0], newArrayOrder)
+                            .then(result => {
                                 setArrayOrder(newArrayOrder)
                                 state.handleUpdateArrayOrder(newArrayOrder)
-                            }
-                        })
-                        .catch(err => {
-                            return err
-                        })
+                                Swal.fire({
+                                    title: 'Successfully deleted the product!',
+                                    text: 'The product has been removed from the cart!',
+                                    icon: 'success',
+                                    confirmButtonText: 'OK!'
+                                })
+                            })
+                            .catch(error => {
+                                console.log(error)
+                            })
+                    }
                 }
             })
             .catch(err => {
@@ -106,7 +116,7 @@ const Index = () => {
                                                     </td>
                                                     <td className="price">{item.nowPrice}₫</td>
                                                     <td className="remove">
-                                                        <a href="/" className="cart" onClick={() => deleteProductInCart(index)}><i className="fa fa-trash" /></a>
+                                                        <p className="cart" onClick={() => deleteProductInCart(index)}><i className="fa fa-trash" /></p>
                                                     </td>
                                                 </tr>
                                             })}
@@ -132,7 +142,7 @@ const Index = () => {
                                                     </label>
                                                     <label htmlFor="checkbox-bill" className="title">Generate an invoice for the order</label>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                     </div>

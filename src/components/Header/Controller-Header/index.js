@@ -141,7 +141,7 @@ const Index = () => {
                     </div>
 
                     {/* <div className="gearvn-info-top-mobile">
-                        <span><NavLink style={{ color: '#ea1c00' }} href /></span>
+                        <span><NavLink style={{ color: '#ea1c00' }} href="/"/></span>
                     </div> */}
                 </div>
             </div>
