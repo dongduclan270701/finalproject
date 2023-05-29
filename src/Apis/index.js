@@ -18,17 +18,17 @@ export const fetchUserDetails = async (username, password) => {
 }
 
 export const fetchCartUser = async (email) => {
-    const req = await axios.get(`${API_ROOT}/v1/cart/${email}`)
+    const req = await axios.get(`${API_ROOT}/v1/cartCustomer/${email}`,{ headers: { 'auth-token-user': token }})
     return req.data
 }
 
 export const updateCart = async (email, data) => {
-    const req = await axios.put(`${API_ROOT}/v1/cart/${email}`, data)
+    const req = await axios.put(`${API_ROOT}/v1/cartCustomer/${email}`, data,{ headers: { 'auth-token-user': token }})
     return req.data
 }
 
 export const fetchUserOrderDetails = async (username) => {
-    const req = await axios.get(`${API_ROOT}/v1/users/${username}`)
+    const req = await axios.get(`${API_ROOT}/v1/users/${username}`,{ headers: { 'auth-token-user': token }})
     return req.data
 }
 
@@ -43,16 +43,46 @@ export const createNewUsers = async (data) => {
 }
 
 export const fetchLaptopCollectingByName = async (id) => {
-    const req = await axios.get(`${API_ROOT}/v1/laptopCollecting/${id}`,{ headers: { 'auth-token-user': token }})
+    const req = await axios.get(`${API_ROOT}/v1/laptopCollectingCustomer/${id}`,{ headers: { 'auth-token-user': token }})
     return req.data
 }
 
-export const fetchSearchLaptopCollecting = async (data, countPage) => {
-    const req = await axios.get(`${API_ROOT}/v1/laptopCollecting/search`, { params: {...data, count:countPage }})
-    return req.data
-}
+// export const fetchSearchLaptopCollecting = async (data, countPage) => {
+//     const req = await axios.get(`${API_ROOT}/v1/laptopCollectingCustomer/search`, { params: {...data, count:countPage }})
+//     return req.data
+// }
 
 export const createOrderByCustomer = async (data) => {
-    const req = await axios.post(`${API_ROOT}/v1/order`, data)
+    const req = await axios.post(`${API_ROOT}/v1/orderUser`, data,{ headers: { 'auth-token-user': token }})
+    return req.data
+}
+
+export const fetchOrderInformation = async (id) => {
+    const req = await axios.get(`${API_ROOT}/v1/orderUser/${id}`,{ headers: { 'auth-token-user': token }})
+    return req.data
+}
+
+export const fetchRatingOrder = async (id,data) => {
+    const req = await axios.put(`${API_ROOT}/v1/orderUser/ratingOrder/${id}`, data,{ headers: { 'auth-token-user': token }})
+    return req.data
+}
+
+export const fetchChat = async (data) => {
+    const req = await axios.put(`${API_ROOT}/v1/chat`, data,{ headers: { 'auth-token-user': token }})
+    return req.data
+}
+
+export const fetchReply = async (data) => {
+    const req = await axios.put(`${API_ROOT}/v1/chat/reply`, data,{ headers: { 'auth-token-user': token }})
+    return req.data
+}
+
+export const fetchDeleteReply = async (data) => {
+    const req = await axios.put(`${API_ROOT}/v1/chat/deleteReply`, data,{ headers: { 'auth-token-user': token }})
+    return req.data
+}
+
+export const fetchDeleteComment = async (data) => {
+    const req = await axios.put(`${API_ROOT}/v1/chat/deleteComment`, data,{ headers: { 'auth-token-user': token }})
     return req.data
 }

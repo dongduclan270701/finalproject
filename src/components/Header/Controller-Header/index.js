@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { StateContext } from 'Context/Context'
 const Index = () => {
     const state = useContext(StateContext)
-    const hanldLogout = () => {
+    const handleLogout = () => {
         localStorage.removeItem("auth-token-user");
         localStorage.removeItem("user")
         window.location.reload();
@@ -47,7 +47,7 @@ const Index = () => {
                             <div className="gearvn-right-top-block">
                                 {JSON.parse(localStorage.getItem('auth-token-user')) ?
                                     <>
-                                        <Link className="gearvn-header-top-item" to="/register">
+                                        <Link className="gearvn-header-top-item" to="/account">
                                             <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak1.png?v=34146" />
                                             <div className="header-right-description">
                                                 <div className="gearvn-text">{
@@ -55,7 +55,7 @@ const Index = () => {
                                                 }</div>
                                             </div>
                                         </Link>
-                                        <button onClick={hanldLogout} className="gearvn-header-top-item">
+                                        <button onClick={handleLogout} className="gearvn-header-top-item">
                                             <img alt="" src="//theme.hstatic.net/1000026716/1000440777/14/ak2.png?v=35775" />
                                             <div className="header-right-description">
                                                 <div className="gearvn-text">Logout</div>

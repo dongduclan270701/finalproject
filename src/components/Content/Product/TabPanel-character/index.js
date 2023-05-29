@@ -58,7 +58,7 @@ const Index = (props) => {
             </div>
 
             {(product.description).map((item, index) => {
-                return <React.Fragment key={index}><h3 >
+                return <React.Fragment ><h3 >
                     <strong>
                         <span style={{ fontSize: '22px' }}>
                             {item[0]}</span>

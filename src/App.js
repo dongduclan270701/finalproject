@@ -19,8 +19,7 @@ import Cart from 'components/Content/Cart'
 import PayOrder from 'components/Content/Pay-order'
 import Account from 'components/Content/Account'
 import Order from 'components/Content/Information-order'
-
-
+import Rating from 'components/Content/Account/OrderDetails/Rating'
 import {
   BrowserRouter as Router,
   Routes,
@@ -64,7 +63,37 @@ function App() {
           JSON.parse(localStorage.getItem('auth-token-user')) ?
           <>
           <HeaderMain /><Banner/>
-            <Account/>
+            <Account Fragment="Information"/>
+            <Footer/>
+          </>
+          :
+          <>
+            <HeaderMain /><Banner/>
+            <Login/>
+            <Footer/>
+          </>
+        } />
+        <Route path='/account/order' element={
+          JSON.parse(localStorage.getItem('auth-token-user')) ?
+          <>
+          <HeaderMain /><Banner/>
+            <Account Fragment="Order"/>
+            <Footer/>
+          </>
+          :
+          <>
+            <HeaderMain /><Banner/>
+            <Login/>
+            <Footer/>
+          </>
+        } />
+        <Route path='/account/order/:id' element={
+          JSON.parse(localStorage.getItem('auth-token-user')) ?
+          <>
+          <HeaderMain />
+          <Banner/>
+            <Account Fragment="OrderDetails"/>
+            
             <Footer/>
           </>
           :

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import { StateContext } from 'Context/Context'
 import { updateCart } from 'Apis'
 
 const Index = () => {
     const state = useContext(StateContext)
+    const navigate = useNavigate()
     const [arrayOrder, setArrayOrder] = useState()
     useEffect(() => {
         setArrayOrder(state.arrayOrder)
@@ -73,6 +74,19 @@ const Index = () => {
             })
 
     }
+    const handlePaymentMethod = () => {
+        if (arrayOrder.length > 0) {
+            navigate("/pay-order")
+        }
+        else {
+            Swal.fire({
+                title: "Can't get to the checkout page!",
+                text: 'You have no products in your shopping cart!',
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        }
+    }
     return (
         <div className="noindex">
             <div id="mainframe">
@@ -84,7 +98,7 @@ const Index = () => {
                                 <div className="header-page">
                                     <h1 className="title-card">Cart</h1>
                                 </div>
-                                <form action="/cart" method="post" id="cartFormPage">
+                                <div id="cartFormPage">
                                     <table width="100%">
                                         <thead>
                                             <tr>
@@ -151,10 +165,10 @@ const Index = () => {
                                     </div>
                                     <div className="col-md-6 cart-buttons inner-right inner-left">
                                         <div className="buttons">
-                                            <NavLink to={"/pay-order/"}><button type="submit" id="checkout" className="button-default" name="checkout" value>Payment</button></NavLink>
+                                            <button onClick={handlePaymentMethod} id="checkout" name="checkout" value>Payment</button>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>

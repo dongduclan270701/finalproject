@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import 'assets/scss/Content/Pay-order/Pay-order.scss'
 import axios from 'axios';
-import { createOrderByCustomer } from 'Apis'
+import { createOrderByCustomer, updateCart } from 'Apis'
 import Swal from 'sweetalert2'
 import { useNavigate, NavLink } from 'react-router-dom';
 import { StateContext } from 'Context/Context'
@@ -166,19 +166,21 @@ const Index = () => {
                         icon: 'success',
                         confirmButtonText: 'OK!'
                     })
-                    localStorage.removeItem("orderArray")
-                    setOrderCheckOut({
-                        product: [],
-                        email: "",
-                        username: "",
-                        phoneNumber: "",
-                        address: "",
-                        city: "",
-                        district: "",
-                        commune: "",
-                        discountCode: "",
-                    })
-                    navigate('/cart')
+                        .then(result => {
+                            if (result.isConfirmed) {
+                                navigate("/cart")
+                            }
+                        })
+                        .catch(err => {
+                            return err
+                        })
+                    updateCart(JSON.parse(localStorage.getItem('user'))[0], [])
+                        .then(result => {
+                            state.handleUpdateArrayOrder([])
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
                 })
                 .catch(error => {
                     Swal.fire({

@@ -3,7 +3,7 @@ import ProductParameters from './Product-parameters'
 import ProductThumbnail from './Product-thumbnail'
 import TabPanelCharacter from './TabPanel-character'
 import TabPanelDetails from './TabPanel-reviews'
-import TabPanelHrvProductTabs from './TabPanel-Exchange'
+import TabPanelExchange from './TabPanel-Exchange'
 import { useParams, useNavigate, NavLink } from 'react-router-dom';
 import { fetchLaptopCollectingByName, updateCart } from 'Apis'
 import Swal from 'sweetalert2'
@@ -24,48 +24,57 @@ const Index = () => {
             })
     }, []);
     const checkArrayOrder = (product) => {
-        const quantity = 1
-        if (state.arrayOrder.length !== 0) {
-            array = state.arrayOrder
-        } else {
-            var array = [];
+        if(JSON.parse(localStorage.getItem('user'))) {
+            const quantity = 1
+            if (state.arrayOrder.length !== 0) {
+                array = state.arrayOrder
+            } else {
+                var array = [];
+            }
+            function isSame(productCompare) {
+                return productCompare.src === product.src;
+            }
+            const result = array.findIndex(isSame);
+            if (result !== -1) {
+                Swal.fire({
+                    title: 'The product is already in the cart!',
+                    text: 'You already have this product in your cart!',
+                    icon: 'warning',
+                    confirmButtonText: 'OK!'
+                })
+            } else {
+                array.push({ ...product, quantity });
+                updateCart(JSON.parse(localStorage.getItem('user'))[0], array)
+                    .then(result => {
+                        state.handleUpdateArrayOrder(array)
+                        Swal.fire({
+                            title: 'Add to cart!',
+                            text: 'You have successfully added the product to your cart!',
+                            icon: 'success',
+                            confirmButtonText: 'OK!'
+                        })
+                            .then(result => {
+                                if (result.isConfirmed) {
+                                    navigate("/cart")
+                                }
+                            })
+                            .catch(err => {
+                                return err
+                            })
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+    
+            }
         }
-        function isSame(productCompare) {
-            return productCompare.src === product.src;
-        }
-        const result = array.findIndex(isSame);
-        if (result !== -1) {
+        else {
             Swal.fire({
-                title: 'The product is already in the cart!',
-                text: 'You already have this product in your cart!',
+                title: 'You need to login!',
+                text: 'Please log in to your account to be able to add products to your cart',
                 icon: 'warning',
                 confirmButtonText: 'OK!'
             })
-        } else {
-            array.push({ ...product, quantity });
-            console.log(array)
-            updateCart(JSON.parse(localStorage.getItem('user'))[0], array)
-                .then(result => {
-                    state.handleUpdateArrayOrder(array)
-                    Swal.fire({
-                        title: 'Add to cart!',
-                        text: 'You have successfully added the product to your cart!',
-                        icon: 'success',
-                        confirmButtonText: 'OK!'
-                    })
-                        .then(result => {
-                            if (result.isConfirmed) {
-                                navigate("/cart")
-                            }
-                        })
-                        .catch(err => {
-                            return err
-                        })
-                })
-                .catch(error => {
-                    console.log(error)
-                })
-
         }
 
     }
@@ -118,7 +127,7 @@ const Index = () => {
                                             </strong>
                                             {product ? <TabPanelCharacter product={product} /> : null}
                                             {product ? <TabPanelDetails product={product} /> : null}
-                                            {product ? <TabPanelHrvProductTabs product={product} /> : null}
+                                            {product ? <TabPanelExchange product={product} /> : null}
 
                                         </div>
                                     </div>

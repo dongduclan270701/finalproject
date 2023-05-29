@@ -62,17 +62,20 @@ const Index = () => {
                         <input name="utf8" type="hidden" defaultValue="✓" />
                         <div id="last_name" className="input-group" style={{width:"100%"}}>
                             <span className="input-group-addon"><i className="fa fa-user" /></span>
-                            <input required type="text" defaultValue="" name="customer[last_name]" placeholder="Họ và Tên" id="last_name" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, username: e.target.value }))}/>
+                            <input style={{height:"auto", fontSize:"inherit"}} required type="text" defaultValue="" name="customer[last_name]" placeholder="Họ và Tên" id="last_name" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, username: e.target.value }))}/>
                         </div>
                         <div id="email" className="input-group" style={{width:"100%"}}>
                             <span className="input-group-addon"><i className="fa fa-envelope" /></span>
-                            <input required type="email" defaultValue="" name="customer[email]" placeholder="Email" id="email" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, email: e.target.value }))} />
+                            <input style={{height:"auto", fontSize:"inherit"}} required type="email" defaultValue="" name="customer[email]" placeholder="Email" id="email" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, email: e.target.value }))} />
                         </div>
                         <div id="password" className="input-group" style={{width:"100%"}}>
                             <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                            <input required type="password" defaultValue="" name="customer[password]" placeholder="Mật khẩu" id="password" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, password: e.target.value }))}/>
+                            <input style={{height:"auto", fontSize:"inherit"}} required type="password" defaultValue="" name="customer[password]" placeholder="Mật khẩu" id="password" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, password: e.target.value }))}/>
                         </div>
-                        <button className="btn" type="submit" value="Đăng ký" onClick={getStateInputForm}>Đăng ký</button>
+                        
+                        <div className="action_bottom">
+                                <button className="btn" value="Đăng nhập" onClick={getStateInputForm} >Đăng ký</button>
+                            </div>
                         <div className="action_bottom">
                             
                             <NavLink to="/login">Đã có tài khoản</NavLink>

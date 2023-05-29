@@ -43,6 +43,7 @@ const Index = () => {
                                     window.location.reload();
                                 } else {
                                     navigate(-1);
+                                    window.location.reload();
                                 }
                             }
                         })
@@ -87,11 +88,11 @@ const Index = () => {
                             <input name="utf8" type="hidden" defaultValue="✓" />
                             <div className="input-group">
                                 <span className="input-group-addon"><i className="fa fa-envelope" /></span>
-                                <input required type="email" onKeyDown={handleOnKeyDown} defaultValue="" name="customer[email]" id="customer_email" placeholder="Email" className="text form-control" aria-describedby="basic-addon1" onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, username: e.target.value }))} />
+                                <input style={{height:"auto", fontSize:"inherit"}} required type="email" onKeyDown={handleOnKeyDown} defaultValue="" name="customer[email]" id="customer_email" placeholder="Email" className="text form-control" aria-describedby="basic-addon1" onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, username: e.target.value }))} />
                             </div>
                             <div className="input-group">
                                 <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                                <input required type="password" onKeyDown={handleOnKeyDown} defaultValue="" name="customer[password]" id="customer_password" placeholder="Mật khẩu" className="text form-control" size={16} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, password: e.target.value }))} />
+                                <input style={{height:"auto", fontSize:"inherit"}} required type="password" onKeyDown={handleOnKeyDown} defaultValue="" name="customer[password]" id="customer_password" placeholder="Mật khẩu" className="text form-control" size={16} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, password: e.target.value }))} />
                             </div>
                             <div className="action_bottom">
                                 <button className="btn" value="Đăng nhập" onClick={getStateInputFormLogin} >Đăng nhập</button>

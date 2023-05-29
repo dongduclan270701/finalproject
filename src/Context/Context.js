@@ -9,7 +9,6 @@ function StateProvider({ children }) {
             fetchCartUser(JSON.parse(localStorage.getItem('user'))[0])
             .then(result => {
                 setArrayOrder(result.product)
-                console.log(result.product)
             })
             .catch(error => {
                 console.log(error)

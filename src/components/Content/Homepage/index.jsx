@@ -446,10 +446,10 @@ const Index = () => {
     return (
         <>
             <div className="gearvn-header-navigation ">
-                <div className="row gearvn-content-section gearvn-header-navigation-content padding-10-0 container1">
+                <div className="row gearvn-content-section gearvn-header-navigation-content padding-10-0 container1" style={{margin:"auto"}}>
                     {/*MENU LEFT*/}
                     {/*<span class="click-list"><i class="fa fa-bars"></i> Danh mục sản phẩm</span>*/}
-                    <div className="gearvn-header-menu">
+                    <div className="gearvn-header-menu" style={{width:"unset"}}>
                         <div className="cat-menu gearvn-cat-menu">
                             <nav id="megamenu-nav" className="megamenu-nav">
                                 <ol className="megamenu-nav-primary responsive" id="megamenu-nav-main">
