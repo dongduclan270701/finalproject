@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { fetchUserDetails } from 'Apis'
 import { NavLink, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
-
+import 'assets/scss/Header/login.css'
+import 'assets/scss/Header/header.css'
+import logo from 'assets/images/logo-brand.png'
 const Index = () => {
     const navigate = useNavigate()
     const [inputForm, setInputForm] = useState({ username: "", password: "" })
@@ -28,7 +30,7 @@ const Index = () => {
                     })
                 }
                 else {
-                    console.log(result)
+                    console.log(window.location.pathname)
                     localStorage.setItem("auth-token-user", JSON.stringify(result.token));
                     localStorage.setItem("user", JSON.stringify(result.user));
                     Swal.fire({
@@ -39,12 +41,8 @@ const Index = () => {
                     })
                         .then((result) => {
                             if (result.isConfirmed) {
-                                if (window.location.pathname !== '/login') {
-                                    window.location.reload();
-                                } else {
-                                    navigate(-1);
-                                    window.location.reload();
-                                }
+                                navigate('/')
+                                window.location.reload();
                             }
                         })
                         .catch((error) => {
@@ -88,11 +86,11 @@ const Index = () => {
                             <input name="utf8" type="hidden" defaultValue="✓" />
                             <div className="input-group">
                                 <span className="input-group-addon"><i className="fa fa-envelope" /></span>
-                                <input style={{height:"auto", fontSize:"inherit"}} required type="email" onKeyDown={handleOnKeyDown} defaultValue="" name="customer[email]" id="customer_email" placeholder="Email" className="text form-control" aria-describedby="basic-addon1" onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, username: e.target.value }))} />
+                                <input style={{ height: "auto", fontSize: "inherit" }} required type="email" onKeyDown={handleOnKeyDown} defaultValue="" name="customer[email]" id="customer_email" placeholder="Email" className="text form-control" aria-describedby="basic-addon1" onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, username: e.target.value }))} />
                             </div>
                             <div className="input-group">
                                 <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                                <input style={{height:"auto", fontSize:"inherit"}} required type="password" onKeyDown={handleOnKeyDown} defaultValue="" name="customer[password]" id="customer_password" placeholder="Mật khẩu" className="text form-control" size={16} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, password: e.target.value }))} />
+                                <input style={{ height: "auto", fontSize: "inherit" }} required type="password" onKeyDown={handleOnKeyDown} defaultValue="" name="customer[password]" id="customer_password" placeholder="Mật khẩu" className="text form-control" size={16} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, password: e.target.value }))} />
                             </div>
                             <div className="action_bottom">
                                 <button className="btn" value="Đăng nhập" onClick={getStateInputFormLogin} >Đăng nhập</button>
@@ -129,5 +127,103 @@ const Index = () => {
         </div>
     );
 }
+// const Index = () => {
+//     const [isMenuOpen, setIsMenuOpen] = useState(false)
+//     const [isPopupOpen, setIsPopupOpen] = useState(false)
+//     const [isSignupForm, setIsSignupForm] = useState(false)
+//     const toggleMenu = () => {
+//         setIsMenuOpen(!isMenuOpen)
+//     }
+//     const togglePopup = () => {
+//         setIsPopupOpen(!isPopupOpen)
+//     }
+//     const toggleSignupForm = () => {
+//         setIsSignupForm(!isSignupForm)
+//     }
+//     return (
+//         <div className={isPopupOpen ? "show-popup" : ''}>
+//             <header>
+//                 <nav className="navbar">
+//                     <span className="hamburger-btn material-symbols-rounded" onClick={toggleMenu}>menu</span>
+//                     <a href="#" className="logo">
+//                         <img src={logo} alt="logo" />
+//                         {/* <h2>CodingNepal</h2> */}
+//                     </a>
+//                     <ul className={isMenuOpen ? "links show-menu" : "links"}>
+//                         <span className="close-btn material-symbols-rounded" onClick={toggleMenu}>close</span>
+//                         <li><a href="#">Home</a></li>
+//                         <li><a href="#">Portfolio</a></li>
+//                         <li><a href="#">Courses</a></li>
+//                         <li><a href="#">About us</a></li>
+//                         <li><a href="#">Contact us</a></li>
+//                     </ul>
+//                     <button className="login-btn" onClick={togglePopup}>LOG IN</button>
+//                 </nav>
+                
+//             </header>
+            
+//             <div className="blur-bg-overlay" />
+//             <div className={isSignupForm ? "form-popup show-signup" : "form-popup"}>
+//                 <span className="close-btn material-symbols-rounded" onClick={togglePopup}>close</span>
+//                 <div className="form-box login">
+//                     <div className="form-details">
+//                         <h2>Welcome Back</h2>
+//                         <p>Please log in using your personal information to stay connected with us.</p>
+//                     </div>
+//                     <div className="form-content">
+//                         <h2>LOGIN</h2>
+//                         <form action="#">
+//                             <div className="input-field">
+//                                 <input type="text" required />
+//                                 <label>Email</label>
+//                             </div>
+//                             <div className="input-field">
+//                                 <input type="password" required />
+//                                 <label>Password</label>
+//                             </div>
+//                             <a href="#" className="forgot-pass-link">Forgot password?</a>
+//                             <button type="submit">Log In</button>
+//                         </form>
+//                         <div className="bottom-link">
+//                             Don't have an account?
+//                             <a href="#" id="signup-link" onClick={toggleSignupForm}>Signup</a>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <div className="form-box signup">
+//                     <div className="form-details">
+//                         <h2>Create Account</h2>
+//                         <p>To become a part of our community, please sign up using your personal information.</p>
+//                     </div>
+//                     <div className="form-content">
+//                         <h2>SIGNUP</h2>
+//                         <form action="#">
+//                             <div className="input-field">
+//                                 <input type="text" required />
+//                                 <label>Enter your email</label>
+//                             </div>
+//                             <div className="input-field">
+//                                 <input type="password" required />
+//                                 <label>Create password</label>
+//                             </div>
+//                             <div className="policy-text">
+//                                 <input type="checkbox" id="policy" />
+//                                 <label htmlFor="policy">
+//                                     I agree the
+//                                     <a href="#" className="option">Terms &amp; Conditions</a>
+//                                 </label>
+//                             </div>
+//                             <button type="submit">Sign Up</button>
+//                         </form>
+//                         <div className="bottom-link">
+//                             Already have an account?
+//                             <a href="#" id="login-link" onClick={toggleSignupForm}>Login</a>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// }
 
 export default Index;

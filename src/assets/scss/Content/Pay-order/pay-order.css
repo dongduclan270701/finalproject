@@ -1,0 +1,151 @@
+Định dạng chung cho phần nội dung
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Định dạng header */
+.content .main-header {
+    background-color: #0f0c18;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .logo {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content .logo-text {
+    margin: 0;
+}
+
+.content .breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.content .breadcrumb-item {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+/* Định dạng nút "Complete order" */
+.content .step-footer-continue-btn {
+    background-color: #ffbd59;
+    color: #0f0c18;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.content .step-footer-continue-btn:hover {
+    transform: scale(0.95);
+}
+
+/* Định dạng sidebar */
+.content .sidebar {
+    width: 30%;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* Animation cho nút "Complete order" */
+.content .step-footer-continue-btn {
+    position: relative;
+}
+
+.content .step-footer-continue-btn .btn-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.content .step-footer-continue-btn.loading .btn-spinner {
+    display: block;
+}
+
+/* Animation cho sản phẩm trong giỏ hàng */
+.content .product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.content .product-table th,
+.content .product-table td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.content .product-table th {
+    background-color: #0f0c18;
+    color: white;
+}
+
+.content .product-table td img.product-thumbnail-image {
+    max-width: 50px;
+    max-height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.content.product-table td .product-description-name {
+    font-weight: bold;
+}
+
+/* Animation cho thông tin đơn hàng */
+.content .order-summary {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.content .order-summary-section {
+    margin-bottom: 20px;
+}
+
+.content .order-summary-emphasis {
+    font-weight: bold;
+}
+
+/* Animation cho nút "Apply" */
+.content .field-input-btn-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.content .field-input-btn {
+    background-color: #0f0c18;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.content .field-input-btn:hover {
+    transform: scale(0.95);
+}

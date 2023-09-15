@@ -72,12 +72,10 @@ const Index = () => {
                             <span className="input-group-addon"><i className="fa fa-lock" /></span>
                             <input style={{height:"auto", fontSize:"inherit"}} required type="password" defaultValue="" name="customer[password]" placeholder="Mật khẩu" id="password" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, password: e.target.value }))}/>
                         </div>
-                        
                         <div className="action_bottom">
                                 <button className="btn" value="Đăng nhập" onClick={getStateInputForm} >Đăng ký</button>
                             </div>
                         <div className="action_bottom">
-                            
                             <NavLink to="/login">Đã có tài khoản</NavLink>
                         </div>
                         

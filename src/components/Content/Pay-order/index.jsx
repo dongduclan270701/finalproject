@@ -246,8 +246,6 @@ const Index = () => {
                                                     <NavLink to="/login">Login</NavLink>
                                                 </p>
                                             }
-
-
                                         </div>
                                         <div className="fieldset">
                                             <div className="field field-required  ">
@@ -293,7 +291,6 @@ const Index = () => {
                                                                     {city && city.map((item, index) => {
                                                                         return <option key={index} value={item.Name}>{item.Name}</option>
                                                                     })}
-
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -305,10 +302,6 @@ const Index = () => {
                                                                     {district && district.map((item, index) => {
                                                                         return <option key={index} value={item.Name}>{item.Name}</option>
                                                                     })}
-                                                                    {/* {console.log(city)} */}
-                                                                    {/* {Number(orderCheckOut.city) - 1*1 > -1 && city[(Number(orderCheckOut.city) - 1*1)].Districts.map((item,index) => {
-                                                                        return <option key={index} value={item.Name}>{item.Name}</option>
-                                                                    })} */}
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -317,9 +310,6 @@ const Index = () => {
                                                                 <label className="field-label" htmlFor="customer_shipping_ward">Commune / Ward</label>
                                                                 <select onChange={(e) => handleChooseCDC(e, "commune")} className="field-input" id="customer_shipping_ward" name="customer_shipping_ward">
                                                                     <option data-code="null" value="null">Select Commune / Ward</option>
-                                                                    {/* {commune !== undefined ? commune.Wards.map((item, index) => {
-                                                                        return <option key={index} value={item.Name}>{item.Name}</option>
-                                                                    }) : null} */}
                                                                     {commune && commune.map((item, index) => {
                                                                         return <option key={index} value={item.Name}>{item.Name}</option>
                                                                     })}
@@ -368,36 +358,17 @@ const Index = () => {
                                 </div>
                             </div >
                             <div className="step-footer" id="step-footer-checkout">
-
                                 <input name="utf8" type="hidden" defaultValue="✓" />
                                 <button onClick={() => RequestCheckOut()} className="step-footer-continue-btn btn">
                                     <span className="btn-content">Complete order</span>
                                     <i className="btn-spinner icon icon-button-spinner" />
                                 </button>
-
                                 <a className="step-footer-previous-link" href="/cart">
                                     Cart
                                 </a>
                             </div>
                         </div>
                     </div>
-                    {/* <div className="hrv-coupons-popup">
-                        <div className="hrv-title-coupons-popup">
-                            <p>Chọn giảm giá <span className="count-coupons" /></p>
-                            <div className="hrv-coupons-close-popup">
-                                <svg width={18} height={18} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M17.1663 2.4785L15.5213 0.833496L8.99968 7.35516L2.47801 0.833496L0.833008 2.4785L7.35468 9.00016L0.833008 15.5218L2.47801 17.1668L8.99968 10.6452L15.5213 17.1668L17.1663 15.5218L10.6447 9.00016L17.1663 2.4785Z" fill="#424242" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="hrv-content-coupons-code">
-                            <h3 className="coupon_heading">Discount code của shop</h3>
-                            <div className="hrv-discount-code-web">
-                            </div>
-                            <div className="hrv-discount-code-external">
-                            </div>
-                        </div>
-                    </div> */}
                     <div className="hrv-coupons-popup-site-overlay" />
                     <div className="main-footer footer-powered-by">Powered by Haravan</div>
                 </div >
@@ -439,7 +410,6 @@ const Index = () => {
                                                     </td>
                                                 </tr>
                                             })}
-
                                         </tbody>
                                     </table>
                                 </div>
