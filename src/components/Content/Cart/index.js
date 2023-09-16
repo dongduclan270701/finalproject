@@ -126,7 +126,7 @@ const Index = () => {
                                                         </NavLink>
                                                     </td>
                                                     <td className="qty">
-                                                        <input type="number" onChange={e => updateOrderCart(index, e.target.value)} size={4} name="updates[]" min={1} id="updates_1099216743" defaultValue={item.quantity} onfocus="this.select();" className="tc item-quantity" />
+                                                        <input type="number" onChange={e => updateOrderCart(index, e.target.value)} size={4} name="updates[]" min={1} id="updates_1099216743" value={item.quantity} onfocus="this.select();" className="tc item-quantity" />
                                                     </td>
                                                     <td className="price">{item.nowPrice}₫</td>
                                                     <td className="remove">
@@ -149,8 +149,8 @@ const Index = () => {
                                         <div className="bill-info">
                                             <div className="r-bill">
                                                 <div className="checkbox">
-                                                    <input type="hidden" name="attributes[invoice]" id="re-checkbox-bill" defaultValue="no" />
-                                                    <input type="checkbox" id="checkbox-bill" defaultValue="yes" name="regular-checkbox" className="regular-checkbox" />
+                                                    <input type="hidden" name="attributes[invoice]" id="re-checkbox-bill" value="no" />
+                                                    <input type="checkbox" id="checkbox-bill" value="yes" name="regular-checkbox" className="regular-checkbox" />
                                                     <label htmlFor="checkbox-bill" className="box">
                                                         <span><svg width="12px" height="9px" viewBox="0 0 12 9"><polyline points="1 5 4 8 11 1" /></svg></span>
                                                     </label>

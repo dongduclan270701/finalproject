@@ -238,7 +238,7 @@ const Index = () => {
                                 <hr style={{ borderTop: "2px solid rgb(237, 110, 37)" }} />
                                 <div className="order-summary-section order-summary-section-discount" data-order-summary-section="discount">
                                     <form id="form_discount_add" acceptCharset="UTF-8" >
-                                        <input name="utf8" type="hidden" defaultValue="✓" />
+                                        <input name="utf8" type="hidden" value="✓" />
                                         <div className="fieldset">
                                             <div className="field  ">
                                                 <div className="row discount">
@@ -320,7 +320,7 @@ const Index = () => {
                             <div className="step-sections steps-onepage">
                                 <div className="section">
                                     <div className="section-content section-customer-information no-mb">
-                                        <input type="hidden" name="checkout_user[email]" defaultValue="dongduclan277@gmail.com" />
+                                        <input type="hidden" name="checkout_user[email]" value="dongduclan277@gmail.com" />
                                         <div className="row customer-information">
                                             <div className="avatar-wrapper">
                                                 <img src={JSON.parse(localStorage.getItem('user'))[4]} alt='' />
@@ -332,15 +332,15 @@ const Index = () => {
                                         </div>
                                         <form>
                                             <div className="input-field">
-                                                <input name='fullName' type="text" onChange={(e) => setOrderCheckOut({ ...orderCheckOut, username: e.target.value })} defaultValue={orderCheckOut.username} required />
+                                                <input name='fullName' type="text" onChange={(e) => setOrderCheckOut({ ...orderCheckOut, username: e.target.value })} value={orderCheckOut.username} required />
                                                 <label>Full Name</label>
                                             </div>
                                             <div className="input-field">
-                                                <input name='phoneNumber' type="tel" onChange={(e) => setOrderCheckOut({ ...orderCheckOut, phoneNumber: e.target.value })} defaultValue={orderCheckOut.phoneNumber} required />
+                                                <input name='phoneNumber' type="tel" onChange={(e) => setOrderCheckOut({ ...orderCheckOut, phoneNumber: e.target.value })} value={orderCheckOut.phoneNumber} required />
                                                 <label>Phone Number</label>
                                             </div>
                                             <div className="input-field">
-                                                <input name='address' type="text" onChange={(e) => setOrderCheckOut({ ...orderCheckOut, address: e.target.value })} defaultValue={orderCheckOut.address} required />
+                                                <input name='address' type="text" onChange={(e) => setOrderCheckOut({ ...orderCheckOut, address: e.target.value })} value={orderCheckOut.address} required />
                                                 <label>Address</label>
                                             </div>
                                             <div className='row select-field'>

@@ -11,6 +11,7 @@ const Index = () => {
     useEffect(() => {
         fetchProductCollection({ category: objParams.category, collection: objParams.collection }, 1)
             .then(result => {
+                console.log(result)
                 setLaptop(result.data)
             })
             .catch(error => {

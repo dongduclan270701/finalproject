@@ -34,6 +34,12 @@ const Index = (props) => {
             </h1>
             <p>{renderStars()} <span style={{ fontSize: '15px' }}>{product.rating.length} reviews - {product.sold} sold - {product.view} views</span>
             </p>
+            <h1 style={{display:'flex', alignItems:'center'}}>
+                <span className="product_sale_price" style={{ color: '#ffbd59' }}>{formatter.format(product.nowPrice)} VNĐ</span>
+                &ensp;
+                <span className="product_price" style={{ color: 'grey', fontSize:'17px' }}><del>{formatter.format(product.realPrice)} VNĐ</del></span>
+                <span style={{border: '1px solid #ffbd59', borderRadius: '5px', padding:'5px', margin:'0 0 0 10px', fontSize:'13px'}}>- {product.percent}%</span>
+            </h1>
             <p>
                 <span style={{ fontSize: '18px' }}>
                     ✔&nbsp;Genuine 24 months warranty.&nbsp;</span>
@@ -52,7 +58,7 @@ const Index = (props) => {
             </p>
             <hr />
             <p>
-                <span style={{ color: '#ff0000' }}>
+                <span style={{ color: '#ffbd59' }}>
                     <span style={{ fontSize: '18px' }}>
                         <u>
                             <strong>
@@ -66,16 +72,14 @@ const Index = (props) => {
                     <span style={{ fontSize: '18px' }}>
 
                         <strong>
-                            {item}</strong>
+                            ⭐ - {item}</strong>
 
                     </span>
                 </p>
             })}
-
-            <hr />
             <p>
                 <span style={{ fontSize: '18px' }}>
-                    <span style={{ color: '#ff0000' }}>
+                    <span style={{ color: '#ffbd59' }}>
                         <strong>
                             <u>
                                 PROMOTION WHEN BUYING INCLUDED:&nbsp;</u>
@@ -84,57 +88,30 @@ const Index = (props) => {
                 </span>
             </p>
             <p>
-
                 {product.gift_buy.map((item, index) => {
                     return <span style={{ fontSize: '18px' }} key={index}>
-                        {item}<br />
+                        🎁 - {item}<br />
                     </span>
                 })}
-
-            </p>
-            <p>
-                <span style={{ fontSize: '18px' }}>
-                    And there are many other offers. <a href="">
-                        <span style={{ color: '#3498db' }}>
-                            <strong>
-                                VIEW DETAILS NOW</strong>
-                        </span>
-                    </a>
-                </span>
             </p>
             <hr />
             <p>
                 <span style={{ fontSize: '18px' }}>
                     <strong>
-                        <span style={{ color: '#ff0000' }}>
-                            Support MPOS (Credit Card), HDSAISON&nbsp;(</span>
-                        <a href="https://gearvn.com/pages/huong-dan-tra-gop">
-                            <span style={{ color: '#3498db' }}>
-                                See details</span>
-                        </a>
-                        <span style={{ color: '#ff0000' }}>
-                            ).</span>
+                        <span style={{ color: '#ffbd59' }}>
+                            Support MPOS (Credit Card), HDSAISON</span>
                     </strong>
                 </span>
             </p>
             <p>
                 <strong>
-
                 </strong>
             </p>
             <strong>
-                <form id="add-item-form-2" name="shoppingCart" action="/cart/add" method="post" encType="multipart/form-data">
-                    <div className="product_nav_btn">
-                        <div className="product_sales_off pull-left">
-                            <span className="price-text">Giá Cũ:</span><span className="product_price"><del>{formatter.format(product.realPrice)} VNĐ</del></span><br />
-                            <span className="price-text">Giá KM:</span><span className="product_sale_price">{formatter.format(product.nowPrice)} VNĐ</span><br />
-                        </div>
-                    </div>
-                    <div className="clearfix" />
-                    <div className="form-group">
-                        <p id="allowAdd2Cart" className="product_buy_btn btn-success theme_button addtocar" onClick={statusOrder}>Đặt hàng</p>
-                    </div>
-                </form>
+                <div className="clearfix" />
+                <div className="form-group">
+                    <button onClick={statusOrder}>Add to cart</button>
+                </div>
             </strong>
         </div>
     );

@@ -58,19 +58,19 @@ const Index = () => {
                 </span>
                 <div className="userbox">
                     <div id="create_customer" style={{display:"flex",margin:"0 auto", flexDirection:"column"}}>
-                        <input name="form_type" type="hidden" defaultValue="create_customer" />
-                        <input name="utf8" type="hidden" defaultValue="✓" />
+                        <input name="form_type" type="hidden" value="create_customer" />
+                        <input name="utf8" type="hidden" value="✓" />
                         <div id="last_name" className="input-group" style={{width:"100%"}}>
                             <span className="input-group-addon"><i className="fa fa-user" /></span>
-                            <input style={{height:"auto", fontSize:"inherit"}} required type="text" defaultValue="" name="customer[last_name]" placeholder="Họ và Tên" id="last_name" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, username: e.target.value }))}/>
+                            <input style={{height:"auto", fontSize:"inherit"}} required type="text" value="" name="customer[last_name]" placeholder="Họ và Tên" id="last_name" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, username: e.target.value }))}/>
                         </div>
                         <div id="email" className="input-group" style={{width:"100%"}}>
                             <span className="input-group-addon"><i className="fa fa-envelope" /></span>
-                            <input style={{height:"auto", fontSize:"inherit"}} required type="email" defaultValue="" name="customer[email]" placeholder="Email" id="email" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, email: e.target.value }))} />
+                            <input style={{height:"auto", fontSize:"inherit"}} required type="email" value="" name="customer[email]" placeholder="Email" id="email" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, email: e.target.value }))} />
                         </div>
                         <div id="password" className="input-group" style={{width:"100%"}}>
                             <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                            <input style={{height:"auto", fontSize:"inherit"}} required type="password" defaultValue="" name="customer[password]" placeholder="Mật khẩu" id="password" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, password: e.target.value }))}/>
+                            <input style={{height:"auto", fontSize:"inherit"}} required type="password" value="" name="customer[password]" placeholder="Mật khẩu" id="password" className="text form-control" size={30} onChange={(e) => setInputForm((inputForm) => ({ ...inputForm, password: e.target.value }))}/>
                         </div>
                         <div className="action_bottom">
                                 <button className="btn" value="Đăng nhập" onClick={getStateInputForm} >Đăng ký</button>
@@ -79,7 +79,7 @@ const Index = () => {
                             <NavLink to="/login">Đã có tài khoản</NavLink>
                         </div>
                         
-                        <input id="c355808e0a4249ea9c3d176345bcb95a" name="g-recaptcha-response" type="hidden" defaultValue="03AFY_a8U7U0AY8uFs02Ngt70hcqgXJDnuWFRaPI3yiqpfccPzyGbWZR-Zyar2rAfas0eIKivY89ZvGvtqBxPVlFwFGsgf6z69GZXqJKdbWFBHMARBctkH_T56i8mCBhgWn1j59pTF3kuX-X0bm5XoDBhr1TPkKHIHtxyNUJvCR6TqznoDXHizsTbouMW9fm_wJ3XfMUMiHm7cz2RK8joAp1zFlbzh9Fp8a9xOMWkObvea9EH9dZg-9Yybj76MtIWyZtYwn4GmaIvAAy8rGNVBI1jLrZXosF15mvc6wQ_cQgCY_bYVPW14UxQfAR0xTblyCVoL7gqzDmgErCdh_wlPA_-MQFe1mTXCUyFGSz5pyUCTPQjrgnuaBjCadX53JoNFHYEHNYx_7mKP_gIHDrFrYb5Yp2RGd1A-DgDhDj9l807kpX476reLh0Irbl4QCyV6wpb5lDbqBBPflVICYN-HMAZcUplvqKDAzRazs_pNTYtye6S1tf60CRSfk9TyXb4sWhP-CMb_WInF" />
+                        <input id="c355808e0a4249ea9c3d176345bcb95a" name="g-recaptcha-response" type="hidden" value="03AFY_a8U7U0AY8uFs02Ngt70hcqgXJDnuWFRaPI3yiqpfccPzyGbWZR-Zyar2rAfas0eIKivY89ZvGvtqBxPVlFwFGsgf6z69GZXqJKdbWFBHMARBctkH_T56i8mCBhgWn1j59pTF3kuX-X0bm5XoDBhr1TPkKHIHtxyNUJvCR6TqznoDXHizsTbouMW9fm_wJ3XfMUMiHm7cz2RK8joAp1zFlbzh9Fp8a9xOMWkObvea9EH9dZg-9Yybj76MtIWyZtYwn4GmaIvAAy8rGNVBI1jLrZXosF15mvc6wQ_cQgCY_bYVPW14UxQfAR0xTblyCVoL7gqzDmgErCdh_wlPA_-MQFe1mTXCUyFGSz5pyUCTPQjrgnuaBjCadX53JoNFHYEHNYx_7mKP_gIHDrFrYb5Yp2RGd1A-DgDhDj9l807kpX476reLh0Irbl4QCyV6wpb5lDbqBBPflVICYN-HMAZcUplvqKDAzRazs_pNTYtye6S1tf60CRSfk9TyXb4sWhP-CMb_WInF" />
                         </div>
                 </div>
             </div>{/* #register */}

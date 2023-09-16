@@ -83,8 +83,8 @@ form .input-field {
     transform: translate(50%, 50%) rotate(45deg);
     /* z-index: 21; */
 }
-.homepage button:hover {
-    transform: scale(0.95);
+.pay-content .button-complete .button-complete-content:hover {
+    transform: scale(0.9);
 }
 .input-field input {
     height: 100%;

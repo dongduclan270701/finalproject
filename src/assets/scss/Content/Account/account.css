@@ -1,0 +1,360 @@
+#layout-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+#layout-page .profile {
+    width: 100%;
+    backdrop-filter: blur(100px);
+    border: 1px solid #393939;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0;
+}
+
+#layout-page .profile-sidebar img {
+    display: flex;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.progress-bar-process {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 50px 0;
+    position: relative;
+}
+
+.progress-bar-process .col-2 {
+    flex-basis: calc(20% - 20px);
+    text-align: center;
+    position: relative;
+}
+
+.progress-bar-process .col-2 .label {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.progress-bar-process .col-2.step.active .circle {
+    background-color: #ffbd59;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    width: 50px;
+    margin:auto
+}
+.progress-bar-process .col-2.step .circle {
+    background-color: #2f2f2f;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    width: 50px;
+    margin:auto
+}
+
+@media (max-width: 768px) {
+    .progress-bar-process {
+        display: none
+    }
+}
+
+#layout-page .profile-sidebar .profile-usertitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#layout-page .profile-sidebar .profile-userbuttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#layout-page .profile-sidebar .profile-userbuttons button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    background-color: unset;
+    border: 1px solid #ffbd59;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px 0;
+    font-size: 13px;
+}
+
+
+#layout-page .profile-sidebar .profile-userbuttons button:hover {
+    transform: scale(1.15)
+}
+
+#layout-page .button-show {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#layout-page .button-show button {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: unset;
+    cursor: pointer;
+    transform: 0.5s ease;
+    border: none;
+    margin: 0 auto
+}
+
+#layout-page .button-show button:before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: #0f0c18;
+    top: 0;
+    left: 0;
+    transform: translate(50%, 50%) rotate(45deg);
+}
+
+
+#layout-page .button-show-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#layout-page .button-show-order button {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    background-color: unset;
+    border: 1px solid #ffbd59;
+    border-radius: 5px;
+    padding: 7px;
+    margin: 10px 0;
+    font-size: 13px;
+}
+
+
+#layout-page .button-show-order button:hover {
+    transform: scale(1.15)
+}
+
+#layout-page .profile-usermenu li {
+    width: 100%;
+    color: white
+}
+
+#layout-page .profile-usermenu li a {
+    color: white;
+    padding: 0;
+    margin: 10px;
+}
+
+#layout-page .profile-usermenu li a button {
+    color: white;
+    padding: 0;
+    margin: 10px;
+    background-size: 0 3px, 100% 3px;
+    background-position: 0 100%, 100% 100%
+}
+
+#layout-page .profile-usermenu li a:hover {
+    background-color: unset;
+}
+
+#layout-page .profile-usermenu li a button:hover {
+    background:
+        linear-gradient(to right,
+            rgb(232, 232, 23),
+            rgb(244, 132, 5));
+    background-size: 100% 3px, 0% 3px;
+    background-position: 0% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms, background-position 400ms;
+}
+
+#layout-page .profile-usermenu li a.active button {
+    background:
+        linear-gradient(to right,
+            rgb(232, 232, 23),
+            rgb(244, 132, 5));
+    background-size: 100% 3px, 0% 3px;
+    background-position: 0% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms, background-position 400ms;
+}
+
+#layout-page .postname {
+    display: flex;
+    justify-content: center;
+}
+.modal-content{
+    background-color: #000;
+    border: 1px solid #383838;
+    border-radius:15px
+}
+.modal-content .modal-header{
+    border-bottom: 1px solid #ffbd59;
+}
+.modal-content .modal-header .btn-close{
+    width: 15px;
+    height: 15px;
+    background-color: #393939;
+}
+.modal-content .modal-footer{
+    border-top: 1px solid #ffbd59;
+}
+.modal-content .modal-footer button{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    background-color: unset;
+    border: 1px solid #ffbd59;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 13px;
+}
+.modal-content .modal-footer button:hover{
+    transform: scale(1.15);
+}
+.modal-content textarea.form-control {
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    font-size: 16px;
+    padding: 15px;
+    border: 1px solid #717171;
+    border-radius: 3px;
+    color: #ffbd59;
+}
+.modal-content textarea.form-control:focus {
+    border: 1px solid #ffbd59;
+}
+.modal-content textarea.form-control:is(:focus, :valid)~label {
+    transform: translateY(-120%);
+    color: #ffbd59;
+    font-size: 16px;
+}
+
+
+.profile-container {
+
+}
+
+.profile-container .profile-content {
+    padding: 20px;
+}
+
+.profile-container .profile-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-container .profile-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+.profile-form {
+    display:flex;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.profile-container .profile-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.profile-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.profile-button:hover {
+    background-color: #0056b3;
+}
+
+
+.profile-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile-avatar-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-avatar-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.profile-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile-upload-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-upload-input {
+    display: none;
+}
+
+.profile-upload-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.profile-upload-button:hover {
+    background-color: #0056b3;
+}

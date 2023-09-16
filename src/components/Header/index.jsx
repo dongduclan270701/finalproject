@@ -200,7 +200,7 @@ const Index = () => {
                                         <a href={''}>{item.name}</a>
                                         <ul className="submenu-menu">
                                             {item.category[0].collecting.map((category, index) => {
-                                                return <li key={index}><a href={''}>{category.name}</a></li>
+                                                return <li key={index}><NavLink to={"/collectionDetail/" + category.name}state={{ category: category.name, collection: item.name.toLowerCase() }}>{category.name}</NavLink></li>
                                             })}
                                         </ul>
                                     </li>

@@ -90,69 +90,76 @@ const Index = () => {
     }
     return (
         <div className="container1">
-                    <div id="wrap-cart" className="container1">
-                        {/* Begin empty cart */}
-                        <div className="row">
-                            <div id="layout-page-card" className="container1">
-                                <div className="header-page">
-                                    <h1 className="title-card">Cart</h1>
-                                </div>
-                                <div id="cartFormPage">
-                                    <table width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th className="image">Image</th>
-                                                <th className="item">Product Name</th>
-                                                <th className="qty">Quantity</th>
-                                                <th className="price">Price</th>
-                                                <th className="remove">Remove</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+            <div id="wrap-cart" className="container1">
+                {/* Begin empty cart */}
+                <div className="row">
+                    <div id="layout-page-card" className="container1">
+                        <div className="header-page">
+                            <h1 className="title-card">Cart</h1>
+                        </div>
+                        <div id="cartFormPage">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <th className="image">Image</th>
+                                        <th className="item">Product Name</th>
+                                        <th className="qty">Quantity</th>
+                                        <th className="price">Price</th>
+                                        <th className="remove">Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                            {arrayOrder && arrayOrder.map((item, index) => {
-                                                return <tr key={index}>
-                                                    <td className="image">
-                                                        <div className="product_image">
-                                                            <NavLink to={"/products/" + item.src}>
-                                                                <img src={item.img[0]} width={100} alt="" />
-                                                            </NavLink>
-                                                        </div>
-                                                    </td>
-                                                    <td className="item">
-                                                        <NavLink to={"/products/" + item.src}>
-                                                            <strong>{item.nameProduct}</strong>
-                                                        </NavLink>
-                                                    </td>
-                                                    <td className="qty">
-                                                        <input type="number" onChange={e => updateOrderCart(index, e.target.value)} size={4} name="updates[]" min={1} id="updates_1099216743" defaultValue={item.quantity} onfocus="this.select();" className="tc item-quantity" />
-                                                    </td>
-                                                    <td className="price">{formatter.format(item.nowPrice)} VNĐ</td>
-                                                    <td className="remove">
-                                                        <p className="cart" onClick={() => deleteProductInCart(index)}><i className="fa fa-trash" /></p>
-                                                    </td>
-                                                </tr>
-                                            })}
-                                            <tr className="summary">
-                                                <td colSpan={4} style={{ fontWeight: 'bold', fontSize: '20px' }}>Total amount:</td>
-                                                <td className="price">
-                                                    <span className="total">
-                                                        <strong>{formatter.format(totalArrayOrder())} VNĐ</strong>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div className="col-md-12 cart-buttons">
-                                        <div className="buttons">
-                                            <button onClick={handlePaymentMethod} id="checkout" name="checkout" value>Payment</button>
-                                        </div>
-                                    </div>
+                                    {arrayOrder && arrayOrder.map((item, index) => {
+                                        return <tr key={index}>
+                                            <td className="image">
+                                                <div className="product_image">
+                                                    <NavLink to={"/products/" + item.src}>
+                                                        <img src={item.img[0]} width={100} alt="" />
+                                                    </NavLink>
+                                                </div>
+                                            </td>
+                                            <td className="item">
+                                                <NavLink to={"/products/" + item.src}>
+                                                    <strong>{item.nameProduct}</strong>
+                                                </NavLink>
+                                            </td>
+                                            <td className="qty">
+                                                <form>
+                                                    <div className="input-field">
+                                                        <input name='quantity' type="number"
+                                                            onChange={e => updateOrderCart(index, e.target.value)} size={4} min={1} value={item.quantity}
+                                                            required />
+                                                        <label>Quantity</label>
+                                                    </div>
+                                                </form>
+                                            </td>
+                                            <td className="price">{formatter.format(item.nowPrice)} VNĐ</td>
+                                            <td className="remove">
+                                                <p className="cart" onClick={() => deleteProductInCart(index)}><i className="fa fa-trash" /></p>
+                                            </td>
+                                        </tr>
+                                    })}
+                                    <tr className="summary">
+                                        <td colSpan={4} style={{ fontWeight: 'bold', fontSize: '20px' }}>Total amount:</td>
+                                        <td className="price">
+                                            <span className="total">
+                                                <strong>{formatter.format(totalArrayOrder())} VNĐ</strong>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div className="col-md-12 cart-buttons">
+                                <div className="buttons">
+                                    <button onClick={handlePaymentMethod} id="checkout" name="checkout" value>Payment</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
     );
 }
 

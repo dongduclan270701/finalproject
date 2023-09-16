@@ -7,8 +7,8 @@ const Index = () => {
         <>
             <div id="register-email">
                 <form acceptCharset="UTF-8" className="contact-form" method="post">
-                    <input name="form_type" type="hidden" defaultValue="customer" />
-                    <input name="utf8" type="hidden" defaultValue="✓" />
+                    <input name="form_type" type="hidden" value="customer" />
+                    <input name="utf8" type="hidden" value="✓" />
                     <div className="container1 main">
                         <div className="get_email">
                             <div id="intro-text" className="pull-left col-sm-7 col-xs-12 pull-left">Buy online with more offers at GEARVN</div>
@@ -25,7 +25,7 @@ const Index = () => {
                         </div>
                         <div className="clr" />
                     </div></form>
-                <input id="774bdbd79901489cb31a0467adb2c3db" name="g-recaptcha-response" type="hidden" defaultValue="03AFY_a8XMWJ8P7Ooxtv-KGHJ0la8fmhTc8ihXQuq22_Xd1pJ2Q9ZWKrzSX9Y4g2rY9TJ1C18Me_STTQi3NMLJSPoY4CaHdDMWR6dn8exBHROf5jlX-go1119oaqFOmoL6lWaqpITo7Q2aLc-PIc59CBY1EzrVQtv8rnDQq1gOCAtBT3uAmj1b4p_JvtN-ngCIrpl2VxlDo6cw5i6U4ElF8NXI6GcJktvGej9Nc_K_GT2Ly8laWtVFuN8756nmI-wvMXSVXQTBxI8T_bNGTT6K6Qxf95I-3PQB3dKqwCy7hVFkWqXGHERngsDihjZ7vIO3X4B9sLWzz8xnruq6DL9VYeb1esOsrSAUsUKyzSg0HLelblyAKbFvvws5UihiJgyP1amDY2AQNgiBJu5mJUebAlkgS83fzmDOAbDluZ-wXVRVfPQ19td2I_BWUq6jEYU7w-e4hMBXsguWj9ofZ7DpFXp2IR2Yef3YLkA_oRRQNS6VDJ92wwjNZNF_Z5mMs7AHT377o6Y8-D2P" />
+                <input id="774bdbd79901489cb31a0467adb2c3db" name="g-recaptcha-response" type="hidden" value="03AFY_a8XMWJ8P7Ooxtv-KGHJ0la8fmhTc8ihXQuq22_Xd1pJ2Q9ZWKrzSX9Y4g2rY9TJ1C18Me_STTQi3NMLJSPoY4CaHdDMWR6dn8exBHROf5jlX-go1119oaqFOmoL6lWaqpITo7Q2aLc-PIc59CBY1EzrVQtv8rnDQq1gOCAtBT3uAmj1b4p_JvtN-ngCIrpl2VxlDo6cw5i6U4ElF8NXI6GcJktvGej9Nc_K_GT2Ly8laWtVFuN8756nmI-wvMXSVXQTBxI8T_bNGTT6K6Qxf95I-3PQB3dKqwCy7hVFkWqXGHERngsDihjZ7vIO3X4B9sLWzz8xnruq6DL9VYeb1esOsrSAUsUKyzSg0HLelblyAKbFvvws5UihiJgyP1amDY2AQNgiBJu5mJUebAlkgS83fzmDOAbDluZ-wXVRVfPQ19td2I_BWUq6jEYU7w-e4hMBXsguWj9ofZ7DpFXp2IR2Yef3YLkA_oRRQNS6VDJ92wwjNZNF_Z5mMs7AHT377o6Y8-D2P" />
             </div>
             <div id="footer">
                 <div className="container1">

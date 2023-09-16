@@ -35,9 +35,9 @@ const Index = () => {
                                     <form id="searchbox" className="popup-content ultimate-search" action="/search" method="get" role="search">
                                         <input name="q" type="text" placeholder="Nhập mã hoặc tên sản phẩm..." className="inputbox search-query" autoComplete="off" />
                                         <button type="submit" className="btn-search btn btn-link"><span className="fa fa-search" aria-hidden="true" /></button>
-                                        <input type="hidden" className="collection_id" defaultValue="(collectionid:product>=0)" />
-                                        <input type="hidden" className="collection_handle" defaultValue="all" />
-                                        <input type="hidden" className="collection_name" defaultValue="all" />
+                                        <input type="hidden" className="collection_id" value="(collectionid:product>=0)" />
+                                        <input type="hidden" className="collection_handle" value="all" />
+                                        <input type="hidden" className="collection_name" value="all" />
                                     </form>
                                 </div>
                                 {/* */}

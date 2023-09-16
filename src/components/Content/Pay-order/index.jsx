@@ -228,7 +228,7 @@ const Index = () => {
                                         <h2 className="section-title">Delivery information</h2>
                                     </div>
                                     <div className="section-content section-customer-information no-mb">
-                                        <input type="hidden" name="checkout_user[email]" defaultValue="dongduclan277@gmail.com" />
+                                        <input type="hidden" name="checkout_user[email]" value="dongduclan277@gmail.com" />
                                         <div className="logged-in-customer-information">
                                             {JSON.parse(localStorage.getItem('user')) ? <>
                                                 <div className="logged-in-customer-information-avatar-wrapper">
@@ -251,13 +251,13 @@ const Index = () => {
                                             <div className="field field-required  ">
                                                 <div className="field-input-wrapper">
                                                     <label className="field-label" htmlFor="billing_address_full_name">Full name</label>
-                                                    <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, username: e.target.value })} defaultValue={orderCheckOut.username} c autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_full_name" name="billing_address[full_name]" autoComplete="false" />
+                                                    <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, username: e.target.value })} value={orderCheckOut.username} c autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_full_name" name="billing_address[full_name]" autoComplete="false" />
                                                 </div>
                                             </div>
                                             <div className="field field-required   ">
                                                 <div className="field-input-wrapper">
                                                     <label className="field-label" htmlFor="billing_address_phone">Phone number</label>
-                                                    <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, phoneNumber: e.target.value })} defaultValue={orderCheckOut.phoneNumber} autoComplete="false" placeholder="Phone number" autoCapitalize="off" spellCheck="false" className="field-input" size={30} maxLength={15} type="tel" id="billing_address_phone" name="billing_address[phone]" />
+                                                    <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, phoneNumber: e.target.value })} value={orderCheckOut.phoneNumber} autoComplete="false" placeholder="Phone number" autoCapitalize="off" spellCheck="false" className="field-input" size={30} maxLength={15} type="tel" id="billing_address_phone" name="billing_address[phone]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -265,23 +265,23 @@ const Index = () => {
                                     <div className="section-content">
                                         <div className="fieldset">
                                             <form autoComplete="off" id="form_update_shipping_method" className="field default" acceptCharset="UTF-8" method="post">
-                                                <input name="utf8" type="hidden" defaultValue="✓" />
+                                                <input name="utf8" type="hidden" value="✓" />
                                                 <div className="content-box mt0">
                                                     <div id="form_update_location_customer_shipping" className="order-checkout__loading radio-wrapper content-box-row content-box-row-padding content-box-row-secondary " htmlFor="customer_pick_at_location_false">
-                                                        <input name="utf8" type="hidden" defaultValue="✓" />
+                                                        <input name="utf8" type="hidden" value="✓" />
                                                         <div className="order-checkout__loading--box">
                                                             <div className="order-checkout__loading--circle" />
                                                         </div>
                                                         <div className="field field-required  field-show-floating-label">
                                                             <div className="field-input-wrapper">
                                                                 <label className="field-label" htmlFor="billing_address_address1">Address</label>
-                                                                <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, address: e.target.value })} defaultValue={orderCheckOut.address} placeholder="Address" autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_address1" name="billing_address[address1]" />
+                                                                <input onChange={(e) => setOrderCheckOut({ ...orderCheckOut, address: e.target.value })} value={orderCheckOut.address} placeholder="Address" autoCapitalize="off" spellCheck="false" className="field-input" size={30} type="text" id="billing_address_address1" name="billing_address[address1]" />
                                                             </div>
                                                         </div>
-                                                        <input name="selected_customer_shipping_country" type="hidden" defaultValue />
-                                                        <input name="selected_customer_shipping_province" type="hidden" defaultValue />
-                                                        <input name="selected_customer_shipping_district" type="hidden" defaultValue />
-                                                        <input name="selected_customer_shipping_ward" type="hidden" defaultValue />
+                                                        <input name="selected_customer_shipping_country" type="hidden" value />
+                                                        <input name="selected_customer_shipping_province" type="hidden" value />
+                                                        <input name="selected_customer_shipping_district" type="hidden" value />
+                                                        <input name="selected_customer_shipping_ward" type="hidden" value />
                                                         <div className="field field-show-floating-label field-required field-third ">
                                                             <div className="field-input-wrapper field-input-wrapper-select">
                                                                 <label className="field-label" htmlFor="customer_shipping_province">City</label>
@@ -334,7 +334,7 @@ const Index = () => {
                                                     <div className="radio-wrapper content-box-row">
                                                         <label className="radio-label" htmlFor="payment_method_id_54606">
                                                             <div className="radio-input payment-method-checkbox">
-                                                                <input type-id={1} id="payment_method_id_54606" className="input-radio" name="payment_method_id" type="radio" defaultValue={54606} defaultChecked />
+                                                                <input type-id={1} id="payment_method_id_54606" className="input-radio" name="payment_method_id" type="radio" value={54606} defaultChecked />
                                                             </div>
                                                             <div className="radio-content-input">
                                                                 <img className="main-img" src="https://hstatic.net/0/0/global/design/seller/image/payment/cod.svg?v=4" />
@@ -358,7 +358,7 @@ const Index = () => {
                                 </div>
                             </div >
                             <div className="step-footer" id="step-footer-checkout">
-                                <input name="utf8" type="hidden" defaultValue="✓" />
+                                <input name="utf8" type="hidden" value="✓" />
                                 <button onClick={() => RequestCheckOut()} className="step-footer-continue-btn btn">
                                     <span className="btn-content">Complete order</span>
                                     <i className="btn-spinner icon icon-button-spinner" />
@@ -415,7 +415,7 @@ const Index = () => {
                                 </div>
                                 <div className="order-summary-section order-summary-section-discount" data-order-summary-section="discount">
                                     <form id="form_discount_add" acceptCharset="UTF-8" >
-                                        <input name="utf8" type="hidden" defaultValue="✓" />
+                                        <input name="utf8" type="hidden" value="✓" />
                                         <div className="fieldset">
                                             <div className="field  ">
                                                 <div className="field-input-btn-wrapper">

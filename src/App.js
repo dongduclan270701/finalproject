@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState, useContext, memo } from 'react';
 // import HeaderMain from 'components/Header/Header-main'
-import Login from 'components/Login'
+// import Login from 'components/Login'
 // import Register from 'components/Register'
 // import Banner from 'components/Content/Banner'
 // import Footer from 'components/Footer/Footer-main'
@@ -25,6 +25,10 @@ import Homepage from 'components/Content/HomePageNew'
 import Footer from 'components/Footer'
 import Cart from 'components/Content/CartNew'
 import PayOrder from 'components/Content/Pay-orderNew'
+import CollectionDetail from 'components/Content/Collection-DetailNew'
+import Product from 'components/Content/ProductNew'
+import Account from 'components/Content/AccountNew'
+import Order from 'components/Content/Information-order'
 import {
   BrowserRouter as Router,
   Routes,
@@ -56,6 +60,45 @@ function App() {
             <PayOrder />
             <Footer />
           </>
+        } />
+        <Route path='/collectionDetail/:codeCollectionDetail' element={
+          <>
+            <Header />
+            <CollectionDetail />
+            <Footer/>
+          </>
+        } />
+        <Route path='/products/:src' element={
+          <>
+            <Header />
+            <Product />
+            <Footer/>
+          </>
+        } />
+        <Route path='/account' element={
+
+          <>
+          <Header />
+            <Account Fragment="Information"/>
+            <Footer/>
+          </>
+
+        } />
+        <Route path='/account/order' element={
+          <>
+          <Header />
+            <Account Fragment="Order"/>
+            <Footer/>
+          </>
+          
+        } />
+        <Route path='/account/order/:id' element={
+          <>
+          <Header />
+            <Account Fragment="OrderDetails"/>
+            <Footer/>
+          </>
+          
         } />
         {/* <Route path='/' element={
           <>
