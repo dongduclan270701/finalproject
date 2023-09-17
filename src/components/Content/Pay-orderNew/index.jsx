@@ -201,7 +201,7 @@ const Index = () => {
                     <div className="sidebar-content-pay">
                         <div className="order-summary order-summary-is-collapsed">
                             <h2 className="visually-hidden">Order information</h2>
-                            <hr style={{ borderTop: "2px solid rgb(237, 110, 37)" }} />
+                            <hr style={{ borderTop: "2px solid rgb(245 53 74)" }} />
                             <div className="order-summary-sections">
                                 <div className="order-summary-section order-summary-section-product-list" data-order-summary-section="line-items">
                                     <table className="product-table">
@@ -235,7 +235,7 @@ const Index = () => {
                                         </tbody>
                                     </table>
                                 </div>
-                                <hr style={{ borderTop: "2px solid rgb(237, 110, 37)" }} />
+                                <hr style={{ borderTop: "2px solid rgb(245 53 74)" }} />
                                 <div className="order-summary-section order-summary-section-discount" data-order-summary-section="discount">
                                     <form id="form_discount_add" acceptCharset="UTF-8" >
                                         <input name="utf8" type="hidden" value="✓" />
@@ -254,7 +254,7 @@ const Index = () => {
                                         </div>
                                     </form>
                                 </div>
-                                <hr style={{ borderTop: "2px solid rgb(237, 110, 37)" }} />
+                                <hr style={{ borderTop: "2px solid rgb(245 53 74)" }} />
                                 <div className="order-summary-section order-summary-section-total-lines payment-lines" data-order-summary-section="payment-lines">
                                     <table className="total-line-table">
                                         <thead>
@@ -300,7 +300,7 @@ const Index = () => {
                             </div>
                         </div>
                     </div>
-                    <hr style={{ borderTop: "2px solid rgb(237, 110, 37)" }} />
+                    <hr style={{ borderTop: "2px solid rgb(245 53 74)" }} />
                 </div>
 
                 <div className="col-md-6 main-pay">
@@ -314,7 +314,7 @@ const Index = () => {
                             </li>
                         </ul>
                     </div>
-                    <hr style={{ borderTop: "2px solid rgb(237, 110, 37)" }} />
+                    <hr style={{ borderTop: "2px solid rgb(245 53 74)" }} />
                     <div className="main-content">
                         <div className="step">
                             <div className="step-sections steps-onepage">

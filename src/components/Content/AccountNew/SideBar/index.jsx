@@ -27,9 +27,9 @@ const Index = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/">
+                            <NavLink to="/account/updatePassword">
                                 <div className='button-show'>
-                                    <button type='button'>Update Information</button>
+                                    <button type='button'>Update Password</button>
                                 </div>
                             </NavLink>
                         </li>

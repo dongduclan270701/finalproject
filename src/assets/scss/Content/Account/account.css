@@ -42,20 +42,21 @@
 }
 
 .progress-bar-process .col-2.step.active .circle {
-    background-color: #ffbd59;
+    background-color: rgb(245 53 74);
     color: white;
     border-radius: 50%;
     padding: 10px;
     width: 50px;
-    margin:auto
+    margin: auto
 }
+
 .progress-bar-process .col-2.step .circle {
     background-color: #2f2f2f;
     color: white;
     border-radius: 50%;
     padding: 10px;
     width: 50px;
-    margin:auto
+    margin: auto
 }
 
 @media (max-width: 768px) {
@@ -82,7 +83,7 @@
     align-items: center;
     padding: 10px 0;
     background-color: unset;
-    border: 1px solid #ffbd59;
+    border: 1px solid rgb(245 53 74);
     border-radius: 5px;
     padding: 5px;
     margin: 10px 0;
@@ -136,7 +137,7 @@
     align-items: center;
     padding: 10px 0;
     background-color: unset;
-    border: 1px solid #ffbd59;
+    border: 1px solid rgb(245 53 74);
     border-radius: 5px;
     padding: 7px;
     margin: 10px 0;
@@ -174,8 +175,8 @@
 #layout-page .profile-usermenu li a button:hover {
     background:
         linear-gradient(to right,
-            rgb(232, 232, 23),
-            rgb(244, 132, 5));
+            rgb(245 53 74),
+            rgb(245 53 74));
     background-size: 100% 3px, 0% 3px;
     background-position: 0% 100%, 100% 100%;
     background-repeat: no-repeat;
@@ -185,8 +186,8 @@
 #layout-page .profile-usermenu li a.active button {
     background:
         linear-gradient(to right,
-            rgb(232, 232, 23),
-            rgb(244, 132, 5));
+            rgb(245 53 74),
+            rgb(245 53 74));
     background-size: 100% 3px, 0% 3px;
     background-position: 0% 100%, 100% 100%;
     background-repeat: no-repeat;
@@ -197,37 +198,44 @@
     display: flex;
     justify-content: center;
 }
-.modal-content{
+
+.modal-content {
     background-color: #000;
     border: 1px solid #383838;
-    border-radius:15px
+    border-radius: 15px
 }
-.modal-content .modal-header{
-    border-bottom: 1px solid #ffbd59;
+
+.modal-content .modal-header {
+    border-bottom: 1px solid rgb(245 53 74);
 }
-.modal-content .modal-header .btn-close{
+
+.modal-content .modal-header .btn-close {
     width: 15px;
     height: 15px;
     background-color: #393939;
 }
-.modal-content .modal-footer{
-    border-top: 1px solid #ffbd59;
+
+.modal-content .modal-footer {
+    border-top: 1px solid rgb(245 53 74);
 }
-.modal-content .modal-footer button{
+
+.modal-content .modal-footer button {
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px 0;
     background-color: unset;
-    border: 1px solid #ffbd59;
+    border: 1px solid rgb(245 53 74);
     border-radius: 5px;
     padding: 7px;
     font-size: 13px;
 }
-.modal-content .modal-footer button:hover{
+
+.modal-content .modal-footer button:hover {
     transform: scale(1.15);
 }
+
 .modal-content textarea.form-control {
     height: 100%;
     width: 100%;
@@ -237,21 +245,21 @@
     padding: 15px;
     border: 1px solid #717171;
     border-radius: 3px;
-    color: #ffbd59;
+    color: rgb(245 53 74);
 }
+
 .modal-content textarea.form-control:focus {
-    border: 1px solid #ffbd59;
+    border: 1px solid rgb(245 53 74);
 }
+
 .modal-content textarea.form-control:is(:focus, :valid)~label {
     transform: translateY(-120%);
-    color: #ffbd59;
+    color: rgb(245 53 74);
     font-size: 16px;
 }
 
 
-.profile-container {
-
-}
+.profile-container {}
 
 .profile-container .profile-content {
     padding: 20px;
@@ -269,19 +277,71 @@
     margin-bottom: 20px;
 }
 
-
 .profile-form {
-    display:flex;
+    display: flex;
     width: 100%;
-    max-width: 400px;
+    justify-content: center;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
+.profile-form .profile-content {
+    display: flex;
+    align-items: center;
+}
+
+.profile-form .input-field input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    font-size: 13px;
+    padding: 0 15px;
+    border: 1px solid #717171;
+    border-radius: 3px;
+}
+
+.profile-form form .input-field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0;
+}
+
+.profile-form .input-field input:focus {
+    border: 1px solid rgb(245 53 74);
+}
+
+.profile-form .input-field label {
+    font-size: 13px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #4a4646;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+.profile-form .input-field input:is(:focus, :valid) {
+    padding: 16px 15px 0;
+}
+
+.profile-form .input-field input:is(:focus, :valid)~label {
+    transform: translateY(-120%);
+    color: rgb(245 53 74);
+    font-size: 10px;
+}
+
 .profile-container .profile-label {
     font-weight: bold;
-    margin-bottom: 10px;
+    /* padding: 20px 0; */
+    width: 200px
+}
+
+.profile-container .profile-value {
+    display: flex;
 }
 
 .profile-input {
@@ -291,20 +351,6 @@
     border: 1px solid #ccc;
     border-radius: 3px;
 }
-
-.profile-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.profile-button:hover {
-    background-color: #0056b3;
-}
-
 
 .profile-avatar {
     display: flex;

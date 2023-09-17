@@ -28,7 +28,9 @@ import PayOrder from 'components/Content/Pay-orderNew'
 import CollectionDetail from 'components/Content/Collection-DetailNew'
 import Product from 'components/Content/ProductNew'
 import Account from 'components/Content/AccountNew'
-import Order from 'components/Content/Information-order'
+import Hotline from 'components/Content/About'
+import Instalment from 'components/Content/Instalment'
+import Guarantee from 'components/Content/Guarantee'
 import {
   BrowserRouter as Router,
   Routes,
@@ -65,40 +67,64 @@ function App() {
           <>
             <Header />
             <CollectionDetail />
-            <Footer/>
+            <Footer />
           </>
         } />
         <Route path='/products/:src' element={
           <>
             <Header />
             <Product />
-            <Footer/>
+            <Footer />
           </>
         } />
         <Route path='/account' element={
-
           <>
-          <Header />
-            <Account Fragment="Information"/>
-            <Footer/>
+            <Header />
+            <Account Fragment="Information" />
+            <Footer />
           </>
-
         } />
         <Route path='/account/order' element={
           <>
-          <Header />
-            <Account Fragment="Order"/>
-            <Footer/>
+            <Header />
+            <Account Fragment="Order" />
+            <Footer />
           </>
-          
         } />
         <Route path='/account/order/:id' element={
           <>
-          <Header />
-            <Account Fragment="OrderDetails"/>
-            <Footer/>
+            <Header />
+            <Account Fragment="OrderDetails" />
+            <Footer />
           </>
-          
+        } />
+        <Route path='/account/updatePassword' element={
+          <>
+            <Header />
+            <Account Fragment="UpdatePassword" />
+            <Footer />
+          </>
+        } />
+        <Route path='/hotline' element={
+          <>
+            <Header />
+            <Hotline />
+            <Footer />
+          </>
+        } />
+        <Route path='/instalment' element={
+          <>
+            <Header />
+            <Instalment />
+            <Footer />
+          </>
+        } />
+        <Route path='/guarantee' element={
+          <>
+            <Header />
+            <Guarantee />
+            <Footer />
+          </>
         } />
         {/* <Route path='/' element={
           <>

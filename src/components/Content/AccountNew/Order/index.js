@@ -28,7 +28,7 @@ const Index = () => {
                     <h1 className="postname">
                         Order Management
                     </h1>
-                    <hr style={{ border: '1px solid #ffbd59' }} />
+                    <hr style={{ border: '1px solid rgb(245 53 74)' }} />
                     {listOrderNew && listOrderNew.map((item, index) => {
                         return <div key={index}>
                             

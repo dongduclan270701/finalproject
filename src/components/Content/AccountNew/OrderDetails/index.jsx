@@ -81,7 +81,7 @@ const Index = () => {
                         <div style={{ width: "unset" }}>{order && order.status}</div>
                     </div>
                 </div>
-                <hr style={{ border: '1px solid #ffbd59' }} />
+                <hr style={{ border: '1px solid rgb(245 53 74)' }} />
                 <div className="progress-bar-process">
                     {steps.map((step, index) => (
                         <div key={index} className={`col-2 step ${currentStep === index ? "active" : ""}`}>
@@ -124,7 +124,7 @@ const Index = () => {
                     </div>
                 </div>
                 }
-                <hr style={{ border: '1px solid #ffbd59' }} />
+                <hr style={{ border: '1px solid rgb(245 53 74)' }} />
                 <div className='row' style={{ padding: "15px 0px" }}>
                     <div className="col-lg-6 ">
                         <h4>Delivery address</h4>
@@ -146,7 +146,7 @@ const Index = () => {
                         ))}
                     </div>
                 </div>
-                <hr style={{ border: '1px solid #ffbd59' }} />
+                <hr style={{ border: '1px solid rgb(245 53 74)' }} />
                 {order && order.product.map((item, index) => {
                     return <div style={{ borderBottom: "1px solid #e1dfdf" }} key={index}>
                         <div className="row" style={{ margin: "0px", padding: "10px 0px" }}>

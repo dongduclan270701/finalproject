@@ -108,7 +108,7 @@ form .input-field {
 }
 
 .input-field input:focus {
-    border: 1px solid #ffbd59;
+    border: 1px solid rgb(245 53 74);
 }
 
 .input-field label {
@@ -128,12 +128,12 @@ form .input-field {
 
 .input-field input:is(:focus, :valid)~label {
     transform: translateY(-120%);
-    color: #ffbd59;
+    color: rgb(245 53 74);
     font-size: 10px;
 }
 
 .form-box a {
-    color: #ffbd59;
+    color: rgb(245 53 74);
     text-decoration: none;
 }
 
@@ -141,7 +141,7 @@ form .input-field {
     text-decoration: underline;
 }
 .form-box #signup-link {
-    color: #ffbd59;
+    color: rgb(245 53 74);
     text-decoration: none;
 }
 
@@ -166,7 +166,7 @@ form button {
     border-radius: 3px;
     cursor: pointer;
     margin: 25px 0;
-    background: #ffbd59;
+    background: rgb(245 53 74);
     transition: 0.2s ease;
 }
 

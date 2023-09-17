@@ -52,7 +52,7 @@ form .input-field {
     position: relative;
     width: 250px;
     height: 50px;
-    background-color: #ffbd59;
+    background-color: rgb(245 53 74);
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
@@ -98,7 +98,7 @@ form .input-field {
 }
 
 .input-field input:focus {
-    border: 1px solid #ffbd59;
+    border: 1px solid rgb(245 53 74);
 }
 
 .input-field label {
@@ -118,7 +118,7 @@ form .input-field {
 
 .input-field input:is(:focus, :valid) ~ label {
     transform: translateY(-120%);
-    color: #ffbd59;
+    color: rgb(245 53 74);
     font-size: 10px;
 }
 /* Thiết lập kiểu cho phần tử select */
@@ -138,7 +138,7 @@ form .input-field {
 
 /* Kiểu khi select được focus */
 .select-field select:focus {
-    border: 1px solid #ffbd59;
+    border: 1px solid rgb(245 53 74);
 }
 
 /* Label cho select */
@@ -157,7 +157,7 @@ form .input-field {
 .select-field select:valid + label,
 .select-field select:focus + label {
     transform: translateY(-120%);
-    color: #ffbd59;
+    color: rgb(245 53 74);
     font-size: 10px;
 }
 

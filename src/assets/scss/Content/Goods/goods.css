@@ -12,7 +12,7 @@
     position: relative;
     width: 300px;
     height: 50px;
-    background-color: #ffbd59;
+    background-color: rgb(245 53 74);
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
@@ -75,9 +75,9 @@
     content: "";
     width: 50%;
     height: 150%;
-    background-color: #ffbd59;
+    background-color: rgb(245 53 74);
     animation: spin 6s linear infinite;
-    box-shadow: 0 0 10px 10px #ffbd59;
+    box-shadow: 0 0 10px 10px rgb(245 53 74);
     transition: 1.5% linear;
 }
 
@@ -102,7 +102,7 @@
 
 .goods .goods-single .goods-card:hover {
     /* Quy tắc cho trường hợp hover */
-    box-shadow: 0 0 5px #ffbd59, 0 0 30px #ffbd597c, 0 0 100px #ffbd5940;
+    box-shadow: 0 0 5px rgb(245 53 74), 0 0 30px #ffbd597c, 0 0 100px #ffbd5940;
     transform: scale(1.15) translateZ(0);
     background-size: 300px;
 }
@@ -148,7 +148,7 @@
     position: relative;
     width: 150px;
     height: 50px;
-    background-color: #ffbd59;
+    background-color: rgb(245 53 74);
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
@@ -198,7 +198,7 @@
 
 /* Kiểu khi select được focus */
 .select-field select:focus {
-    border: 1px solid #ffbd59;
+    border: 1px solid rgb(245 53 74);
 }
 
 /* Label cho select */

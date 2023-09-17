@@ -13,7 +13,7 @@
     max-width: 1200px;
     margin: auto;
     padding: 10px 0;
-    border-top: 2px solid rgb(237, 110, 37)
+    border-top: 2px solid rgb(245 53 74)
 }
 .goods-details .form-group {
     display:flex;
@@ -23,7 +23,7 @@
     position: relative;
     width: 250px;
     height:50px;
-    background-color: #ffbd59;
+    background-color: rgb(245 53 74);
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
@@ -67,7 +67,7 @@
     position: relative;
     width: 80px;
     height: 50px;
-    background-color: #ffbd59;
+    background-color: rgb(245 53 74);
     font-weight: 700;
     cursor: pointer;
     transform: 0.5s ease;
@@ -115,22 +115,22 @@
     color: white
 }
 .goods-details .nav-tabs {
-    border-bottom: 1px solid rgb(237, 110, 37);
+    border-bottom: 1px solid rgb(245 53 74);
     margin-bottom:10px
 }
 .goods-details .nav-tabs a:hover {
     color: white;
     border:none;
-    background-color: rgb(237, 110, 37);
+    background-color: rgb(245 53 74);
 }
 .goods-details .nav-tabs .active > a {
     border: none;
-    background-color: rgb(237, 110, 37);
+    background-color: rgb(245 53 74);
     color: white
 }
 .goods-details .nav-tabs .active > a:hover {
     border: none;
-    background-color: rgb(237, 110, 37);
+    background-color: rgb(245 53 74);
     color: white
 }
 
@@ -149,7 +149,7 @@
 
 #tabExchange .comment-options .dropdown-menu .dropdown-item:hover {
     color:yellow;
-    background-color: #ffbd59
+    background-color: rgb(245 53 74)
 }
 #dropdown-basic {
     padding: 0 !important
@@ -178,7 +178,7 @@
     position: relative;
     width: 20px;
     height: 20px;
-    background-color: #ffbd59;
+    background-color: rgb(245 53 74);
     font-weight: 700;
     cursor: pointer;
     transform: 0.5s ease;

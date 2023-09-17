@@ -35,7 +35,7 @@ const Index = () => {
                         <div className='col-md-6' id="breadcrumb">
                             <div className="main">
                                 <div className="breadcrumbs container1">
-                                    <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "#ffbd59" }}>Homepage</NavLink>
+                                    <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "rgb(245 53 74)" }}>Homepage</NavLink>
                                     <span> <i className="fa fa-caret-right" /> {objParams.collection.toUpperCase() + " " + objParams.category.toUpperCase()}</span>
                                 </div>
                             </div>

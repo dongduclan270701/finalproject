@@ -77,11 +77,11 @@ header {
 }
 .navbar .links .dropdown .dropdown-menu li:hover {
     padding: 10px 20px;
-    background-color: #ffbd5c;
+    background-color: rgb(245 53 74);
 }
 .navbar .links .dropdown .dropdown-menu li a:hover {
     padding: 10px 20px;
-    background-color: #ffbd5c;
+    background-color: rgb(245 53 74);
 }
 .navbar .links .dropdown:hover .dropdown-menu .submenu-menu{
     display: none;
@@ -92,11 +92,11 @@ header {
 }
 .navbar .links .dropdown .dropdown-menu .submenu-menu li:hover {
     padding: 10px 20px;
-    background-color: #ffbd5c;
+    background-color: rgb(245 53 74);
 }
 .navbar .links .dropdown .dropdown-menu .submenu-menu li a:hover {
     padding: 10px 0px;
-    background-color: #ffbd5c;
+    background-color: rgb(245 53 74);
 }
 .navbar .links .dropdown {
     position: relative;
@@ -130,7 +130,7 @@ header {
 
 /* Khi hover vào các mục trong submenu-menu, thay đổi màu nền */
 .submenu-menu li:hover {
-    background-color: #ffbd5c;
+    background-color: rgb(245 53 74);
 }
 
 /* Keyframes cho animation */
@@ -163,7 +163,7 @@ header {
 }
 
 .navbar .links a:hover {
-    color: yellow;
+    color: white;
 }
 .navbar .logged-btn {
     display:flex;

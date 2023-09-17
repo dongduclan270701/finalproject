@@ -207,8 +207,9 @@ const Index = () => {
                                 }) : null}
                             </ul>
                         </li>
-                        <li><a href={''}>Courses</a></li>
-                        <li><a href={''}>About us</a></li>
+                        <li><NavLink to={'/guarantee'}>Guarantee</NavLink></li>
+                        <li><NavLink to={'/instalment'}>Instalment</NavLink></li>
+                        <li><NavLink to={'/hotline'}>About us</NavLink></li>
                     </ul>
                     {JSON.parse(localStorage.getItem('auth-token-user')) ?
                         <span className="logged-btn">

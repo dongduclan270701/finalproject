@@ -87,7 +87,7 @@ const Index = () => {
                     <div id="breadcrumb">
                         <div className="main">
                             <div className="breadcrumbs">
-                                <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "#ffbd59" }}>Homepage</NavLink> <i className="fa fa-caret-right" />
+                                <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "rgb(245 53 74)" }}>Homepage</NavLink> <i className="fa fa-caret-right" />
                                 <span> {product && product.nameProduct} </span>
                             </div>
                         </div>
