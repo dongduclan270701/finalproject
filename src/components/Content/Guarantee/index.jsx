@@ -192,7 +192,7 @@ const Index = () => {
                     </div>
                     <div id="HEADLINE300" className="ladi-element">
                         <h3 className="ladi-headline ladi-transition">
-                            2. Processing time for product warranty&nbsp;</h3>
+                            2. Processing time for product warranty</h3>
                     </div>
                     <div id="IMAGE301" className="ladi-element">
                         <div className="ladi-image ladi-transition">

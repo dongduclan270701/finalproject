@@ -159,11 +159,11 @@
 
     /* Điều chỉnh cho màn hình nhỏ hơn 480px */
     .container1 {
-        padding: 20px;
+        /* padding: 20px; */
     }
 
     #layout-page-card {
-        padding: 20px;
+        padding: 20px 5px;
     }
 
     /* Điều chỉnh nút Payment cho màn hình nhỏ hơn 480px */

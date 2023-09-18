@@ -33,7 +33,12 @@ export const fetchUserOrderDetails = async (username) => {
 }
 
 export const updateUser = async (id, data) => {
-    const req = await axios.put(`${API_ROOT}/v1/users/${id}`, data)
+    const req = await axios.put(`${API_ROOT}/v1/users/${id}`, data,{ headers: { 'auth-token-user': token }})
+    return req.data
+}
+
+export const updatePasswordUser = async (id, data) => {
+    const req = await axios.put(`${API_ROOT}/v1/users/updatePassword/${id}`, data,{ headers: { 'auth-token-user': token }})
     return req.data
 }
 

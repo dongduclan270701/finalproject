@@ -4,6 +4,7 @@ import { StateContext } from 'Context/Context'
 import 'assets/scss/Header/login.css'
 import 'assets/scss/Header/header.css'
 import logo from 'assets/images/logo-brand.png'
+import logo1 from 'assets/images/logo-brand1.png'
 import user from 'assets/images/account.png'
 import logout from 'assets/images/exit.png'
 import cart from 'assets/images/shopping-cart.png'
@@ -12,10 +13,11 @@ import {
     fetchUserDetails,
     createNewUsers
 } from 'Apis'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import 'assets/scss/Header/login.css'
 const Index = () => {
+    const navigate = useNavigate()
     const state = useContext(StateContext)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isPopupOpen, setIsPopupOpen] = useState(false)
@@ -36,7 +38,7 @@ const Index = () => {
     const handleLogout = () => {
         localStorage.removeItem("auth-token-user");
         localStorage.removeItem("user")
-        window.location.reload();
+        navigate('/')
     }
     useEffect(() => {
         fetchCollecting()
@@ -60,18 +62,18 @@ const Index = () => {
         } else {
             fetchUserDetails(account.username, account.password)
                 .then(result => {
-                    if (result === 'Email không tồn tại') {
+                    if (result === 'Email does not exist') {
                         Swal.fire({
-                            title: 'Đăng nhập thất bại!',
-                            text: 'Email này không tồn tại, vui lòng thử lại!',
+                            title: 'Login failed!',
+                            text: 'This email does not exist, please try again!',
                             icon: 'error',
                             confirmButtonText: 'OK!'
                         })
                     }
-                    else if (result === 'Mật khẩu không chính xác') {
+                    else if (result === 'incorrect password') {
                         Swal.fire({
-                            title: 'Đăng nhập thất bại!',
-                            text: 'Mật khẩu không đúng, vui lòng thử lại!',
+                            title: 'Login failed!',
+                            text: 'Password is incorrect, please try again!',
                             icon: 'error',
                             confirmButtonText: 'OK!'
                         })
@@ -80,8 +82,8 @@ const Index = () => {
                         localStorage.setItem("auth-token-user", JSON.stringify(result.token));
                         localStorage.setItem("user", JSON.stringify(result.user));
                         Swal.fire({
-                            title: 'Đăng nhập thành công!',
-                            text: 'Chào mừng đến với website của Gearvn!',
+                            title: 'Logged in successfully!',
+                            text: 'Welcome to the website!',
                             icon: 'success',
                             confirmButtonText: 'OK!'
                         })
@@ -92,8 +94,8 @@ const Index = () => {
                             })
                             .catch((error) => {
                                 Swal.fire({
-                                    title: 'Ops! Không kết nối được đến server',
-                                    text: 'Có vẻ như đường truyền của bạn có vấn đề, thử kiểm tra lại xem!',
+                                    title: 'Ops! Unable to connect to the server',
+                                    text: 'Looks like your connection has a problem, try checking again!',
                                     icon: 'error',
                                     confirmButtonText: 'OK!'
                                 })
@@ -102,8 +104,8 @@ const Index = () => {
                 })
                 .catch(err => {
                     Swal.fire({
-                        title: 'Ops! Không kết nối được đến server',
-                        text: 'Có vẻ như đường truyền của bạn có vấn đề, thử kiểm tra lại xem!',
+                        title: 'Ops! Unable to connect to the server',
+                        text: 'Looks like your connection has a problem, try checking again!',
                         icon: 'error',
                         confirmButtonText: 'OK!'
                     })
@@ -138,10 +140,10 @@ const Index = () => {
             const { rePassword, ...data } = newAccount
             createNewUsers(data)
                 .then(result => {
-                    if (result === 'Email đã tồn tại') {
+                    if (result === 'Email already exists') {
                         Swal.fire({
-                            title: 'Đăng ký thất bại!',
-                            text: 'Email này đã tồn tại, vui lòng thử lại!',
+                            title: 'Registration failed!',
+                            text: 'This email already exists, please try again!',
                             icon: 'error',
                             confirmButtonText: 'OK!'
                         })
@@ -149,8 +151,8 @@ const Index = () => {
                         localStorage.setItem("auth-token-user", JSON.stringify(result.token));
                         localStorage.setItem("user", JSON.stringify(result.user));
                         Swal.fire({
-                            title: 'Đăng ký thành công!',
-                            text: 'Chào mừng đến với website của Gearvn!',
+                            title: 'Sign Up Success!',
+                            text: 'Welcome to website!',
                             icon: 'success',
                             confirmButtonText: 'OK!'
                         })
@@ -161,8 +163,8 @@ const Index = () => {
                             })
                             .catch((error) => {
                                 Swal.fire({
-                                    title: 'Ops! Không kết nối được đến server',
-                                    text: 'Có vẻ như đường truyền của bạn có vấn đề, thử kiểm tra lại xem!',
+                                    title: 'Ops! Unable to connect to the server',
+                                    text: 'Looks like your connection has a problem, try checking again!',
                                     icon: 'error',
                                     confirmButtonText: 'OK!'
                                 })
@@ -189,11 +191,14 @@ const Index = () => {
                     <NavLink to='/' className="logo">
                         <img src={logo} alt="logo" />
                     </NavLink>
+                    <NavLink to='/' className="logo-res">
+                        <img src={logo1} alt="logo" />
+                    </NavLink>
                     <ul className={isMenuOpen ? "links show-menu" : "links"}>
                         <span className="close-btn material-symbols-rounded" onClick={toggleMenu}>x</span>
-                        <li><NavLink to='/'>Home</NavLink></li>
+                        <li><NavLink to='/' onClick={toggleMenu}>Home</NavLink></li>
                         <li className="dropdown">
-                            <a href={''}>Portfolio</a>
+                            <a href={'#'}>Portfolio</a>
                             <ul className="dropdown-menu">
                                 {item ? item.map((item, index) => {
                                     return <li key={index}>
@@ -207,9 +212,9 @@ const Index = () => {
                                 }) : null}
                             </ul>
                         </li>
-                        <li><NavLink to={'/guarantee'}>Guarantee</NavLink></li>
-                        <li><NavLink to={'/instalment'}>Instalment</NavLink></li>
-                        <li><NavLink to={'/hotline'}>About us</NavLink></li>
+                        <li><NavLink to={'/guarantee'} onClick={toggleMenu}>Guarantee</NavLink></li>
+                        <li><NavLink to={'/instalment'} onClick={toggleMenu}>Instalment</NavLink></li>
+                        <li><NavLink to={'/hotline'} onClick={toggleMenu}>About us</NavLink></li>
                     </ul>
                     {JSON.parse(localStorage.getItem('auth-token-user')) ?
                         <span className="logged-btn">

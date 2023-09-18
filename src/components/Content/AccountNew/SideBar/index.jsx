@@ -10,8 +10,7 @@ const Index = () => {
                         alt="Thông tin cá nhân" style={{ width: "131px", height: "131px" }} />
                 </div>
                 <div className="profile-usertitle">
-                    <div className="profile-usertitle-name"> Email: {JSON.parse(localStorage.getItem('user'))[0]}</div>
-                    <div className="profile-usertitle-job"> Username: {JSON.parse(localStorage.getItem('user'))[1]}</div>
+                    <div className="profile-usertitle-name">{JSON.parse(localStorage.getItem('user'))[0]}</div>
                 </div>
                 <div className="profile-userbuttons">
                     <button>Logout</button>
@@ -30,13 +29,6 @@ const Index = () => {
                             <NavLink to="/account/updatePassword">
                                 <div className='button-show'>
                                     <button type='button'>Update Password</button>
-                                </div>
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/">
-                                <div className='button-show'>
-                                    <button type='button'>Notice Board</button>
                                 </div>
                             </NavLink>
                         </li>

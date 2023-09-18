@@ -68,7 +68,7 @@ const Index = () => {
     }
     return (
         <>
-            <div className="col-sm-9" style={{ borderRadius: "15px", fontSize: "15px" }}>
+            <div className="col-sm-9 order-detail" style={{ borderRadius: "15px", fontSize: "15px" }}>
                 <div className="row" style={{ padding: "20px", fontSize: "15px" }}>
                     <div className="col-3" onClick={() => navigate(-1)} style={{ cursor: "pointer" }}> {"< "} Back</div>
                     <div className="col-9 row" style={{ display: "flex", flexDirection: "row-reverse", padding: "0" }}>
@@ -133,7 +133,7 @@ const Index = () => {
                         <p>(+84) {order && order.phoneNumber}</p>
                         <p>{order && order.address + ", " + order.commune + ", " + order.district + ", " + order.city}</p>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 order-shipping">
                         {shipProcess.map((item, index) => (
                             <div className='row' style={{ margin: 'auto' }} key={index}>
                                 <img alt="" src={
@@ -141,7 +141,7 @@ const Index = () => {
                                         item.content === "Payment information confirmed" ? Process :
                                             item.content === "Being transported" ? Delivery :
                                                 item.content === "Delivered to the carrier" ? Delivery : Correct} style={{ width: "25px", padding: "0", filter: "invert(100%)" }} />
-                                <p style={{ paddingLeft: "15px", margin: 0, width: "370px", whiteSpace: "nowrap", wordWrap: "break-word", overflow: "hidden", textOverflow: "ellipsis" }}>{item.time} - {item.date} - {item.content}</p>
+                                <p className='order-shipping-list' style={{ paddingLeft: "15px", margin: 0, width: "90%", whiteSpace: "nowrap", wordWrap: "break-word", overflow: "hidden", textOverflow: "ellipsis" }}>{item.time} - {item.date} - {item.content}</p>
                             </div>
                         ))}
                     </div>
@@ -166,7 +166,7 @@ const Index = () => {
                         Total amount of goods
                     </div>
                     <div className="col-4" style={{ display: "flex", height: "50px", alignItems: "center", justifyContent: "end" }}>
-                        {order && formatter.format(order.sumOrder)} VNĐ
+                        {order && formatter.format(order.sumOrder)}
                     </div>
                 </div>
                 <div className="row" style={{ margin: "0", padding: 0, alignItems: "center", borderBottom: "1px solid #e1dfdf" }}>
@@ -174,7 +174,7 @@ const Index = () => {
                         Shipping fee
                     </div>
                     <div className="col-4" style={{ display: "flex", height: "50px", alignItems: "center", justifyContent: "end" }}>
-                        {order && formatter.format(order.ship)} VNĐ
+                        {order && formatter.format(order.ship)}
                     </div>
                 </div>
                 <div className="row" style={{ margin: "0", padding: 0, alignItems: "center", borderBottom: "1px solid #e1dfdf" }}>
@@ -182,7 +182,7 @@ const Index = () => {
                         Discount
                     </div>
                     <div className="col-4" style={{ display: "flex", height: "50px", alignItems: "center", justifyContent: "end" }}>
-                        {formatter.format(sumDiscountListProduct())} VNĐ
+                        {formatter.format(sumDiscountListProduct())}
                     </div>
                 </div>
                 <div className="row" style={{ margin: "0", padding: 0, alignItems: "center", borderBottom: "1px solid #e1dfdf" }}>
@@ -190,7 +190,7 @@ const Index = () => {
                         Into money
                     </div>
                     <div className="col-4" style={{ display: "flex", height: "50px", alignItems: "center", justifyContent: "end", color: "#fa577a", fontSize: "20px" }}>
-                        {order && formatter.format(order.sumOrder + order.ship - sumDiscountListProduct())} VNĐ
+                        {order && formatter.format(order.sumOrder + order.ship - sumDiscountListProduct())}
                     </div>
                 </div>
                 <div className="row" style={{ height: "50px", padding: "0 15px", margin: 0, alignItems: "center", borderBottom: "1px solid #e1dfdf", }}>

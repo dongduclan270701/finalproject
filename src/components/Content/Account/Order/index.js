@@ -33,11 +33,11 @@ const Index = () => {
                             <div className="row" style={{ padding: "0px 20px 10px 20px" }}>
                                 <div className="col-6">Order: {item.orderId}</div>
                                 <div className="col-6 row" style={{ display: "flex", flexDirection: "row-reverse", padding: "0" }}>
-                                    {item.status !== "Delivery successful" ? <div style={{ color: "#5d5dd9", width:"unset" }}>In process</div>
+                                    {item.status !== "Delivery successful" ? <div style={{ color: "#5d5dd9", width: "unset" }}>In process</div>
                                         :
-                                        <div style={{ color: "green", width:"unset" }}>Complete</div>}
-                                    <div style={{ padding: "0 10px 0 10px", width:"unset" }}>|</div>
-                                    <div style={{ width:"unset" }}>{item.status}</div>
+                                        <div style={{ color: "green", width: "unset" }}>Complete</div>}
+                                    <div style={{ padding: "0 10px 0 10px", width: "unset" }}>|</div>
+                                    <div style={{ width: "unset" }}>{item.status}</div>
                                 </div>
                             </div>
                             <div className="row" style={{ padding: "0px 20px 10px 20px" }}>

@@ -1,14 +1,100 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import {
+    updateUser
+} from 'Apis'
+import Swal from 'sweetalert2'
 const Index = (props) => {
+    const { user, handleChangeUserInformation } = props
     const [change, setChange] = useState(false)
+    const [informationUser, setInformationUser] = useState(null)
+    const [newInformationUser, setNewInformationUser] = useState(null)
     const handleChange = () => {
         setChange(!change)
+        setNewInformationUser(informationUser)
+    }
+    const handleChangeAfterUpdate = () => {
+        setChange(!change)
+    }
+    useEffect(() => {
+        setInformationUser(user)
+        setNewInformationUser(user)
+    }, [user]);
+    const handleChangeInformation = (e) => {
+        const { name, value } = e.target
+        setNewInformationUser({ ...newInformationUser, [name]: value })
+    }
+    const handleSubmitUpdate = () => {
+        const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+        if(JSON.stringify(informationUser) === JSON.stringify(newInformationUser)){
+            Swal.fire({
+                title: "Ops!",
+                text: "You must be change information!",
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        }
+        else if (!re.test(newInformationUser.phoneNumber)) {
+            Swal.fire({
+                title: "Ops!",
+                text: "Phone number incorrect format!",
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        }
+        else if (newInformationUser.age * 1 === 0) {
+            Swal.fire({
+                title: "Ops!",
+                text: "Age incorrect format!",
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        }
+        else if (newInformationUser.sex === 'null') {
+            Swal.fire({
+                title: "Ops!",
+                text: "Choose your sex!",
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        }
+        else {
+            Swal.fire({
+                title: 'Updating...',
+                html: 'Please wait...',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading()
+                }
+            });
+            updateUser(informationUser._id, newInformationUser)
+                .then(result => {
+                    handleChangeAfterUpdate()
+                    setInformationUser(result)
+                    handleChangeUserInformation(result)
+                    Swal.fire({
+                        title: "Successfully!",
+                        text: "Updated new information!",
+                        icon: 'success',
+                        confirmButtonText: 'OK!'
+                    })
+                })
+                .catch(error => {
+                    Swal.fire({
+                        title: "Ops!",
+                        text: "Error connect to server!",
+                        icon: 'error',
+                        confirmButtonText: 'OK!'
+                    })
+                    console.log(error)
+                })
+        }
+
     }
     return (
         <div className='col-sm-9'>
             <div className="profile-container">
-                <div className="profile-content">
+                {informationUser ? <div className="profile-content">
                     <div className="profile-header">
                         <h1 className="profile-title">My profile</h1>
                         <div className="profile-description">Manage profile information for account security</div>
@@ -17,7 +103,6 @@ const Index = (props) => {
                         <div className="profile-avatar-icon">
                             <img src={JSON.parse(localStorage.getItem('user'))[4] ? JSON.parse(localStorage.getItem('user'))[4] : null} style={{ borderRadius: '50%' }} alt='' />
                         </div>
-                        {/* <input className="profile-upload-input" type="file" accept=".jpg,.jpeg,.png" /> */}
                     </div>
                     <div className="profile-form">
                         <div className="profile-table">
@@ -26,14 +111,14 @@ const Index = (props) => {
                                     <div className='profile-content'>
                                         <div className="profile-label">Email: </div>
                                         <div className="profile-value">
-                                            <div className="profile-info">dongduclan277@gmail.com</div>
+                                            <div className="profile-info">{informationUser.email}</div>
                                         </div>
                                     </div>
                                     <div className='profile-content'>
                                         <div className="profile-label">Username: </div>
                                         <div className="profile-value">
                                             <div className="input-field">
-                                                <input name='username' type="text" value={'1'} required />
+                                                <input name='username' onChange={e => handleChangeInformation(e)} type="text" value={newInformationUser.username} required />
                                                 <label>New Username</label>
                                             </div>
                                         </div>
@@ -42,7 +127,7 @@ const Index = (props) => {
                                         <div className="profile-label">Phone number: </div>
                                         <div className="profile-value">
                                             <div className="input-field">
-                                                <input name='phoneNumber' type="tel" value={'2'} required />
+                                                <input name='phoneNumber' onChange={e => handleChangeInformation(e)} type="number" value={newInformationUser.phoneNumber} required />
                                                 <label>Phone Number</label>
                                             </div>
                                         </div>
@@ -51,17 +136,8 @@ const Index = (props) => {
                                         <div className="profile-label">Address: </div>
                                         <div className="profile-value">
                                             <div className="input-field">
-                                                <input name='address' type="text" value={'3'} required />
+                                                <input name='address' type="text" onChange={e => handleChangeInformation(e)} value={newInformationUser.address} required />
                                                 <label>Address</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='profile-content'>
-                                        <div className="profile-label">Sex: </div>
-                                        <div className="profile-value">
-                                            <div className="input-field">
-                                                <input name='sex' type="text" value={'4'} required />
-                                                <label>New Sex</label>
                                             </div>
                                         </div>
                                     </div>
@@ -69,54 +145,71 @@ const Index = (props) => {
                                         <div className="profile-label">Age: </div>
                                         <div className="profile-value">
                                             <div className="input-field">
-                                                <input name='age' type="number" value={'4'} required />
+                                                <input name='age' type="number" onChange={e => handleChangeInformation(e)} value={newInformationUser.age} required />
                                                 <label>New Age</label>
                                             </div>
                                         </div>
                                     </div>
+                                    <div className='profile-content'>
+                                        <div className="profile-label">Sex: </div>
+                                        <div className="profile-value ">
+                                            <div className="select-field">
+                                                {/* <label>&nbsp;</label> */}
+                                                {/* <input name='sex' type="text" onChange={e => handleChangeInformation(e)} value={newInformationUser.sex} required /> */}
+                                                <select onChange={(e) => handleChangeInformation(e)} value={newInformationUser.sex} className="field-input" id="customer_shipping_province" name="sex">
+                                                    <option data-code="null" value="null">
+                                                        Select Sex </option>
+                                                    <option value='Male'>Male</option>
+                                                    <option value='Female'>Female</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </form>
                                 :
                                 <form>
                                     <div className='profile-content'>
                                         <div className="profile-label">Email: </div>
                                         <div className="profile-value">
-                                            <div className="profile-info">dongduclan277@gmail.com</div>
+                                            <div className="profile-info">{informationUser.email}</div>
                                         </div>
                                     </div>
                                     <div className='profile-content'>
                                         <div className="profile-label">Username: </div>
                                         <div className="profile-value">
-                                            <div className="profile-info">dongduclan277</div>
+                                            <div className="profile-info">{informationUser.username}</div>
                                         </div>
                                     </div>
                                     <div className='profile-content'>
                                         <div className="profile-label">Phone number: </div>
                                         <div className="profile-value">
-                                            <div className="profile-info">0379382992</div>
+                                            <div className="profile-info">{informationUser.phoneNumber}</div>
                                         </div>
                                     </div>
                                     <div className='profile-content'>
                                         <div className="profile-label">Address: </div>
                                         <div className="profile-value">
-                                            <div className="profile-info">dongduclan277@gmail.com</div>
+                                            <div className="profile-info">{informationUser.address}</div>
                                         </div>
                                     </div>
                                     <div className='profile-content'>
                                         <div className="profile-label">Sex: </div>
                                         <div className="profile-value">
-                                            <div className="profile-info">Female</div>
+                                            <div className="profile-info">{informationUser.sex === 'null' ? '' : informationUser.sex}</div>
                                         </div>
                                     </div>
                                     <div className='profile-content'>
                                         <div className="profile-label">Age: </div>
                                         <div className="profile-value">
-                                            <div className="profile-info">18</div>
+                                            <div className="profile-info">{informationUser.age}</div>
                                         </div>
                                     </div>
                                     <div className='profile-content'>
                                         <div className="profile-label">Created Date: </div>
                                         <div className="profile-value">
-                                            <div className="profile-info">dongduclan277@gmail.com</div>
+                                            <div className="profile-info">{informationUser.createdDate}</div>
                                         </div>
                                     </div>
                                 </form>
@@ -125,15 +218,16 @@ const Index = (props) => {
                     </div>
                     <div className='button-show-order'>
                         {change ?
-                            <div style={{display:'flex'}}>
-                                <button type='button' onClick={handleChange} style={{margin: '10px'}}>Save</button>
-                                <button type='button' onClick={handleChange} style={{margin: '10px'}}>Close</button>
+                            <div style={{ display: 'flex' }}>
+                                <button type='button' onClick={handleSubmitUpdate} style={{ margin: '10px' }}>Save</button>
+                                <button type='button' onClick={handleChange} style={{ margin: '10px' }}>Close</button>
                             </div>
                             :
                             <button type='button' onClick={handleChange} >Update</button>
                         }
                     </div>
-                </div>
+                </div> : <div style={{ width: "100%", display: 'flex' }}><div class="lds-hourglass"></div></div>}
+
             </div>
         </div>
     );

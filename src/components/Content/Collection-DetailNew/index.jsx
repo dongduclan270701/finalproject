@@ -21,11 +21,11 @@ const Index = () => {
 
     return (
         <div className="container">
-            <div className=" banner-collection-header">
+            {/* <div className=" banner-collection-header">
                 <NavLink to="" >
                     <img src="https://file.hstatic.net/1000026716/collection/vvb_gearvn1920x450_61fba033031f4d6d97272973a3154f39.jpg" alt="Laptop Asus Vivobook Series" style={{ height: '300px', width: '100%', objectFit: 'contain' }} />
                 </NavLink>
-            </div>
+            </div> */}
             <div className="col-sm-12 list-goods">
                 <h1 className="title-box-collection">
                     {objParams.collection.toUpperCase() + " " + objParams.category.toUpperCase()}

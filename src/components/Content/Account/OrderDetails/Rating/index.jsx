@@ -20,7 +20,6 @@ const Index = (props) => {
             })
         }
     }, [order])
-
     const handleChangeReview = (data) => {
         const updatedProductList = listGoodsReview.product.map(item => {
             if (item.nameProduct === data.nameProduct) {
@@ -31,7 +30,6 @@ const Index = (props) => {
         const updatedObj = { ...listGoodsReview, product: updatedProductList }
         setListGoodsReview(updatedObj)
     }
-    
     const handleSubmitReview = () => {
         const date = new Date();
         const minutes = date.getMinutes();

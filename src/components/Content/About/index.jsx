@@ -22,7 +22,7 @@ const Index = () => {
                     </div>
                     <div id="HEADLINE512" className="ladi-element">
                         <h3 className="ladi-headline">
-                            About Ttech<br />
+                            About KTech<br />
                         </h3>
                     </div>
                     <div id="PARAGRAPH544" className="ladi-element">
@@ -98,7 +98,7 @@ const Index = () => {
                     </div> */}
                     <div className='col-md-12'>
                         <div className='title-method-about'>
-                            Trải nghiệm mua sắm toàn diện
+                        Comprehensive shopping experience
                         </div>
                     </div>
                     <div className='col-md-6' style={{ padding: 40 }}>

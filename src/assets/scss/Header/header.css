@@ -38,6 +38,19 @@ header {
     text-decoration: none;
 }
 
+.navbar .logo-res {
+    order: 1;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    display:none
+}
+
+.navbar .logo-res img {
+    width: 60px;
+}
+
 .navbar .logo img {
     width: 150px;
 }
@@ -82,6 +95,7 @@ header {
 .navbar .links .dropdown .dropdown-menu li a:hover {
     padding: 10px 20px;
     background-color: rgb(245 53 74);
+    color:white
 }
 .navbar .links .dropdown:hover .dropdown-menu .submenu-menu{
     display: none;
@@ -163,7 +177,7 @@ header {
 }
 
 .navbar .links a:hover {
-    color: white;
+    color: rgb(233, 15, 15);
 }
 .navbar .logged-btn {
     display:flex;
@@ -190,7 +204,7 @@ header {
     display: flex;
     align-items: center;
     margin-left: 10px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
 .navbar .logged-btn .cart-content {
     display: flex;
@@ -248,7 +262,12 @@ header {
     .navbar :is(.hamburger-btn, .close-btn) {
         display: block;
     }
-
+    .navbar .logo-res {
+        display:block
+    }
+    .navbar .logo {
+        display: none;
+    }
     .navbar .links {
         position: fixed;
         top: 0;
@@ -282,4 +301,77 @@ header {
         font-size: 0.9rem;
         padding: 7px 10px;
     }
+    .navbar .links {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        flex-direction: column;
+        display: none;
+      }
+    
+      .navbar .links.show-menu {
+        display: flex;
+      }
+    
+      .navbar .links a {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-decoration: none;
+        padding: 10px 20px;
+      }
+    
+      .navbar .links .dropdown {
+        position: relative;
+      }
+    
+      .navbar .links .dropdown .dropdown-menu {
+        position: static;
+        background: none;
+        box-shadow: none;
+        min-width: auto;
+        padding: 0;
+        display: none;
+      }
+    
+      .navbar .links .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    
+      .navbar .links .dropdown .dropdown-menu li {
+        padding: 10px 20px;
+        border-left: none;
+      }
+    
+      .navbar .links .dropdown .dropdown-menu li:hover {
+        background-color: rgb(245 53 74);
+      }
+    
+      .navbar .links .dropdown .dropdown-menu li a:hover {
+        background-color: rgb(245 53 74);
+        color: white;
+      }
+    
+      .navbar .links .dropdown .submenu-menu {
+        position: static;
+        background: none;
+        box-shadow: none;
+        min-width: auto;
+        padding: 0;
+        display: none;
+      }
+    
+      .navbar .links .dropdown:hover .submenu-menu {
+        display: none;
+      }
+    
+      .navbar .close-btn {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        display: block;
+        color: #fff;
+        cursor: pointer;
+      }
 }

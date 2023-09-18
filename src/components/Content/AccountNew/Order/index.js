@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { fetchUserOrderDetails } from 'Apis'
 import { NavLink } from 'react-router-dom';
-const Index = () => {
+const Index = (props) => {
+    const { user } = props
     const formatter = new Intl.NumberFormat('en-US')
-    const [listOrder, setListOrder] = useState()
+    const [listOrder, setListOrder] = useState(null)
     const [listOrderNew, setListOrderNew] = useState(null)
     const [displayCount, setDisplayCount] = useState(5);
     useEffect(() => {
-        fetchUserOrderDetails(JSON.parse(localStorage.getItem('user'))[0])
-            .then(result => {
-                setListOrder(result.orders)
-                const orders = result.orders.slice(0, displayCount)
-                setListOrderNew(orders)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    }, [])
+        if (user) {
+            setListOrder(user.orders)
+            const orders = user.orders.slice(0, displayCount)
+            setListOrderNew(orders)
+        }
+    }, [user])
     const handleScroll = () => {
         setDisplayCount(displayCount + 5)
         setListOrderNew(listOrder.slice(0, displayCount + 5))
@@ -31,9 +28,9 @@ const Index = () => {
                     <hr style={{ border: '1px solid rgb(245 53 74)' }} />
                     {listOrderNew && listOrderNew.map((item, index) => {
                         return <div key={index}>
-                            
+
                             <div className="row" style={{ padding: "0px 20px 10px 20px" }}>
-                                <div className="col-6">ID: {item.orderId}</div>
+                                <div className="col-6 order-id">ID: {item.orderId}</div>
                                 <div className="col-6 row" style={{ display: "flex", flexDirection: "row-reverse", padding: "0" }}>
                                     {item.status === "Delivery successful" ?
                                         <div style={{ color: "green", width: "unset" }}>Complete</div>
@@ -71,7 +68,7 @@ const Index = () => {
                                     </div>
                                 </NavLink>
                             </div>
-                            <hr style={{border:'1px solid rgb(68 51 26)'}}/>
+                            <hr style={{ border: '1px solid rgb(68 51 26)' }} />
                         </div>
                     })}
                     {listOrder && listOrderNew && listOrder.length === listOrderNew.length ?
