@@ -59,6 +59,11 @@ export const fetchLaptopCollectingByName = async (id) => {
     return req.data
 }
 
+export const fetchBestLaptop = async () => {
+    const req = await axios.get(`${API_ROOT}/v1/laptopCollectingCustomer/`)
+    return req.data
+}
+
 // export const fetchSearchLaptopCollecting = async (data, countPage) => {
 //     const req = await axios.get(`${API_ROOT}/v1/laptopCollectingCustomer/search`, { params: {...data, count:countPage }})
 //     return req.data

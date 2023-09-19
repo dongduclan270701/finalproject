@@ -154,10 +154,20 @@ const Index = () => {
             })
         }
         else {
+            Swal.fire({
+                title: 'Loading...',
+                html: 'Please wait...',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading()
+                }
+            });
             const newData = {
                 ...orderCheckOut,
                 shipping_process: [{ time: time, date: today, content: 'Ordered' }],
                 sumOrder: totalArrayOrder(),
+                createDate: today
             }
             createOrderByCustomer(newData)
                 .then(result => {

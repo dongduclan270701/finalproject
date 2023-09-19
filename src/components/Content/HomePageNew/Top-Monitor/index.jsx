@@ -45,9 +45,6 @@ const Index = () => {
                     </div>
                 </div>
             </div>
-            <div className='button-show'>
-                <button type='button'>Show All</button>
-            </div>
         </>
     );
 }

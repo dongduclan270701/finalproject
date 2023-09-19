@@ -63,6 +63,16 @@ const Index = () => {
                 else if (result.status === 'Delivery successful') {
                     setCurrentStep(4)
                 }
+                else if (result.status === 'Delivery failed') {
+                    setSteps([
+                        "Ordered",
+                        "Payment information confirmed",
+                        "Delivered to the carrier",
+                        "Being transported",
+                        "Delivery failed",
+                    ])
+                    setCurrentStep(4)
+                }
             })
             .catch(error => {
                 console.log(error)
@@ -142,10 +152,7 @@ const Index = () => {
                         })
                 }
             })
-
         }
-
-        // console.log(order)
     }
     return (
         <>
@@ -155,9 +162,11 @@ const Index = () => {
                     <div className="col-9 row" style={{ display: "flex", flexDirection: "row-reverse", padding: "0" }}>
                         <div style={{ width: "unset" }}>ID: <span style={{ color: "green" }}>{order && order.orderId}</span></div>
                         <div style={{ padding: "0 10px 0 10px", width: "unset" }}>|</div>
-                        {order && order.status !== "Delivery successful" ? <div style={{ color: "#5d5dd9", width: "unset" }}>In process</div>
+                        {order && order.status === "Delivery successful" ? <div style={{ color: "green", width: "unset" }}>Complete</div>
                             :
-                            <div style={{ color: "green", width: "unset" }}>Complete</div>}
+                            order.status === "Delivery failed" ? <div style={{ color: "red", width: "unset" }}>Failed</div>
+                                :
+                                order.status === "Cancel" ? <div style={{ color: "red", width: "unset" }}>Cancel</div>: <div style={{ color: "#5d5dd9", width: "unset" }}>In process</div>}
                         <div style={{ padding: "0 10px 0 10px", width: "unset" }}>|</div>
                         <div style={{ width: "unset" }}>{order && order.status}</div>
                     </div>

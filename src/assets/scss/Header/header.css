@@ -270,6 +270,11 @@ header {
 
 .navbar .logged-btn .logged-content .logged-text {
     margin-left: 10px;
+    white-space: nowrap;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:60px
 }
 
 .navbar .login-btn {
@@ -360,6 +365,7 @@ header {
     background: unset;
     border: 1px solid gray
 }
+
 /* 
 .overlay input[type=text]:hover {
     background: #f1f1f1;
@@ -588,8 +594,7 @@ header {
       } */
 }
 
-.goods-search {
-}
+.goods-search {}
 
 .goods-search .goods-search-single .goods-search-card {
     margin: 0;

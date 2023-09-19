@@ -135,6 +135,14 @@ const Index = () => {
     }
     const getStateInputFormRegister = async (event) => {
         event.preventDefault();
+        const date = new Date();
+        const minutes = date.getMinutes();
+        const hours = date.getHours();
+        const time = `${hours}:${minutes}`;
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear();
+        const today = `${year}-${month}-${day}`;
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (newAccount.password !== newAccount.rePassword) {
             Swal.fire({
@@ -168,7 +176,8 @@ const Index = () => {
                 }
             });
             const { rePassword, ...data } = newAccount
-            createNewUsers(data)
+            const newDate = {...data, createdDate:today, lastLogin:{time: time, date:today}}
+            createNewUsers(newDate)
                 .then(result => {
                     if (result === 'Email already exists') {
                         Swal.fire({
@@ -202,6 +211,12 @@ const Index = () => {
                     }
                 })
                 .catch(err => {
+                    Swal.fire({
+                        title: 'Ops! Unable to connect to the server',
+                        text: 'Looks like your connection has a problem, try checking again!',
+                        icon: 'error',
+                        confirmButtonText: 'OK!'
+                    })
                     console.log(err)
                 })
         }
