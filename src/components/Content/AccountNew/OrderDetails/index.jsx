@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchOrderInformation } from 'Apis'
+import { fetchOrderInformation, fetchCancelOrder } from 'Apis'
 import logoWarning from 'assets/images/warning.png';
 import Process from 'assets/images/box.png'
 import Delivery from 'assets/images/delivery.png'
 import Correct from 'assets/images/correct.png'
 import Rating from './Rating'
 import ShowRating from './ShowRating'
+import Swal from 'sweetalert2'
 const Index = () => {
     const formatter = new Intl.NumberFormat('en-US')
     const navigate = useNavigate()
     const params = useParams()
-    const [order, setOrder] = useState()
+    const [order, setOrder] = useState(null)
     const [steps, setSteps] = useState([
         "Ordered",
         "Payment information confirmed",
@@ -23,14 +24,23 @@ const Index = () => {
     const [currentStep, setCurrentStep] = useState(0);
     const [toggleRate, setToggleRate] = useState(false);
     const [toggleShowRate, setToggleShowRate] = useState(false);
+    const [isCancelForm, setIsCancelForm] = useState(false)
     const handleToggleShow = () => setToggleRate(!toggleRate);
     const handleToggleShowRate = () => setToggleShowRate(!toggleShowRate);
+    const date = new Date();
+    const minutes = date.getMinutes();
+    const hours = date.getHours();
+    const time = `${hours}:${minutes}`;
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    const today = `${year}-${month}-${day}`;
     useEffect(() => {
+        setOrder(null)
         fetchOrderInformation(params.id)
             .then(result => {
-                console.log(result)
                 setOrder(result)
-                setShipProcess(result.shipping_process.reverse())
+                setShipProcess(result.shipping_process)
                 if (result.status === "Cancel") {
                     setSteps([
                         "Ordered",
@@ -66,9 +76,80 @@ const Index = () => {
         })
         return sumDiscountListProduct
     }
+
+    const handleOpenCancel = () => {
+        setIsCancelForm(!isCancelForm)
+    }
+    const handleSubmitCancel = () => {
+        const newOrder = {
+            ...order,
+            status: 'Cancel',
+            shipping_process: [
+                { time: time, date: today, content: 'Cancel' },
+                ...order.shipping_process
+            ]
+        }
+        if (order.reasonCancel === '') {
+            Swal.fire({
+                title: 'Missing!',
+                text: 'You have to enter your reason cancel order',
+                icon: 'warning',
+                confirmButtonText: 'OK!'
+            })
+        } else {
+            Swal.fire({
+                title: 'Do you agree to cancel order??',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Accept',
+                cancelButtonText: 'Decline',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Updating...',
+                        html: 'Please wait...',
+                        allowEscapeKey: false,
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        }
+                    });
+                    fetchCancelOrder(order.orderId, newOrder)
+                        .then(result => {
+                            Swal.fire({
+                                title: 'Successfully!',
+                                text: 'You have successfully edited your order status',
+                                icon: 'success',
+                                confirmButtonText: 'OK!'
+                            })
+                            console.log(result)
+                            setOrder(result)
+                            setShipProcess(result.shipping_process)
+                            setSteps([
+                                "Ordered",
+                                "Cancel"
+                            ])
+                            setCurrentStep(1)
+                        })
+                        .catch(error => {
+                            Swal.fire({
+                                title: `Error ${error.response.status}`,
+                                text: 'There seems to be a problem with the connection to the server, please try again later',
+                                icon: 'error',
+                                confirmButtonText: 'OK!'
+                            })
+                            console.log(error)
+                        })
+                }
+            })
+
+        }
+
+        // console.log(order)
+    }
     return (
         <>
-            <div className="col-sm-9 order-detail" style={{ borderRadius: "15px", fontSize: "15px" }}>
+            {order ? <div className="col-sm-9 order-detail" style={{ borderRadius: "15px", fontSize: "15px" }}>
                 <div className="row" style={{ padding: "20px", fontSize: "15px" }}>
                     <div className="col-3" onClick={() => navigate(-1)} style={{ cursor: "pointer" }}> {"< "} Back</div>
                     <div className="col-9 row" style={{ display: "flex", flexDirection: "row-reverse", padding: "0" }}>
@@ -92,7 +173,7 @@ const Index = () => {
                     ))
                     }
                 </div>
-                {order && order.status !== 'Delivery successful' && <div className="row" style={{ height: "50px", padding: "0 15px", alignItems: "center",  }}>
+                {order && order.status !== 'Delivery successful' && <div className="row" style={{ height: "50px", padding: "0 15px", alignItems: "center", }}>
                     <div className='col-12' style={{ margin: "0", padding: "0" }}>
                         You can check the goods after payment.
                     </div>
@@ -207,7 +288,18 @@ const Index = () => {
                         Payment on delivery
                     </div>
                 </div>
-            </div>
+                {order && order.status === 'Ordered' ? <div className='button-show-order'>
+                    <button type='button' onClick={handleOpenCancel}>Cancel</button>
+                    {isCancelForm && <form>
+                        <div className="input-field">
+                            <input name='reasonCancel' value={order.reasonCancel} onChange={e => setOrder({ ...order, reasonCancel: e.target.value })} />
+                            <label>Reason cancel</label>
+                        </div>
+                        <button type='button' onClick={handleSubmitCancel}>Submit</button>
+                    </form>}
+                </div> : null}
+            </div> : <div className="col-sm-9 order-detail" style={{ borderRadius: "15px", fontSize: "15px" }}><div style={{ width: "100%", display: 'flex' }}><div class="lds-hourglass"></div></div></div>}
+
             <Rating toggleRate={toggleRate} onHandleToggleShow={handleToggleShow} order={order} />
             <ShowRating toggleShowRate={toggleShowRate} onHandleToggleShowRate={handleToggleShowRate} order={order} />
         </>

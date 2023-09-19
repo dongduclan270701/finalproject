@@ -13,9 +13,10 @@ const Index = () => {
     const state = useContext(StateContext)
     const params = useParams()
     const navigate = useNavigate();
-    const [product, setProduct] = useState()
+    const [product, setProduct] = useState(null)
     const [activeTable, setActiveTable] = useState(1)
     useEffect(() => {
+        setProduct(null)
         fetchLaptopCollectingByName(params.src)
             .then(result => {
                 setProduct(result)

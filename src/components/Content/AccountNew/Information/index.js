@@ -25,7 +25,7 @@ const Index = (props) => {
     }
     const handleSubmitUpdate = () => {
         const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
-        if(JSON.stringify(informationUser) === JSON.stringify(newInformationUser)){
+        if (JSON.stringify(informationUser) === JSON.stringify(newInformationUser)) {
             Swal.fire({
                 title: "Ops!",
                 text: "You must be change information!",
@@ -154,19 +154,15 @@ const Index = (props) => {
                                         <div className="profile-label">Sex: </div>
                                         <div className="profile-value ">
                                             <div className="select-field">
-                                                {/* <label>&nbsp;</label> */}
-                                                {/* <input name='sex' type="text" onChange={e => handleChangeInformation(e)} value={newInformationUser.sex} required /> */}
                                                 <select onChange={(e) => handleChangeInformation(e)} value={newInformationUser.sex} className="field-input" id="customer_shipping_province" name="sex">
                                                     <option data-code="null" value="null">
                                                         Select Sex </option>
                                                     <option value='Male'>Male</option>
                                                     <option value='Female'>Female</option>
                                                 </select>
-
                                             </div>
                                         </div>
                                     </div>
-
                                 </form>
                                 :
                                 <form>

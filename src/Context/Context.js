@@ -4,6 +4,7 @@ const StateContext = createContext()
 
 function StateProvider({ children }) {
     const [arrayOrder, setArrayOrder] = useState([])
+    const [category, setCategory] = useState([])
     useEffect(() => {
         if (JSON.parse(localStorage.getItem('user'))){
             fetchCartUser(JSON.parse(localStorage.getItem('user'))[0])
@@ -15,12 +16,18 @@ function StateProvider({ children }) {
             })
         }
     }, [])
+    
     const handleUpdateArrayOrder = (data) => {
         setArrayOrder(data)
     }
+    const handleUpdateCategory = (data) => {
+        setCategory(data)
+    }
     const value = {
         arrayOrder,
-        handleUpdateArrayOrder
+        category,
+        handleUpdateArrayOrder,
+        handleUpdateCategory
     }
     return (
         <StateContext.Provider value={value}>

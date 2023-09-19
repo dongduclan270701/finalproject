@@ -11,7 +11,14 @@ export const fetchProductCollection = async (data, countPage) => {
     const req = await axios.get(`${API_ROOT}/v1/searchCustomer/search`, { params: {...data, count:countPage }})
     return req.data
 }
-
+export const fetchSearchProduct = async (data) => {
+    const req = await axios.get(`${API_ROOT}/v1/searchGoods/searchGoods`, { params: {...data}})
+    return req.data
+}
+export const fetchFilterProduct = async (data) => {
+    const req = await axios.get(`${API_ROOT}/v1/searchGoods/filterGoods`, { params: {...data}})
+    return req.data
+}
 export const fetchUserDetails = async (username, password) => {
     const req = await axios.get(`${API_ROOT}/v1/users/${username}/${password}`)
     return req.data
@@ -67,6 +74,10 @@ export const fetchOrderInformation = async (id) => {
     return req.data
 }
 
+export const fetchCancelOrder = async (id, data) => {
+    const req = await axios.put(`${API_ROOT}/v1/orderUser/${id}`, data,{ headers: { 'auth-token-user': token }})
+    return req.data
+}
 export const fetchRatingOrder = async (id,data) => {
     const req = await axios.put(`${API_ROOT}/v1/orderUser/ratingOrder/${id}`, data,{ headers: { 'auth-token-user': token }})
     return req.data

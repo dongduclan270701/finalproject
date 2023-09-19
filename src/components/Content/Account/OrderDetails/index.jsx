@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchOrderInformation } from 'Apis'
+import { 
+    fetchOrderInformation
+ } from 'Apis'
 import logoWarning from 'assets/images/warning.png';
 import Process from 'assets/images/box.png'
 import Delivery from 'assets/images/delivery.png'

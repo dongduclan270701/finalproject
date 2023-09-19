@@ -39,15 +39,15 @@ const Index = (props) => {
         }
         else {
             // console.log({...user, oldPassword: inputForm.oldPassword, newPassword: inputForm.newPassword})
-            // Swal.fire({
-            //     title: 'Updating...',
-            //     html: 'Please wait...',
-            //     allowEscapeKey: false,
-            //     allowOutsideClick: false,
-            //     didOpen: () => {
-            //         Swal.showLoading()
-            //     }
-            // });
+            Swal.fire({
+                title: 'Updating...',
+                html: 'Please wait...',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading()
+                }
+            });
             updatePasswordUser(user._id, {...user, oldPassword: inputForm.oldPassword, newPassword: inputForm.newPassword})
                 .then(result => {
                     if(result === 'Password incorrect'){

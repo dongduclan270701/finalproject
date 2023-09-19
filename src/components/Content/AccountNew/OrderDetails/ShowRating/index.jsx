@@ -4,8 +4,6 @@ import GoodsReview from 'components/Content/AccountNew/OrderDetails/ShowRating/G
 
 const Index = (props) => {
     const { toggleShowRate, onHandleToggleShowRate, order } = props
-    console.log(order)
-
     return (
         <Modal size="lg" show={toggleShowRate} onHide={onHandleToggleShowRate} backdrop="static" keyboard={false} animation={false}>
             <Modal.Header closeButton>

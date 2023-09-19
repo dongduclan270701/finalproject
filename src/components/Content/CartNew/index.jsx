@@ -77,7 +77,17 @@ const Index = () => {
     }
     const handlePaymentMethod = () => {
         if (arrayOrder.length > 0) {
-            navigate("/pay-order")
+            const hasProductWithZeroQuantity = arrayOrder.some(product => product.quantity === 0);
+            if(hasProductWithZeroQuantity){
+                Swal.fire({
+                    title: "Can't get to the checkout page!",
+                    text: 'There are products in the cart that do not have quantities, please check!',
+                    icon: 'warning',
+                    confirmButtonText: 'OK!'
+                })
+            }else{
+                navigate("/pay-order")
+            }
         }
         else {
             Swal.fire({
@@ -152,7 +162,7 @@ const Index = () => {
                             </table>
                             <div className="col-md-12 cart-buttons">
                                 <div className="buttons">
-                                    <button onClick={handlePaymentMethod} id="checkout" name="checkout" value>Payment</button>
+                                    <button onClick={handlePaymentMethod} id="checkout" name="checkout">Payment</button>
                                 </div>
                             </div>
                         </div>
