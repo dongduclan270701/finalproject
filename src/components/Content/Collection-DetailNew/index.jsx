@@ -17,7 +17,7 @@ const Index = () => {
     const [filter, setFilter] = useState({ sort: 'none', collection: '', category: ['', '', '', '', ''], minPrice: 0, maxPrice: 90000000 })
     useEffect(() => {
         setGoods(null)
-        const clickedItem = state.category.find((item) => item.name === objParams.nameCollection);
+        const clickedItem = state.category.find((item) => item.name === objParams.nameCategory);
         if (clickedItem) {
             setListFilter(clickedItem.category.slice(2, clickedItem.category.length));
             const findBrand = clickedItem.category[0].collecting.find((item) => item.name === objParams.category);
@@ -33,10 +33,10 @@ const Index = () => {
         }
         setFilter((prevFilter) => ({
             ...prevFilter,
-            collection: objParams.collection,
+            collection: objParams.nameCollection,
             category: [objParams.category, ...prevFilter.category.slice(1)],
         }));
-        fetchProductCollection({ category: objParams.category, collection: objParams.collection }, 1)
+        fetchProductCollection({ category: objParams.category, collection: objParams.nameCollection }, 1)
             .then(result => {
                 setGoods(result.data)
             })
@@ -209,7 +209,7 @@ const Index = () => {
                                                     <img src={goods2} alt='' />
                                                     <h1 style={{ fontSize: 13 }}>{item.nameProduct}</h1>
                                                     <h1 style={{ fontSize: 13 }}>{formatter.format(item.nowPrice)} VNĐ</h1>
-                                                    <NavLink to={"/products/" + item.src}><button type='button' style={{ color: "white" }}>Show</button></NavLink>
+                                                    <NavLink to={"/products/" + item.src} state={{ collection: objParams.nameCollection}}><button type='button' style={{ color: "white" }}>Show</button></NavLink>
                                                 </div>
                                             </div>
                                         </div>

@@ -54,8 +54,8 @@ export const createNewUsers = async (data) => {
     return req.data
 }
 
-export const fetchLaptopCollectingByName = async (id) => {
-    const req = await axios.get(`${API_ROOT}/v1/laptopCollectingCustomer/${id}`,{ headers: { 'auth-token-user': token }})
+export const fetchGoodsByName = async (id, data) => {
+    const req = await axios.get(`${API_ROOT}/v1/laptopCollectingCustomer/${id}`, {params : {nameCollection: data}})
     return req.data
 }
 

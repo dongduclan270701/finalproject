@@ -245,6 +245,7 @@ const Index = () => {
     }
     const handleChangeSearch = (e) => {
         const { name, value } = e.target
+        console.log(value)
         const clickedItem = item.find((item) => item.name === value);
         if (clickedItem) {
             setSearchCategory(clickedItem.category[0].collecting);
@@ -304,14 +305,14 @@ const Index = () => {
                                         <ul className={'submenu-menu'}>
                                             {item.category[0].collecting.map((category, index) => {
                                                 return <li key={index}>
-                                                    <NavLink to={"/collectionDetail/" + category.name} state={{ category: category.name, collection: item.name.toLowerCase(), nameCollection: item.name }}>{category.name}</NavLink>
+                                                    <NavLink to={"/collectionDetail/" + category.name} state={{ category: category.name, collection: item.name.toLowerCase(), nameCategory: item.name, nameCollection: item.src }}>{category.name}</NavLink>
                                                 </li>
                                             })}
                                         </ul>
                                         <ul className={isPortfolio === 3 ? 'active-submenu-menu-responsive' : 'submenu-menu-responsive'}>
                                             {category.map((category, index) => {
                                                 return <li key={index}>
-                                                    <NavLink onClick={toggleMenu} to={"/collectionDetail/" + category.name} state={{ category: category.name, collection: item.name.toLowerCase(), nameCollection: item.name }}>{category.name}</NavLink>
+                                                    <NavLink onClick={toggleMenu} to={"/collectionDetail/" + category.name} state={{ category: category.name, collection: item.name.toLowerCase(), nameCategory: item.name, nameCollection: item.src }}>{category.name}</NavLink>
                                                 </li>
                                             })}
                                         </ul>
@@ -429,7 +430,7 @@ const Index = () => {
                                     <option data-code="null" value="null">
                                         Select collection </option>
                                     {item ? item.map((item, index) => {
-                                        return <option key={index} value={item.name}>{item.name}</option>
+                                        return <option key={index} value={item.src}>{item.name}</option>
                                     }) : null}
                                 </select>
                             </div>

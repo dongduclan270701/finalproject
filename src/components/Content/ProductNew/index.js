@@ -4,8 +4,8 @@ import ProductThumbnail from './Product-thumbnail'
 import TabPanelCharacter from './TabPanel-character'
 import TabPanelDetails from './TabPanel-reviews'
 import TabPanelExchange from './TabPanel-Exchange'
-import { useParams, useNavigate, NavLink } from 'react-router-dom';
-import { fetchLaptopCollectingByName, updateCart } from 'Apis'
+import { useParams, useNavigate, NavLink, useLocation } from 'react-router-dom';
+import { fetchGoodsByName, updateCart } from 'Apis'
 import Swal from 'sweetalert2'
 import { StateContext } from 'Context/Context'
 import 'assets/scss/Content/Goods/goods-detail.css'
@@ -13,11 +13,13 @@ const Index = () => {
     const state = useContext(StateContext)
     const params = useParams()
     const navigate = useNavigate();
+    const location = useLocation();
+    const objParams = location.state;
     const [product, setProduct] = useState(null)
     const [activeTable, setActiveTable] = useState(1)
     useEffect(() => {
         setProduct(null)
-        fetchLaptopCollectingByName(params.src)
+        fetchGoodsByName(params.src, objParams.collection)
             .then(result => {
                 setProduct(result)
             })
