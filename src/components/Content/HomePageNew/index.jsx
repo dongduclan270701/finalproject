@@ -4,20 +4,31 @@ import BannerSlide from './Banner-slide'
 import Banner from './Banner'
 import TopLaptopGaming from './Top-laptopGaming'
 import TopLaptopCompany from './Top-laptopCompany'
-import TopMouse from './Top-Mouse'
-import TopKeyboard from './Top-Keyboard'
-import TopMonitor from './Top-Monitor'
+import TopApple from './Top-apple'
+import TopPcCreator from './Top-pcCreator'
+import TopPcGaming from './Top-pcGaming'
+import TopPcCompany from './Top-pcCompany'
 import ads1 from 'assets/images/banner-ads1.webp'
 import ads2 from 'assets/images/banner-ads2.webp'
 import ads3 from 'assets/images/banner-ads3.webp'
 import 'assets/scss/Content/Homepage/homepage.css'
 import { fetchBestLaptop } from 'Apis'
 const Index = () => {
-    const [laptop, setLaptop] = useState()
+    const [laptop, setLaptop] = useState(null)
+    const [laptopGaming, setLaptopGaming] = useState(null)
+    const [pcGaming, setPcGaming] = useState(null)
+    const [pcCreator, setPcCreator] = useState(null)
+    const [pcCompany, setPcCompany] = useState(null)
+    const [apple, setApple] = useState(null)
     useEffect(() => {
         fetchBestLaptop()
             .then(result => {
-                setLaptop(result)
+                setLaptopGaming(result.resultBestLaptopGaming)
+                setLaptop(result.resultBestLaptop)
+                setPcGaming(result.resultBestPcGaming)
+                setPcCreator(result.resultBestPcCreator)
+                setPcCompany(result.resultBestPcCompany)
+                setApple(result.resultBestApple)
             })
             .catch(error => {
                 console.log(error)
@@ -32,7 +43,7 @@ const Index = () => {
             <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
             <hr />
 
-            <TopLaptopGaming />
+            <TopLaptopGaming laptopGaming={laptopGaming} />
 
             <div className='title'>Laptop Company - Best Selling</div>
             <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
@@ -44,37 +55,26 @@ const Index = () => {
             <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
             <hr />
 
-            <TopMouse />
+            <TopPcGaming pcGaming={pcGaming}/>
 
             <div className='title'>PC Creator - Best Selling</div>
             <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
             <hr />
 
-            <TopMouse />
+            <TopPcCreator pcCreator={pcCreator}/>
+
+            <div className='title'>PC Company- Best Selling</div>
+            <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
+            <hr />
+
+            <TopPcCompany pcCompany={pcCompany}/>
 
             <div className='title'>Apple- Best Selling</div>
             <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
             <hr />
 
-            <TopMouse />
+            <TopApple apple={apple}/>
 
-            <div className='title'>Mouse - Best Selling</div>
-            <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
-            <hr />
-
-            <TopMouse />
-
-            <div className='title'>Keyboard - Best Selling</div>
-            <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
-            <hr />
-
-            <TopKeyboard />
-
-            <div className='title'>Monitor - Best Selling</div>
-            <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
-            <hr />
-
-            <TopMonitor />
             <div className='row d-flex goods'>
                 <div className='col-md-8 mt-4 mb-4 goods-single'>
                     <div className='goods-single-content'>

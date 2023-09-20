@@ -135,8 +135,9 @@ header {
 /* Thêm animation cho submenu-menu */
 .navbar .links .dropdown .submenu-menu {
     list-style-type: none;
+    /* flex-direction: row; */
     position: absolute;
-    top: 0%;
+    /* top: 0%; */
     left: 100%;
     background: #000;
     display: none;
@@ -146,6 +147,7 @@ header {
     z-index: 1;
     min-width: 200px;
     padding: 10px 0;
+    margin-top: -48px;
     animation: fade-in 0.3s ease-in-out forwards;
 }
 

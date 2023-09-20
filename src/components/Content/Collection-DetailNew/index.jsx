@@ -209,7 +209,7 @@ const Index = () => {
                                                     <img src={goods2} alt='' />
                                                     <h1 style={{ fontSize: 13 }}>{item.nameProduct}</h1>
                                                     <h1 style={{ fontSize: 13 }}>{formatter.format(item.nowPrice)} VNĐ</h1>
-                                                    <NavLink to={"/products/" + item.src} state={{ collection: objParams.nameCollection}}><button type='button' style={{ color: "white" }}>Show</button></NavLink>
+                                                    <NavLink to={"/products/" + item.src} state={{ collection: item.collection}}><button type='button' style={{ color: "white" }}>Show</button></NavLink>
                                                 </div>
                                             </div>
                                         </div>

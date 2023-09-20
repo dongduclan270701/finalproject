@@ -3,11 +3,11 @@ import goods2 from 'assets/images/gigabyte.webp';
 import { NavLink } from 'react-router-dom';
 const Index = (props) => {
     const formatter = new Intl.NumberFormat('en-US')
-    const { laptop } = props
+    const { pcGaming } = props
     return (
         <>
             <div className='row d-flex goods'>
-                {laptop ? laptop.map((item, index) => {
+            {pcGaming ? pcGaming.map((item, index) => {
                     return <div key={index} className='col-md-3 mt-4 mb-4 goods-single'>
                         <div className='goods-card'>
                             <div className='goods-single-content'>
