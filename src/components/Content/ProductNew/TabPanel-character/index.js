@@ -13,7 +13,7 @@ const Index = (props) => {
 
             // nếu không thì thêm <span> để render
             return (
-                <p key={index} style={{ fontSize: '16px', color: '#000000' }}>
+                <p key={index} style={{ fontSize: '16px' }}>
                     {textPart}</p>
             );
         });

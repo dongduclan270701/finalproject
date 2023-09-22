@@ -202,11 +202,11 @@ const Index = () => {
                         <div className="col-md-12 product-list">
                             <div className='row d-flex goods'>
                                 {
-                                    goods ? goods.slice(0, 8).map((item, index) => {
+                                    goods ? goods.map((item, index) => {
                                         return <div className='col-md-3 mt-4 mb-4 goods-single' key={index}>
                                             <div className='goods-card'>
                                                 <div className='goods-single-content'>
-                                                    <img src={goods2} alt='' />
+                                                    <img src={item.img[0]} alt='' />
                                                     <h1 style={{ fontSize: 13 }}>{item.nameProduct}</h1>
                                                     <h1 style={{ fontSize: 13 }}>{formatter.format(item.nowPrice)} VNĐ</h1>
                                                     <NavLink to={"/products/" + item.src} state={{ collection: item.collection}}><button type='button' style={{ color: "white" }}>Show</button></NavLink>
