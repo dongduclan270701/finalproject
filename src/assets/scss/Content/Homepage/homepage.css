@@ -1,4 +1,6 @@
-.homepage {}
+.homepage {
+    backdrop-filter: blur(10px);
+}
 
 .homepage .title {
     text-align: center;
@@ -10,14 +12,14 @@
     max-width: fit-content;
     height: 10px;
     margin: auto;
-    background-color: rgb(245 53 74);
+    background-color: rgb(240 61 118);
     text-align: center;
 }
 
 .homepage hr {
     max-width: 1200px;
     margin: auto;
-    border-top: 2px solid rgb(245 53 74)
+    border-top: 2px solid rgb(240 61 118)
 }
 
 .homepage .slider-wrap .carousel .carousel-inner .carousel-item img {
@@ -39,7 +41,7 @@
     position: relative;
     width: 150px;
     height: 50px;
-    background-color: rgb(245 53 74);
+    background-color: rgb(240 61 118);
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
@@ -90,7 +92,7 @@
 
 :root {
     --card-color: #0f0c18;
-    --border-color: rgb(245 53 74)
+    --border-color: rgb(240 61 118)
 }
 
 .homepage .goods .goods-single .goods-card {
@@ -113,11 +115,12 @@
 .homepage .goods .goods-single .goods-card::after {
     position: absolute;
     content: "";
-    width: 50%;
-    height: 150%;
-    background-color: rgb(245 53 74);
-    animation: spin 6s linear infinite;
-    box-shadow: 0 0 10px 10px rgb(245 53 74);
+    width: 75%;
+    height: 100%;
+    background-color: rgb(240 61 118);
+    /* animation: spin 6s linear infinite; */
+    transform: rotate(240deg);
+    box-shadow: 0 0 10px 10px rgb(240 61 118);
     transition: 1.5% linear;
 }
 
@@ -142,7 +145,7 @@
 
 .homepage .goods .goods-single .goods-card:hover {
     /* Quy tắc cho trường hợp hover */
-    box-shadow: 0 0 5px rgb(245 53 74), 0 0 30px #ffbd597c, 0 0 100px #ffbd5940;
+    box-shadow: 0 0 5px rgb(240 61 118), 0 0 30px #ffbd597c, 0 0 100px #ffbd5940;
     transform: scale(1.15) translateZ(0);
     background-size: 300px;
 }
@@ -188,18 +191,18 @@
     position: relative;
     width: 150px;
     height: 50px;
-    background-color: rgb(245 53 74);
-    font-size: 20px;
+    background-color: unset;
+    border: 1px solid rgb(240 61 118);
+    font-size: 16px;
     font-weight: 700;
     cursor: pointer;
     transform: 0.5s ease;
-    border: none;
     margin-top: 5px;
     z-index:11;
     margin-bottom:15px
 }
 
-.homepage .goods .goods-single .goods-card .goods-single-content button:after {
+/* .homepage .goods .goods-single .goods-card .goods-single-content button:after {
     position: absolute;
     content: '';
     width: 20px;
@@ -209,7 +212,7 @@
     left: 0;
     transform: translate(-50%, -50%) rotate(45deg);
     z-index: 21;
-}
+} */
 .homepage .goods .goods-single .goods-card .goods-single-content button:before {
     position: absolute;
     content: '';

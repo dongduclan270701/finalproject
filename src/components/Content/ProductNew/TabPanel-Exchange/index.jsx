@@ -83,11 +83,11 @@ const Index = ({ product }) => {
                 <img src={JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user'))[4] : unknow} alt="" style={{ width: "60px", borderRadius: "50%", margin: "0px 15px" }} />
                 <form>
                     <div className="input-field" style={{ margin: "0", width:'300px' }}>
-                        <input onChange={e => handleChangeChat(e)} value={chatting.content} type="text" placeholder='Enter your comment here'/>
+                        <input style={{borderRadius:'15px 0 0 15px'}} onChange={e => handleChangeChat(e)} value={chatting.content} type="text" placeholder='Enter your comment here'/>
                         <label>Comment</label>
                     </div>
                 </form>
-                <button onClick={handleSubmitChat}>Post</button>
+                <button style={{borderRadius:'0 15px 15px 0'}} onClick={handleSubmitChat}>Post</button>
             </div>
             <br />
             {chat.length > 0 ? chat.map((comment, index) => {

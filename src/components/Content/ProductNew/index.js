@@ -90,7 +90,7 @@ const Index = () => {
                     <div id="breadcrumb">
                         <div className="main">
                             <div className="breadcrumbs">
-                                <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "rgb(245 53 74)" }}>Homepage</NavLink> <i className="fa fa-caret-right" />
+                                <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "rgb(240 61 118)" }}>Homepage</NavLink> <i className="fa fa-caret-right" />
                                 <span> {product && product.nameProduct} </span>
                             </div>
                         </div>
@@ -118,10 +118,10 @@ const Index = () => {
                                     </strong>
                                     <div role="tabpanel">
                                         <strong>
-                                            <ul className="nav nav-tabs" role="tablist">
-                                                <li role="presentation" onClick={() => setActiveTable(1)} className={activeTable === 1 ? "active" : null}><a href="#details-goods" aria-controls="details-goods" role="tab" data-toggle="tab">Product Description</a></li>
-                                                <li role="presentation" onClick={() => setActiveTable(2)} className={activeTable === 2 ? "active" : null}><a href="#tabReviews" aria-controls="tabReviews" role="tab" data-toggle="tab">Product Reviews</a></li>
-                                                <li role="presentation" onClick={() => setActiveTable(3)} className={activeTable === 3 ? "active" : null}><a href="#tabExchange" aria-controls="tabExchange" role="tab" data-toggle="tab">Exchange between buyer and shop</a></li>
+                                            <ul className="nav nav-tabs" >
+                                                <li  onClick={() => setActiveTable(1)} className={activeTable === 1 ? "active" : null}><a href="#details-goods" aria-controls="details-goods" role="tab" data-toggle="tab">Product Description</a></li>
+                                                <li  onClick={() => setActiveTable(2)} className={activeTable === 2 ? "active" : null}><a href="#tabReviews" aria-controls="tabReviews" role="tab" data-toggle="tab">Product Reviews</a></li>
+                                                <li  onClick={() => setActiveTable(3)} className={activeTable === 3 ? "active" : null}><a href="#tabExchange" aria-controls="tabExchange" role="tab" data-toggle="tab">Exchange between buyer and shop</a></li>
                                             </ul>
                                         </strong>
                                         <div className="tab-content">

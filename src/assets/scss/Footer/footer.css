@@ -1,7 +1,8 @@
 .footer {
-    margin-top:30px;
+    /* margin-top:30px; */
+    border-top:1px solid #525252;
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(255, 255, 255, 0.5); */
 }
 .footer-content {
     max-width: 1200px;
@@ -11,6 +12,6 @@
 .footer::before {
     content: "";
     position: absolute;
-    background: rgba(255, 255, 255, 0.5); /* Màu trắng với độ mờ 0.5 (tùy chỉnh độ mờ tùy ý) */
-    backdrop-filter: blur(10px); /* Độ mờ của nền đằng sau */
+    /* background: rgba(255, 255, 255, 0.5); Màu trắng với độ mờ 0.5 (tùy chỉnh độ mờ tùy ý) */
+    /* backdrop-filter: blur(10px); Độ mờ của nền đằng sau */
 }

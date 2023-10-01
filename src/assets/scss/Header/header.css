@@ -96,12 +96,12 @@ header {
 
 .navbar .links .dropdown .dropdown-menu li:hover {
     padding: 10px 20px;
-    background-color: rgb(245 53 74);
+    background-color: rgb(240 61 118);
 }
 
 .navbar .links .dropdown .dropdown-menu li a:hover {
     padding: 10px 20px;
-    background-color: rgb(245 53 74);
+    background-color: rgb(240 61 118);
     color: white
 }
 
@@ -116,12 +116,12 @@ header {
 
 .navbar .links .dropdown .dropdown-menu .submenu-menu li:hover {
     padding: 13px 20px;
-    background-color: rgb(245 53 74);
+    background-color: rgb(240 61 118);
 }
 
 .navbar .links .dropdown .dropdown-menu .submenu-menu li a:hover {
     padding: 10px 0px;
-    background-color: rgb(245 53 74);
+    background-color: rgb(240 61 118);
 }
 
 .navbar .links .dropdown {
@@ -160,7 +160,7 @@ header {
 
 /* Khi hover vào các mục trong submenu-menu, thay đổi màu nền */
 .submenu-menu li:hover {
-    background-color: rgb(245 53 74);
+    background-color: rgb(240 61 118);
 }
 
 /* Keyframes cho animation */
@@ -565,11 +565,11 @@ header {
     }
     
     .navbar .links .dropdown .dropdown-menu li:hover {
-        background-color: rgb(245 53 74);
+        background-color: rgb(240 61 118);
     }
     
     .navbar .links .dropdown .dropdown-menu li a:hover {
-        background-color: rgb(245 53 74);
+        background-color: rgb(240 61 118);
         color: white;
     }
     
@@ -618,11 +618,12 @@ header {
 .goods-search .goods-search-single .goods-search-card::after {
     position: absolute;
     content: "";
-    width: 50%;
-    height: 150%;
-    background-color: rgb(245 53 74);
-    animation: spin 6s linear infinite;
-    box-shadow: 0 0 10px 10px rgb(245 53 74);
+    width: 75%;
+    height: 100%;
+    background-color: rgb(240 61 118);
+    /* animation: spin 6s linear infinite; */
+    transform: rotate(240deg);
+    box-shadow: 0 0 10px 10px rgb(240 61 118);
     transition: 1.5% linear;
 }
 
@@ -647,7 +648,7 @@ header {
 
 .goods-search .goods-search-single .goods-search-card:hover {
     /* Quy tắc cho trường hợp hover */
-    box-shadow: 0 0 5px rgb(245 53 74), 0 0 30px #ffbd597c, 0 0 100px #ffbd5940;
+    box-shadow: 0 0 5px rgb(240 61 118), 0 0 30px #ffbd597c, 0 0 100px #ffbd5940;
     transform: scale(1.15) translateZ(0);
     background-size: 300px;
 }
@@ -695,7 +696,7 @@ header {
     position: relative;
     width: 150px;
     height: 50px;
-    background-color: rgb(245 53 74);
+    background-color: rgb(240 61 118);
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;

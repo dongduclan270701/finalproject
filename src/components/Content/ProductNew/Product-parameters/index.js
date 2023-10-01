@@ -35,10 +35,10 @@ const Index = (props) => {
             <p>{renderStars()} <span style={{ fontSize: '15px' }}>{product.rating.length} reviews - {product.sold} sold - {product.view} views</span>
             </p>
             <h1 style={{display:'flex', alignItems:'center'}}>
-                <span className="product_sale_price" style={{ color: 'rgb(245 53 74)' }}>{formatter.format(product.nowPrice)} VNĐ</span>
+                <span className="product_sale_price" style={{ color: 'rgb(240 61 118)' }}>{formatter.format(product.nowPrice)} VNĐ</span>
                 &ensp;
                 <span className="product_price" style={{ color: 'grey', fontSize:'17px' }}><del>{formatter.format(product.realPrice)} VNĐ</del></span>
-                <span style={{border: '1px solid rgb(245 53 74)', borderRadius: '5px', padding:'5px', margin:'0 0 0 10px', fontSize:'13px'}}>- {product.percent}%</span>
+                <span style={{border: '1px solid rgb(240 61 118)', borderRadius: '5px', padding:'5px', margin:'0 0 0 10px', fontSize:'13px'}}>- {product.percent}%</span>
             </h1>
             <p>
                 <span style={{ fontSize: '18px' }}>
@@ -58,7 +58,7 @@ const Index = (props) => {
             </p>
             <hr />
             <p>
-                <span style={{ color: 'rgb(245 53 74)' }}>
+                <span style={{ color: 'rgb(240 61 118)' }}>
                     <span style={{ fontSize: '18px' }}>
                         <u>
                             <strong>
@@ -79,7 +79,7 @@ const Index = (props) => {
             })}
             <p>
                 <span style={{ fontSize: '18px' }}>
-                    <span style={{ color: 'rgb(245 53 74)' }}>
+                    <span style={{ color: 'rgb(240 61 118)' }}>
                         <strong>
                             <u>
                                 PROMOTION WHEN BUYING INCLUDED:&nbsp;</u>
@@ -98,7 +98,7 @@ const Index = (props) => {
             <p>
                 <span style={{ fontSize: '18px' }}>
                     <strong>
-                        <span style={{ color: 'rgb(245 53 74)' }}>
+                        <span style={{ color: 'rgb(240 61 118)' }}>
                             Support MPOS (Credit Card), HDSAISON</span>
                     </strong>
                 </span>
@@ -110,7 +110,7 @@ const Index = (props) => {
             <strong>
                 <div className="clearfix" />
                 <div className="form-group">
-                    <button onClick={statusOrder}>Add to cart</button>
+                    <button onClick={statusOrder}>Add to wishlist</button>
                 </div>
             </strong>
         </div>

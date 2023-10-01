@@ -156,7 +156,7 @@ const Index = () => {
     }
     return (
         <>
-            {order ? <div className="col-sm-9 order-detail" style={{ borderRadius: "15px", fontSize: "15px" }}>
+            {order ? <><div className="col-sm-9 order-detail" style={{ borderRadius: "15px", fontSize: "15px" }}>
                 <div className="row" style={{ padding: "20px", fontSize: "15px" }}>
                     <div className="col-3" onClick={() => navigate(-1)} style={{ cursor: "pointer" }}> {"< "} Back</div>
                     <div className="col-9 row" style={{ display: "flex", flexDirection: "row-reverse", padding: "0" }}>
@@ -166,12 +166,12 @@ const Index = () => {
                             :
                             order.status === "Delivery failed" ? <div style={{ color: "red", width: "unset" }}>Failed</div>
                                 :
-                                order.status === "Cancel" ? <div style={{ color: "red", width: "unset" }}>Cancel</div>: <div style={{ color: "#5d5dd9", width: "unset" }}>In process</div>}
+                                order.status === "Cancel" ? <div style={{ color: "red", width: "unset" }}>Cancel</div> : <div style={{ color: "#5d5dd9", width: "unset" }}>In process</div>}
                         <div style={{ padding: "0 10px 0 10px", width: "unset" }}>|</div>
                         <div style={{ width: "unset" }}>{order && order.status}</div>
                     </div>
                 </div>
-                <hr style={{ border: '1px solid rgb(245 53 74)' }} />
+                <hr style={{ border: '1px solid rgb(240 61 118)' }} />
                 <div className="progress-bar-process">
                     {steps.map((step, index) => (
                         <div key={index} className={`col-2 step ${currentStep === index ? "active" : ""}`}>
@@ -214,7 +214,7 @@ const Index = () => {
                     </div>
                 </div>
                 }
-                <hr style={{ border: '1px solid rgb(245 53 74)' }} />
+                <hr style={{ border: '1px solid rgb(240 61 118)' }} />
                 <div className='row' style={{ padding: "15px 0px" }}>
                     <div className="col-lg-6 ">
                         <h4>Delivery address</h4>
@@ -236,7 +236,7 @@ const Index = () => {
                         ))}
                     </div>
                 </div>
-                <hr style={{ border: '1px solid rgb(245 53 74)' }} />
+                <hr style={{ border: '1px solid rgb(240 61 118)' }} />
                 {order && order.product.map((item, index) => {
                     return <div style={{ borderBottom: "1px solid #e1dfdf" }} key={index}>
                         <div className="row" style={{ margin: "0px", padding: "10px 0px" }}>
@@ -297,17 +297,23 @@ const Index = () => {
                         Payment on delivery
                     </div>
                 </div>
-                {order && order.status === 'Ordered' ? <div className='button-show-order'>
-                    <button type='button' onClick={handleOpenCancel}>Cancel</button>
-                    {isCancelForm && <form>
-                        <div className="input-field">
-                            <input name='reasonCancel' value={order.reasonCancel} onChange={e => setOrder({ ...order, reasonCancel: e.target.value })} />
-                            <label>Reason cancel</label>
-                        </div>
-                        <button type='button' onClick={handleSubmitCancel}>Submit</button>
-                    </form>}
+                {order && order.status === 'Ordered' ? <div className='row' style={{ display: 'flex', justifyContent: 'center' }}>
+                    <div className='col-md-4 button-show-order'>
+                        <button type='button' onClick={handleOpenCancel}>Cancel</button>
+                        {isCancelForm && <form className='row' style={{ width: 'inherit' }}>
+                            <div className='col-9' style={{ padding: 0 }}>
+                                <div className="input-field" style={{ margin: 0 }}>
+                                    <input style={{borderRadius: '15px 0 0 15px'}} name='reasonCancel' value={order.reasonCancel} onChange={e => setOrder({ ...order, reasonCancel: e.target.value })} />
+                                    <label>Reason cancel</label>
+                                </div>
+                            </div>
+                            <div className='col-3' style={{ padding: 0 }}>
+                                <button style={{ padding:15, margin: 0, borderRadius: '0 15px 15px 0', background: 'rgb(240 61 118)' }} type='button' onClick={handleSubmitCancel}>Submit</button>
+                            </div>
+                        </form>}
+                    </div>
                 </div> : null}
-            </div> : <div className="col-sm-9 order-detail" style={{ borderRadius: "15px", fontSize: "15px" }}><div style={{ width: "100%", display: 'flex' }}><div class="lds-hourglass"></div></div></div>}
+            </div></> : <div className="col-sm-9 order-detail" style={{ borderRadius: "15px", fontSize: "15px" }}><div style={{ width: "100%", display: 'flex' }}><div class="lds-hourglass"></div></div></div>}
 
             <Rating toggleRate={toggleRate} onHandleToggleShow={handleToggleShow} order={order} />
             <ShowRating toggleShowRate={toggleShowRate} onHandleToggleShowRate={handleToggleShowRate} order={order} />

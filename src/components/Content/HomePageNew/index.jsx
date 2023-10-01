@@ -38,59 +38,60 @@ const Index = () => {
         <div className="homepage">
             <BannerSlide />
             <Banner />
+            <div>
+                <div className='title'>Laptop Gaming - Best Selling</div>
+                <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
+                <hr />
 
-            <div className='title'>Laptop Gaming - Best Selling</div>
-            <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
-            <hr />
+                <TopLaptopGaming laptopGaming={laptopGaming} />
 
-            <TopLaptopGaming laptopGaming={laptopGaming} />
+                <div className='title'>Laptop Company - Best Selling</div>
+                <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
+                <hr />
 
-            <div className='title'>Laptop Company - Best Selling</div>
-            <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
-            <hr />
+                <TopLaptopCompany laptop={laptop} />
 
-            <TopLaptopCompany laptop={laptop} />
+                <div className='title'>PC Gaming - Best Selling</div>
+                <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
+                <hr />
 
-            <div className='title'>PC Gaming - Best Selling</div>
-            <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
-            <hr />
+                <TopPcGaming pcGaming={pcGaming} />
 
-            <TopPcGaming pcGaming={pcGaming}/>
+                <div className='title'>PC Creator - Best Selling</div>
+                <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
+                <hr />
 
-            <div className='title'>PC Creator - Best Selling</div>
-            <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
-            <hr />
+                <TopPcCreator pcCreator={pcCreator} />
 
-            <TopPcCreator pcCreator={pcCreator}/>
+                <div className='title'>PC Company- Best Selling</div>
+                <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
+                <hr />
 
-            <div className='title'>PC Company- Best Selling</div>
-            <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
-            <hr />
+                <TopPcCompany pcCompany={pcCompany} />
 
-            <TopPcCompany pcCompany={pcCompany}/>
+                <div className='title'>Apple- Best Selling</div>
+                <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
+                <hr />
 
-            <div className='title'>Apple- Best Selling</div>
-            <div className='title-background'>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; </div>
-            <hr />
+                <TopApple apple={apple} />
 
-            <TopApple apple={apple}/>
-
-            <div className='row d-flex goods'>
-                <div className='col-md-8 mt-4 mb-4 goods-single'>
-                    <div className='goods-single-content'>
-                        <img src={ads1} alt='ads' style={{ width: "100%" }} />
-                    </div>
-                </div>
-                <div className='col-md-4 mt-4 mb-4 goods-single'>
-                    <div className='row d-flex ads'>
-                        <div className='col-md-12 mb-2 ads-single'>
-                            <div className='ads-single-content'>
-                                <img src={ads2} alt='ads' style={{ width: "100%" }} />
-                            </div>
+                <div className='row d-flex goods'>
+                    <div className='col-md-8 mt-4 mb-4 goods-single'>
+                        <div className='goods-single-content'>
+                            <img src={ads1} alt='ads' style={{ width: "100%" }} />
                         </div>
-                        <div className='col-md-12 mt-2 ads-single'>
-                            <div className='ads-single-content'>
-                                <img src={ads3} alt='ads' style={{ width: "100%" }} />
+                    </div>
+                    <div className='col-md-4 mt-4 mb-4 goods-single'>
+                        <div className='row d-flex ads'>
+                            <div className='col-md-12 mb-2 ads-single'>
+                                <div className='ads-single-content'>
+                                    <img src={ads2} alt='ads' style={{ width: "100%" }} />
+                                </div>
+                            </div>
+                            <div className='col-md-12 mt-2 ads-single'>
+                                <div className='ads-single-content'>
+                                    <img src={ads3} alt='ads' style={{ width: "100%" }} />
+                                </div>
                             </div>
                         </div>
                     </div>

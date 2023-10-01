@@ -35,8 +35,8 @@ body {
     height: 0;
     margin: 8px;
     box-sizing: border-box;
-    border: 32px solid rgb(245 53 74);
-    border-color: rgb(245 53 74) transparent rgb(245 53 74) transparent;
+    border: 32px solid rgb(240 61 118);
+    border-color: rgb(240 61 118) transparent rgb(240 61 118) transparent;
     animation: lds-hourglass 1.2s infinite;
 }
 
@@ -54,4 +54,23 @@ body {
     100% {
         transform: rotate(1800deg);
     }
+}
+body .swal2-popup{
+    border-radius:15px;
+    background: unset;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgb(240 61 118);
+    color:white
+}
+body .swal2-popup .swal2-title{
+    color:white
+}
+body .swal2-popup .swal2-actions .swal2-confirm,
+body .swal2-popup .swal2-actions .swal2-cancel{
+    border-radius:15px;
+    border: 1px solid rgb(240 61 118);
+    background: unset;
+}
+body .swal2-popup .swal2-actions .swal2-confirm:focus{
+    border: 1px solid rgb(240 61 118);
 }

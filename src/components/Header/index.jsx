@@ -297,7 +297,7 @@ const Index = () => {
                             <NavLink to='/' onClick={toggleMenu}>Home</NavLink>
                         </li>
                         <li className="dropdown" >
-                            <a onClick={handleChoosePortfolio} href className={isPortfolio === 2 || isPortfolio === 3 ? 'active-portfolio-true' : isPortfolio === 1 ? 'active-portfolio-false' : null}>Portfolio <span className='button-portfolio-website'>&gt;</span></a>
+                            <a onClick={handleChoosePortfolio} href className={isPortfolio === 2 || isPortfolio === 3 ? 'active-portfolio-true' : isPortfolio === 1 ? 'active-portfolio-false' : null}>Product <span className='button-portfolio-website'>&gt;</span></a>
                             <ul className={isPortfolio === 2 || isPortfolio === 3 ? 'dropdown-menu deactivate-portfolio-true' : 'dropdown-menu deactivate-portfolio-false'} >
                                 {item ? item.slice(0, isPortfolio === 3 ? 1 : item.length).map((item, index) => {
                                     return <li key={index} >

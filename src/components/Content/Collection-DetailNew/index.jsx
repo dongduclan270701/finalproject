@@ -103,7 +103,7 @@ const Index = () => {
         fetchFilterProduct(filter)
             .then(result => {
                 setGoods(result.data)
-            }) 
+            })
             .catch(error => {
                 console.log(error)
             })
@@ -124,7 +124,7 @@ const Index = () => {
                         <div className='col-md-12' id="breadcrumb">
                             <div className="main">
                                 <div className="breadcrumbs href-here">
-                                    <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "rgb(245 53 74)" }}>Homepage</NavLink>
+                                    <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "rgb(240 61 118)" }}>Homepage</NavLink>
                                     <span> <i className="fa fa-caret-right" /> {objParams.collection.toUpperCase() + " " + objParams.category.toUpperCase()}</span>
                                 </div>
                             </div>
@@ -132,36 +132,17 @@ const Index = () => {
                         <div className="col-md-12">
                             <div className="row">
                                 <div className="col-md-12 wrap-sort-by">
-                                    <div className="col-md-2 browse-tags pull-left">
-                                        <span className="custom-dropdown custom-dropdown--white">
-                                            <form>
-                                                <div className='row select-field'>
-                                                    <div className='col-12'>
-                                                        <select className="field-input" style={{ padding: 15 }} onChange={e => handleChangeFilter(e)} name="sort">
-                                                            <option data-code="null" value="none">
-                                                                Select Sort </option>
-                                                            <option value="asc">Price: ascending</option>
-                                                            <option value="desc">Price: descending</option>
-                                                            {/* <option value="title-ascending">Name: A-Z</option>
-                                                            <option value="title-descending">Name: Z-A</option>
-                                                            <option value="created-ascending">Oldest</option>
-                                                            <option value="created-descending">Newest</option>
-                                                            <option value="best-selling">Best-selling</option> */}
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </span>
-                                    </div>
+
                                     {listFilter && listFilter.map((item, index) => {
                                         return <div key={index} className="col-md-2 browse-tags pull-left">
                                             <span className="custom-dropdown custom-dropdown--white">
                                                 <form>
                                                     <div className='row select-field'>
                                                         <div className='col-12'>
+                                                            <label style={{ fontSize: 13 }}>{index === 0 ? 'Type' : item.name}</label>
                                                             <select className="field-input" style={{ padding: 15 }} onChange={e => handleChangeFilter(e)} name={item.src ? 'Brand' : item.name}>
                                                                 <option data-code="null" value="">
-                                                                    Select {item.name} </option>
+                                                                    Select </option>
                                                                 {item ? item.collecting.map((item1, index) => {
                                                                     return <option key={index} value={item1.name}>{item1.name}</option>
                                                                 }) : null}
@@ -194,8 +175,34 @@ const Index = () => {
                                             <button type='button' onClick={handleSubmitFilter}>Filter</button>
                                         </div>
                                     </div>
+
                                 </div>
+                                
                             </div>
+                            <div className='row'>
+                                    <div className="col-md-3 browse-tags pull-left" style={{margin: '0 15px 0 15px'}}>
+                                        <span className="custom-dropdown custom-dropdown--white">
+                                            <form>
+                                                <div className='row select-field'>
+                                                    <div className='col-12'>
+                                                        <label>Sort</label>
+                                                        <select className="field-input" style={{ padding: 15, marginRight:5 }} onChange={e => handleChangeFilter(e)} name="sort">
+                                                            <option data-code="null" value="none">
+                                                                Select </option>
+                                                            <option value="asc">Price: ascending</option>
+                                                            <option value="desc">Price: descending</option>
+                                                            {/* <option value="title-ascending">Name: A-Z</option>
+                                                            <option value="title-descending">Name: Z-A</option>
+                                                            <option value="created-ascending">Oldest</option>
+                                                            <option value="created-descending">Newest</option>
+                                                            <option value="best-selling">Best-selling</option> */}
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </span>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                     <div className="row">
@@ -207,9 +214,9 @@ const Index = () => {
                                             <div className='goods-card'>
                                                 <div className='goods-single-content'>
                                                     <img src={item.img[0]} alt='' />
-                                                    <h1 style={{ fontSize: 13 }}>{item.nameProduct}</h1>
+                                                    <h1 style={{ fontSize: 13, marginLeft: 10, marginRight: 10 }}>{item.nameProduct}</h1>
                                                     <h1 style={{ fontSize: 13 }}>{formatter.format(item.nowPrice)} VNĐ</h1>
-                                                    <NavLink to={"/products/" + item.src} state={{ collection: item.collection}}><button type='button' style={{ color: "white" }}>Show</button></NavLink>
+                                                    <NavLink to={"/products/" + item.src} state={{ collection: item.collection }}><button type='button' style={{ color: "white" }}>See more</button></NavLink>
                                                 </div>
                                             </div>
                                         </div>

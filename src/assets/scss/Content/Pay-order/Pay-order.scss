@@ -5,12 +5,14 @@
 }
 .pay-content {
     width: 100%;
-    backdrop-filter: blur(100px);
+    backdrop-filter: blur(10px);
     border: 1px solid #393939;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 40px 10px;
-    margin:0
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 .pay-content .breadcrumb {
     // backdrop-filter: blur(100px);
@@ -46,13 +48,13 @@ form .input-field {
 .pay-content .button-complete {
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 .pay-content .button-complete .button-complete-content {
     position: relative;
     width: 250px;
     height: 50px;
-    background-color: rgb(245 53 74);
+    background-color: rgb(240 61 118);
+    border-radius: 15px;
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
@@ -61,29 +63,48 @@ form .input-field {
     margin: 40px 0;
 }
 
-.pay-content .button-complete .button-complete-content:after {
-    position: absolute;
-    content: "";
-    width: 20px;
-    height: 20px;
-    background-color: #0f0c18;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%) rotate(45deg);
-    /* z-index: 21; */
-}
-.pay-content .button-complete .button-complete-content:before {
-    position: absolute;
-    content: "";
-    width: 20px;
-    height: 20px;
-    background-image: #0f0c18;
-    top: 0;
-    left: 0;
-    transform: translate(50%, 50%) rotate(45deg);
-    /* z-index: 21; */
-}
 .pay-content .button-complete .button-complete-content:hover {
+    transform: scale(0.9);
+}
+
+.pay-content .button-step {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.pay-content .button-step .button-step-next-content {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    background-color: unset;
+    border: 1px solid rgb(240 61 118);
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transform: 0.5s ease;
+    margin: 40px 0;
+}
+
+.pay-content .button-step .button-step-next-content:hover {
+    transform: scale(0.9);
+}
+
+.pay-content .button-step .button-step-pre-content {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    background-color: unset;
+    border: 1px solid rgb(240 61 118);
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transform: 0.5s ease;
+    margin: 40px 0;
+}
+
+.pay-content .button-step .button-step-pre-content:hover {
     transform: scale(0.9);
 }
 .input-field input {
@@ -98,7 +119,7 @@ form .input-field {
 }
 
 .input-field input:focus {
-    border: 1px solid rgb(245 53 74);
+    border: 1px solid rgb(240 61 118);
 }
 
 .input-field label {
@@ -118,14 +139,14 @@ form .input-field {
 
 .input-field input:is(:focus, :valid) ~ label {
     transform: translateY(-120%);
-    color: rgb(245 53 74);
+    color: rgb(240 61 118);
     font-size: 10px;
 }
 /* Thiết lập kiểu cho phần tử select */
-.select-field {
+#payment .select-field {
     // height:100px
 }
-.select-field select {
+#payment .select-field select {
     height: 100%;
     width: 100%;
     background: none;
@@ -134,15 +155,16 @@ form .input-field {
     padding: 0 15px;
     border: 1px solid #717171;
     border-radius: 3px;
+    margin: 15px 0 15px 0;
 }
 
 /* Kiểu khi select được focus */
-.select-field select:focus {
-    border: 1px solid rgb(245 53 74);
+#payment .select-field select:focus {
+    border: 1px solid rgb(240 61 118);
 }
 
 /* Label cho select */
-.select-field select + label {
+#payment .select-field select + label {
     font-size: 13px;
     position: absolute;
     top: 50%;
@@ -154,10 +176,10 @@ form .input-field {
 }
 
 /* Hiệu ứng label khi select có giá trị được chọn */
-.select-field select:valid + label,
-.select-field select:focus + label {
+#payment .select-field select:valid + label,
+#payment .select-field select:focus + label {
     transform: translateY(-120%);
-    color: rgb(245 53 74);
+    color: rgb(240 61 118);
     font-size: 10px;
 }
 
@@ -225,5 +247,46 @@ form .input-field {
 /* Định dạng cho giá trị tổng cộng */
 .order-summary-emphasis {
     font-weight: bold;
-    color: #e86e25;
+    color: rgb(240 61 118);
+}
+
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px
+}
+
+.step-circle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    background-color: unset;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    margin: auto;
+    // margin-bottom: 10px; 
+}
+
+.step-line {
+    height: 2px;
+    width: 90px;
+    background-color: #ccc;
+    flex-grow: 1; /* Đảm bảo dòng kẻ ngang mở rộng để chia cách giữa các hình tròn */
+}
+
+.completed {
+    background-color: rgb(240 61 118); /* Màu cho bước đã hoàn thành */
+    border-color: rgb(240 61 118);
+    color: #fff;
+}
+
+/* CSS để ẩn các bước, chỉ hiển thị bước hiện tại */
+
+.step.active {
+    display: block;
 }

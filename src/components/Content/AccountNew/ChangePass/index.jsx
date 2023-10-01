@@ -38,7 +38,6 @@ const Index = (props) => {
             })
         }
         else {
-            // console.log({...user, oldPassword: inputForm.oldPassword, newPassword: inputForm.newPassword})
             Swal.fire({
                 title: 'Updating...',
                 html: 'Please wait...',

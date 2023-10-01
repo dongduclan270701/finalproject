@@ -54,7 +54,7 @@
 }
 
 .progress-bar-process .col-2.step.active .circle {
-    background-color: rgb(245 53 74);
+    background-color: rgb(240 61 118);
     color: white;
     border-radius: 50%;
     padding: 10px;
@@ -95,7 +95,7 @@
     align-items: center;
     padding: 10px 0;
     background-color: unset;
-    border: 1px solid rgb(245 53 74);
+    border: 1px solid rgb(240 61 118);
     border-radius: 5px;
     padding: 5px;
     margin: 10px 0;
@@ -149,11 +149,12 @@
     align-items: center;
     padding: 10px 0;
     background-color: unset;
-    border: 1px solid rgb(245 53 74);
-    border-radius: 5px;
+    border: 1px solid rgb(240 61 118);
+    border-radius: 15px;
     padding: 7px;
     margin: 10px 0;
     font-size: 13px;
+    /* width: -webkit-fill-available; */
 }
 
 
@@ -187,8 +188,8 @@
 #layout-page .profile-usermenu li a button:hover {
     background:
         linear-gradient(to right,
-            rgb(245 53 74),
-            rgb(245 53 74));
+            rgb(240 61 118),
+            rgb(240 61 118));
     background-size: 100% 3px, 0% 3px;
     background-position: 0% 100%, 100% 100%;
     background-repeat: no-repeat;
@@ -198,8 +199,8 @@
 #layout-page .profile-usermenu li a.active button {
     background:
         linear-gradient(to right,
-            rgb(245 53 74),
-            rgb(245 53 74));
+            rgb(240 61 118),
+            rgb(240 61 118));
     background-size: 100% 3px, 0% 3px;
     background-position: 0% 100%, 100% 100%;
     background-repeat: no-repeat;
@@ -218,7 +219,7 @@
 }
 
 .modal-content .modal-header {
-    border-bottom: 1px solid rgb(245 53 74);
+    border-bottom: 1px solid rgb(240 61 118);
 }
 
 .modal-content .modal-header .btn-close {
@@ -228,7 +229,7 @@
 }
 
 .modal-content .modal-footer {
-    border-top: 1px solid rgb(245 53 74);
+    border-top: 1px solid rgb(240 61 118);
 }
 
 .modal-content .modal-footer button {
@@ -238,7 +239,7 @@
     align-items: center;
     padding: 10px 0;
     background-color: unset;
-    border: 1px solid rgb(245 53 74);
+    border: 1px solid rgb(240 61 118);
     border-radius: 5px;
     padding: 7px;
     font-size: 13px;
@@ -257,16 +258,16 @@
     padding: 15px;
     border: 1px solid #717171;
     border-radius: 3px;
-    color: rgb(245 53 74);
+    color: rgb(240 61 118);
 }
 
 .modal-content textarea.form-control:focus {
-    border: 1px solid rgb(245 53 74);
+    border: 1px solid rgb(240 61 118);
 }
 
 .modal-content textarea.form-control:is(:focus, :valid)~label {
     transform: translateY(-120%);
-    color: rgb(245 53 74);
+    color: rgb(240 61 118);
     font-size: 16px;
 }
 
@@ -322,7 +323,7 @@
 }
 
 .profile-form .input-field input:focus {
-    border: 1px solid rgb(245 53 74);
+    border: 1px solid rgb(240 61 118);
 }
 
 .profile-form .input-field label {
@@ -342,7 +343,7 @@
 
 .profile-form .input-field input:is(:focus, :valid)~label {
     transform: translateY(-120%);
-    color: rgb(245 53 74);
+    color: rgb(240 61 118);
     font-size: 10px;
 }
 
@@ -430,7 +431,7 @@
 
 /* Kiểu khi select được focus */
 /* .profile-value .select-field select:focus {
-    border: 1px solid rgb(245 53 74);
+    border: 1px solid rgb(240 61 118);
 } */
 
 /* Label cho select */
@@ -449,6 +450,6 @@
 /* .profile-value .select-field select:valid + label,
 .profile-value .select-field select:focus + label {
     transform: translateY(-120%);
-    color: rgb(245 53 74);
+    color: rgb(240 61 118);
     font-size: 10px;
 } */

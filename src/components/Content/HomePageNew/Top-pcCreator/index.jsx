@@ -12,9 +12,9 @@ const Index = (props) => {
                         <div className='goods-card'>
                             <div className='goods-single-content'>
                                 <img src={item.img[0]} alt='' />
-                                <h1 style={{ fontSize: 13 }}>{item.nameProduct}</h1>
+                                <h1 style={{ fontSize: 13, marginLeft:5, marginRight:5 }}>{item.nameProduct}</h1>
                                 <h1 style={{ fontSize: 13 }}>{formatter.format(item.nowPrice)} VNĐ</h1>
-                                <NavLink to={'/products/' + item.src} state={{ collection: item.collection}}><button type='button'>Show</button></NavLink>
+                                <NavLink to={'/products/' + item.src} state={{ collection: item.collection}}><button type='button'>See more</button></NavLink>
                             </div>
                         </div>
                     </div>
