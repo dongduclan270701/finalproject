@@ -3,6 +3,7 @@ import Order from './Order'
 import OrderDetails from './OrderDetails'
 import Information from './Information'
 import UpdatePassword from './ChangePass'
+import Notification from './Notification'
 import SideBar from './SideBar'
 import 'assets/scss/Content/Account/account.css'
 import {
@@ -29,6 +30,7 @@ const Index = (props) => {
                 <SideBar />
                 {Fragment === "Order" && <Order user={user}/>}
                 {Fragment === "OrderDetails" && <OrderDetails />}
+                {Fragment === "Notification" && <Notification user={user}/>}
                 {Fragment === "Information" && <Information user={user} handleChangeUserInformation={handleChangeUserInformation}/>}
                 {Fragment === "UpdatePassword" && <UpdatePassword user={user} handleChangeUserInformation={handleChangeUserInformation}/>}
             </div>

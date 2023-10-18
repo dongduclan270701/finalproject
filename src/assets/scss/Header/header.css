@@ -696,7 +696,9 @@ header {
     position: relative;
     width: 150px;
     height: 50px;
-    background-color: rgb(240 61 118);
+    background-color: unset;
+    border:1px solid rgb(240 61 118);
+    
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
@@ -707,29 +709,6 @@ header {
     margin-bottom: 15px
 }
 
-.goods-search .goods-search-single .goods-search-card .goods-search-single-content button:after {
-    position: absolute;
-    content: '';
-    width: 20px;
-    height: 20px;
-    background-color: #0f0c18;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%) rotate(45deg);
-    z-index: 21;
-}
-
-.goods-search .goods-search-single .goods-search-card .goods-search-single-content button:before {
-    position: absolute;
-    content: '';
-    width: 20px;
-    height: 20px;
-    background-image: #0f0c18;
-    top: 0;
-    left: 0;
-    transform: translate(50%, 50%) rotate(45deg);
-    z-index: 21;
-}
 
 .goods-search .goods-search-single .goods-search-card .goods-search-single-content button:hover {
     transform: scale(0.95)

@@ -40,6 +40,13 @@ const Index = () => {
                             </NavLink>
                         </li>
                         <li>
+                            <NavLink to="/account/notification">
+                                <div className='button-show'>
+                                    <button type='button'>Notification</button>
+                                </div>
+                            </NavLink>
+                        </li>
+                        <li>
                             <NavLink to="/account/order">
                                 <div className='button-show'>
                                     <button type='button'>Orders List</button>

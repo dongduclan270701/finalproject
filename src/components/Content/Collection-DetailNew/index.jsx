@@ -3,24 +3,35 @@ import {
     fetchProductCollection,
     fetchFilterProduct
 } from 'Apis'
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
 import { StateContext } from 'Context/Context'
 import goods2 from 'assets/images/gigabyte.webp';
 import 'assets/scss/Content/Goods/goods.css'
 const Index = () => {
+    const params = useParams()
     const state = useContext(StateContext)
-    const location = useLocation();
-    const objParams = location.state;
     const formatter = new Intl.NumberFormat('en-US')
     const [goods, setGoods] = useState(null)
     const [listFilter, setListFilter] = useState([])
-    const [filter, setFilter] = useState({ sort: 'none', collection: '', category: ['', '', '', '', ''], minPrice: 0, maxPrice: 90000000 })
+    const [filter, setFilter] = useState({
+        sort: 'none',
+        collection: '',
+        category: ['', '', '', '', ''],
+        minPrice: 0,
+        maxPrice: 90000000
+    })
+    const formatText = (text) => {
+        const words = text.split('-')
+        const formattedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        return formattedWords.join(' ')
+    }
     useEffect(() => {
         setGoods(null)
-        const clickedItem = state.category.find((item) => item.name === objParams.nameCategory);
+        const clickedItem = state.category.find((item) => item.name === formatText(params.collection));
+
         if (clickedItem) {
             setListFilter(clickedItem.category.slice(2, clickedItem.category.length));
-            const findBrand = clickedItem.category[0].collecting.find((item) => item.name === objParams.category);
+            const findBrand = clickedItem.category[0].collecting.find((item) => item.name === params.codeCollectionDetail);
             const mer = [findBrand].concat(clickedItem.category.slice(2, clickedItem.category.length))
             const updatedMer = mer.map(item => {
                 if (item.category) {
@@ -33,17 +44,17 @@ const Index = () => {
         }
         setFilter((prevFilter) => ({
             ...prevFilter,
-            collection: objParams.nameCollection,
-            category: [objParams.category, ...prevFilter.category.slice(1)],
+            collection: params.collection,
+            category: [params.codeCollectionDetail, ...prevFilter.category.slice(1)],
         }));
-        fetchProductCollection({ category: objParams.category, collection: objParams.nameCollection }, 1)
+        fetchProductCollection({ category: params.codeCollectionDetail, collection: params.collection }, 1)
             .then(result => {
                 setGoods(result.data)
             })
             .catch(error => {
                 console.log(error)
             })
-    }, [objParams, state])
+    }, [state])
     const handleChangeFilter = (e) => {
         const { name, value } = e.target
         const formattedValue = value.replace(/\D/g, '')
@@ -117,7 +128,7 @@ const Index = () => {
             </div> */}
             <div className="col-sm-12 list-goods">
                 <h1 className="title-box-collection">
-                    {objParams.collection.toUpperCase() + " " + objParams.category.toUpperCase()}
+                    {formatText(params.collection).toUpperCase() + " " + params.codeCollectionDetail.toUpperCase()}
                 </h1>
                 <div className="main-content-goods">
                     <div className='row' style={{ display: "flex" }}>
@@ -125,7 +136,7 @@ const Index = () => {
                             <div className="main">
                                 <div className="breadcrumbs href-here">
                                     <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "rgb(240 61 118)" }}>Homepage</NavLink>
-                                    <span> <i className="fa fa-caret-right" /> {objParams.collection.toUpperCase() + " " + objParams.category.toUpperCase()}</span>
+                                    <span> <i className="fa fa-caret-right" /> {formatText(params.collection).toUpperCase() + " " + params.codeCollectionDetail.toUpperCase()}</span>
                                 </div>
                             </div>
                         </div>
@@ -177,32 +188,32 @@ const Index = () => {
                                     </div>
 
                                 </div>
-                                
+
                             </div>
                             <div className='row'>
-                                    <div className="col-md-3 browse-tags pull-left" style={{margin: '0 15px 0 15px'}}>
-                                        <span className="custom-dropdown custom-dropdown--white">
-                                            <form>
-                                                <div className='row select-field'>
-                                                    <div className='col-12'>
-                                                        <label>Sort</label>
-                                                        <select className="field-input" style={{ padding: 15, marginRight:5 }} onChange={e => handleChangeFilter(e)} name="sort">
-                                                            <option data-code="null" value="none">
-                                                                Select </option>
-                                                            <option value="asc">Price: ascending</option>
-                                                            <option value="desc">Price: descending</option>
-                                                            {/* <option value="title-ascending">Name: A-Z</option>
+                                <div className="col-md-3 browse-tags pull-left" style={{ margin: '0 15px 0 15px' }}>
+                                    <span className="custom-dropdown custom-dropdown--white">
+                                        <form>
+                                            <div className='row select-field'>
+                                                <div className='col-12'>
+                                                    <label>Sort</label>
+                                                    <select className="field-input" style={{ padding: 15, marginRight: 5 }} onChange={e => handleChangeFilter(e)} name="sort">
+                                                        <option data-code="null" value="none">
+                                                            Select </option>
+                                                        <option value="asc">Price: ascending</option>
+                                                        <option value="desc">Price: descending</option>
+                                                        {/* <option value="title-ascending">Name: A-Z</option>
                                                             <option value="title-descending">Name: Z-A</option>
                                                             <option value="created-ascending">Oldest</option>
                                                             <option value="created-descending">Newest</option>
                                                             <option value="best-selling">Best-selling</option> */}
-                                                        </select>
-                                                    </div>
+                                                    </select>
                                                 </div>
-                                            </form>
-                                        </span>
-                                    </div>
+                                            </div>
+                                        </form>
+                                    </span>
                                 </div>
+                            </div>
                         </div>
                     </div>
                     <div className="row">
@@ -216,12 +227,12 @@ const Index = () => {
                                                     <img src={item.img[0]} alt='' />
                                                     <h1 style={{ fontSize: 13, marginLeft: 10, marginRight: 10 }}>{item.nameProduct}</h1>
                                                     <h1 style={{ fontSize: 13 }}>{formatter.format(item.nowPrice)} VNĐ</h1>
-                                                    <NavLink to={"/products/" + item.src} state={{ collection: item.collection }}><button type='button' style={{ color: "white" }}>See more</button></NavLink>
+                                                    <NavLink to={'/products/' + item.collection + '/' + item.src}><button type='button'>See more</button></NavLink>
                                                 </div>
                                             </div>
                                         </div>
                                     })
-                                        : <div class="lds-hourglass"></div>
+                                        : <div className="lds-hourglass"></div>
                                 }
                             </div>
                             <div className='button-show'>

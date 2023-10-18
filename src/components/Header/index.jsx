@@ -176,7 +176,7 @@ const Index = () => {
                 }
             });
             const { rePassword, ...data } = newAccount
-            const newDate = {...data, createdDate:today, lastLogin:{time: time, date:today}}
+            const newDate = { ...data, createdDate: today, lastLogin: { time: time, date: today } }
             createNewUsers(newDate)
                 .then(result => {
                     if (result === 'Email already exists') {
@@ -246,7 +246,8 @@ const Index = () => {
     const handleChangeSearch = (e) => {
         const { name, value } = e.target
         console.log(value)
-        const clickedItem = item.find((item) => item.name === value);
+        console.log(item)
+        const clickedItem = item.find((item) => item.src === value);
         if (clickedItem) {
             setSearchCategory(clickedItem.category[0].collecting);
         }
@@ -305,14 +306,20 @@ const Index = () => {
                                         <ul className={'submenu-menu'}>
                                             {item.category[0].collecting.map((category, index) => {
                                                 return <li key={index}>
-                                                    <NavLink to={"/collectionDetail/" + category.name} state={{ category: category.name, collection: item.name.toLowerCase(), nameCategory: item.name, nameCollection: item.src }}>{category.name}</NavLink>
+                                                    <NavLink
+                                                        onClick={toggleMenu}
+                                                        to={"/collectionDetail/" + item.src + '/' + category.name}
+                                                    >{category.name}</NavLink>
                                                 </li>
                                             })}
                                         </ul>
                                         <ul className={isPortfolio === 3 ? 'active-submenu-menu-responsive' : 'submenu-menu-responsive'}>
                                             {category.map((category, index) => {
                                                 return <li key={index}>
-                                                    <NavLink onClick={toggleMenu} to={"/collectionDetail/" + category.name} state={{ category: category.name, collection: item.name.toLowerCase(), nameCategory: item.name, nameCollection: item.src }}>{category.name}</NavLink>
+                                                    <NavLink
+                                                        onClick={toggleMenu}
+                                                        to={"/collectionDetail/" + item.src + '/' + category.name}
+                                                    >{category.name}</NavLink>
                                                 </li>
                                             })}
                                         </ul>
@@ -422,7 +429,7 @@ const Index = () => {
                 <div className="overlay-content">
                     <form>
                         <div className='row'>
-                            <div className="col-md-12" style={{ width: '50%', margin:20 }}>
+                            <div className="col-md-12" style={{ width: '50%', margin: 20 }}>
                                 <h1>Search</h1>
                             </div>
                             <div className="col-md-6 select-field" style={{ width: '50%' }}>
@@ -455,14 +462,14 @@ const Index = () => {
                             return <div key={index} className='col-md-3 mt-4 mb-4 goods-search-single'>
                                 <div className='goods-search-card'>
                                     <div className='goods-search-single-content'>
-                                        <img src={goods2} alt='' />
+                                        <img src={item.img[0]} alt='' />
                                         <h1 style={{ fontSize: 13 }}>{item.nameProduct}</h1>
                                         <h1 style={{ fontSize: 13 }}>{formatter.format(item.nowPrice)} VNĐ</h1>
-                                        <NavLink to={"/products/" + item.src}><button type='button' style={{ color: "white" }} onClick={handleSearch}>Show</button></NavLink>
+                                        <NavLink to={"/products/" + item.collection + '/' + item.src}><button type='button' style={{ color: "white" }} onClick={handleSearch}>See more</button></NavLink>
                                     </div>
                                 </div>
                             </div>
-                        }) : <div class="lds-hourglass"></div>}
+                        }) : <div className="lds-hourglass"></div>}
                     </div>
                 </div>
             </div>

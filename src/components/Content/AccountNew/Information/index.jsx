@@ -222,7 +222,7 @@ const Index = (props) => {
                             <button type='button' onClick={handleChange} >Update</button>
                         }
                     </div>
-                </div> : <div style={{ width: "100%", display: 'flex' }}><div class="lds-hourglass"></div></div>}
+                </div> : <div style={{ width: "100%", display: 'flex' }}><div className="lds-hourglass"></div></div>}
 
             </div>
         </div>

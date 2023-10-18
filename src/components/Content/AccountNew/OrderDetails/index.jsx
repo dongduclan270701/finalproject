@@ -313,7 +313,7 @@ const Index = () => {
                         </form>}
                     </div>
                 </div> : null}
-            </div></> : <div className="col-sm-9 order-detail" style={{ borderRadius: "15px", fontSize: "15px" }}><div style={{ width: "100%", display: 'flex' }}><div class="lds-hourglass"></div></div></div>}
+            </div></> : <div className="col-sm-9 order-detail" style={{ borderRadius: "15px", fontSize: "15px" }}><div style={{ width: "100%", display: 'flex' }}><div className="lds-hourglass"></div></div></div>}
 
             <Rating toggleRate={toggleRate} onHandleToggleShow={handleToggleShow} order={order} />
             <ShowRating toggleShowRate={toggleShowRate} onHandleToggleShowRate={handleToggleShowRate} order={order} />

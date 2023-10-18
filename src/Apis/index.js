@@ -74,6 +74,16 @@ export const createOrderByCustomer = async (data) => {
     return req.data
 }
 
+export const createNoticeByCustomer = async (data) => {
+    const req = await axios.post(`${API_ROOT}/v1/notice`, data,{ headers: { 'auth-token-user': token }})
+    return req.data
+}
+
+export const fetchNoticeByCustomer = async (email) => {
+    const req = await axios.get(`${API_ROOT}/v1/notice/fetch/${email}`,{ headers: { 'auth-token-user': token }})
+    return req.data
+}
+
 export const fetchOrderInformation = async (id) => {
     const req = await axios.get(`${API_ROOT}/v1/orderUser/${id}`,{ headers: { 'auth-token-user': token }})
     return req.data

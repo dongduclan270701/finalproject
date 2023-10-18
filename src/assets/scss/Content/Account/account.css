@@ -21,6 +21,7 @@
         overflow: hidden;
         text-overflow: ellipsis
     }
+
     /* #layout-page .order-detail .order-shipping-list{
         width:90% !important
     } */
@@ -427,6 +428,46 @@
     padding: 15px;
     border: 1px solid #717171;
     border-radius: 3px;
+}
+
+.step-process {
+    padding: 15px
+}
+
+.step-process-active {
+    padding: 15px;
+    border-bottom: 1px solid rgb(240 61 118);
+}
+
+.step-process::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    /* height: 1px; */
+    border-bottom: 1px solid rgb(240 61 118);
+    transition: width 0.5s ease-out;
+    transform-origin: left;
+}
+
+.step-process:hover::before {
+    width: 100%;
+}
+
+.profile-content .user-page .notice {
+    margin: 0 0 15px 0;
+    padding: 15px 0;
+    cursor: pointer;
+    border-radius: 15px
+}
+
+.profile-content .user-page .notice-unread {
+    background: rgb(145 57 88);
+    margin: 0 0 15px 0;
+    padding: 15px 0;
+    cursor: pointer;
+    border-radius: 15px
 }
 
 /* Kiểu khi select được focus */

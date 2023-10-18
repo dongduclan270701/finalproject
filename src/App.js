@@ -63,14 +63,14 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path='/collectionDetail/:codeCollectionDetail' element={
+        <Route path='/collectionDetail/:collection/:codeCollectionDetail' element={
           <>
             <Header />
             <CollectionDetail />
             <Footer />
           </>
         } />
-        <Route path='/products/:src' element={
+        <Route path='/products/:collection/:src' element={
           <>
             <Header />
             <Product />
@@ -81,6 +81,13 @@ function App() {
           <>
             <Header />
             <Account Fragment="Information" />
+            <Footer />
+          </>
+        } />
+        <Route path='/account/notification' element={
+          <>
+            <Header />
+            <Account Fragment="Notification" />
             <Footer />
           </>
         } />

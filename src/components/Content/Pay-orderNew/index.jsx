@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import 'assets/scss/Content/Pay-order/Pay-order.scss'
 import axios from 'axios';
-import { createOrderByCustomer, updateCart } from 'Apis'
+import { createOrderByCustomer, updateCart, createNoticeByCustomer } from 'Apis'
 import Swal from 'sweetalert2'
 import { useNavigate, NavLink } from 'react-router-dom';
 import { StateContext } from 'Context/Context'
@@ -184,8 +184,8 @@ const Index = () => {
 
     const RequestCheckOut = () => {
         const date = new Date();
-        const minutes = date.getMinutes();
-        const hours = date.getHours();
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        const hours = date.getHours().toString().padStart(2, '0');
         const time = `${hours}:${minutes}`;
         const day = date.getDate().toString().padStart(2, '0');
         const month = (date.getMonth() + 1).toString().padStart(2, '0');
@@ -263,11 +263,26 @@ const Index = () => {
                 sumOrder: totalArrayOrder(),
                 createDate: today
             }
-
             createOrderByCustomer(newData)
                 .then(result => {
                     nextStep()
                     setOrderSuccessful(result)
+                    createNoticeByCustomer({
+                        product: result.product[0],
+                        email: result.email,
+                        time: time,
+                        date: today,
+                        content: 'Order placed successfully, please wait for order confirmation',
+                        status: result.status,
+                        orderId: result.orderId,
+                        createDate: today
+                    })
+                        .then(result => {
+                            console.log(result)
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
                     updateCart(JSON.parse(localStorage.getItem('user'))[0], [])
                         .then(result => {
                             state.handleUpdateArrayOrder([])
@@ -429,7 +444,7 @@ const Index = () => {
                                             <div className='row select-field'>
                                                 <div className='col-4'>
                                                     {/* <label>City</label> */}
-                                                    <select onChange={(e) => handleChooseCDC(e, "city")} value={orderCheckOut.city} className="field-input" id="customer_shipping_province" name="customer_shipping_province">
+                                                    <select onChange={(e) => handleChooseCDC(e, "city")} value={orderCheckOut.city} className="field-input" id="customer_shipping_province" name="customer_shipping_province" required>
                                                         <option data-code="" value="">
                                                             Select City </option>
                                                         {city && city.map((item, index) => {
@@ -439,7 +454,7 @@ const Index = () => {
                                                 </div>
                                                 <div className='col-4'>
                                                     {/* <label >District</label> */}
-                                                    <select onChange={(e) => handleChooseCDC(e, "district")} value={orderCheckOut.district} className="field-input" id="customer_shipping_district" name="customer_shipping_district">
+                                                    <select onChange={(e) => handleChooseCDC(e, "district")} value={orderCheckOut.district} className="field-input" id="customer_shipping_district" name="customer_shipping_district" required>
                                                         <option data-code="" value="">Select District</option>
                                                         {district && district.map((item, index) => {
                                                             return <option key={index} value={item.Name}>{item.Name}</option>
@@ -448,7 +463,7 @@ const Index = () => {
                                                 </div>
                                                 <div className='col-4'>
                                                     {/* <label htmlFor="customer_shipping_ward">Ward</label> */}
-                                                    <select onChange={(e) => handleChooseCDC(e, "commune")} value={orderCheckOut.commune} className="field-input" id="customer_shipping_ward" name="customer_shipping_ward">
+                                                    <select onChange={(e) => handleChooseCDC(e, "commune")} value={orderCheckOut.commune} className="field-input" id="customer_shipping_ward" name="customer_shipping_ward" required>
                                                         <option data-code="" value="">Select Ward</option>
                                                         {commune && commune.map((item, index) => {
                                                             return <option key={index} value={item.Name}>{item.Name}</option>

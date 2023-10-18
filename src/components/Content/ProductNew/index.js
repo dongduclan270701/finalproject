@@ -19,7 +19,7 @@ const Index = () => {
     const [activeTable, setActiveTable] = useState(1)
     useEffect(() => {
         setProduct(null)
-        fetchGoodsByName(params.src, objParams.collection)
+        fetchGoodsByName(params.src, params.collection)
             .then(result => {
                 setProduct(result)
             })
@@ -137,7 +137,7 @@ const Index = () => {
                         </div>
                     </div>
                 </>
-                    :<div style={{width:"100%", display:'flex'}}><div class="lds-hourglass"></div></div>
+                    :<div style={{width:"100%", display:'flex'}}><div className="lds-hourglass"></div></div>
                 }
                 
             </div>

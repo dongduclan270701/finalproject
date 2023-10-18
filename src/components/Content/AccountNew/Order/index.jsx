@@ -7,29 +7,63 @@ const Index = (props) => {
     const [listOrder, setListOrder] = useState(null)
     const [listOrderNew, setListOrderNew] = useState(null)
     const [displayCount, setDisplayCount] = useState(5);
+    const [step, setStep] = useState(0)
+    const [searchOrder, setSearchOrder] = useState('')
+    const stepStatusMapping = [
+        ['Ordered', 'Payment information confirmed'],
+        ['Delivered to the carrier', 'Being transported'],
+        ['Delivery successful'],
+        ['Cancel', 'Delivery failed'],
+    ]
     useEffect(() => {
         if (user) {
-            setListOrder(user.orders)
-            const orders = user.orders.slice(0, displayCount)
-            setListOrderNew(orders)
+            setDisplayCount(5)
+            const filteredOrders = user.orders.filter(item => stepStatusMapping[step].includes(item.status));
+            setListOrder(filteredOrders)
+            setListOrderNew(filteredOrders)
         }
-    }, [user])
+    }, [user, step])
     const handleScroll = () => {
-        setDisplayCount(displayCount + 5)
-        setListOrderNew(listOrder.slice(0, displayCount + 5))
+        setDisplayCount(displayCount + 5) 
+    }
+    const handleChangeStepProcess = (step) => {
+        setStep(step)
+    }
+    const handleSubmitSearch = (e) => {
+        e.preventDefault()
+        const foundOrders = listOrder.filter(order => order.orderId.includes(searchOrder.toLowerCase()));
+        setListOrderNew(foundOrders)
+    }
+    const handleChangeSearch = (e) => {
+        setSearchOrder(e.target.value)
     }
     return (
         <div className="col-sm-9">
             <div className="profile-content">
                 {listOrderNew ? <div className="user-page">
+                    {/* 
                     <h1 className="postname">
                         Order Management
-                    </h1>
-                    <hr style={{ border: '1px solid rgb(240 61 118)' }} />
-                    
-                    {listOrderNew.map((item, index) => {
+                    </h1> 
+                    <hr style={{ border: '1px solid rgb(240 61 118)' }} /> 
+                    */}
+                    <div className='row' style={{ margin: 0, display: 'flex', textAlign: 'center' }}>
+                        <div className={step === 0 ? 'col-3 step-process-active' : 'col-3 step-process'} onClick={() => handleChangeStepProcess(0)}>Processing <span style={{ display: step === 0 ? 'contents' : 'none', color: 'red' }}> ({listOrder.length})</span></div>
+                        <div className={step === 1 ? 'col-3 step-process-active' : 'col-3 step-process'} onClick={() => handleChangeStepProcess(1)}>Delivery<span style={{ display: step === 1 ? 'contents' : 'none', color: 'red' }}> ({listOrder.length})</span></div>
+                        <div className={step === 2 ? 'col-3 step-process-active' : 'col-3 step-process'} onClick={() => handleChangeStepProcess(2)}>Successful<span style={{ display: step === 2 ? 'contents' : 'none', color: 'red' }}> ({listOrder.length})</span></div>
+                        <div className={step === 3 ? 'col-3 step-process-active' : 'col-3 step-process'} onClick={() => handleChangeStepProcess(3)}>Cancel<span style={{ display: step === 3 ? 'contents' : 'none', color: 'red' }}> ({listOrder.length})</span></div>
+                    </div>
+                    <form className='row' style={{ margin: 0 }}>
+                        <div className="input-field" style={{ width: '90%' }}>
+                            <input name='nameProduct' onChange={ (e) => handleChangeSearch(e)} type="text" style={{ borderRadius: '15px 0 0 15px' }} required />
+                            <label>Order ID</label>
+                        </div>
+                        <div className="input-field" style={{ width: '10%', display: 'flex' }}>
+                            <button style={{ margin: 0, padding: 0, borderRadius: '0 15px 15px 0' }} onClick={handleSubmitSearch}><i className="fa fa-search" /></button>
+                        </div>
+                    </form>
+                    {listOrderNew.slice(0, displayCount).map((item, index) => {
                         return <div key={index}>
-
                             <div className="row" style={{ padding: "0px 20px 10px 20px" }}>
                                 <div className="col-6 order-id">ID: {item.orderId}</div>
                                 <div className="col-6 row" style={{ display: "flex", flexDirection: "row-reverse", padding: "0" }}>
@@ -63,7 +97,7 @@ const Index = (props) => {
                             </div>
                             <div style={{ textAlign: "right", margin: "auto", color: "", padding: "0px 20px 10px 20px" }}>Total: {formatter.format(item.sumOrder + item.ship)} VNĐ</div>
                             <div className="row" style={{ margin: 0, width: '100%', display: 'flex', justifyContent: 'center' }}>
-                                <NavLink to={"/account/order/" + item.orderId}>
+                                <NavLink to={"/account/order/" + item.orderId} style={{ textDecoration: 'none' }}>
                                     <div className='button-show-order'>
                                         <button type='button'>View order details</button>
                                     </div>
@@ -72,7 +106,7 @@ const Index = (props) => {
                             <hr style={{ border: '1px solid rgb(68 51 26)' }} />
                         </div>
                     })}
-                    {listOrder && listOrderNew && listOrder.length === listOrderNew.length ?
+                    {listOrder.length === listOrderNew.slice(0, displayCount).length || listOrderNew.length < displayCount ?
                         null
                         :
                         <div className='button-show-order'>
@@ -81,7 +115,7 @@ const Index = (props) => {
                     }
                 </div>
                     :
-                    <div style={{ width: "100%", display: 'flex' }}><div class="lds-hourglass"></div></div>
+                    <div style={{ width: "100%", display: 'flex' }}><div className="lds-hourglass"></div></div>
                 }
             </div>
         </div>
