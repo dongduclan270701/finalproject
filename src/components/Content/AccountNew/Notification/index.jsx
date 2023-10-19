@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchNoticeByCustomer } from 'Apis'
+import { fetchNoticeByCustomer, fetchUpdateNotice } from 'Apis'
 import { NavLink } from 'react-router-dom';
 import logo from 'assets/images/banner-about.png'
 const Index = (props) => {
@@ -16,15 +16,23 @@ const Index = (props) => {
                 })
         }
     }, [user])
-    const handleReadNotice = (orderId) => {
-        console.log(orderId)
+    const handleReadNotice = (id, isReadCus) => {
+        if(!isReadCus){
+            fetchUpdateNotice(user.email, { id: id })
+            .then(result => {
+                console.log(result)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        }
     }
     return (
         <div className="col-sm-9">
             <div className="profile-content"><div className="user-page">
                 {listNotice ? listNotice.map((item, index) => {
-                    return <NavLink to={'/account/order/'+item.orderId} style={{textDecoration:'none'}} onClick={() => handleReadNotice(item.orderId)}>
-                        <div className={item.isRead ? "row notice" : "row notice-unread"} key={index}>
+                    return <NavLink to={'/account/order/' + item.orderId} style={{ textDecoration: 'none' }} onClick={() => handleReadNotice(item._id, item.isReadCus)} key={index}>
+                        <div className={item.isReadCus ? "row notice" : "row notice-unread"} key={index}>
                             <div className="col-12" style={{ margin: "0", display: 'flex', alignItems: 'center' }}>
                                 <div className="pro-img"><img src={logo} alt="" style={{ width: "80px", borderRadius: "3px" }} /></div>
                                 <div className="pro-name" style={{ padding: "inherit" }}>
