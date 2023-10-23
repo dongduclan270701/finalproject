@@ -9,6 +9,11 @@ const Index = (props) => {
         if (user) {
             fetchNoticeByCustomer(user.email)
                 .then(result => {
+                    result.sort((a, b) => {
+                        const dateA = new Date(`${a.date} ${a.time}`);
+                        const dateB = new Date(`${b.date} ${b.time}`);
+                        return dateB - dateA;
+                    });
                     setListNotice(result)
                 })
                 .catch(error => {
