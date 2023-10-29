@@ -135,6 +135,7 @@ const Index = () => {
         setStep(step - 1);
     };
     useEffect(() => {
+        document.title = 'Payment'
         const getCity = async () => {
             try {
                 await axios.get('https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json')

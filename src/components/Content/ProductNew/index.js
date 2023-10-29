@@ -4,7 +4,7 @@ import ProductThumbnail from './Product-thumbnail'
 import TabPanelCharacter from './TabPanel-character'
 import TabPanelDetails from './TabPanel-reviews'
 import TabPanelExchange from './TabPanel-Exchange'
-import { useParams, useNavigate, NavLink, useLocation } from 'react-router-dom';
+import { useParams, useNavigate, NavLink } from 'react-router-dom';
 import { fetchGoodsByName, updateCart } from 'Apis'
 import Swal from 'sweetalert2'
 import { StateContext } from 'Context/Context'
@@ -13,14 +13,13 @@ const Index = () => {
     const state = useContext(StateContext)
     const params = useParams()
     const navigate = useNavigate();
-    const location = useLocation();
-    const objParams = location.state;
     const [product, setProduct] = useState(null)
     const [activeTable, setActiveTable] = useState(1)
     useEffect(() => {
         setProduct(null)
         fetchGoodsByName(params.src, params.collection)
             .then(result => {
+                document.title = `${result.nameProduct}`
                 setProduct(result)
             })
             .catch(error => {
@@ -80,7 +79,6 @@ const Index = () => {
                 confirmButtonText: 'OK!'
             })
         }
-
     }
 
     return (

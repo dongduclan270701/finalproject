@@ -10,6 +10,7 @@ const Index = () => {
     const formatter = new Intl.NumberFormat('en-US')
     const [arrayOrder, setArrayOrder] = useState()
     useEffect(() => {
+        document.title = 'Cart'
         setArrayOrder(state.arrayOrder)
     }, [state.arrayOrder])
     const totalArrayOrder = () => {

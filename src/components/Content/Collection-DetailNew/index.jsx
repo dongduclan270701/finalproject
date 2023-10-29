@@ -26,6 +26,7 @@ const Index = () => {
         return formattedWords.join(' ')
     }
     useEffect(() => {
+        document.title = `${formatText(params.collection).toUpperCase() + " " + params.codeCollectionDetail.toUpperCase()}`
         setGoods(null)
         const clickedItem = state.category.find((item) => item.name === formatText(params.collection));
 
@@ -54,7 +55,7 @@ const Index = () => {
             .catch(error => {
                 console.log(error)
             })
-    }, [state])
+    }, [state, params])
     const handleChangeFilter = (e) => {
         const { name, value } = e.target
         const formattedValue = value.replace(/\D/g, '')

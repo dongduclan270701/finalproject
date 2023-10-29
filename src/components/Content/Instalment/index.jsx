@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import 'assets/scss/Content/Instalment/instalment.css'
 const Index = () => {
+    useEffect(() => {
+        document.title = 'Installment'
+    }, []);
     return (
         <div >
             <div id="SECTION525" className="ladi-section">

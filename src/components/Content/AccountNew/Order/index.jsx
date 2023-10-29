@@ -21,6 +21,7 @@ const Index = (props) => {
             const filteredOrders = user.orders.filter(item => stepStatusMapping[step].includes(item.status));
             setListOrder(filteredOrders)
             setListOrderNew(filteredOrders)
+            document.title = `Orders`
         }
     }, [user, step])
     const handleScroll = () => {

@@ -432,7 +432,7 @@ const Index = () => {
                             <div className="col-md-12" style={{ width: '50%', margin: 20 }}>
                                 <h1>Search</h1>
                             </div>
-                            <div className="col-md-6 select-field" style={{ width: '50%' }}>
+                            <div className="col-md-6 select-field">
                                 <select className="field-input" name="collection" onChange={(e) => handleChangeSearch(e)} value={searchCollection} style={{ padding: 15 }}>
                                     <option data-code="null" value="null">
                                         Select collection </option>
@@ -441,7 +441,7 @@ const Index = () => {
                                     }) : null}
                                 </select>
                             </div>
-                            <div className="col-md-6 select-field" style={{ width: '50%' }}>
+                            <div className="col-md-6 select-field">
                                 <select className="field-input" onChange={(e) => handleChangeSearch(e)} name="category" style={{ padding: 15 }}>
                                     <option data-code="null" value="">
                                         Select category </option>
@@ -452,9 +452,9 @@ const Index = () => {
                             </div>
                         </div>
                         <div className="input-field">
-                            <input name='nameProduct' onChange={(e) => handleChangeSearch(e)} type="text" required />
+                            <input style={{borderRadius:'15px 0 0 15px'}} name='nameProduct' onChange={(e) => handleChangeSearch(e)} type="text" required />
                             <label>Search name</label>
-                            <button onClick={handleSubmitSearch} style={{ margin: 0 }}><i className="fa fa-search" /></button>
+                            <button style={{borderRadius:'0 15px 15px 0',margin: 0 }} onClick={handleSubmitSearch} ><i className="fa fa-search" /></button>
                         </div>
                     </form>
                     <div className='row d-flex goods-search'>

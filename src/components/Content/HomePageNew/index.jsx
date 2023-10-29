@@ -21,6 +21,7 @@ const Index = () => {
     const [pcCompany, setPcCompany] = useState(null)
     const [apple, setApple] = useState(null)
     useEffect(() => {
+        document.title = 'Homepage'
         fetchBestLaptop()
             .then(result => {
                 setLaptopGaming(result.resultBestLaptopGaming)

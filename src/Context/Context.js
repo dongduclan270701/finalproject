@@ -6,17 +6,18 @@ function StateProvider({ children }) {
     const [arrayOrder, setArrayOrder] = useState([])
     const [category, setCategory] = useState([])
     useEffect(() => {
-        if (JSON.parse(localStorage.getItem('user'))){
+        if (JSON.parse(localStorage.getItem('user'))) {
             fetchCartUser(JSON.parse(localStorage.getItem('user'))[0])
-            .then(result => {
-                setArrayOrder(result.product)
-            })
-            .catch(error => {
-                console.log(error)
-            })
+                .then(result => {
+                    setArrayOrder(result.product)
+                    document.title = 'KTech';
+                })
+                .catch(error => {
+                    console.log(error)
+                })
         }
     }, [])
-    
+
     const handleUpdateArrayOrder = (data) => {
         setArrayOrder(data)
     }

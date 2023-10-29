@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import 'assets/scss/Content/About/about.css'
 import about from 'assets/images/banner-about.png'
 import about1 from 'assets/images/banner-about1.png'
@@ -7,6 +7,9 @@ import about3 from 'assets/images/banner-about3.png'
 import GAbout from 'assets/images/GAbout.png'
 import appAbout from 'assets/images/appAbout.png'
 const Index = () => {
+    useEffect(() => {
+        document.title = 'About us'
+    }, []);
     return (
         <div>
             <div id="SECTION516" className="ladi-section">

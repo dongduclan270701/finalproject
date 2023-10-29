@@ -16,6 +16,7 @@ const Index = (props) => {
         setChange(!change)
     }
     useEffect(() => {
+        document.title = `Account`
         setInformationUser(user)
         setNewInformationUser(user)
     }, [user]);

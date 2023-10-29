@@ -7,6 +7,7 @@ const Index = (props) => {
     const [listNotice, setListNotice] = useState(null)
     useEffect(() => {
         if (user) {
+            
             fetchNoticeByCustomer(user.email)
                 .then(result => {
                     result.sort((a, b) => {
@@ -15,6 +16,9 @@ const Index = (props) => {
                         return dateB - dateA;
                     });
                     setListNotice(result)
+                    const unreadItems = result.filter(item => item.isReadCus === false);
+                    const countUnreadItems = unreadItems.length;
+                    document.title = `(${countUnreadItems}) Notification`
                 })
                 .catch(error => {
                     console.log(error)
@@ -22,14 +26,14 @@ const Index = (props) => {
         }
     }, [user])
     const handleReadNotice = (id, isReadCus) => {
-        if(!isReadCus){
+        if (!isReadCus) {
             fetchUpdateNotice(user.email, { id: id })
-            .then(result => {
-                console.log(result)
-            })
-            .catch(error => {
-                console.log(error)
-            })
+                .then(result => {
+                    console.log(result)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
         }
     }
     return (

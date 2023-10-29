@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchOrderInformation, fetchCancelOrder } from 'Apis'
+import { fetchOrderInformation, fetchCancelOrder, createNoticeByCustomer } from 'Apis'
 import logoWarning from 'assets/images/warning.png';
 import Process from 'assets/images/box.png'
 import Delivery from 'assets/images/delivery.png'
@@ -37,6 +37,7 @@ const Index = () => {
     const today = `${year}-${month}-${day}`;
     useEffect(() => {
         setOrder(null)
+        document.title = `KTECH`
         fetchOrderInformation(params.id)
             .then(result => {
                 setOrder(result)
@@ -132,7 +133,22 @@ const Index = () => {
                                 icon: 'success',
                                 confirmButtonText: 'OK!'
                             })
-                            console.log(result)
+                            createNoticeByCustomer({
+                                product: result.product[0],
+                                email: result.email,
+                                time: time,
+                                date: today,
+                                content: 'Order placed successfully, please wait for order confirmation',
+                                status: result.status,
+                                orderId: result.orderId,
+                                createDate: today
+                            })
+                                .then(result => {
+                                    console.log(result)
+                                })
+                                .catch(error => {
+                                    console.log(error)
+                                })
                             setOrder(result)
                             setShipProcess(result.shipping_process)
                             setSteps([
