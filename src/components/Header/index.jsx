@@ -445,7 +445,7 @@ const Index = () => {
                             </div>
                             <div className="col-md-6 select-field">
                                 <select className="field-input" name="collection" onChange={(e) => handleChangeSearch(e)} value={searchCollection} style={{ padding: 15 }}>
-                                    {console.log(dataSearch)}
+                                    
                                     {item ? item.map((item, index) => {
                                         return <option key={index} value={item.src}>{item.name}</option>
                                     }) : null}
