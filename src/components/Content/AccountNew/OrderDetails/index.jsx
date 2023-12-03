@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchOrderInformation, fetchCancelOrder, createNoticeByCustomer } from 'Apis'
 import logoWarning from 'assets/images/warning.png';
@@ -78,7 +78,7 @@ const Index = () => {
             .catch(error => {
                 console.log(error)
             })
-    }, [])
+    }, [params])
 
     const sumDiscountListProduct = () => {
         let sumDiscountListProduct = 0
@@ -337,4 +337,4 @@ const Index = () => {
     );
 }
 
-export default Index;
+export default memo(Index);

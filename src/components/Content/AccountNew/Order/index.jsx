@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { fetchUserOrderDetails } from 'Apis'
+import React, { useState, useEffect, memo } from 'react';
 import { NavLink } from 'react-router-dom';
 const Index = (props) => {
     const { user } = props
@@ -42,12 +41,6 @@ const Index = (props) => {
         <div className="col-sm-9">
             <div className="profile-content">
                 {listOrderNew ? <div className="user-page">
-                    {/* 
-                    <h1 className="postname">
-                        Order Management
-                    </h1> 
-                    <hr style={{ border: '1px solid rgb(240 61 118)' }} /> 
-                    */}
                     <div className='row' style={{ margin: 0, display: 'flex', textAlign: 'center' }}>
                         <div className={step === 0 ? 'col-3 step-process-active' : 'col-3 step-process'} onClick={() => handleChangeStepProcess(0)}>Processing <span style={{ display: step === 0 ? 'contents' : 'none', color: 'red' }}> ({listOrder.length})</span></div>
                         <div className={step === 1 ? 'col-3 step-process-active' : 'col-3 step-process'} onClick={() => handleChangeStepProcess(1)}>Delivery<span style={{ display: step === 1 ? 'contents' : 'none', color: 'red' }}> ({listOrder.length})</span></div>
@@ -88,7 +81,7 @@ const Index = (props) => {
                             </div>
                             <div className="row" style={{ padding: "0px 20px 10px 20px" }}>
                                 <div className="col-8" style={{ margin: "auto", display: 'flex' }}>
-                                    <div className="pro-img"><img src={item.product[0].img} alt="" style={{ width: "80px", borderRadius: "3px" }} /></div>
+                                    <div className="pro-img"><img src={item.product[0].img[0]} alt="" style={{ width: "80px", borderRadius: "3px" }} /></div>
                                     <div className="pro-name" style={{ padding: "inherit", marginTop: "15px" }}>
                                         <div>{item.product[0].nameProduct}</div>
                                         <div>x {item.product[0].quantity}</div>
@@ -123,4 +116,4 @@ const Index = (props) => {
     );
 }
 
-export default Index;
+export default memo(Index);

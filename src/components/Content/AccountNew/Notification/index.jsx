@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { fetchNoticeByCustomer, fetchUpdateNotice } from 'Apis'
 import { NavLink } from 'react-router-dom';
-import logo from 'assets/images/banner-about.png'
 const Index = (props) => {
     const { user } = props
     const [listNotice, setListNotice] = useState(null)
     useEffect(() => {
         if (user) {
-            
             fetchNoticeByCustomer(user.email)
                 .then(result => {
                     result.sort((a, b) => {
@@ -29,7 +27,6 @@ const Index = (props) => {
         if (!isReadCus) {
             fetchUpdateNotice(user.email, { id: id })
                 .then(result => {
-                    console.log(result)
                 })
                 .catch(error => {
                     console.log(error)
@@ -43,7 +40,7 @@ const Index = (props) => {
                     return <NavLink to={'/account/order/' + item.orderId} style={{ textDecoration: 'none' }} onClick={() => handleReadNotice(item._id, item.isReadCus)} key={index}>
                         <div className={item.isReadCus ? "row notice" : "row notice-unread"} key={index}>
                             <div className="col-12" style={{ margin: "0", display: 'flex', alignItems: 'center' }}>
-                                <div className="pro-img"><img src={logo} alt="" style={{ width: "80px", borderRadius: "3px" }} /></div>
+                                <div className="pro-img"><img src={item.product.img[0]} alt="" style={{ width: "80px", borderRadius: "3px" }} /></div>
                                 <div className="pro-name" style={{ padding: "inherit" }}>
                                     <div>Your order: {item.status}</div>
                                     <div>{item.content}</div>
@@ -61,4 +58,4 @@ const Index = (props) => {
     );
 }
 
-export default Index;
+export default memo(Index);

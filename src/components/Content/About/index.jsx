@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import 'assets/scss/Content/About/about.css'
 import about from 'assets/images/banner-about.png'
 import about1 from 'assets/images/banner-about1.png'
@@ -79,29 +79,20 @@ const Index = () => {
             <div id='about-content'>
                 <div id="aboutImage" className='row'>
                     <div className='col-md-6' style={{ padding: 0 }}>
-                        <div className='col-md-12' style={{padding: 0}}>
-                            <img src={about} alt='' style={{ width: '50%', padding:20 }} />
-                            <img src={about1} alt='' style={{ width: '50%', padding:20 }} />
+                        <div className='col-md-12' style={{ padding: 0 }}>
+                            <img src={about} alt='' style={{ width: '50%', padding: 20 }} />
+                            <img src={about1} alt='' style={{ width: '50%', padding: 20 }} />
                         </div>
                     </div>
-                    <div className='col-md-6'style={{ padding: 0 }}>
-                        <div className='col-md-12' style={{padding: 0}}>
-                            <img src={about} alt='' style={{ width: '50%', padding:20 }} />
-                            <img src={about1} alt='' style={{ width: '50%', padding:20 }} />
+                    <div className='col-md-6' style={{ padding: 0 }}>
+                        <div className='col-md-12' style={{ padding: 0 }}>
+                            <img src={about2} alt='' style={{ width: '50%', padding: 20 }} />
+                            <img src={about3} alt='' style={{ width: '50%', padding: 20 }} />
                         </div>
                     </div>
-                    {/* <div className='col-md-3' style={{padding:40}}>
-                        <img src={about1} alt=''  style={{ width: '100%' }} />
-                    </div> */}
-                    {/* <div className='col-md-6' style={{ padding: 40 }}>
-                        <img src={about2} alt='' style={{ width: '100%' }} />
-                    </div> */}
-                    {/* <div className='col-md-3' style={{padding:40}}>
-                        <img src={about3} alt=''  style={{ width: '100%' }} />
-                    </div> */}
                     <div className='col-md-12'>
                         <div className='title-method-about'>
-                        Comprehensive shopping experience
+                            Comprehensive shopping experience
                         </div>
                     </div>
                     <div className='col-md-6' style={{ padding: 40 }}>

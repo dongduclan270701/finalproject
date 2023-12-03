@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import veryBad from 'assets/images/bad-review.png'
 import bad from 'assets/images/bad.png'
 import normal from 'assets/images/emoji.png'
@@ -55,4 +55,4 @@ const Index = ({ item }) => {
     );
 }
 
-export default Index;
+export default memo(Index);

@@ -3,10 +3,11 @@ import {
     fetchProductCollection,
     fetchFilterProduct
 } from 'Apis'
-import { NavLink, useLocation, useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { StateContext } from 'Context/Context'
-import goods2 from 'assets/images/gigabyte.webp';
 import 'assets/scss/Content/Goods/goods.css'
+import ProductList from 'components/Content/Collection-DetailNew/Product-List'
+import Swal from 'sweetalert2'
 const Index = () => {
     const params = useParams()
     const state = useContext(StateContext)
@@ -117,16 +118,22 @@ const Index = () => {
                 setGoods(result.data)
             })
             .catch(error => {
+                Swal.fire({
+                    title: "Ops!",
+                    text: "Error connect to server!",
+                    icon: 'error',
+                    confirmButtonText: 'OK!'
+                })
                 console.log(error)
             })
     }
     return (
         <div className="container">
-            {/* <div className=" banner-collection-header">
+            <div className=" banner-collection-header">
                 <NavLink to="" >
                     <img src="https://file.hstatic.net/1000026716/collection/vvb_gearvn1920x450_61fba033031f4d6d97272973a3154f39.jpg" alt="goods Asus Vivobook Series" style={{ height: '300px', width: '100%', objectFit: 'contain' }} />
                 </NavLink>
-            </div> */}
+            </div>
             <div className="col-sm-12 list-goods">
                 <h1 className="title-box-collection">
                     {formatText(params.collection).toUpperCase() + " " + params.codeCollectionDetail.toUpperCase()}
@@ -222,16 +229,7 @@ const Index = () => {
                             <div className='row d-flex goods'>
                                 {
                                     goods ? goods.map((item, index) => {
-                                        return <div className='col-md-3 mt-4 mb-4 goods-single' key={index}>
-                                            <div className='goods-card'>
-                                                <div className='goods-single-content'>
-                                                    <img src={item.img[0]} alt='' />
-                                                    <h1 style={{ fontSize: 13, marginLeft: 10, marginRight: 10 }}>{item.nameProduct}</h1>
-                                                    <h1 style={{ fontSize: 13 }}>{formatter.format(item.nowPrice)} VNĐ</h1>
-                                                    <NavLink to={'/products/' + item.collection + '/' + item.src}><button type='button'>See more</button></NavLink>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        return <ProductList item={item} key={index}/>
                                     })
                                         : <div className="lds-hourglass"></div>
                                 }

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, memo} from 'react';
 import Order from './Order'
 import OrderDetails from './OrderDetails'
 import Information from './Information'
@@ -16,6 +16,7 @@ const Index = (props) => {
         fetchUserOrderDetails(JSON.parse(localStorage.getItem('user'))[0])
             .then(result => {
                 setUser(result)
+                localStorage.setItem("user", JSON.stringify([result.email, result.username, result.phoneNumber, result.address, result.image]));
             })
             .catch(error => {
                 console.log(error)
@@ -23,6 +24,7 @@ const Index = (props) => {
     }, []);
     const handleChangeUserInformation = (data) => {
         setUser(data)
+        localStorage.setItem("user", JSON.stringify([data.email, data.username, data.phoneNumber, data.address, data.image]));
     }
     return (
         <div id="layout-page" className="">
@@ -38,4 +40,4 @@ const Index = (props) => {
     );
 }
 
-export default Index;
+export default memo(Index);

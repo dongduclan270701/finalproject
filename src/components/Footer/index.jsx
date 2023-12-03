@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import 'assets/scss/Footer/footer.css'
 import ship1 from 'assets/images/ship_1.webp'
@@ -63,9 +63,6 @@ const Index = () => {
                             </table>
                             <br />
                         </div>
-                        {/* <ul className="menu-footer">
-                    </ul> */}
-                        {/* <NavLink to="" rel="nofollow"><img alt='' src="https://theme.hstatic.net/1000026716/1000440777/14/20150827110756-dathongbao.png" style={{ maxWidth: '300px' }} /></NavLink> */}
                     </div>
                 </div>
                 <div className="col-md-3 ">
@@ -101,8 +98,6 @@ const Index = () => {
                             <img alt='' src={ship3} style={{ maxWidth: '85px' }} />
                             <hr style={{border: '1px solid rgba(255, 255, 255, 0.5)'}}/>
                         </div>
-                        {/* <ul className="menu-footer">
-                    </ul> */}
                         <NavLink to="" rel="nofollow"><img alt='' src="https://theme.hstatic.net/1000026716/1000440777/14/20150827110756-dathongbao.png" style={{ maxWidth: '150px' }} /></NavLink>
                     </div>
                 </div>

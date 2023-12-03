@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
 import BannerSlide from './Banner-slide'
 import Banner from './Banner'
 import TopLaptopGaming from './Top-laptopGaming'

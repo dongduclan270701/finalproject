@@ -7,7 +7,7 @@ const Index = () => {
             <div className="profile-sidebar">
                 <div className="profile-userpic">
                     <img src={JSON.parse(localStorage.getItem('user'))[4]} className="img-responsive"
-                        alt="Thông tin cá nhân" style={{ width: "131px", height: "131px" }} />
+                        alt="Information" style={{ width: "131px", height: "131px" }} />
                 </div>
                 <div className="profile-usertitle">
                     <div className="profile-usertitle-name">{JSON.parse(localStorage.getItem('user'))[0]}</div>

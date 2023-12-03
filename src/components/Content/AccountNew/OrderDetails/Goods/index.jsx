@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import veryBad from 'assets/images/bad-review.png'
 import bad from 'assets/images/bad.png'
 import normal from 'assets/images/emoji.png'
@@ -6,13 +6,7 @@ import good from 'assets/images/smile.png'
 import excellent from 'assets/images/happy.png'
 
 const Index = ({ item, onHandleChangeReview }) => {
-    const formatter = new Intl.NumberFormat('en-US')
     const [rating, setRating] = useState();
-
-    // const handleMouseOver = (event) => {
-    //     const selectedRating = parseInt(event.target.dataset.rating);
-    //     // setRating(selectedRating);
-    // };
 
     useEffect(() => {
         setRating(item.star)
@@ -26,7 +20,6 @@ const Index = ({ item, onHandleChangeReview }) => {
         const selectedRating = parseInt(event.target.dataset.rating);
         setRating(selectedRating)
         onHandleChangeReview({...item, star: selectedRating})
-        // Do something with the selected rating (e.g., submit it to the server)
     };
     const renderStars = () => {
         const stars = [];
@@ -37,7 +30,6 @@ const Index = ({ item, onHandleChangeReview }) => {
                     key={i}
                     className={starClass}
                     data-rating={i}
-                    // onMouseOver={handleMouseOver}
                     onMouseLeave={handleMouseLeave}
                     onClick={handleClick}
                     style={{ padding: "0px 5px" }}
@@ -74,4 +66,4 @@ const Index = ({ item, onHandleChangeReview }) => {
     );
 }
 
-export default Index;
+export default memo(Index);

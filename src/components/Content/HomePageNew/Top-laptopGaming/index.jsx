@@ -1,5 +1,4 @@
 import React from 'react';
-import goods2 from 'assets/images/gigabyte.webp';
 import { NavLink } from 'react-router-dom';
 const Index = (props) => {
     const formatter = new Intl.NumberFormat('en-US')
@@ -18,7 +17,7 @@ const Index = (props) => {
                             </div>
                         </div>
                     </div>
-                }) : null}
+                }) : <div style={{ width: "100%", display: 'flex' }}><div className="lds-hourglass"></div></div>}
             </div>
         </>
     );

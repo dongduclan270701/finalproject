@@ -168,9 +168,6 @@ const Index = ({ comment, product }) => {
                 <div className="row comment-form" style={{ margin: "0 90px" }}>
                     <div className='border-left-reply-comment'>
                     </div>
-                    {/* <img src={JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user'))[4] : unknow} alt="" style={{ width: "60px", borderRadius: "50%", margin: "0px 15px" }} /> */}
-                    {/* <input type="text" autoFocus={selectReply} onChange={e => handleChangeReply(e)} value={reply.content} className="col-4 comment-input" placeholder="Write a comment" /> */}
-                    {/* <button onClick={handleSubmitReply} className="col-1 btn btn-secondary" style={{ padding: "" }}>Post</button> */}
                     <div className="row comment-container">
                         <img src={JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user'))[4] : unknow} alt="" style={{ width: "60px", borderRadius: "50%", margin: "0px 15px" }} />
                         <form>

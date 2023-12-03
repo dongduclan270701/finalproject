@@ -1,18 +1,16 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, memo } from 'react';
 import 'assets/scss/Content/Pay-order/Pay-order.scss'
 import axios from 'axios';
 import { createOrderByCustomer, updateCart, createNoticeByCustomer } from 'Apis'
 import Swal from 'sweetalert2'
-import { useNavigate, NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { StateContext } from 'Context/Context'
 import location from 'assets/images/location.png'
 import box from 'assets/images/box.png'
-// import 'assets/scss/Content/Pay-order/pay-order.css'
 const Index = () => {
     const state = useContext(StateContext)
     const navigate = useNavigate()
     const formatter = new Intl.NumberFormat('en-US')
-    // const [arrayOrder, setArrayOrder] = useState(JSON.parse(localStorage.getItem('orderArray')))
     const [city, setCity] = useState([])
     const [district, setDistrict] = useState([])
     const [commune, setCommune] = useState(undefined)
@@ -27,7 +25,7 @@ const Index = () => {
         commune: "",
         discountCode: [],
         shipping_process: [],
-        method_payment: "Thanh toán khi nhận hàng",
+        method_payment: "Payment on delivery",
         ship: 30000,
         sumOrder: 0,
         status: 'Ordered',
@@ -148,7 +146,10 @@ const Index = () => {
             }
         }
         getCity()
-    }, []);
+        if(orderCheckOut.product.length === 0){
+            navigate('/cart')
+        }
+    }, [orderCheckOut]);
     const totalArrayOrder = () => {
         let total = 0;
         state.arrayOrder && state.arrayOrder.map((item, index) => {
@@ -333,7 +334,6 @@ const Index = () => {
                 </div>
                 {step === 1 && <div className="col-md-8 sidebar">
                     <div className="sidebar-content-pay">
-                        {/* <div className="col-md-6" style={{ display: 'flex', justifyContent: 'center' }}> */}
                         <div className="order-summary order-summary-is-collapsed">
                             <div className="order-summary-sections">
                                 <div className="order-summary-section order-summary-section-product-list" data-order-summary-section="line-items">
@@ -417,12 +417,9 @@ const Index = () => {
                                 <button onClick={nextStep} className="button-step-next-content">Next &gt;</button>
                             </div>
                         </div>
-                        {/* </div> */}
-
                     </div>
                 </div>}
                 {step === 2 && <div className="col-md-8 main-pay">
-                    {/* <div className="col-md-6" style={{ display: 'flex', justifyContent: 'center' }}> */}
                     <div className="main-content">
                         <div className="step">
                             <div className="step-sections steps-onepage">
@@ -444,7 +441,6 @@ const Index = () => {
                                             </div>
                                             <div className='row select-field'>
                                                 <div className='col-4'>
-                                                    {/* <label>City</label> */}
                                                     <select onChange={(e) => handleChooseCDC(e, "city")} value={orderCheckOut.city} className="field-input" id="customer_shipping_province" name="customer_shipping_province" required>
                                                         <option data-code="" value="">
                                                             Select City </option>
@@ -454,7 +450,6 @@ const Index = () => {
                                                     </select>
                                                 </div>
                                                 <div className='col-4'>
-                                                    {/* <label >District</label> */}
                                                     <select onChange={(e) => handleChooseCDC(e, "district")} value={orderCheckOut.district} className="field-input" id="customer_shipping_district" name="customer_shipping_district" required>
                                                         <option data-code="" value="">Select District</option>
                                                         {district && district.map((item, index) => {
@@ -463,7 +458,6 @@ const Index = () => {
                                                     </select>
                                                 </div>
                                                 <div className='col-4'>
-                                                    {/* <label htmlFor="customer_shipping_ward">Ward</label> */}
                                                     <select onChange={(e) => handleChooseCDC(e, "commune")} value={orderCheckOut.commune} className="field-input" id="customer_shipping_ward" name="customer_shipping_ward" required>
                                                         <option data-code="" value="">Select Ward</option>
                                                         {commune && commune.map((item, index) => {
@@ -474,7 +468,6 @@ const Index = () => {
                                             </div>
                                         </form>
                                     </div>
-
                                     <div className='button-step'>
                                         <button onClick={prevStep} className="button-step-pre-content">&lt; Previous</button>
                                         <button onClick={nextStep} className="button-step-next-content">Next &gt;</button>
@@ -483,7 +476,6 @@ const Index = () => {
                             </div >
                         </div>
                     </div>
-                    {/* </div> */}
                 </div >}
                 {step === 3 &&
                     <>
@@ -511,7 +503,6 @@ const Index = () => {
                         </div >
                         <div className="col-md-8 sidebar">
                             <div className="sidebar-content-pay">
-                                {/* <div className="col-md-6" style={{ display: 'flex', justifyContent: 'center' }}> */}
                                 <div className="order-summary order-summary-is-collapsed">
                                     <div className="order-summary-sections">
                                         <div className="order-summary-section order-summary-section-product-list" data-order-summary-section="line-items">
@@ -610,7 +601,6 @@ const Index = () => {
                                         <div className="section">
                                             <div className="section-content section-customer-information no-mb">
                                                 <div>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -657,7 +647,6 @@ const Index = () => {
                         </div >
                         <div className="col-md-8 sidebar">
                             <div className="sidebar-content-pay">
-                                {/* <div className="col-md-6" style={{ display: 'flex', justifyContent: 'center' }}> */}
                                 <div className="order-summary order-summary-is-collapsed">
                                     <div className="order-summary-sections">
                                         <div className="order-summary-section order-summary-section-product-list" data-order-summary-section="line-items">
@@ -752,4 +741,4 @@ const Index = () => {
     );
 }
 
-export default Index;
+export default memo(Index);

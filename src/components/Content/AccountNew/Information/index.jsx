@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import {
     updateUser
 } from 'Apis'
@@ -68,6 +68,7 @@ const Index = (props) => {
                     Swal.showLoading()
                 }
             });
+            
             updateUser(informationUser._id, newInformationUser)
                 .then(result => {
                     handleChangeAfterUpdate()
@@ -230,4 +231,4 @@ const Index = (props) => {
     );
 }
 
-export default Index;
+export default memo(Index);

@@ -1,11 +1,9 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, memo } from 'react'
 import { StateContext } from 'Context/Context'
 import 'assets/scss/Header/login.css'
 import 'assets/scss/Header/header.css'
 import logo from 'assets/images/logo-brand.png'
 import logo1 from 'assets/images/logo-brand1.png'
-import goods2 from 'assets/images/gigabyte.webp';
 import user from 'assets/images/account.png'
 import logout from 'assets/images/exit.png'
 import cart from 'assets/images/shopping-cart.png'
@@ -29,7 +27,7 @@ const Index = () => {
     const [isPortfolio, setIsPortfolio] = useState(1)
     const [category, setCategory] = useState([])
     const [searchCategory, setSearchCategory] = useState([])
-    const [searchCollection, setSearchCollection] = useState()
+    const searchCollection = null
     const [item, setItem] = useState(null)
     const [account, setAccount] = useState({ username: "", password: "" })
     const [newAccount, setNewAccount] = useState({ password: "", email: "", username: "" })
@@ -55,11 +53,21 @@ const Index = () => {
         fetchCollecting()
             .then(result => {
                 setItem(result)
+                setDataSearch({ ...dataSearch, collection: result[0].src, category: result[0].category[0].collecting[0].src })
+                setSearchCategory(result[0].category[0].collecting)
+                fetchSearchProduct({ ...dataSearch, collection: result[0].src, category: result[0].category[0].collecting[0].src })
+                    .then(result => {
+                        setGoodsSearch(result.data)
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
                 state.handleUpdateCategory(result)
             })
             .catch(error => {
                 console.log(error)
             })
+
     }, [])
     const getStateInputFormLogin = async (event) => {
         event.preventDefault();
@@ -245,8 +253,6 @@ const Index = () => {
     }
     const handleChangeSearch = (e) => {
         const { name, value } = e.target
-        console.log(value)
-        console.log(item)
         const clickedItem = item.find((item) => item.src === value);
         if (clickedItem) {
             setSearchCategory(clickedItem.category[0].collecting);
@@ -276,6 +282,12 @@ const Index = () => {
                     setGoodsSearch(result.data)
                 })
                 .catch(error => {
+                    Swal.fire({
+                        title: "Ops!",
+                        text: "Error connect to server!",
+                        icon: 'error',
+                        confirmButtonText: 'OK!'
+                    })
                     console.log(error)
                 })
         }
@@ -323,7 +335,6 @@ const Index = () => {
                                                 </li>
                                             })}
                                         </ul>
-                                        {/* <span className='button-portfolio'>&gt;</span> */}
                                     </li>
                                 }) : null}
                             </ul>
@@ -347,7 +358,7 @@ const Index = () => {
                                 <div className="number">{state.arrayOrder.length}</div>
                                 <img alt="" width={25} height={25} src={cart} />
                             </NavLink>|
-                            <a onClick={handleLogout} className="logout-content">
+                            <a href onClick={handleLogout} className="logout-content">
                                 <img alt="" width={25} height={25} src={logout} />
                             </a>
                         </span>
@@ -375,12 +386,12 @@ const Index = () => {
                                 <input name='password' type="password" onKeyDown={event => handleOnKeyDown(event)} onChange={(e) => setAccount((account) => ({ ...account, password: e.target.value }))} required />
                                 <label>Password</label>
                             </div>
-                            <a href={''} className="forgot-pass-link">Forgot password?</a>
+                            <a href className="forgot-pass-link">Forgot password?</a>
                             <button onClick={event => getStateInputFormLogin(event)}>Log In</button>
                         </form>
                         <div className="bottom-link">
                             Don't have an account?
-                            <a id="signup-link" onClick={toggleSignUpForm}>Signup</a>
+                            <a href id="signup-link" onClick={toggleSignUpForm}>Signup</a>
                         </div>
                     </div>
                 </div>
@@ -412,14 +423,14 @@ const Index = () => {
                                 <input type="checkbox" id="policy" />
                                 <label htmlFor="policy">
                                     I agree the
-                                    <a href={''} className="option">Terms &amp; Conditions</a>
+                                    <a href className="option">Terms &amp; Conditions</a>
                                 </label>
                             </div>
                             <button onClick={event => getStateInputFormRegister(event)}>Sign Up</button>
                         </form>
                         <div className="bottom-link">
                             Already have an account?
-                            <a id="signup-link" onClick={toggleSignUpForm}>Login</a>
+                            <a href id="signup-link" onClick={toggleSignUpForm}>Login</a>
                         </div>
                     </div>
                 </div>
@@ -434,8 +445,7 @@ const Index = () => {
                             </div>
                             <div className="col-md-6 select-field">
                                 <select className="field-input" name="collection" onChange={(e) => handleChangeSearch(e)} value={searchCollection} style={{ padding: 15 }}>
-                                    <option data-code="null" value="null">
-                                        Select collection </option>
+                                    {console.log(dataSearch)}
                                     {item ? item.map((item, index) => {
                                         return <option key={index} value={item.src}>{item.name}</option>
                                     }) : null}
@@ -443,8 +453,6 @@ const Index = () => {
                             </div>
                             <div className="col-md-6 select-field">
                                 <select className="field-input" onChange={(e) => handleChangeSearch(e)} name="category" style={{ padding: 15 }}>
-                                    <option data-code="null" value="">
-                                        Select category </option>
                                     {searchCategory.map((item, index) => {
                                         return <option key={index} value={item.name}>{item.name}</option>
                                     })}
@@ -452,9 +460,9 @@ const Index = () => {
                             </div>
                         </div>
                         <div className="input-field">
-                            <input style={{borderRadius:'15px 0 0 15px'}} name='nameProduct' onChange={(e) => handleChangeSearch(e)} type="text" required />
+                            <input style={{ borderRadius: '15px 0 0 15px' }} name='nameProduct' onChange={(e) => handleChangeSearch(e)} type="text" required />
                             <label>Search name</label>
-                            <button style={{borderRadius:'0 15px 15px 0',margin: 0 }} onClick={handleSubmitSearch} ><i className="fa fa-search" /></button>
+                            <button style={{ borderRadius: '0 15px 15px 0', margin: 0 }} onClick={handleSubmitSearch} ><i className="fa fa-search" /></button>
                         </div>
                     </form>
                     <div className='row d-flex goods-search'>
@@ -477,4 +485,4 @@ const Index = () => {
     );
 }
 
-export default Index;
+export default memo(Index);

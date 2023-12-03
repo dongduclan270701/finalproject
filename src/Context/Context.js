@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext } from 'react'
-import { fetchCartUser } from 'Apis'
+import { fetchCartUser, fetchUserOrderDetails } from 'Apis'
 const StateContext = createContext()
 
 function StateProvider({ children }) {
@@ -11,6 +11,13 @@ function StateProvider({ children }) {
                 .then(result => {
                     setArrayOrder(result.product)
                     document.title = 'KTech';
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+            fetchUserOrderDetails(JSON.parse(localStorage.getItem('user'))[0])
+                .then(result => {
+                    localStorage.setItem("user", JSON.stringify([result.email, result.username, result.phoneNumber, result.address, result.image]));
                 })
                 .catch(error => {
                     console.log(error)

@@ -310,7 +310,7 @@ const Index = () => {
                                     <div className="ladi-line-container" />
                                 </div>
                             </div>
-                            <a href="https://www.hdsaison.com.vn/vn/khach-hang/tra-cuu-khoan-vay.html" target="_blank" rel="nofollow" id="IMAGE416" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/khach-hang/tra-cuu-khoan-vay.html">
+                            <a href rel="nofollow" id="IMAGE416" className="ladi-element" >
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background"  style={{ filter: "" }}/>
                                 </div>
@@ -326,27 +326,27 @@ const Index = () => {
                                     Click to see the details:<br />
                                 </div>
                             </div>
-                            <a href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-buu-dien.html" target="_blank" rel="nofollow" id="IMAGE419" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-buu-dien.html">
+                            <a href rel="nofollow" id="IMAGE419" className="ladi-element" >
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background"  style={{ filter: "" }}/>
                                 </div>
                             </a>
-                            <a href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-ngan-hang-agribank.html" target="_blank" rel="nofollow" id="IMAGE420" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-ngan-hang-agribank.html">
+                            <a href rel="nofollow" id="IMAGE420" className="ladi-element" >
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background"  style={{ filter: "" }}/>
                                 </div>
                             </a>
-                            <a href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-momo.html" target="_blank" rel="nofollow" id="IMAGE421" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-momo.html">
+                            <a href rel="nofollow" id="IMAGE421" className="ladi-element" >
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background"  style={{ filter: "" }}/>
                                 </div>
                             </a>
-                            <a href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-ngan-hang-hdbank.html" target="_blank" rel="nofollow" id="IMAGE422" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-ngan-hang-hdbank.html">
+                            <a href rel="nofollow" id="IMAGE422" className="ladi-element" >
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background"  style={{ filter: "" }}/>
                                 </div>
                             </a>
-                            <a href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-ngan-hang-bidv.html" target="_blank" rel="nofollow" id="IMAGE423" className="ladi-element" data-replace-href="https://www.hdsaison.com.vn/vn/huong-dan-thanh-toan-qua-ngan-hang-bidv.html">
+                            <a href rel="nofollow" id="IMAGE423" className="ladi-element" >
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background"  style={{ filter: "" }}/>
                                 </div>

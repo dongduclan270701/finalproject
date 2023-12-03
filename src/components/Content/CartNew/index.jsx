@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, memo } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import { StateContext } from 'Context/Context'
@@ -22,20 +22,23 @@ const Index = () => {
     }
     const updateOrderCart = (index, value) => {
         const newState = arrayOrder.map(obj => {
-            // 👇️ if id equals 2, update country property
             if (obj === arrayOrder[index]) {
                 return { ...obj, quantity: Number(value) }
             }
-            // 👇️ otherwise return the object as is
             return obj;
         });
-        // localStorage.setItem("orderArray", JSON.stringify(newState))
         updateCart(JSON.parse(localStorage.getItem('user'))[0], newState)
             .then(result => {
                 setArrayOrder(newState)
                 state.handleUpdateArrayOrder(newState)
             })
             .catch(error => {
+                Swal.fire({
+                    title: "Ops!",
+                    text: "Error connect to server!",
+                    icon: 'error',
+                    confirmButtonText: 'OK!'
+                })
                 console.log(error)
             })
     }
@@ -66,6 +69,12 @@ const Index = () => {
                                 })
                             })
                             .catch(error => {
+                                Swal.fire({
+                                    title: "Ops!",
+                                    text: "Error connect to server!",
+                                    icon: 'error',
+                                    confirmButtonText: 'OK!'
+                                })
                                 console.log(error)
                             })
                     }
@@ -102,7 +111,6 @@ const Index = () => {
     return (
         <div className="container1">
             <div id="wrap-cart" className="container1">
-                {/* Begin empty cart */}
                 <div className="row">
                     <div id="layout-page-card" className="container1">
                         <div className="header-page">
@@ -120,7 +128,6 @@ const Index = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     {arrayOrder && arrayOrder.map((item, index) => {
                                         return <tr key={index}>
                                             <td className="image">
@@ -174,4 +181,4 @@ const Index = () => {
     );
 }
 
-export default Index;
+export default memo(Index);

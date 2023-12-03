@@ -1,5 +1,5 @@
-import React, { useState,useEffect } from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import React, { useState,useEffect, memo } from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 const Index = (props) => {
     const product = props
@@ -20,4 +20,4 @@ const Index = (props) => {
     );
 }
 
-export default Index;
+export default memo(Index);

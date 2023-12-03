@@ -72,7 +72,7 @@ const Index = () => {
                     </div>
                     <div id="GROUP273" className="ladi-element">
                         <div className="ladi-group">
-                            <a href="" target="_blank" id="IMAGE215" className="ladi-element" data-replace-href="https://gearvn.com/pages/he-thong-showroom-gearvn">
+                            <a href id="IMAGE215" className="ladi-element">
                                 <div className="ladi-image ladi-transition">
                                     <div className="ladi-image-background" />
                                 </div>
@@ -82,7 +82,6 @@ const Index = () => {
                                     <div className="ladi-image-background" />
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

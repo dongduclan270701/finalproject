@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { Button, Modal } from 'react-bootstrap'
 import GoodsReview from 'components/Content/AccountNew/OrderDetails/Rating/GoodsReview'
 import Swal from 'sweetalert2'
@@ -95,4 +95,4 @@ const Index = (props) => {
     );
 }
 
-export default Index;
+export default memo(Index);

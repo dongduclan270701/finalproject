@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import 'assets/scss/Content/Homepage/homepage.css'
 const Index = () => {
-    const [imgBanner, setImageBanner] = useState(
-        [
+    const imgBanner = [
             { url: "", src: "//theme.hstatic.net/1000026716/1000440777/14/slideshow_3.jpg?v=34252" },
             { url: "", src: "//theme.hstatic.net/1000026716/1000440777/14/slideshow_4.jpg?v=34252" },
             { url: "", src: "//theme.hstatic.net/1000026716/1000440777/14/slideshow_7.jpg?v=34252" },
@@ -12,7 +11,7 @@ const Index = () => {
             { url: "", src: "//theme.hstatic.net/1000026716/1000440777/14/slideshow_10.jpg?v=34252" },
             { url: "", src: "//theme.hstatic.net/1000026716/1000440777/14/slideshow_11.jpg?v=34252" },
         ]
-    )
+    
     return (
         <div className="slider-wrap">
             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">

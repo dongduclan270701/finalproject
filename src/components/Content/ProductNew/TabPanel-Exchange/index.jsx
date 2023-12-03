@@ -95,7 +95,6 @@ const Index = ({ product }) => {
                 />
             }) :
                 "chưa có comment nào"}
-
         </div>
     );
 }

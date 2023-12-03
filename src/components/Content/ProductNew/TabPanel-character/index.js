@@ -3,15 +3,12 @@ import React from 'react';
 const Index = (props) => {
     const { product } = props
     const renderTextWithSpan = (text) => {
-        const splitText = text.split(/<br\s*\/?>/i); // tách chuỗi tại vị trí <br/> hoặc <br>
+        const splitText = text.split(/<br\s*\/?>/i)
 
         return splitText.map((textPart, index) => {
             if (index === splitText.length - 1) {
-                // nếu đây là phần tử cuối cùng thì trả về textPart không cần thêm <span>
                 return textPart;
             }
-
-            // nếu không thì thêm <span> để render
             return (
                 <p key={index} style={{ fontSize: '16px' }}>
                     {textPart}</p>
@@ -21,7 +18,6 @@ const Index = (props) => {
     return (
         <div role="tabpanel" className="tab-pane active" id="details-goods">
             <strong>
-
             </strong>
             <p>
                 <strong />
