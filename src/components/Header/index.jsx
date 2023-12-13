@@ -34,6 +34,7 @@ const Index = () => {
     const [isSearch, setIsSearch] = useState(false)
     const [goodsSearch, setGoodsSearch] = useState([])
     const [dataSearch, setDataSearch] = useState({ collection: '', category: '', nameProduct: '' })
+    const [selectedItem, setSelectedItem] = useState(null);
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
         setIsPortfolio(1)
@@ -238,7 +239,8 @@ const Index = () => {
     const handleChoosePortfolio = () => {
         setIsPortfolio(isPortfolio + 1)
     }
-    const handleChoosePortfolioCategory = (name) => {
+    const handleChoosePortfolioCategory = (name, src) => {
+        setSelectedItem(src)
         setIsPortfolio(isPortfolio + 1)
         const clickedItem = item.find((item) => item.name === name);
         if (clickedItem) {
@@ -312,26 +314,26 @@ const Index = () => {
                         <li className="dropdown" >
                             <a onClick={handleChoosePortfolio} href className={isPortfolio === 2 || isPortfolio === 3 ? 'active-portfolio-true' : isPortfolio === 1 ? 'active-portfolio-false' : null}>Product <span className='button-portfolio-website'>&gt;</span></a>
                             <ul className={isPortfolio === 2 || isPortfolio === 3 ? 'dropdown-menu deactivate-portfolio-true' : 'dropdown-menu deactivate-portfolio-false'} >
-                                {item ? item.slice(0, isPortfolio === 3 ? 1 : item.length).map((item, index) => {
+                                {item ? item.slice(0, isPortfolio === 3 ? 1 : item.length).map((itemC, index) => {
                                     return <li key={index} >
-                                        <a onClick={() => handleChoosePortfolioCategory(item.name)} href className={isPortfolio === 3 ? 'active-portfolioCategory-true' : 'active-portfolioCategory-false'}>{item.name}</a>
+                                        <a onClick={() => handleChoosePortfolioCategory(itemC.name, itemC.src)} href className={isPortfolio === 3 ? 'active-portfolioCategory-true' : 'active-portfolioCategory-false'}>{itemC.name}</a>
                                         <ul className={'submenu-menu'}>
-                                            {item.category[0].collecting.map((category, index) => {
+                                            {itemC.category[0].collecting.map((category, index) => {
                                                 return <li key={index}>
                                                     <NavLink
                                                         onClick={toggleMenu}
-                                                        to={"/collectionDetail/" + item.src + '/' + category.name}
+                                                        to={"/collectionDetail/" + itemC.src + '/' + category.name}
                                                     >{category.name}</NavLink>
                                                 </li>
                                             })}
                                         </ul>
                                         <ul className={isPortfolio === 3 ? 'active-submenu-menu-responsive' : 'submenu-menu-responsive'}>
-                                            {category.map((category, index) => {
+                                            {category.map((category1, index) => {
                                                 return <li key={index}>
                                                     <NavLink
                                                         onClick={toggleMenu}
-                                                        to={"/collectionDetail/" + item.src + '/' + category.name}
-                                                    >{category.name}</NavLink>
+                                                        to={"/collectionDetail/" + selectedItem + '/' + category1.name}
+                                                    >{category1.name} </NavLink>
                                                 </li>
                                             })}
                                         </ul>
