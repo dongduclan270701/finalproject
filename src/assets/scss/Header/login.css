@@ -14,6 +14,7 @@
     background: #fff;
     border: 2px solid #fff;
     transform: translate(-50%, -70%);
+    border-radius: 15px;
 }
 
 .show-popup .form-popup {
@@ -70,6 +71,7 @@
     background: url("assets/images/login-img.jpg");
     background-position: center;
     background-size: cover;
+    border-radius: 15px;
 }
 
 .signup .form-details {
@@ -77,6 +79,7 @@
     background: url("assets/images/signup-img.jpg");
     background-position: center;
     background-size: cover;
+    border-radius: 15px;
 }
 
 .form-box .form-content {
@@ -108,7 +111,7 @@ form .input-field {
 }
 
 .input-field input:focus {
-    border: 1px solid rgb(240 61 118);
+    border: 1px solid #4b93f8;
 }
 
 .input-field label {
@@ -128,12 +131,12 @@ form .input-field {
 
 .input-field input:is(:focus, :valid)~label {
     transform: translateY(-120%);
-    color: rgb(240 61 118);
+    color: #4b93f8;
     font-size: 10px;
 }
 
 .form-box a {
-    color: rgb(240 61 118);
+    color: #4b93f8;
     text-decoration: none;
 }
 
@@ -141,7 +144,7 @@ form .input-field {
     text-decoration: underline;
 }
 .form-box #signup-link {
-    color: rgb(240 61 118);
+    color: #4b93f8;
     text-decoration: none;
 }
 
@@ -166,12 +169,13 @@ form button {
     border-radius: 3px;
     cursor: pointer;
     margin: 25px 0;
-    background: rgb(240 61 118);
+    background: #4b93f8;
+    border-radius: 15px;
     transition: 0.2s ease;
 }
 
 form button:hover {
-    background: rgb(233, 97, 140);
+    background: #4b93f8a7;
 }
 
 .form-content .bottom-link {

@@ -623,23 +623,23 @@ a:link {
     /* font-family: Oswald, sans-serif; */
     font-weight: bold;
     line-height: 1.6;
-    color: rgb(229, 32, 63);
+    color: black;
     text-align: justify;
 }
 
 #HEADLINE63>.ladi-headline {
     line-height: 1.6;
-    color: white;
+    color: black;
 }
 
 #HEADLINE208>.ladi-headline {
     line-height: 1.6;
-    color: white;
+    color: black;
 }
 
 #HEADLINE209>.ladi-headline {
     line-height: 1.6;
-    color: rgb(229, 32, 62);
+    color: black;
 }
 
 #SECTION212>.ladi-section-background,
@@ -663,7 +663,7 @@ a:link {
     /* font-family: Oswald, sans-serif; */
     font-weight: bold;
     line-height: 1.6;
-    color: rgb(229, 32, 63);
+    color: black;
     /* text-decoration-line: underline; */
     letter-spacing: 0px;
     text-align: justify;
@@ -725,14 +725,14 @@ a:link {
 #HEADLINE254>.ladi-headline,
 #HEADLINE255>.ladi-headline {
     line-height: 1.6;
-    color: white;
+    color: black;
     text-align: justify;
 }
 
 #HEADLINE1020>.ladi-headline {
     /* font-family: UZOLUdvdGhhbSBCbxkLnRZg; */
     line-height: 1.6;
-    color: white;
+    color: black;
 }
 
 #HEADLINE278>.ladi-headline,
@@ -744,7 +744,7 @@ a:link {
 #HEADLINE908>.ladi-headline,
 #HEADLINE909>.ladi-headline {
     line-height: 1.6;
-    color: white;
+    color: black;
 }
 
 #HEADLINE295,
@@ -757,7 +757,7 @@ a:link {
 #HEADLINE883>.ladi-headline {
     /* font-family: UZOLUdvdGhhbSBCbxkLnRZg; */
     line-height: 1.6;
-    color: rgb(229, 32, 63);
+    color: black;
 }
 
 #HEADLINE336>.ladi-headline,
@@ -793,7 +793,7 @@ a:link {
 }
 
 #SECTION968>.ladi-section-background {
-    background-color: rgb(229, 32, 63);
+    background-color: black;
 }
 
 #HEADLINE969>.ladi-headline {
@@ -1742,16 +1742,16 @@ a:link {
     }
 
     #IMAGE1018 {
-        width: 1266.05px;
+        width: 100%;
         height: 268.584px;
         top: 614.437px;
-        left: -28px;
+        left: -15px;
     }
 
     #IMAGE1018>.ladi-image>.ladi-image-background {
-        width: 1225.05px;
+        width: 100%;
         height: 274.914px;
-        filter:invert(1);
+        /* filter:invert(1); */
         background-image: url("https://w.ladicdn.com/s1600x600/5bf3dc7edc60303c34e4991f/chinhsachbaohanh-recovered-30-20201106073424.png");
     }
 

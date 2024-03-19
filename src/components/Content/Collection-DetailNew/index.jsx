@@ -131,7 +131,7 @@ const Index = () => {
         <div className="container">
             <div className=" banner-collection-header">
                 <NavLink to="" >
-                    <img src="https://file.hstatic.net/1000026716/collection/vvb_gearvn1920x450_61fba033031f4d6d97272973a3154f39.jpg" alt="goods Asus Vivobook Series" style={{ height: '300px', width: '100%', objectFit: 'contain' }} />
+                    <img src="https://file.hstatic.net/1000026716/collection/vvb_gearvn1920x450_61fba033031f4d6d97272973a3154f39.jpg" alt="goods Asus Vivobook Series" style={{ margin:'0 0 15px 0',borderRadius:'15px', width: '100%', objectFit: 'contain' }} />
                 </NavLink>
             </div>
             <div className="col-sm-12 list-goods">
@@ -143,8 +143,8 @@ const Index = () => {
                         <div className='col-md-12' id="breadcrumb">
                             <div className="main">
                                 <div className="breadcrumbs href-here">
-                                    <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "rgb(240 61 118)" }}>Homepage</NavLink>
-                                    <span> <i className="fa fa-caret-right" /> {formatText(params.collection).toUpperCase() + " " + params.codeCollectionDetail.toUpperCase()}</span>
+                                    <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "#2196f3" }}>Homepage</NavLink>
+                                    <span className='play-bold'> <i className="fa fa-caret-right" /> {formatText(params.collection).toUpperCase() + " " + params.codeCollectionDetail.toUpperCase()}</span>
                                 </div>
                             </div>
                         </div>
@@ -158,7 +158,7 @@ const Index = () => {
                                                 <form>
                                                     <div className='row select-field'>
                                                         <div className='col-12'>
-                                                            <label style={{ fontSize: 13 }}>{index === 0 ? 'Type' : item.name}</label>
+                                                            <label className='play-bold' style={{ fontSize: 13 }}>{index === 0 ? 'Type' : item.name}</label>
                                                             <select className="field-input" style={{ padding: 15 }} onChange={e => handleChangeFilter(e)} name={item.src ? 'Brand' : item.name}>
                                                                 <option data-code="null" value="">
                                                                     Select </option>
@@ -180,11 +180,11 @@ const Index = () => {
                                         <div className="price-wrap">
                                             <div className="price-container">
                                                 <div className="price-wrap-1">
-                                                    <input id="one" type="text" min={0} max={400000000} onBlur={handleBlurFilter} name='minPrice' onChange={e => handleChangeFilter(e)} value={formatter.format(filter.minPrice)} style={{ color: 'white' }} />
+                                                    <input id="one" type="text" min={0} max={400000000} onBlur={handleBlurFilter} name='minPrice' onChange={e => handleChangeFilter(e)} value={formatter.format(filter.minPrice)} style={{ color: 'black' }} />
                                                 </div>
                                                 <div className="price-wrap_line">-</div>
                                                 <div className="price-wrap-2">
-                                                    <input id="two" type="text" min={0} max={400000000} onBlur={handleBlurFilter} name='maxPrice' onChange={e => handleChangeFilter(e)} value={formatter.format(filter.maxPrice)} style={{ color: 'white' }} />
+                                                    <input id="two" type="text" min={0} max={400000000} onBlur={handleBlurFilter} name='maxPrice' onChange={e => handleChangeFilter(e)} value={formatter.format(filter.maxPrice)} style={{ color: 'black' }} />
                                                 </div>
                                             </div>
                                         </div>
@@ -235,7 +235,7 @@ const Index = () => {
                                 }
                             </div>
                             <div className='button-show'>
-                                <button type='button'>Show More</button>
+                                <button type='button'>More</button>
                             </div>
                         </div>
                     </div>

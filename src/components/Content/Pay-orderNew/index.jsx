@@ -323,10 +323,10 @@ const Index = () => {
                                 <div className={`step-circle ${step >= index + 1 ? 'completed' : ''}`}>
                                     {index + 1}
                                 </div>
-                                {index + 1 === 1 && <p style={{ width: '120px', textAlign: 'center', margin: 0 }}>Cart</p>}
-                                {index + 1 === 2 && <p style={{ width: '120px', textAlign: 'center', margin: 0 }}>Information</p>}
-                                {index + 1 === 3 && <p style={{ width: '120px', textAlign: 'center', margin: 0 }}>Payment</p>}
-                                {index + 1 === 4 && <p style={{ width: '120px', textAlign: 'center', margin: 0 }}>Complete</p>}
+                                {index + 1 === 1 && <p className='play-bold' style={{ width: '120px', textAlign: 'center', margin: 0 }}>Cart</p>}
+                                {index + 1 === 2 && <p className='play-bold' style={{ width: '120px', textAlign: 'center', margin: 0 }}>Information</p>}
+                                {index + 1 === 3 && <p className='play-bold' style={{ width: '120px', textAlign: 'center', margin: 0 }}>Payment</p>}
+                                {index + 1 === 4 && <p className='play-bold' style={{ width: '120px', textAlign: 'center', margin: 0 }}>Complete</p>}
                             </div>
                             {index < totalSteps - 1 && <div className={`step-line ${step > index + 1 ? 'completed' : ''}`}></div>}
                         </React.Fragment>
@@ -368,7 +368,7 @@ const Index = () => {
                                         </tbody>
                                     </table>
                                 </div>
-                                <hr style={{ borderTop: "2px solid rgb(240 61 118)" }} />
+                                {/* <hr style={{ borderTop: "2px solid #4b93f8" }} /> */}
                                 <div className="order-summary-section order-summary-section-total-lines payment-lines" data-order-summary-section="payment-lines">
                                     <table className="total-line-table">
                                         <thead>
@@ -486,9 +486,10 @@ const Index = () => {
                                         <div className="section">
                                             <div className="section-content section-customer-information no-mb">
                                                 <div className='row' style={{ margin: 0 }}>
-                                                    <img src={location} alt='' style={{ width: '30px', height: '30px', filter: 'invert(1)', margin: '5px 0 5px 0' }} />
+                                                    {/* <img src={location} alt='' style={{ width: '30px', height: '30px', filter: 'invert(1)', margin: '5px 0 5px 0' }} /> */}
+                                                    <i className='fa fa-location-dot' style={{margin: '5px 0 5px 0'}}/>
                                                     <div style={{ padding: '0 10px 0 10px' }}>
-                                                        <div style={{ padding: '', fontWeight: 'bold', fontSize: 18 }}>Delivery information</div>
+                                                        <div style={{ padding: '', fontWeight: 'bold', fontSize: 18 }} className='play-bold'>Delivery information</div>
                                                         <div>{orderCheckOut.email}</div>
                                                         <div>{orderCheckOut.username} || {orderCheckOut.phoneNumber}</div>
                                                         <div>{orderCheckOut.address}, {orderCheckOut.commune}, {orderCheckOut.district}, {orderCheckOut.city}</div>
@@ -499,7 +500,7 @@ const Index = () => {
                                     </div >
                                 </div>
                             </div>
-                            <hr style={{ borderTop: "2px solid rgb(240 61 118)" }} />
+                            {/* <hr style={{ borderTop: "2px solid #4b93f8" }} /> */}
                         </div >
                         <div className="col-md-8 sidebar">
                             <div className="sidebar-content-pay">
@@ -537,7 +538,7 @@ const Index = () => {
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <hr style={{ borderTop: "2px solid rgb(240 61 118)" }} />
+                                        {/* <hr style={{ borderTop: "2px solid #4b93f8" }} /> */}
                                         <div className="order-summary-section order-summary-section-total-lines payment-lines" data-order-summary-section="payment-lines">
                                             <table className="total-line-table">
                                                 <thead>
@@ -613,7 +614,8 @@ const Index = () => {
                                         <div className="section">
                                             <div className="section-content section-customer-information no-mb">
                                                 <div className='row' style={{ margin: 0 }}>
-                                                    <img src={box} alt='' style={{ width: '30px', height: '30px', filter: 'invert(1)', margin: '5px 0 5px 0' }} />
+                                                    {/* <img src={box} alt='' style={{ width: '30px', height: '30px', filter: 'invert(1)', margin: '5px 0 5px 0' }} /> */}
+                                                    <i className='fa fa-boxes-stacked' style={{margin: '5px 0 5px 0'}}/>
                                                     <div style={{ padding: '0 10px 0 10px' }}>{console.log(orderSuccessful)}
                                                         <div style={{ padding: '', fontWeight: 'bold', fontSize: 18 }}>ID: {orderSuccessful && orderSuccessful.orderId}</div>
                                                         <div>{orderSuccessful && orderSuccessful.shipping_process[0].date} - {orderSuccessful && orderSuccessful.shipping_process[0].time} : {orderSuccessful && orderSuccessful.shipping_process[0].content}</div>
@@ -630,7 +632,8 @@ const Index = () => {
                                         <div className="section">
                                             <div className="section-content section-customer-information no-mb">
                                                 <div className='row' style={{ margin: 0 }}>
-                                                    <img src={location} alt='' style={{ width: '30px', height: '30px', filter: 'invert(1)', margin: '5px 0 5px 0' }} />
+                                                    {/* <img src={location} alt='' style={{ width: '30px', height: '30px', filter: 'invert(1)', margin: '5px 0 5px 0' }} /> */}
+                                                    <i className='fa fa-location-dot' style={{margin: '5px 0 5px 0'}}/>
                                                     <div style={{ padding: '0 10px 0 10px' }}>
                                                         <div style={{ padding: '', fontWeight: 'bold', fontSize: 18 }}>Delivery information</div>
                                                         <div>{orderSuccessful && orderSuccessful.email}</div>
@@ -643,7 +646,7 @@ const Index = () => {
                                     </div >
                                 </div>
                             </div>
-                            <hr style={{ borderTop: "2px solid rgb(240 61 118)" }} />
+                            {/* <hr style={{ borderTop: "2px solid #4b93f8" }} /> */}
                         </div >
                         <div className="col-md-8 sidebar">
                             <div className="sidebar-content-pay">
@@ -681,7 +684,7 @@ const Index = () => {
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <hr style={{ borderTop: "2px solid rgb(240 61 118)" }} />
+                                        {/* <hr style={{ borderTop: "2px solid #4b93f8" }} /> */}
                                         <div className="order-summary-section order-summary-section-total-lines payment-lines" data-order-summary-section="payment-lines">
                                             <table className="total-line-table">
                                                 <thead>

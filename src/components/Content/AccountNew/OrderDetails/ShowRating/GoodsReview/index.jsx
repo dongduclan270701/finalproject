@@ -1,35 +1,56 @@
-import React from 'react';
-import { Form } from 'react-bootstrap'
-import ShowGoods from 'components/Content/AccountNew/OrderDetails/ShowGoods'
-const Index = (props) => {
-    const { item } = props
+import React, { useState } from 'react';
 
+const Index = ({ item, onHandleChangeReview }) => {
+    const [rating, setRating] = useState();
+    const handleClick = (event) => {
+        const selectedRating = parseInt(event.target.dataset.rating);
+        setRating(selectedRating)
+        onHandleChangeReview({ ...item, star: selectedRating })
+    };
+    const handleMouseLeave = () => {
+        setRating(rating);
+    };
+    const renderStars = () => {
+        const stars = [];
+        for (let i = 1; i <= 5; i++) {
+            const starClass = i <= rating ? 'fa fa-star checked' : 'fa fa-star';
+            stars.push(
+                <span
+                    key={i}
+                    className={starClass}
+                    data-rating={i}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={handleClick}
+                    style={{ padding: "0px 5px" }}
+                ></span>
+            );
+        }
+        return stars;
+    };
+    const handleChangeReviewContent = (e) => {
+        onHandleChangeReview({ ...item, content: e.target.value })
+    }
     return (
-        <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" style={{ display: "flex", alignItems: "center" }}>
-                <div className="row" style={{ margin: "0px", padding: "10px 0px" }}>
-                    <div className="col-12" style={{ padding: "0", display:'flex' }}>
-                        <div className="pro-img"><img src={item.img} alt="" style={{ width: "80px", borderRadius: "3px" }} /></div>
-                        <div className="pro-name" style={{ padding: "inherit", marginTop: "15px" }}>
-                            <div style={{ padding: "0px 10px" }}>{item.nameProduct}</div>
-                        </div>
-                    </div>
-
+        <React.Fragment >
+            <div className='info-product-review'>
+                <div className='info-product-img'><img src={item.img} alt='' /></div>
+                <div className='info-product-content'>
+                    <div className='play-bold'>{item.nameProduct}</div>
+                    <div>{renderStars(item.star)}</div>
+                    {/* <label className='play-bold'>: {item.content}</label> */}
+                    <form>
+                        <div className='profile-content'>
+                            <div className="profile-value">
+                                <div className="input-field">
+                                    <input style={{width:'300px'}} type="text" onChange={e => handleChangeReviewContent(e)} value={item.content} required />
+                                    <label>Content rated</label>
+                                </div>
+                            </div>
+                        </div></form>
                 </div>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" style={{ display: "flex", alignItems: "center" }}>
-                <Form.Label>Product quality <ShowGoods item={item}/></Form.Label>
-            </Form.Group>
-            {item.content !== "" && <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlTextarea1"
-            >
-                <Form.Label>Content rated: </Form.Label>
-                <Form.Control as="textarea" value={item.content} rows={3} placeholder='Please share the information you like about this product' disabled/>
-            </Form.Group>
-            }
-            
-        </Form>
+            </div>
+
+        </React.Fragment>
     );
 }
 

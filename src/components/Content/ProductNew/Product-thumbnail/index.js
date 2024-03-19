@@ -12,7 +12,7 @@ const Index = (props) => {
             <Carousel>
                 {listImage.map((item,index) => {
                     return <div key={index}>
-                    <img alt="" src={item} />
+                    <img style={{filter: 'drop-shadow(0 0 0.75rem #fff)'}} alt="" src={item} />
                 </div>
                 })}
             </Carousel>

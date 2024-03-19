@@ -13,7 +13,7 @@ const Index = () => {
         ]
     
     return (
-        <div className="slider-wrap">
+        <div className="slider-wrap row d-flex banner" style={{padding:'0 15px'}}>
             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
@@ -25,7 +25,7 @@ const Index = () => {
                     <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
                 </ol>
-                <div className="carousel-inner">
+                <div className="carousel-inner" style={{ borderRadius:'15px'}}>
                     <div className="carousel-item active">
                         <NavLink to={imgBanner[0].url}>
                             <img className="d-block w-100" src={imgBanner[0].src} alt="..." />

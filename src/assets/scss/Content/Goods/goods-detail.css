@@ -2,7 +2,7 @@
     /* display: flex; */
     backdrop-filter: blur(10px);
     padding: 10px 15px;
-    border: 1px solid rgb(93, 93, 93);
+    border: 1px solid #68a7ffb2;
     border-radius: 15px
 }
 
@@ -15,7 +15,7 @@
     max-width: 1200px;
     margin: auto;
     padding: 10px 0;
-    border-top: 2px solid rgb(240 61 118)
+    border-top: 2px solid #68a7ffb2
 }
 
 .goods-details .form-group {
@@ -27,8 +27,9 @@
     position: relative;
     width: 250px;
     height: 50px;
-    background-color: unset;
-    border: 1px solid rgb(240 61 118);
+    background-color: #4b93f8;
+    color: white;
+    border: 1px solid #68a7ffb2;
     border-radius: 15px;
     font-size: 20px;
     font-weight: 700;
@@ -75,13 +76,13 @@
     position: relative;
     width: 80px;
     height: 50px;
-    background-color: rgb(240 61 118);
+    background-color: #68a7ffb2;
     font-weight: 700;
     cursor: pointer;
     transform: 0.5s ease;
     border: none;
     z-index: 11;
-    border-radius:15px;
+    border-radius: 15px;
     /* margin-bottom:15px */
 }
 
@@ -127,46 +128,47 @@
 }
 
 .goods-details .nav-tabs a {
-    color: white
+    color: black
 }
 
 .goods-details .nav-tabs {
-    border-bottom: 1px solid rgb(240 61 118);
+    border-bottom: 1px solid #68a7ffb2;
     margin-bottom: 10px
 }
 
 .goods-details .nav-tabs a:hover {
-    color: white;
+    color: black;
     border: none;
-    background-color: rgb(240 61 118);
+    background-color: #68a7ffb2;
 }
 
 .goods-details .nav-tabs .active>a {
     border: none;
-    background-color: rgb(240 61 118);
+    background-color: #4b93f8;
     color: white
 }
 
-.goods-details .nav-tabs .active > a:hover {
+.goods-details .nav-tabs .active>a:hover {
     border: none;
-    background-color: rgb(240 61 118);
-    color: white
+    background-color: #68a7ffb2;
+    color: black
 }
-.goods-details .nav-tabs .active > a:focus {
+
+.goods-details .nav-tabs .active>a:focus {
     border: none;
-    background-color: rgb(240 61 118);
+    background-color: #4b93f8;
     color: white
 }
 
 
 #tabExchange .comment-options .dropdown-menu .dropdown-item {
-    color: white;
+    color: black;
     background-color: #0f0c18
 }
 
 #tabExchange .comment-options .dropdown-menu .dropdown-item:hover {
     color: yellow;
-    background-color: rgb(240 61 118)
+    background-color: #68a7ffb2
 }
 
 #dropdown-basic {
@@ -199,7 +201,7 @@
     position: relative;
     width: 20px;
     height: 20px;
-    background-color: rgb(240 61 118);
+    background-color: #68a7ffb2;
     font-weight: 700;
     cursor: pointer;
     transform: 0.5s ease;
@@ -229,7 +231,7 @@
     position: relative;
     width: 70px;
     height: 30px;
-    background-color: rgb(240 61 118);
+    background-color: #68a7ffb2;
     font-weight: 700;
     cursor: pointer;
     transform: 0.5s ease;
@@ -263,9 +265,11 @@
     border: 3px solid #333 !important;
 }
 
-.carousel .thumb.selected, .carousel .thumb:hover {
+.carousel .thumb.selected,
+.carousel .thumb:hover {
     border: 3px solid #fff !important;
 }
+
 .carousel-status {
     display: none
 }

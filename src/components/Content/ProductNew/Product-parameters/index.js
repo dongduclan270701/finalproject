@@ -29,16 +29,16 @@ const Index = (props) => {
     };
     return (
         <div className="col-sm-6 col-xs-12 product_parameters">
-            <h1 className="product_name">
+            <h1 className="product_name play-bold">
                 {product.nameProduct}
             </h1>
             <p>{renderStars()} <span style={{ fontSize: '15px' }}>{product.rating.length} reviews - {product.sold} sold - {product.view} views</span>
             </p>
-            <h1 style={{display:'flex', alignItems:'center'}}>
-                <span className="product_sale_price" style={{ color: 'rgb(240 61 118)' }}>{formatter.format(product.nowPrice)} VNĐ</span>
+            <h1 style={{ display: 'flex', alignItems: 'center' }}>
+                <span className="product_sale_price play-bold" style={{ color: '#4b93f8' }}>{formatter.format(product.nowPrice)} VNĐ</span>
                 &ensp;
-                <span className="product_price" style={{ color: 'grey', fontSize:'17px' }}><del>{formatter.format(product.realPrice)} VNĐ</del></span>
-                <span style={{border: '1px solid rgb(240 61 118)', borderRadius: '5px', padding:'5px', margin:'0 0 0 10px', fontSize:'13px'}}>- {product.percent}%</span>
+                <span className="product_price play-bold" style={{ color: 'grey', fontSize: '17px' }}><del>{formatter.format(product.realPrice)} VNĐ</del></span>
+                <span className='play-bold' style={{ border: '1px solid #68a7ffb2', borderRadius: '5px', padding: '5px', margin: '0 0 0 10px', fontSize: '13px'}}>- {product.percent}%</span>
             </h1>
             <p>
                 <span style={{ fontSize: '18px' }}>
@@ -57,8 +57,8 @@ const Index = (props) => {
                     ✔ Free shipping nationwide.</span>
             </p>
             <hr />
-            <p>
-                <span style={{ color: 'rgb(240 61 118)' }}>
+            <p className='play-bold'>
+                <span style={{ color: '#68a7ff' }}>
                     <span style={{ fontSize: '18px' }}>
                         <u>
                             <strong>
@@ -77,9 +77,9 @@ const Index = (props) => {
                     </span>
                 </p>
             })}
-            <p>
+            <p className='play-bold'>
                 <span style={{ fontSize: '18px' }}>
-                    <span style={{ color: 'rgb(240 61 118)' }}>
+                    <span style={{ color: '#68a7ff' }}>
                         <strong>
                             <u>
                                 PROMOTION WHEN BUYING INCLUDED:&nbsp;</u>
@@ -87,7 +87,7 @@ const Index = (props) => {
                     </span>
                 </span>
             </p>
-            <p>
+            <p className='play-bold'>
                 {product.gift_buy.map((item, index) => {
                     return <span style={{ fontSize: '18px' }} key={index}>
                         🎁 - {item}<br />
@@ -95,10 +95,10 @@ const Index = (props) => {
                 })}
             </p>
             <hr />
-            <p>
+            <p className='play-bold'>
                 <span style={{ fontSize: '18px' }}>
                     <strong>
-                        <span style={{ color: 'rgb(240 61 118)' }}>
+                        <span style={{ color: '#68a7ff' }}>
                             Support MPOS (Credit Card), HDSAISON</span>
                     </strong>
                 </span>
@@ -107,12 +107,18 @@ const Index = (props) => {
                 <strong>
                 </strong>
             </p>
-            <strong>
-                <div className="clearfix" />
-                <div className="form-group">
-                    <button onClick={statusOrder}>Add to wishlist</button>
-                </div>
-            </strong>
+            {product.quantity > 0 ?
+                <strong>
+                    <div className="clearfix" />
+                    <div className="form-group">
+                        <button onClick={statusOrder}>Add to cart</button>
+                    </div>
+                </strong> :
+                <strong className='play-bold' style={{color:'red', fontSize:'23px'}}>
+                    SOLD OUT
+                </strong>
+            }
+
         </div>
     );
 }

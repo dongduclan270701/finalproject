@@ -28,13 +28,13 @@ const Index = () => {
                     <div id="PARAGRAPH349" className="ladi-element">
                         <div className="ladi-paragraph ladi-transition">
                         Pay in installments without mortgaging assets and pay in installments via credit card,
-                            processing <span style={{ fontWeight: 'bold' }}>
+                            processing <span className='play-bold' style={{ fontWeight: 'bold' }}>
                             "SUPER FAST - SUPER SIMPLE" </span>
                             at KTECH.<br />
                         </div>
                     </div>
                     <div id="HEADLINE348" className="ladi-element">
-                        <h1 className="ladi-headline ladi-transition">
+                        <h1 className="ladi-headline ladi-transition play-bold">
                         Installment</h1>
                     </div>
                 </div>
@@ -43,12 +43,12 @@ const Index = () => {
                 <div className="ladi-section-background" />
                 <div className="ladi-container">
                     <div id="HEADLINE359" className="ladi-element">
-                        <h2 className="ladi-headline ladi-transition">
+                        <h2 className="ladi-headline ladi-transition play-bold">
                             1. Pay installments through HD SAISON company<br />
                         </h2>
                     </div>
                     <div id="HEADLINE360" className="ladi-element">
-                        <h3 className="ladi-headline ladi-transition">
+                        <h3 className="ladi-headline ladi-transition play-bold">
                             A. Condition</h3>
                     </div>
                     <div id="PARAGRAPH361" className="ladi-element">
@@ -61,7 +61,7 @@ const Index = () => {
                         </div>
                     </div>
                     <div id="HEADLINE362" className="ladi-element">
-                        <h3 className="ladi-headline ladi-transition">
+                        <h3 className="ladi-headline ladi-transition play-bold">
                             B. Registration form</h3>
                     </div>
                     <div id="GROUP386" className="ladi-element">
@@ -73,7 +73,7 @@ const Index = () => {
                                 <div className="ladi-box ladi-transition" />
                             </div>
                             <div id="HEADLINE364" className="ladi-element">
-                                <p className="ladi-headline ladi-transition">
+                                <p className="ladi-headline ladi-transition play-bold">
                                 Method 1: Browse documents at KTECH Showroom</p>
                             </div>
                             <div id="PARAGRAPH365" className="ladi-element">
@@ -90,13 +90,13 @@ const Index = () => {
                                     </div>
                                     <div id="PARAGRAPH367" className="ladi-element">
                                         <div className="ladi-paragraph ladi-transition">
-                                            &nbsp;• <span style={{ fontWeight: 700 }}>
+                                            &nbsp;• <span className='play-bold' style={{ fontWeight: 700 }}>
                                                 CMND/CCCD </span>
                                                 Validity period (15 years from date of issue)
                                             <br />
 
                                             <br />
-                                            &nbsp;• <span style={{ fontWeight: 'bold' }}>
+                                            &nbsp;• <span className='play-bold' style={{ fontWeight: 'bold' }}>
                                             Household registration</span> (can use driver's license (GPLX) instead of household registration)<br />
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@ const Index = () => {
                                         <div className="ladi-button ladi-transition">
                                             <div className="ladi-button-background" />
                                             <div id="BUTTON_TEXT368" className="ladi-element ladi-button-headline">
-                                                <p className="ladi-headline ladi-transition">
+                                                <p className="ladi-headline ladi-transition play-bold">
                                                 Under 10 Million</p>
                                             </div>
                                         </div>
@@ -131,7 +131,7 @@ const Index = () => {
                                         <div className="ladi-button ladi-transition">
                                             <div className="ladi-button-background" />
                                             <div id="BUTTON_TEXT374" className="ladi-element ladi-button-headline">
-                                                <p className="ladi-headline ladi-transition">
+                                                <p className="ladi-headline ladi-transition play-bold">
                                                 From 10 - 30 Million</p>
                                             </div>
                                         </div>
@@ -162,14 +162,14 @@ const Index = () => {
                                         <div className="ladi-button ladi-transition">
                                             <div className="ladi-button-background" />
                                             <div id="BUTTON_TEXT379" className="ladi-element ladi-button-headline">
-                                                <p className="ladi-headline ladi-transition">
+                                                <p className="ladi-headline ladi-transition play-bold">
                                                     Over 30 Milion</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="HEADLINE381" className="ladi-element">
+                            <div id="HEADLINE381" className="ladi-element play-bold">
                                 <p className="ladi-headline ladi-transition">
                                     Note:</p>
                             </div>
@@ -198,7 +198,7 @@ const Index = () => {
                                 <div className="ladi-box ladi-transition" />
                             </div>
                             <div id="HEADLINE390" className="ladi-element">
-                                <p className="ladi-headline ladi-transition">
+                                <p className="ladi-headline ladi-transition play-bold">
                                 Method 2: Browse documents via phone</p>
                             </div>
                             <div id="PARAGRAPH391" className="ladi-element">
@@ -226,7 +226,7 @@ const Index = () => {
                                         <div className="ladi-button ladi-transition">
                                             <div className="ladi-button-background" />
                                             <div id="BUTTON_TEXT395" className="ladi-element ladi-button-headline">
-                                                <p className="ladi-headline ladi-transition">
+                                                <p className="ladi-headline ladi-transition play-bold">
                                                     Step 1</p>
                                             </div>
                                         </div>
@@ -250,7 +250,7 @@ const Index = () => {
                                         <div className="ladi-button ladi-transition">
                                             <div className="ladi-button-background" />
                                             <div id="BUTTON_TEXT400" className="ladi-element ladi-button-headline">
-                                                <p className="ladi-headline ladi-transition">
+                                                <p className="ladi-headline ladi-transition play-bold">
                                                     Step 2</p>
                                             </div>
                                         </div>
@@ -271,7 +271,7 @@ const Index = () => {
                                         <div className="ladi-button ladi-transition">
                                             <div className="ladi-button-background" />
                                             <div id="BUTTON_TEXT405" className="ladi-element ladi-button-headline">
-                                                <p className="ladi-headline ladi-transition">
+                                                <p className="ladi-headline ladi-transition play-bold">
                                                     Step 3</p>
                                             </div>
                                         </div>
@@ -286,7 +286,7 @@ const Index = () => {
                         </div>
                     </div>
                     <div id="HEADLINE410" className="ladi-element">
-                        <h3 className="ladi-headline ladi-transition">
+                        <h3 className="ladi-headline ladi-transition play-bold">
                             C. Monthly loan payment method</h3>
                     </div>
                     <div id="GROUP425" className="ladi-element">
@@ -302,7 +302,7 @@ const Index = () => {
                                 </div>
                             </div>
                             <div id="HEADLINE412" className="ladi-element">
-                                <p className="ladi-headline ladi-transition">
+                                <p className="ladi-headline ladi-transition play-bold">
                                     Step 1:</p>
                             </div>
                             <div id="LINE413" className="ladi-element">
@@ -316,7 +316,7 @@ const Index = () => {
                                 </div>
                             </a>
                             <div id="HEADLINE417" className="ladi-element">
-                                <p className="ladi-headline ladi-transition">
+                                <p className="ladi-headline ladi-transition play-bold">
                                     Step 2:</p>
                             </div>
                             <div id="PARAGRAPH418" className="ladi-element">
@@ -364,11 +364,11 @@ const Index = () => {
                 <div className="ladi-section-background" />
                 <div className="ladi-container">
                     <div id="HEADLINE426" className="ladi-element">
-                        <h2 className="ladi-headline ladi-transition">
+                        <h2 className="ladi-headline ladi-transition play-bold">
                             2. Pay in installments via MPOS credit card</h2>
                     </div>
                     <div id="HEADLINE427" className="ladi-element">
-                        <h3 className="ladi-headline ladi-transition">
+                        <h3 className="ladi-headline ladi-transition play-bold">
                             A. Apply</h3>
                     </div>
                     <div id="PARAGRAPH428" className="ladi-element">
@@ -379,7 +379,7 @@ const Index = () => {
                         </div>
                     </div>
                     <div id="HEADLINE429" className="ladi-element">
-                        <h3 className="ladi-headline ladi-transition">
+                        <h3 className="ladi-headline ladi-transition play-bold">
                             B. Condition</h3>
                     </div>
                     <div id="PARAGRAPH430" className="ladi-element">
@@ -398,7 +398,7 @@ const Index = () => {
                     </div>
                     
                     <div id="HEADLINE431" className="ladi-element">
-                        <h3 className="ladi-headline ladi-transition">
+                        <h3 className="ladi-headline ladi-transition play-bold">
                             C. Registration form</h3>
                     </div>
                     <div id="GROUP453" className="ladi-element">
@@ -444,12 +444,12 @@ const Index = () => {
                         </div>
                     </div>
                     <div id="HEADLINE454" className="ladi-element">
-                        <h3 className="ladi-headline ladi-transition">
+                        <h3 className="ladi-headline ladi-transition play-bold">
                             D. List of banks supporting installment payments and installment terms</h3>
                     </div>
                     <div data-action="true" id="IMAGE455" className="ladi-element">
                         <div className="ladi-image ladi-transition">
-                            <div className="ladi-image-background" style={{ filter: "invert(1)" }}/>
+                            <div className="ladi-image-background" />
                         </div>
                     </div>
                 </div>

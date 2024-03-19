@@ -786,7 +786,7 @@ a:link {
 }
 
 #PARAGRAPH349>.ladi-paragraph {
-    color: white;
+    color: black;
 }
 
 #HEADLINE348>.ladi-headline,
@@ -795,7 +795,7 @@ a:link {
 #HEADLINE470>.ladi-headline {
     font-weight: bold;
     line-height: 1.6;
-    color: white;
+    color: black;
 }
 
 #SECTION358>.ladi-section-background,
@@ -822,7 +822,7 @@ a:link {
 #HEADLINE454>.ladi-headline {
     font-weight: bold;
     line-height: 1.6;
-    color: white;
+    color: black;
 }
 
 #PARAGRAPH361>.ladi-paragraph,
@@ -843,7 +843,7 @@ a:link {
 #PARAGRAPH469>.ladi-paragraph,
 #PARAGRAPH460>.ladi-paragraph {
     line-height: 1.4;
-    color: white;
+    color: black;
 }
 
 #BOX363>.ladi-box,
@@ -857,7 +857,7 @@ a:link {
 #BOX363>.ladi-box,
 #BUTTON368>.ladi-button>.ladi-button-background,
 #BUTTON395>.ladi-button>.ladi-button-background {
-    background-color: rgb(240 61 118);
+    background-color: #4b93f8;
 }
 
 #BOX384,
@@ -960,7 +960,7 @@ a:link {
 #BUTTON400>.ladi-button>.ladi-button-background,
 #BUTTON405>.ladi-button>.ladi-button-background,
 #SECTION533>.ladi-section-background {
-    background-color: rgb(240 61 118);
+    background-color: #4b93f8;
 }
 
 #HEADLINE381>.ladi-headline,
@@ -970,13 +970,13 @@ a:link {
 #HEADLINE466>.ladi-headline {
     font-weight: bold;
     line-height: 1.6;
-    color: white;
+    color: black;
 }
 
 #PARAGRAPH383>.ladi-paragraph {
     font-style: italic;
     line-height: 1.4;
-    color: white;
+    color: black;
 }
 
 #IMAGE385,
@@ -1060,7 +1060,7 @@ a:link {
 #PARAGRAPH449>.ladi-paragraph,
 #PARAGRAPH434>.ladi-paragraph {
     line-height: 1.4;
-    color: white;
+    color: black;
     text-align: center;
 }
 
@@ -1068,7 +1068,7 @@ a:link {
 #HEADLINE435>.ladi-headline {
     font-weight: bold;
     line-height: 1.6;
-    color: white;
+    color: black;
     text-align: center;
 }
 
@@ -1111,7 +1111,7 @@ a:link {
 #PARAGRAPH461>.ladi-paragraph {
     font-size: 18px;
     line-height: 1.4;
-    color: white;
+    color: black;
 }
 
 #PARAGRAPH462>.ladi-paragraph,
@@ -1206,7 +1206,7 @@ a:link {
 #PARAGRAPH514>.ladi-paragraph,
 #PARAGRAPH515>.ladi-paragraph {
     line-height: 1.8;
-    color: white;
+    color: black;
 }
 
 #PARAGRAPH489>.ladi-paragraph,
@@ -1220,7 +1220,7 @@ a:link {
 
 #SHAPE497 svg:last-child,
 #SHAPE498 svg:last-child {
-    fill: rgb(240 61 118);
+    fill: #4b93f8;
 }
 
 #SHAPE500 svg:last-child {

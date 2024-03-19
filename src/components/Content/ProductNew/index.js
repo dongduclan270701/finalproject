@@ -9,13 +9,21 @@ import { fetchGoodsByName, updateCart } from 'Apis'
 import Swal from 'sweetalert2'
 import { StateContext } from 'Context/Context'
 import 'assets/scss/Content/Goods/goods-detail.css'
+
 const Index = () => {
     const state = useContext(StateContext)
     const params = useParams()
     const navigate = useNavigate();
     const [product, setProduct] = useState(null)
     const [activeTable, setActiveTable] = useState(1)
+    
     useEffect(() => {
+        var referrer = document.referrer;
+        if (referrer !== "") {
+            console.log(referrer);
+        } else {
+            console.log("No referrer found.");
+        }
         setProduct(null)
         fetchGoodsByName(params.src, params.collection)
             .then(result => {
@@ -94,8 +102,8 @@ const Index = () => {
                     <div id="breadcrumb">
                         <div className="main">
                             <div className="breadcrumbs">
-                                <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "rgb(240 61 118)" }}>Homepage</NavLink> <i className="fa fa-caret-right" />
-                                <span> {product && product.nameProduct} </span>
+                                <span className="showHere">You are in: </span><NavLink to="/" className="pathway" style={{ color: "#68a7ff" }}>Homepage</NavLink> <i className="fa fa-caret-right" />
+                                <span className='play-bold'> {product && product.nameProduct} </span>
                             </div>
                         </div>
                     </div>
@@ -121,7 +129,7 @@ const Index = () => {
                                     <strong>
                                     </strong>
                                     <div role="tabpanel">
-                                        <strong>
+                                        <strong className='play-bold'>
                                             <ul className="nav nav-tabs" >
                                                 <li  onClick={() => setActiveTable(1)} className={activeTable === 1 ? "active" : null}><a href="#details-goods" aria-controls="details-goods" role="tab" data-toggle="tab">Product Description</a></li>
                                                 <li  onClick={() => setActiveTable(2)} className={activeTable === 2 ? "active" : null}><a href="#tabReviews" aria-controls="tabReviews" role="tab" data-toggle="tab">Product Reviews</a></li>

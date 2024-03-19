@@ -137,14 +137,14 @@ const Index = () => {
                                                     </NavLink>
                                                 </div>
                                             </td>
-                                            <td className="item">
+                                            <td className="item play-bold">
                                                 <NavLink to={"/products/" + item.src}>
                                                     <strong>{item.nameProduct}</strong>
                                                 </NavLink>
                                             </td>
                                             <td className="qty">
                                                 <form>
-                                                    <div className="input-field">
+                                                    <div className="input-field" style={{marginTop:0}}>
                                                         <input name='quantity' type="number"
                                                             onChange={e => updateOrderCart(index, e.target.value)} size={4} min={1} value={item.quantity}
                                                             required />
@@ -152,16 +152,16 @@ const Index = () => {
                                                     </div>
                                                 </form>
                                             </td>
-                                            <td className="price">{formatter.format(item.nowPrice)} VNĐ</td>
+                                            <td className="price play-bold">{formatter.format(item.nowPrice)} VNĐ</td>
                                             <td className="remove">
-                                                <p className="cart" onClick={() => deleteProductInCart(index)}><i className="fa fa-trash" /></p>
+                                                <span className="cart" onClick={() => deleteProductInCart(index)}><i className="fa fa-trash" style={{color:'red', fontSize:20}} /></span>
                                             </td>
                                         </tr>
                                     })}
-                                    <tr className="summary">
+                                    <tr className="summary play-bold">
                                         <td colSpan={4} style={{ fontWeight: 'bold', fontSize: '20px' }}>Total amount:</td>
                                         <td className="price">
-                                            <span className="total">
+                                            <span className="total play-bold">
                                                 <strong>{formatter.format(totalArrayOrder())} VNĐ</strong>
                                             </span>
                                         </td>

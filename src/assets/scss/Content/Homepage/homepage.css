@@ -1,5 +1,6 @@
 .homepage {
     backdrop-filter: blur(10px);
+    margin-top:20px
 }
 
 .homepage .title {
@@ -12,14 +13,15 @@
     max-width: fit-content;
     height: 10px;
     margin: auto;
-    background-color: rgb(240 61 118);
+    border-radius:15px 15px 0 0;
+    background: #68a7ff91;
     text-align: center;
 }
 
 .homepage hr {
     max-width: 1200px;
     margin: auto;
-    border-top: 2px solid rgb(240 61 118)
+    border-top: 2px solid #68a7ff91
 }
 
 .homepage .slider-wrap .carousel .carousel-inner .carousel-item img {
@@ -41,7 +43,7 @@
     position: relative;
     width: 150px;
     height: 50px;
-    background-color: rgb(240 61 118);
+    background: #68a7ff91;
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
@@ -82,7 +84,7 @@
     font-size: 20px;
     font-weight: bold;
     /* border: 1px solid rgb(57, 57, 57); */
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 .homepage .goods {
@@ -91,8 +93,8 @@
 }
 
 :root {
-    --card-color: #0f0c18;
-    --border-color: rgb(240 61 118)
+    --card-color: #68a7ff91;;
+    --border-color: #68a7ff91;
 }
 
 .homepage .goods .goods-single .goods-card {
@@ -109,18 +111,18 @@
     transition: 0.5s ease-in-out;
     overflow: hidden;
     z-index: 10;
-    background-color: #0f0c18;
+    background: white;
 }
 
 .homepage .goods .goods-single .goods-card::after {
     position: absolute;
     content: "";
-    width: 75%;
+    width: 60%;
     height: 100%;
-    background-color: rgb(240 61 118);
+    background: #8ab2eba4;
     /* animation: spin 6s linear infinite; */
-    transform: rotate(240deg);
-    box-shadow: 0 0 10px 10px rgb(240 61 118);
+    transform: rotate(180deg);
+    box-shadow: 0 0 30px 20px #69a1efa4;
     transition: 1.5% linear;
 }
 
@@ -138,16 +140,16 @@
     position: absolute;
     content: "";
     inset: 4px;
-    background-color: #0f0c18;
+    background: #afccf58a;
     z-index: 10;
     border-radius: 16px;
 }
 
 .homepage .goods .goods-single .goods-card:hover {
     /* Quy tắc cho trường hợp hover */
-    box-shadow: 0 0 5px rgb(240 61 118), 0 0 30px #ffbd597c, 0 0 100px #ffbd5940;
-    transform: scale(1.15) translateZ(0);
-    background-size: 300px;
+    box-shadow: 0 0 5px #afccf58a, 0 0 20px #aac9f48a, 0 0 30px #96bff88a;
+    transform: scale(1) translateZ(0);
+    background-size: 200px;
 }
 
 .homepage .goods:hover .goods-single .goods-card:not(:hover) {
@@ -192,7 +194,7 @@
     width: 150px;
     height: 50px;
     background-color: unset;
-    border: 1px solid rgb(240 61 118);
+    border: 1px solid #2196f3;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
@@ -240,7 +242,7 @@
     height: auto;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 @media (max-width: 950px) {

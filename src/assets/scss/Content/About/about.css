@@ -11,7 +11,7 @@
     .ladi-section .ladi-container {
         width: 1200px;
         backdrop-filter: blur(10px);
-        border: 1px solid #393939;
+        border: 1px solid #4b93f8;
         border-radius: 15px;
     }
 
@@ -47,7 +47,7 @@
 
     #PARAGRAPH544>.ladi-paragraph {
         font-size: 18px;
-        color: white
+        color: black
     }
 
     #PARAGRAPH545 {
@@ -59,7 +59,7 @@
     #PARAGRAPH545>.ladi-paragraph {
         font-size: 18px;
         line-height: 1.2;
-        color: white
+        color: black
     }
 
     #IMAGE910 {
@@ -115,7 +115,7 @@
     }
 
     #HEADLINE514 {
-        width: 423px;
+        /* width: 423px; */
         top: 548.099px;
         left: 682px;
     }
@@ -125,7 +125,7 @@
     }
 
     #HEADLINE515 {
-        width: 423px;
+        /* width: 423px; */
         top: 602.099px;
         left: 681px;
     }
@@ -273,7 +273,7 @@
 
 #HEADLINE515>.ladi-headline {
     line-height: 1.6;
-    color: white;
+    color: black;
     text-align: center;
 }
 
@@ -288,7 +288,7 @@
 #HEADLINE514>.ladi-headline {
     font-weight: bold;
     line-height: 1.6;
-    color: rgb(255, 255, 255);
+    color: black;
     text-align: center;
 }
 
@@ -309,7 +309,7 @@
 
 #PARAGRAPH545>.ladi-paragraph {
     /* font-family: QmVWaWVbmFtUHJvLVJlZVsYXIudHRm; */
-    color: rgb(255, 255, 255);
+    color: white;
     text-align: justify;
 }
 
@@ -322,7 +322,7 @@
 #PARAGRAPH544>.ladi-paragraph {
     /* font-family: QmVWaWVbmFtUHJvLVJlZVsYXIudHRm; */
     line-height: 1.2;
-    color: rgb(255, 255, 255);
+    color: black;
     text-align: justify;
 }
 
@@ -340,7 +340,7 @@
 #HEADLINE512>.ladi-headline {
     font-weight: bold;
     line-height: 1.6;
-    color: rgb(255, 255, 255);
+    color: black;
     text-align: left;
 }
 

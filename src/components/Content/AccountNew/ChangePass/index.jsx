@@ -4,7 +4,7 @@ import {
 } from 'Apis'
 import Swal from 'sweetalert2'
 const Index = (props) => {
-    const { user, handleChangeUserInformation} = props
+    const { user, handleChangeUserInformation } = props
     const [inputForm, setInputForm] = useState({ oldPassword: '', newPassword: '', reNewPassword: '' })
     const handleChangePassword = (e) => {
         const { name, value } = e.target
@@ -46,9 +46,9 @@ const Index = (props) => {
                     Swal.showLoading()
                 }
             });
-            updatePasswordUser(user._id, {...user, oldPassword: inputForm.oldPassword, newPassword: inputForm.newPassword})
+            updatePasswordUser(user._id, { ...user, oldPassword: inputForm.oldPassword, newPassword: inputForm.newPassword })
                 .then(result => {
-                    if(result === 'Password incorrect'){
+                    if (result === 'Password incorrect') {
                         Swal.fire({
                             title: "Ops!",
                             text: "Password incorrect!",
@@ -118,8 +118,10 @@ const Index = (props) => {
                             </form>
                         </div>
                     </div>
-                    <div className='button-show-order'>
-                        <button type='button' onClick={handleSubmit} >Save</button>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div className='button-show-order play-bold'>
+                            <button type='button ' onClick={handleSubmit} >SAVE</button>
+                        </div>
                     </div>
                 </div>
             </div>

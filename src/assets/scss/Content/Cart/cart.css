@@ -9,7 +9,7 @@
 #layout-page-card {
     width: 100%;
     backdrop-filter: blur(100px);
-    border: 1px solid #393939;
+    border: 1px solid #4b93f8;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -23,7 +23,7 @@
 .title-card {
     font-size: 24px;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 /* Định dạng bảng sản phẩm */
@@ -38,11 +38,11 @@
     padding: 10px;
     text-align: left;
     vertical-align: middle;
-    border-bottom: 1px solid #343045;
+    border-bottom: 1px solid #4b93f8;
 }
 
 #cartFormPage table th {
-    background-color: #0f0c18;
+    /* background-color: #0f0c18; */
     font-weight: bold;
 }
 
@@ -57,7 +57,8 @@
     position: relative;
     width: 150px;
     height: 50px;
-    background-color: rgb(240 61 118);
+    background-color: #4b93f8;
+    color:white;
     border-radius:15px;
     font-size: 20px;
     font-weight: 700;

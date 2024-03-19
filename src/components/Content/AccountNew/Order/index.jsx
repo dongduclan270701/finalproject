@@ -24,7 +24,7 @@ const Index = (props) => {
         }
     }, [user, step])
     const handleScroll = () => {
-        setDisplayCount(displayCount + 5) 
+        setDisplayCount(displayCount + 5)
     }
     const handleChangeStepProcess = (step) => {
         setStep(step)
@@ -48,8 +48,8 @@ const Index = (props) => {
                         <div className={step === 3 ? 'col-3 step-process-active' : 'col-3 step-process'} onClick={() => handleChangeStepProcess(3)}>Cancel<span style={{ display: step === 3 ? 'contents' : 'none', color: 'red' }}> ({listOrder.length})</span></div>
                     </div>
                     <form className='row' style={{ margin: 0 }}>
-                        <div className="input-field" style={{ width: '90%' }}>
-                            <input name='nameProduct' onChange={ (e) => handleChangeSearch(e)} type="text" style={{ borderRadius: '15px 0 0 15px' }} required />
+                        <div className="input-field play-bold" style={{ width: '90%' }}>
+                            <input name='nameProduct' onChange={(e) => handleChangeSearch(e)} type="text" style={{ borderRadius: '15px 0 0 15px' }} required />
                             <label>Order ID</label>
                         </div>
                         <div className="input-field" style={{ width: '10%', display: 'flex' }}>
@@ -59,7 +59,7 @@ const Index = (props) => {
                     {listOrderNew.slice(0, displayCount).map((item, index) => {
                         return <div key={index}>
                             <div className="row" style={{ padding: "0px 20px 10px 20px" }}>
-                                <div className="col-6 order-id">ID: {item.orderId}</div>
+                                <div className="col-6 order-id play-bold">ID: {item.orderId}</div>
                                 <div className="col-6 row" style={{ display: "flex", flexDirection: "row-reverse", padding: "0" }}>
                                     {item.status === "Delivery successful" ?
                                         <div style={{ color: "green", width: "unset" }}>Complete</div>
@@ -71,7 +71,7 @@ const Index = (props) => {
                                                 <div style={{ color: "red", width: "unset" }}>Delivery failed</div>
                                                 :
                                                 item.status === "Ordered" ?
-                                                    <div style={{ color: "yellow", width: "unset" }}>In process</div>
+                                                    <div style={{ color: "#c3c300", width: "unset" }}>In process</div>
                                                     :
                                                     <div style={{ color: "#5d5dd9", width: "unset" }}>In process</div>
                                     }
@@ -83,28 +83,30 @@ const Index = (props) => {
                                 <div className="col-8" style={{ margin: "auto", display: 'flex' }}>
                                     <div className="pro-img"><img src={item.product[0].img[0]} alt="" style={{ width: "80px", borderRadius: "3px" }} /></div>
                                     <div className="pro-name" style={{ padding: "inherit", marginTop: "15px" }}>
-                                        <div>{item.product[0].nameProduct}</div>
+                                        <div className='play-bold'>{item.product[0].nameProduct}</div>
                                         <div>x {item.product[0].quantity}</div>
                                     </div>
                                 </div>
-                                <div className="col-4" style={{ textAlign: "right", margin: "auto", color: "" }}> {formatter.format(item.product[0].quantity * item.product[0].nowPrice)} VNĐ</div>
+                                <div className="col-4 play-bold" style={{ textAlign: "right", margin: "auto", color: "" }}> {formatter.format(item.product[0].quantity * item.product[0].nowPrice)} VNĐ</div>
                             </div>
-                            <div style={{ textAlign: "right", margin: "auto", color: "", padding: "0px 20px 10px 20px" }}>Total: {formatter.format(item.sumOrder + item.ship)} VNĐ</div>
+                            <div className='play-bold' style={{ textAlign: "right", margin: "auto", color: "", padding: "0px 20px 10px 20px" }}>Total: {formatter.format(item.sumOrder + item.ship)} VNĐ</div>
                             <div className="row" style={{ margin: 0, width: '100%', display: 'flex', justifyContent: 'center' }}>
                                 <NavLink to={"/account/order/" + item.orderId} style={{ textDecoration: 'none' }}>
                                     <div className='button-show-order'>
-                                        <button type='button'>View order details</button>
+                                        <button type='button play-bold'>SHOW</button>
                                     </div>
                                 </NavLink>
                             </div>
-                            <hr style={{ border: '1px solid rgb(68 51 26)' }} />
+                            <hr style={{ border: '1px solid #4b93f8' }} />
                         </div>
                     })}
                     {listOrder.length === listOrderNew.slice(0, displayCount).length || listOrderNew.length < displayCount ?
                         null
                         :
-                        <div className='button-show-order'>
-                            <button type="button" className="btn btn-secondary btn-sm" style={{ display: 'flex', }} onClick={handleScroll}>Show More</button>
+                        <div style={{display:'flex', justifyContent:'center'}}>
+                            <div className='button-show-order' style={{}}>
+                                <button type="button" className="btn btn-secondary btn-sm play-bold" style={{ display: 'flex', }} onClick={handleScroll}>MORE</button>
+                            </div>
                         </div>
                     }
                 </div>

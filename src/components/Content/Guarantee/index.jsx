@@ -10,14 +10,14 @@ const Index = () => {
                 <div className="ladi-section-background" />
                 <div className="ladi-container">
                     <div id="BOX207" className="ladi-element">
-                        <div className="ladi-box ladi-transition"  style={{filter:'invert(1)'}}/>
+                        <div className="ladi-box ladi-transition"  />
                     </div>
                     <div id="HEADLINE62" className="ladi-element">
-                        <h1 className="ladi-headline ladi-transition">
+                        <h1 className="ladi-headline ladi-transition play-bold">
                             Guarantee</h1>
                     </div>
                     <div id="HEADLINE63" className="ladi-element">
-                        <p className="ladi-headline ladi-transition">
+                        <p className="ladi-headline ladi-transition play-bold">
                             AT KTech</p>
                     </div>
                     <div id="HEADLINE208" className="ladi-element">
@@ -25,7 +25,7 @@ const Index = () => {
                             If you have difficulty contacting the Warranty Center, please contact KTech's customer service department with the following information for assistance:</p>
                     </div>
                     <div id="HEADLINE209" className="ladi-element">
-                        <p className="ladi-headline ladi-transition">
+                        <p className="ladi-headline ladi-transition play-bold">
                             E-mail: cskh@gearvn.com • Hotline:  1800.6173</p>
                     </div>
                 </div>
@@ -95,12 +95,12 @@ const Index = () => {
                     </div>
                     <div id="IMAGE248" className="ladi-element">
                         <div className="ladi-image ladi-transition">
-                            <div className="ladi-image-background" style={{filter:'invert(1)'}}/>
+                            <div className="ladi-image-background" />
                         </div>
                     </div>
                     <div id="IMAGE251" className="ladi-element">
                         <div className="ladi-image ladi-transition">
-                            <div className="ladi-image-background"  style={{filter:'invert(1)'}}/>
+                            <div className="ladi-image-background"  />
                         </div>
                     </div>
                     <div id="LINE252" className="ladi-element">
@@ -165,7 +165,7 @@ const Index = () => {
                     </div>
                     <div id="IMAGE277" className="ladi-element">
                         <div className="ladi-image ladi-transition">
-                            <div className="ladi-image-background"  style={{filter:'invert(1)'}}/>
+                            <div className="ladi-image-background"  />
                         </div>
                     </div>
                     <div id="HEADLINE278" className="ladi-element">
@@ -198,7 +198,7 @@ const Index = () => {
                     </div>
                     <div id="IMAGE301" className="ladi-element">
                         <div className="ladi-image ladi-transition">
-                            <div className="ladi-image-background"  style={{filter:'invert(1)'}}/>
+                            <div className="ladi-image-background"  />
                         </div>
                     </div>
                     <div id="HEADLINE308" className="ladi-element">
@@ -239,17 +239,17 @@ const Index = () => {
                     </div>
                     <div id="IMAGE903" className="ladi-element">
                         <div className="ladi-image ladi-transition">
-                            <div className="ladi-image-background"  style={{filter:'invert(1)'}}/>
+                            <div className="ladi-image-background"  />
                         </div>
                     </div>
                     <div id="IMAGE904" className="ladi-element">
                         <div className="ladi-image ladi-transition">
-                            <div className="ladi-image-background"  style={{filter:'invert(1)'}}/>
+                            <div className="ladi-image-background"  />
                         </div>
                     </div>
                     <div id="IMAGE905" className="ladi-element">
                         <div className="ladi-image ladi-transition">
-                            <div className="ladi-image-background"  style={{filter:'invert(1)'}}/>
+                            <div className="ladi-image-background"  />
                         </div>
                     </div>
                     <div id="HEADLINE906" className="ladi-element">

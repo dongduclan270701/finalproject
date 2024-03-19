@@ -24,7 +24,7 @@ const Index = () => {
                         </div>
                     </div>
                     <div id="HEADLINE512" className="ladi-element">
-                        <h3 className="ladi-headline">
+                        <h3 className="ladi-headline play-bold">
                             About KTech<br />
                         </h3>
                     </div>
@@ -91,7 +91,7 @@ const Index = () => {
                         </div>
                     </div>
                     <div className='col-md-12'>
-                        <div className='title-method-about'>
+                        <div className='title-method-about play-bold'>
                             Comprehensive shopping experience
                         </div>
                     </div>

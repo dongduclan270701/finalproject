@@ -68,7 +68,7 @@ const Index = (props) => {
                     Swal.showLoading()
                 }
             });
-            
+
             updateUser(informationUser._id, newInformationUser)
                 .then(result => {
                     handleChangeAfterUpdate()
@@ -98,7 +98,7 @@ const Index = (props) => {
             <div className="profile-container">
                 {informationUser ? <div className="profile-content">
                     <div className="profile-header">
-                        <h1 className="profile-title">My profile</h1>
+                        <h1 className="profile-title play-bold">My profile</h1>
                         <div className="profile-description">Manage profile information for account security</div>
                     </div>
                     <div className="profile-avatar">
@@ -214,15 +214,17 @@ const Index = (props) => {
                             }
                         </div>
                     </div>
-                    <div className='button-show-order'>
-                        {change ?
-                            <div style={{ display: 'flex' }}>
-                                <button type='button' onClick={handleSubmitUpdate} style={{ margin: '10px' }}>Save</button>
-                                <button type='button' onClick={handleChange} style={{ margin: '10px' }}>Close</button>
-                            </div>
-                            :
-                            <button type='button' onClick={handleChange} >Update</button>
-                        }
+                    <div style={{display:'flex', justifyContent:'center'}}>
+                        <div className='button-show-order play-bold'>
+                            {change ?
+                                <div style={{ display: 'flex' }}>
+                                    <button type='button' onClick={handleSubmitUpdate} style={{ margin: '10px' }}>SAVE</button>
+                                    <button type='button' onClick={handleChange} style={{ margin: '10px', backgroundColor:'unset', color:'black' }}>CLOSE</button>
+                                </div>
+                                :
+                                <button type='button' onClick={handleChange} >UPDATE</button>
+                            }
+                        </div>
                     </div>
                 </div> : <div style={{ width: "100%", display: 'flex' }}><div className="lds-hourglass"></div></div>}
 

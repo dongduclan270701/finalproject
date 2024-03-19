@@ -297,10 +297,12 @@ const Index = () => {
     return (
         <div className={isPopupOpen ? "show-popup" : ''}>
             <header>
-                <nav className="navbar">
-                    <span className="hamburger-icon hamburger-btn material-symbols-rounded" width={20} height={20} style={{ fontSize: 30 }} onClick={toggleMenu}>&#8801;</span>
+                <nav className="navbar play-bold">
+                    {/* <span className="hamburger-icon hamburger-btn material-symbols-rounded" width={30} height={30} >&#8801;</span> */}
+                    <i className="hamburger-icon hamburger-btn fa-solid fa-bars" style={{ fontSize: 20 }} onClick={toggleMenu}></i>
                     <NavLink to='/' className="logo">
-                        <img src={logo} alt="logo" />
+                        <img src={logo1} alt="logo" />
+                        <h1 className='play-bold' style={{}}>Ktech</h1>
                     </NavLink>
                     <NavLink to='/' className="logo-res">
                         <img src={logo1} alt="logo" />
@@ -313,13 +315,13 @@ const Index = () => {
                         </li>
                         <li className="dropdown" >
                             <a onClick={handleChoosePortfolio} href className={isPortfolio === 2 || isPortfolio === 3 ? 'active-portfolio-true' : isPortfolio === 1 ? 'active-portfolio-false' : null}>Product <span className='button-portfolio-website'>&gt;</span></a>
-                            <ul className={isPortfolio === 2 || isPortfolio === 3 ? 'dropdown-menu deactivate-portfolio-true' : 'dropdown-menu deactivate-portfolio-false'} >
+                            <ul style={{fontSize:'1.6rem'}} className={isPortfolio === 2 || isPortfolio === 3 ? 'dropdown-menu deactivate-portfolio-true play-bold' : 'dropdown-menu deactivate-portfolio-false play-bold'} >
                                 {item ? item.slice(0, isPortfolio === 3 ? 1 : item.length).map((itemC, index) => {
                                     return <li key={index} >
-                                        <a onClick={() => handleChoosePortfolioCategory(itemC.name, itemC.src)} href className={isPortfolio === 3 ? 'active-portfolioCategory-true' : 'active-portfolioCategory-false'}>{itemC.name}</a>
-                                        <ul className={'submenu-menu'}>
+                                        <a style={{display:'flex', justifyContent:'space-between'}} onClick={() => handleChoosePortfolioCategory(itemC.name, itemC.src)} href className={isPortfolio === 3 ? 'active-portfolioCategory-true play-bold' : 'active-portfolioCategory-false play-bold'}>{itemC.name} <div>&gt;</div></a>
+                                        <ul className={'submenu-menu '}>
                                             {itemC.category[0].collecting.map((category, index) => {
-                                                return <li key={index}>
+                                                return <li key={index} >
                                                     <NavLink
                                                         onClick={toggleMenu}
                                                         to={"/collectionDetail/" + itemC.src + '/' + category.name}
@@ -327,7 +329,7 @@ const Index = () => {
                                                 </li>
                                             })}
                                         </ul>
-                                        <ul className={isPortfolio === 3 ? 'active-submenu-menu-responsive' : 'submenu-menu-responsive'}>
+                                        <ul className={isPortfolio === 3 ? 'active-submenu-menu-responsive play-bold' : 'submenu-menu-responsive play-bold'}>
                                             {category.map((category1, index) => {
                                                 return <li key={index}>
                                                     <NavLink
@@ -345,24 +347,28 @@ const Index = () => {
                         <li className={isPortfolio === 2 || isPortfolio === 3 ? 'active-portfolio-true' : isPortfolio === 1 ? 'active-portfolio-false' : null}><NavLink to={'/instalment'} onClick={toggleMenu}>Instalment</NavLink></li>
                         <li className={isPortfolio === 2 || isPortfolio === 3 ? 'active-portfolio-true' : isPortfolio === 1 ? 'active-portfolio-false' : null}><NavLink to={'/hotline'} onClick={toggleMenu}>About us</NavLink></li>
                         <li className={isPortfolio === 2 || isPortfolio === 3 ? 'active-portfolio-true' : isPortfolio === 1 ? 'active-portfolio-false' : null}>
-                            <img className='search-icon' src={logoSearch} alt='' onClick={handleSearch} />
+                            {/* <img className='' src={logoSearch} alt=''  /> */}
+                            <i className="fa-solid fa-search" onClick={handleSearch} style={{ fontSize: '20px', cursor:'pointer' }} />
                         </li>
                     </ul>
                     {JSON.parse(localStorage.getItem('auth-token-user')) ?
                         <span className="logged-btn">
                             <NavLink className="logged-content" to="/account">
-                                <img alt="" width={25} height={25} src={user} />
+                                {/* <img alt="" width={25} height={25} src={user} /> */}
+                                <i className="fa-regular fa-user" style={{ fontSize: '20px' }} />
                                 <div className="logged-text">{
                                     JSON.parse(localStorage.getItem('user'))[1]
                                 }</div>
-                            </NavLink>|
+                            </NavLink>
+                            <a href onClick={handleLogout} className="cart-content">
+                                <i className="fa-solid fa-right-from-bracket" style={{ fontSize: '20px', color: '#ff003f' }} />
+                            </a>|
                             <NavLink to={'/cart'} className="cart-content">
                                 <div className="number">{state.arrayOrder.length}</div>
-                                <img alt="" width={25} height={25} src={cart} />
-                            </NavLink>|
-                            <a href onClick={handleLogout} className="logout-content">
-                                <img alt="" width={25} height={25} src={logout} />
-                            </a>
+                                {/* <img alt="" width={25} height={25} src={cart} /> */}
+                                <i className="fa-solid fa-shopping-cart" style={{ fontSize: '20px' }} />
+                            </NavLink>
+                            
                         </span>
                         :
                         <button className="login-btn" onClick={togglePopup}>LOG IN</button>
@@ -374,11 +380,11 @@ const Index = () => {
                 <span className="close-btn material-symbols-rounded" onClick={togglePopup}>x</span>
                 <div className="form-box login">
                     <div className="form-details">
-                        <h2>Welcome Back</h2>
+                        <h2 className='play-bold'>Welcome Back</h2>
                         <p>Please log in using your personal information to stay connected with us.</p>
                     </div>
                     <div className="form-content">
-                        <h2>LOGIN</h2>
+                        <h2 className='play-bold'>LOGIN</h2>
                         <form>
                             <div className="input-field">
                                 <input name='email' type="email" onChange={(e) => setAccount((account) => ({ ...account, username: e.target.value }))} required />
@@ -389,21 +395,21 @@ const Index = () => {
                                 <label>Password</label>
                             </div>
                             <a href className="forgot-pass-link">Forgot password?</a>
-                            <button onClick={event => getStateInputFormLogin(event)}>Log In</button>
+                            <button className='play-bold' onClick={event => getStateInputFormLogin(event)}>Log In</button>
                         </form>
                         <div className="bottom-link">
                             Don't have an account?
-                            <a href id="signup-link" onClick={toggleSignUpForm}>Signup</a>
+                            <a className='play-bold' href id="signup-link" onClick={toggleSignUpForm}>Signup</a>
                         </div>
                     </div>
                 </div>
                 <div className="form-box signup">
                     <div className="form-details">
-                        <h2>Create Account</h2>
+                        <h2 className='play-bold'>Create Account</h2>
                         <p>To become a part of our community, please sign up using your personal information.</p>
                     </div>
                     <div className="form-content">
-                        <h2>SIGNUP</h2>
+                        <h2 className='play-bold'>SIGNUP</h2>
                         <form >
                             <div className="input-field">
                                 <input name='username' type="text" onChange={(e) => setNewAccount((newAccount) => ({ ...newAccount, username: e.target.value }))} required />
@@ -428,11 +434,11 @@ const Index = () => {
                                     <a href className="option">Terms &amp; Conditions</a>
                                 </label>
                             </div>
-                            <button onClick={event => getStateInputFormRegister(event)}>Sign Up</button>
+                            <button className='play-bold' onClick={event => getStateInputFormRegister(event)}>Sign Up</button>
                         </form>
                         <div className="bottom-link">
                             Already have an account?
-                            <a href id="signup-link" onClick={toggleSignUpForm}>Login</a>
+                            <a className='play-bold' href id="signup-link" onClick={toggleSignUpForm}>Login</a>
                         </div>
                     </div>
                 </div>
@@ -443,18 +449,18 @@ const Index = () => {
                     <form>
                         <div className='row'>
                             <div className="col-md-12" style={{ width: '50%', margin: 20 }}>
-                                <h1>Search</h1>
+                                <h1 className='play-bold'>Search</h1>
                             </div>
                             <div className="col-md-6 select-field">
-                                <select className="field-input" name="collection" onChange={(e) => handleChangeSearch(e)} value={searchCollection} style={{ padding: 15 }}>
-                                    
+                                <select className="field-input play-bold" name="collection" onChange={(e) => handleChangeSearch(e)} value={searchCollection} style={{ padding: 15 }}>
+
                                     {item ? item.map((item, index) => {
                                         return <option key={index} value={item.src}>{item.name}</option>
                                     }) : null}
                                 </select>
                             </div>
                             <div className="col-md-6 select-field">
-                                <select className="field-input" onChange={(e) => handleChangeSearch(e)} name="category" style={{ padding: 15 }}>
+                                <select className="field-input play-bold" onChange={(e) => handleChangeSearch(e)} name="category" style={{ padding: 15 }}>
                                     {searchCategory.map((item, index) => {
                                         return <option key={index} value={item.name}>{item.name}</option>
                                     })}
@@ -472,10 +478,10 @@ const Index = () => {
                             return <div key={index} className='col-md-3 mt-4 mb-4 goods-search-single'>
                                 <div className='goods-search-card'>
                                     <div className='goods-search-single-content'>
-                                        <img src={item.img[0]} alt='' />
-                                        <h1 style={{ fontSize: 13 }}>{item.nameProduct}</h1>
-                                        <h1 style={{ fontSize: 13 }}>{formatter.format(item.nowPrice)} VNĐ</h1>
-                                        <NavLink to={"/products/" + item.collection + '/' + item.src}><button type='button' style={{ color: "white" }} onClick={handleSearch}>See more</button></NavLink>
+                                        <img style={{filter: 'drop-shadow(0 0 0.75rem #fff)'}} src={item.img[0]} alt='' />
+                                        <h1 className='play-bold' style={{ fontSize: 14 }}>{item.nameProduct}</h1>
+                                        <h1 className='play-bold' style={{ fontSize: 13 }}>{formatter.format(item.nowPrice)} VNĐ</h1>
+                                        <NavLink to={"/products/" + item.collection + '/' + item.src}><button type='button' style={{ color: "" }} onClick={handleSearch}>See more</button></NavLink>
                                     </div>
                                 </div>
                             </div>

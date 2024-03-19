@@ -24,7 +24,7 @@ const Index = (props) => {
             </p>
             <h2>
                 <span style={{ fontSize: '22px' }}>
-                    <strong>
+                    <strong className='play-bold'>
                         THÔNG SỐ KĨ THUẬT:<strong>
                             &nbsp;</strong>
                     </strong>
@@ -35,7 +35,7 @@ const Index = (props) => {
                     <tbody style={{ boxSizing: 'border-box' }}>
                         {product.description_table.map((item, index) => {
                             return <tr className="row-info" key={index}>
-                                <td>
+                                <td className='play-bold'>
                                     <span style={{ fontSize: '18px' }}>
                                         <strong>
                                             <p target="_blank">
@@ -53,8 +53,8 @@ const Index = (props) => {
             </div>
 
             {(product.description).map((item, index) => {
-                return <React.Fragment ><h3 >
-                    <strong>
+                return <React.Fragment ><h3 style={{paddingTop:'10px'}} key={index}>
+                    <strong className='play-bold'>
                         <span style={{ fontSize: '22px' }}>
                             {item[0]}</span>
                     </strong>

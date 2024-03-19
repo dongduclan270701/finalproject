@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Play", sans-serif;
 }
 
 body {
@@ -13,14 +13,28 @@ body {
     font-size: 16px;
     padding-top: 84px;
     margin: auto;
-    color: white;
-    background: url("assets/images/Technology.png");
+    color: black;
+    /* background: url("assets/images/Technology.png");
     background-size: cover;
-    background-position: center center;
+    background-position: center center; */
+    background: linear-gradient(to right, #9cc4fda7, #9cc4fd24);
+}
+
+.play-regular {
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.play-bold {
+    font-family: "Play", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 1px;
 }
 
 .lds-hourglass {
-    margin:auto;
+    margin: auto;
     display: inline-block;
     position: relative;
     width: 80px;
@@ -35,8 +49,8 @@ body {
     height: 0;
     margin: 8px;
     box-sizing: border-box;
-    border: 32px solid rgb(240 61 118);
-    border-color: rgb(240 61 118) transparent rgb(240 61 118) transparent;
+    border: 32px solid #2196f3;
+    border-color: #2196f3 transparent #2196f3 transparent;
     animation: lds-hourglass 1.2s infinite;
 }
 
@@ -55,22 +69,26 @@ body {
         transform: rotate(1800deg);
     }
 }
-body .swal2-popup{
-    border-radius:15px;
-    background: unset;
+
+body .swal2-popup {
+    border-radius: 15px;
+    background: #2195f343;
     backdrop-filter: blur(20px);
-    border: 1px solid rgb(240 61 118);
-    color:white
+    border: 1px solid #0c89f0;
+    color: white
 }
-body .swal2-popup .swal2-title{
-    color:white
+
+body .swal2-popup .swal2-title {
+    color: white
 }
+
 body .swal2-popup .swal2-actions .swal2-confirm,
-body .swal2-popup .swal2-actions .swal2-cancel{
-    border-radius:15px;
-    border: 1px solid rgb(240 61 118);
+body .swal2-popup .swal2-actions .swal2-cancel {
+    border-radius: 15px;
+    border: 1px solid #2196f3;
     background: unset;
 }
-body .swal2-popup .swal2-actions .swal2-confirm:focus{
-    border: 1px solid rgb(240 61 118);
+
+body .swal2-popup .swal2-actions .swal2-confirm:focus {
+    border: 1px solid #2196f3;
 }

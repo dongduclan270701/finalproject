@@ -11,7 +11,7 @@ const Index = () => {
             <div className='footer-content row'>
                 <div className="col-md-3 ">
                     <div className="moduletable">
-                        <h3>ABOUT KTECH</h3>
+                        <h3 className='play-bold'>ABOUT KTECH</h3>
                         <div className="custom">
                             <table style={{ width: '260px' }}>
                                 <tbody>
@@ -25,7 +25,7 @@ const Index = () => {
                             </table>
                             <br />
                         </div>
-                        <h3>Information</h3>
+                        <h3 className='play-bold'>Information</h3>
                         <div className="custom">
                             <table style={{ width: '260px' }}>
                                 <tbody>
@@ -43,21 +43,21 @@ const Index = () => {
                 </div>
                 <div className="col-md-3 ">
                     <div className="moduletable">
-                        <h3>POLICY</h3>
+                        <h3 className='play-bold'>POLICY</h3>
                         <div className="custom">
                             <table style={{ width: '260px' }}>
                                 <tbody>
                                     <tr>
-                                        <td style={{ width: '50px', fontSize: '14px', paddingBottom: '5px' }}><div><NavLink to="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Warranty Policy</NavLink></div></td>
+                                        <td className='play-bold' style={{ width: '50px', fontSize: '14px', paddingBottom: '5px' }}><div><NavLink to="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Warranty Policy</NavLink></div></td>
                                     </tr>
                                     <tr>
-                                        <td style={{ width: '50px', fontSize: '14px' }}><div><NavLink to="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Payment policy</NavLink></div></td>
+                                        <td className='play-bold' style={{ width: '50px', fontSize: '14px' }}><div><NavLink to="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Payment policy</NavLink></div></td>
                                     </tr>
                                     <tr>
-                                        <td style={{ width: '50px', fontSize: '14px', paddingBottom: '5px' }}><div><NavLink to="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Delivery policy</NavLink></div></td>
+                                        <td className='play-bold' style={{ width: '50px', fontSize: '14px', paddingBottom: '5px' }}><div><NavLink to="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Delivery policy</NavLink></div></td>
                                     </tr>
                                     <tr>
-                                        <td style={{ width: '50px', fontSize: '14px' }}><div><NavLink to="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Privacy Policy</NavLink></div></td>
+                                        <td className='play-bold' style={{ width: '50px', fontSize: '14px' }}><div><NavLink to="" style={{ fontSize: '16px', color: '#0655a6', fontWeight: 'bold' }}>Privacy Policy</NavLink></div></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -67,21 +67,21 @@ const Index = () => {
                 </div>
                 <div className="col-md-3 ">
                     <div className="moduletable">
-                        <h3>HOTLINE</h3>
+                        <h3 className='play-bold'>HOTLINE</h3>
                         <div className="custom">
                             <table style={{ width: '260px' }}>
                                 <tbody>
                                     <tr>
                                         <td style={{ width: '60px', fontSize: '14px', paddingBottom: '5px' }}>Call to buy:</td>
-                                        <td style={{ width: '105px', fontSize: '14px', paddingBottom: '5px' }}><strong>1800 6975</strong></td>
+                                        <td style={{ width: '105px', fontSize: '14px', paddingBottom: '5px' }}><strong className='play-bold'>1800 6975</strong></td>
                                     </tr>
                                     <tr>
                                         <td style={{ width: '60px', fontSize: '14px', paddingBottom: '5px' }}>Support:</td>
-                                        <td style={{ width: '105px', fontSize: '14px', paddingBottom: '5px' }}><strong>1800 6173</strong></td>
+                                        <td style={{ width: '105px', fontSize: '14px', paddingBottom: '5px' }}><strong className='play-bold'>1800 6173</strong></td>
                                     </tr>
                                     <tr>
                                         <td style={{ width: '60px', fontSize: '14px' }}>Email:</td>
-                                        <td style={{ width: '105px', fontSize: '14px' }}><strong>kass2k1@gmail.com</strong></td>
+                                        <td style={{ width: '105px', fontSize: '14px' }}><strong className='play-bold'>kass2k1@gmail.com</strong></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -91,7 +91,7 @@ const Index = () => {
                 </div>
                 <div className="col-md-3 ">
                     <div className="moduletable">
-                        <h3>SHIPPING UNIT</h3>
+                        <h3 className='play-bold'>SHIPPING UNIT</h3>
                         <div className="custom">
                             <img alt='' src={ship1} style={{ maxWidth: '85px', marginRight: 5 }} />
                             <img alt='' src={ship2} style={{ maxWidth: '85px', marginRight: 5 }} />
